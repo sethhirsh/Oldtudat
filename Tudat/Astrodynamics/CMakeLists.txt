@@ -2,7 +2,7 @@
  #    This is the CMake file for the Astrodynamics sub-directory.
  #
  #    Path              : /Astrodynamics/
- #    Version           : 3
+ #    Version           : 4
  #    Check status      : Checked
  #
  #    Author            : S.M. Persson
@@ -18,7 +18,7 @@
  #    E-mail address    : mikael.s.persson@gmail.com
  #
  #    Date created      : 20 August, 2011
- #    Last modified     : 26 October, 2011
+ #    Last modified     : 2 February, 2012
  #
  #    References
  #
@@ -40,6 +40,7 @@
  #      110820    S.M. Persson      File created.
  #      111025    K. Kumar          Adapted file to work with Revision 194.
  #      111026    K. Kumar          Adapted file so all headers show in project tree in Qt Creator.
+ #      120202    K. Kumar          Removed astrodynamicsFunctions.h/.cpp and unit tests.
  #/
 
 # Define the main sub-directories.
@@ -54,13 +55,11 @@ set(STATESDIR "${ASTRODYNAMICSDIR}/States")
 
 # Set the source files.
 set(ASTRODYNAMICS_SOURCES 
-  "${SRCROOT}${ASTRODYNAMICSDIR}/astrodynamicsFunctions.cpp"
   "${SRCROOT}${ASTRODYNAMICSDIR}/physicalConstants.cpp"
 )
 
 # Set the header files.
 set(ASTRODYNAMICS_HEADERS 
-  "${SRCROOT}${ASTRODYNAMICSDIR}/astrodynamicsFunctions.h"
   "${SRCROOT}${ASTRODYNAMICSDIR}/physicalConstants.h"
 )
 
@@ -93,10 +92,5 @@ setup_headers("${ASTRODYNAMICS_HEADERS}" "${ASTRODYNAMICSDIR}")
 add_executable(test_PhysicalConstants "${SRCROOT}${ASTRODYNAMICSDIR}/unitTestPhysicalConstants.cpp")
 setup_custom_test_program(test_PhysicalConstants "${SRCROOT}${ASTRODYNAMICSDIR}")
 target_link_libraries(test_PhysicalConstants tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics)
-
-# Add unit tests.
-add_executable(test_AstrodynamicsFunctions "${SRCROOT}${ASTRODYNAMICSDIR}/unitTestAstrodynamicsFunctions.cpp")
-setup_custom_test_program(test_AstrodynamicsFunctions "${SRCROOT}${ASTRODYNAMICSDIR}")
-target_link_libraries(test_AstrodynamicsFunctions tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics)
 
 # End of file.
