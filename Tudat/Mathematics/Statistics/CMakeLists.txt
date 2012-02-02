@@ -44,11 +44,13 @@
 
 # Add source files.
 set(STATISTICS_SOURCES
+  "${SRCROOT}${MATHEMATICSDIR}/Statistics/basicStatistics.cpp"
   "${SRCROOT}${MATHEMATICSDIR}/Statistics/simpleLinearRegression.cpp"
 )
 
 # Add header files.
 set(STATISTICS_HEADERS 
+  "${SRCROOT}${MATHEMATICSDIR}/Statistics/basicStatistics.h"
   "${SRCROOT}${MATHEMATICSDIR}/Statistics/simpleLinearRegression.h"
 )
 
