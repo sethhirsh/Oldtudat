@@ -51,7 +51,24 @@
 #include "Basics/basicFunctions.h"
 
 //! Tudat library namespace.
+/*!
+ * The Tudat library namespace.
+ */
 namespace tudat
+{
+
+//! Mathematics namespace.
+/*!
+ * The mathematics namespace.
+ */
+namespace mathematics
+{
+
+//! Interpolators namespace.
+/*!
+ * The intepolators namespace.
+ */
+namespace interpolators
 {
 
 //! The cubic spline interpolation class.
@@ -214,7 +231,11 @@ private:
     void computeSecondDerivativeOfCurvature_( );
 };
 
-}
+} // Namespace interpolators.
+
+} // Namespace mathematics.
+
+} // Namespace tudat.
 
 #endif // CUBICSPLINEINTERPOLATION_H
 

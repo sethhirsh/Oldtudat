@@ -3,14 +3,14 @@
  *    containing all basic functions contained in Tudat.
  *
  *    Path              : /Mathematics/
- *    Version           : 13
+ *    Version           : 14
  *    Check status      : Checked
  *
  *    Author            : K. Kumar
  *    Affiliation       : Delft University of Technology
  *    E-mail address    : K.Kumar@tudelft.nl
  *
- *    Author            : D. Dirkx
+ *    Author/Checker    : D. Dirkx
  *    Affiliation       : Delft University of Technology
  *    E-mail address    : d.dirkx@tudelft.nl
  *
@@ -21,19 +21,13 @@
  *    Checker           : L. Abdulkadir
  *    Affiliation       : Delft University of Technology
  *    E-mail address    : L.Abdulkadir@student.tudelft.nl
- *
- *    Checker           : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
+
  *    Date created      : 3 September, 2010
- *    Last modified     : 5 September, 2011
+ *    Last modified     : 2 February, 2012
  *
  *    References
  *      Press W.H., et al. Numerical Recipes in C++: The Art of
  *          Scientific Computing. Cambridge University Press, February 2002.
- *      Spiegel, M.R., Stephens, L.J. Statistics, Fourth Edition, Schaum's
- *          Outlines, McGraw-Hill, 2008.
  *
  *    Notes
  *
@@ -66,6 +60,8 @@
  *      110824    J. Leloux         Corrected doxygen documentation.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *      120202    K. Kumar          Moved functions to new Statistics and Interpolators
+ *                                  sub-directories.
  */
 
 #ifndef BASICMATHEMATICSFUNCTIONS_H
@@ -106,72 +102,6 @@ typedef boost::mt19937 globalRandomNumberGeneratorType;
  * \return Global random number generator.
  */
 globalRandomNumberGeneratorType& getGlobalRandomNumberGenerator( );
-
-//! Compute linear interpolation.
-/*!
- * Computes linear interpolation of data provided in the form of a vector of
- * sorted indepedent variables and an associated vector of dependent variables.
- * The linear interpolation equation used is:
- * \f[
- *      y_{target} = x_{1} * ( 1 - mu ) + x_{2} * mu
- * \f]
- * where \f$ mu = \frac{ x_{target} - x_{1} } { x_{2} + x_{1} } \f$
- * and \f$ x_{2} > x_{1} \f$.
- * \param sortedIndependentVariables Vector of independent variables sorted.
- *          in ascending/descending order.
- * \param associatedDependentVariables Vector of dependent variables
- *          associated with sorted vector of independent variables.
- * \param targetIndependentVariableValue Target independent variable value
- *          in vector of sorted independent variables.
- * \return Value of dependent variable associated with target independent
- *          value in vector of sorted independent variables.
- */
-double computeLinearInterpolation( Eigen::VectorXd& sortedIndependentVariables,
-                                   Eigen::VectorXd& associatedDependentVariables,
-                                   double targetIndependentVariableValue );
-//! Compute linear interpolation.
-/*!
- * Computes linear interpolation of data provided in the form of a map of
- * independent variables and associated vectors of dependent variables.
- * The linear interpolation equation used is:
- * \f[
- *      y_{target} = x_{1} * ( 1 - mu ) + x_{2} * mu
- * \f]
- * where \f$ \mu = \frac{ x_{target} - x_{1} } { x_{2} + x_{1} } \f$
- * and \f$ x_{2} > x_{1} \f$.
- * \param sortedIndepedentAndDependentVariables Map of sorted independent
- *              variables, in ascending/descending order, and associated
- *              dependent variables.
- * \param targetIndependentVariableValue Target independent variable value
- *              in vector of sorted independent variables.
- * \return Vector of dependent variable associated with target independent
- *              value in vector of sorted independent variables.
- */
-Eigen::VectorXd computeLinearInterpolation(
-        std::map < double, Eigen::VectorXd >& sortedIndepedentAndDependentVariables,
-        double targetIndependentVariableValue );
-
-//! Compute linear interpolation.
-/*!
- * Computes linear interpolation of data provided in the form of a map of
- * sorted independent variables and associated State objects containing vectors
- * of dependent variables. The linear interpolation equation used is:
- * \f[
- *      y_{target} = x_{1} * ( 1 - mu ) + x_{2} * mu
- * \f]
- * where \f$ \mu = \frac{ x_{target} - x_{1} } { x_{2} + x_{1} } \f$
- * and \f$ x_{2} > x_{1} \f$.
- * \param sortedIndepedentAndDependentVariables Map of sorted independent
- *              variables, in ascending/descending order, and associated
- *              State objects.
- * \param targetIndependentVariableValue Target independent variable value
- *              in vector of sorted independent variables.
- * \return Vector of dependent variable associated with target independent
- *              value in vector of sorted independent variables.
- */
-State* computeLinearInterpolation(
-        std::map < double, State* >& sortedIndepedentAndDependentVariables,
-        double targetIndependentVariableValue );
 
 //! Convert spherical to cartesian coordinates.
 /*!

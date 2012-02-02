@@ -3,14 +3,14 @@
  *    containing all basic functions contained in Tudat.
  *
  *    Path              : /Mathematics/
- *    Version           : 12
+ *    Version           : 13
  *    Check status      : Checked
  *
  *    Author            : K. Kumar
  *    Affiliation       : Delft University of Technology
  *    E-mail address    : K.Kumar@tudelft.nl
  *
- *    Author            : D. Dirkx
+ *    Author/Checker    : D. Dirkx
  *    Affiliation       : Delft University of Technology
  *    E-mail address    : d.dirkx@tudelft.nl
  *
@@ -21,10 +21,6 @@
  *    Checker           : L. Abdulkadir
  *    Affiliation       : Delft University of Technology
  *    E-mail address    : L.Abdulkadir@student.tudelft.nl
- *
- *    Checker           : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
  *
  *    Date created      : 3 September, 2010
  *    Last modified     : 5 September, 2011
@@ -63,13 +59,14 @@
  *      110707    K. Kumar          Added computeSampleMean(), computeSampleVariance() functions.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *      120202    K. Kumar          Moved functions to new Statistics and Interpolators
+ *                                  sub-directories.
  */
 
 // Include statements.
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "Basics/basicFunctions.h"
 #include "Mathematics/basicMathematicsFunctions.h"
 
 //! Tudat library namespace.
@@ -90,131 +87,6 @@ globalRandomNumberGeneratorType& getGlobalRandomNumberGenerator( )
   static globalRandomNumberGeneratorType globalRandomNumberGenerator(
               static_cast< unsigned int >( std::time( 0 ) ) );
   return globalRandomNumberGenerator;
-}
-
-//! Compute linear interpolation.
-double computeLinearInterpolation( Eigen::VectorXd& sortedIndependentVariables,
-                                   Eigen::VectorXd& associatedDependentVariables,
-                                   double targetIndependentVariableValue )
-{
-    // Declare local variables.
-    // Declare nearest neighbor.
-    int nearestNeighbor;
-    double locationTargetIndependentVariableValueInInterval;
-
-    // Compute nearest neighbor in sorted vector of independent variables.
-    // Result is always to the left of the target independent variable value.
-    nearestNeighbor = basic_functions
-                      ::computeNearestLeftNeighborUsingBinarySearch(
-            sortedIndependentVariables,
-            targetIndependentVariableValue );
-
-    // Compute location of target independent variable value in interval
-    // between nearest neighbors.
-    locationTargetIndependentVariableValueInInterval
-            = ( targetIndependentVariableValue
-              - sortedIndependentVariables[ nearestNeighbor ] )
-             / ( sortedIndependentVariables[ nearestNeighbor + 1 ]
-                 - sortedIndependentVariables[ nearestNeighbor ] );
-
-    // Return the computed value of the dependent variable.
-    return ( associatedDependentVariables[ nearestNeighbor ]
-             * ( 1 - locationTargetIndependentVariableValueInInterval )
-             + associatedDependentVariables[ nearestNeighbor + 1 ]
-             * locationTargetIndependentVariableValueInInterval );
-}
-
-//! Compute linear interpolation.
-Eigen::VectorXd computeLinearInterpolation(
-        std::map < double, Eigen::VectorXd >& sortedIndepedentAndDependentVariables,
-        double targetIndependentVariableValue )
-{
-    // Declare local variables.
-    // Declare nearest neighbor.
-    int nearestLeftNeighbor;
-
-    // Declare location of target independent variable value in interval.
-    double locationTargetIndependentVariableValueInInterval;
-
-    // Declare map iterators
-    std::map < double, Eigen::VectorXd >::iterator mapIteratorIntervalLeft;
-    std::map < double, Eigen::VectorXd >::iterator mapIteratorIntervalRight;
-
-    // Compute nearest neighbor in map of data.
-    // Result is always to the left of the target independent variable value.
-    nearestLeftNeighbor = basic_functions::
-                          computeNearestLeftNeighborUsingBinarySearch(
-                                  sortedIndepedentAndDependentVariables,
-                                  targetIndependentVariableValue );
-
-    // Compute location of target independent variable value in interval
-    // between nearest neighbors.
-    mapIteratorIntervalLeft = sortedIndepedentAndDependentVariables.begin( );
-    advance( mapIteratorIntervalLeft, nearestLeftNeighbor );
-    mapIteratorIntervalRight = sortedIndepedentAndDependentVariables.begin( );
-    advance( mapIteratorIntervalRight, nearestLeftNeighbor + 1 );
-    locationTargetIndependentVariableValueInInterval
-            = ( targetIndependentVariableValue
-              - mapIteratorIntervalLeft->first )
-             / ( mapIteratorIntervalRight->first
-                 - mapIteratorIntervalLeft->first );
-
-    // Return the computed value of the dependent variable.
-    return ( mapIteratorIntervalLeft->second
-             * ( 1 - locationTargetIndependentVariableValueInInterval )
-             + mapIteratorIntervalRight->second
-             * locationTargetIndependentVariableValueInInterval );
-}
-
-//! Compute linear interpolation.
-State* computeLinearInterpolation(
-        std::map < double, State* >& sortedIndepedentAndDependentVariables,
-        double targetIndependentVariableValue )
-{
-    // Declare local variables.
-    // Declare nearest neighbor.
-    int nearestLeftNeighbor;
-
-    // Pointer to state.
-    State* pointerToState_ = new State;
-
-    // Declare location of target independent variable value in interval.
-    double locationTargetIndependentVariableValueInInterval;
-
-    // Declare map iterators
-    std::map < double, State* >::iterator mapIteratorIntervalLeft;
-    std::map < double, State* >::iterator mapIteratorIntervalRight;
-
-    // Compute nearest neighbor in map of data.
-    // Result is always to the left of the target independent variable value.
-    nearestLeftNeighbor = basic_functions::
-                          computeNearestLeftNeighborUsingBinarySearch(
-                                  sortedIndepedentAndDependentVariables,
-                                  targetIndependentVariableValue );
-
-    // Compute location of target independent variable value in interval
-    // between nearest neighbors.
-    mapIteratorIntervalLeft = sortedIndepedentAndDependentVariables.begin( );
-    advance( mapIteratorIntervalLeft, nearestLeftNeighbor );
-    mapIteratorIntervalRight = sortedIndepedentAndDependentVariables.begin( );
-    advance( mapIteratorIntervalRight, nearestLeftNeighbor + 1 );
-    locationTargetIndependentVariableValueInInterval
-            = ( targetIndependentVariableValue
-              - mapIteratorIntervalLeft->first )
-             / ( mapIteratorIntervalRight->first
-                 - mapIteratorIntervalLeft->first );
-
-    // Set vector in pointer to State object to the computed value of the
-    // dependent variable.
-
-    pointerToState_->state
-            = mapIteratorIntervalLeft->second->state
-              * ( 1 - locationTargetIndependentVariableValueInInterval )
-              + mapIteratorIntervalRight->second->state
-              * locationTargetIndependentVariableValueInInterval;
-
-    // Return pointer to State object.
-    return pointerToState_;
 }
 
 //! Convert spherical to cartesian coordinates.

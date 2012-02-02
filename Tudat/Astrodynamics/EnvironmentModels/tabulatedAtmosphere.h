@@ -53,7 +53,7 @@
 #include <string>
 #include "Astrodynamics/EnvironmentModels/atmosphereModel.h"
 #include "Input/textFileReader.h"
-#include "Mathematics/cubicSplineInterpolation.h"
+#include "Mathematics/Interpolators/cubicSplineInterpolation.h"
 
 //! Tudat library namespace.
 /*!
@@ -219,19 +219,19 @@ private:
     /*!
      *  Cubic spline interpolation for density.
      */
-    CubicSplineInterpolation cubicSplineInterpolationForDensity_;
+    mathematics::interpolators::CubicSplineInterpolation cubicSplineInterpolationForDensity_;
 
     //! Cubic spline interpolation for pressure.
     /*!
      *  Cubic spline interpolation for pressure.
      */
-    CubicSplineInterpolation cubicSplineInterpolationForPressure_;
+    mathematics::interpolators::CubicSplineInterpolation cubicSplineInterpolationForPressure_;
 
     //! Cubic spline interpolation for temperature.
     /*!
      *  Cubic spline interpolation for temperature.
      */
-    CubicSplineInterpolation cubicSplineInterpolationForTemperature_;
+    mathematics::interpolators::CubicSplineInterpolation cubicSplineInterpolationForTemperature_;
 };
 
 }

@@ -45,7 +45,7 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <iostream>
-#include "Mathematics/cubicSplineInterpolation.h"
+#include "Mathematics/Interpolators/cubicSplineInterpolation.h"
 
 //! Test implementation of cubic spline class.
 int main( )
@@ -87,7 +87,7 @@ int main( )
     double interpolatedDependentVariableValue;
 
     // Declare cubic spline object.
-    CubicSplineInterpolation cubicSplineInterpolation;
+    tudat::mathematics::interpolators::CubicSplineInterpolation cubicSplineInterpolation;
 
     // Initialize cubic spline interpolation with input data.
     cubicSplineInterpolation.initializeCubicSplineInterpolation(

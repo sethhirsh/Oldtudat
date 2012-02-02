@@ -48,10 +48,18 @@
  */
 
 // Include statements.
-#include "Mathematics/cubicSplineInterpolation.h"
+#include "Mathematics/Interpolators/cubicSplineInterpolation.h"
 
 //! Tudat library namespace.
 namespace tudat
+{
+
+//! Mathematics namespace.
+namespace mathematics
+{
+
+//! Interpolators namespace.
+namespace interpolators
 {
 
 //! Initialize cubic spline interpolation.
@@ -173,6 +181,10 @@ void CubicSplineInterpolation::computeSecondDerivativeOfCurvature_( )
     secondDerivativeOfCurvature_ << 0.0, intermediateSecondDerivativeOfCurvature_, 0.0;
 }
 
-}
+} // Namespace interpolators.
+
+} // Namespace mathematics.
+
+} // Namespace tudat.
 
 // End of file.
