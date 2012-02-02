@@ -74,6 +74,9 @@
 namespace tudat
 {
 
+namespace input_output
+{
+
 //! TLE data class.
 /*!
  * Class containing all variables of one TLE for one space debris
@@ -329,7 +332,10 @@ protected:
 private:
 };
 
-}
+
+} // namespace input_output
+
+} // namespace tudat
 
 #endif // TWOLINEELEMENTDATA_H
 

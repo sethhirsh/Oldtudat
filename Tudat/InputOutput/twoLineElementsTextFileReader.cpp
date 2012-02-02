@@ -72,8 +72,11 @@
 #include <map>
 #include <string>
 #include <utility>
+#include <boost/format.hpp>
+#include <boost/exception/all.hpp>
+#include <boost/throw_exception.hpp>
 #include "Basics/basicFunctions.h"
-#include "Input/twoLineElementsTextFileReader.h"
+#include "InputOutput/twoLineElementsTextFileReader.h"
 #include "Astrodynamics/physicalConstants.h"
 #include "Astrodynamics/Bodies/planet.h"
 #include "Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
@@ -81,6 +84,9 @@
 
 //! Tudat library namespace.
 namespace tudat
+{
+
+namespace input_output
 {
 
 // Using declarations.
@@ -92,6 +98,150 @@ using std::vector;
 using std::multimap;
 using std::pair;
 using tudat::basic_functions::convertStringToTemplate;
+
+
+//! Open data file.
+void TwoLineElementsTextFileReader::openFile( )
+{
+    if ( absoluteDirectoryPath_.compare( "" ) == 0 )
+    {
+        absoluteFilePath_ = basic_functions::getRootPath( ) + relativeDirectoryPath_ + fileName_;
+    }
+
+    else
+    {
+        absoluteFilePath_ = absoluteDirectoryPath_ + fileName_;
+    }
+
+    // Open data file.
+    dataFile_.open( absoluteFilePath_.c_str( ), std::ios::binary );
+
+    // Check if file could be opened. Throw exception with error message if file could not be
+    // opened.
+    if ( !dataFile_ )
+    {
+        boost::throw_exception(
+                    boost::enable_error_info(
+                        std::runtime_error(
+                            boost::str( boost::format( "Data file '%s' could not be opened." )
+                                 % absoluteFilePath_.c_str( ) ) ) )
+            << boost::errinfo_file_name( absoluteFilePath_.c_str( ) )
+            << boost::errinfo_file_open_mode( "std::ios::binary" )
+            << boost::errinfo_api_function( "std::ifstream::open" ) );
+    }
+}
+
+//! Skip lines.
+void TwoLineElementsTextFileReader::skipLines( unsigned int numberOfLines )
+{
+    // Call getline( ) function for set number of lines to be skipped.
+    for ( unsigned int i = 0; i < numberOfLines; i++ )
+    {
+        // Get next line of data from file and don't do anything.
+        std::getline( dataFile_, stringOfData_ );
+
+        // Increment line counter.
+        lineCounter_++;
+    }
+}
+
+//! Read and store data.
+void TwoLineElementsTextFileReader::readAndStoreData( )
+{
+    // Reset the datafile.
+    containerOfDataFromFile_.clear( );
+
+    // Whilst the end of the data file has not been reached, continue reading
+    // from lines from data file.
+    while( !dataFile_.eof( ) )
+    {
+        // Get next line of data from data file and store in a string.
+        getline( dataFile_, stringOfData_ );
+
+        // Check if line of data is header line.
+        if ( lineCounter_ <= numberOfHeaderLines_ )
+        {
+            // Store header line data.
+            containerOfHeaderDataFromFile_[ lineCounter_ ] = stringOfData_;
+        }
+
+        // Else process non-header data line.
+        else
+        {
+            // Check if string doesn't start with set starting character, if string
+            // is not empty, and if the skip keyword is not in the string.
+            if ( ( ( !startingCharacter_.empty( ) && stringOfData_.substr( 0, 1 )
+                     .compare( startingCharacter_ ) != 0 )
+                   || ( !skipKeyword_.empty( ) && stringOfData_.find( skipKeyword_ )
+                        == string::npos )
+                   || ( startingCharacter_.empty( ) && skipKeyword_.empty( ) ) )
+                 && !stringOfData_.empty( ) )
+            {
+                // Store string in container.
+                containerOfDataFromFile_[ lineCounter_ ] = stringOfData_;
+            }
+        }
+
+        // Increment line counter.
+        lineCounter_++;
+    }
+}
+
+//! Read and store data.
+void TwoLineElementsTextFileReader::readAndStoreData( unsigned int numberOfLines )
+{
+    // Loop over number of lines of data to read and stored from data file.
+    for ( unsigned int i = 0; i < numberOfLines; i++ )
+    {
+        // Get next line of data from data file and store in a string.
+        getline( dataFile_, stringOfData_ );
+
+        // Check string is not empty.
+        if ( !stringOfData_.empty( ) )
+        {
+            // Store string in container.
+            containerOfDataFromFile_[ lineCounter_ ] = stringOfData_;
+        }
+
+        // Increment line counter.
+        lineCounter_++;
+    }
+}
+
+//! Strip End-Of-Line characters.
+void TwoLineElementsTextFileReader::stripEndOfLineCharacters( LineBasedStringDataMap& containerOfLinesOfData )
+{
+    // Declare local variables.
+    // Declare string iterator.
+    string::iterator iteratorString_;
+
+    // Loop through all the strings stored in the container.
+    for ( LineBasedStringDataMap::iterator iteratorContainerOfDataFromFile_
+          = containerOfLinesOfData.begin( );
+          iteratorContainerOfDataFromFile_ != containerOfLinesOfData.end( );
+          iteratorContainerOfDataFromFile_++ )
+    {
+        // Loop through all the characters in the string.
+        for ( iteratorString_ = iteratorContainerOfDataFromFile_->second.begin( );
+              iteratorString_ != iteratorContainerOfDataFromFile_->second.end( );
+              iteratorString_++ )
+        {
+            // Check if end-of-line characters are present in string.
+            // The end-of-line characters are checked for their integer
+            // equivalents. See: http://www.asciitable.com/.
+            if ( static_cast< int >( *iteratorString_ ) == 10
+                 || static_cast< int >( *iteratorString_ ) == 13 )
+            {
+                // Strip end-of-line character from string.
+                iteratorContainerOfDataFromFile_->second.erase( iteratorString_ );
+
+                // Decrement string iterator since character was erased from string.
+                iteratorString_--;
+            }
+        }
+    }
+}
+
 
 //! Convert and store TLE data.
 void TwoLineElementsTextFileReader::storeTwoLineElementData( )
@@ -618,6 +768,8 @@ multimap< int, string > TwoLineElementsTextFileReader::checkTwoLineElementsFileI
     return corruptedTwoLineElementDataErrors_;
 }
 
-}
+} // namespace input_output
+
+} // namespace tudat
 
 // End of file.

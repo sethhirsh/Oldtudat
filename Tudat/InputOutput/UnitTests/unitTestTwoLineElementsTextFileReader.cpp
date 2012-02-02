@@ -68,7 +68,7 @@
 #include <map>
 #include <string>
 #include <vector>
-#include "Input/twoLineElementsTextFileReader.h"
+#include "InputOutput/twoLineElementsTextFileReader.h"
 
 //! Test implementation of TLE text file reader class.
 int main( )
@@ -79,11 +79,9 @@ int main( )
     using std::multimap;
     using std::vector;
     using std::string;
-    using tudat::basic_functions::outputCurrentRunningTime;
     using namespace tudat;
+    using namespace tudat::input_output;
 
-    // Starting clock initialised.
-    clock_t start_clock = clock( );
 
     // Test result initialized to false.
     bool isTwoLineElementsTextFileReaderErroneous = false;
@@ -150,11 +148,6 @@ int main( )
             cerr << "TLE text file reader unit test failed!" << endl;
         }
 
-        // Current running time and status written to vector.
-        vector< string > runningTimeAndStatusContainer;
-        runningTimeAndStatusContainer = outputCurrentRunningTime(
-                    start_clock, "Storing of TwoLineElement data is done." );
-
         // Stored TLE data is checked for integrity and number of corrupted TLEs is saved,
         // while the corrupted TLEs have been erased from the data
         // and the reason and the corrupt objects involved are written to output.
@@ -166,9 +159,6 @@ int main( )
         vector< TwoLineElementData > twoLineElementDataAfterIntegrityCheck =
                 twoLineElementsTextFileReaders[ i ]->getTwoLineElementData( );
 
-        // Current running time and status written to vector.
-        runningTimeAndStatusContainer = outputCurrentRunningTime(
-                    start_clock, "Checking of TwoLineElement file integrity is done." );
 
         // Test input file has been setup to contain 7 corrupted TLEs,
         // if this is not detected the test fails.
@@ -196,10 +186,6 @@ int main( )
             cerr << "Valid TLE input data vs stored variables mismatch." << endl;
             cerr << "TLE text file reader (file integrity) unit test failed!" << endl;
         }
-
-        // Current running time and status written to vector.
-        runningTimeAndStatusContainer = outputCurrentRunningTime(
-                    start_clock, "Unit test for TwoLineElementsTextFileReader is done.");
     }
 
     return isTwoLineElementsTextFileReaderErroneous;
