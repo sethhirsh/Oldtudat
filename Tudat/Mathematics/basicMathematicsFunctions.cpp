@@ -69,7 +69,6 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include <numeric>
 #include "Basics/basicFunctions.h"
 #include "Mathematics/basicMathematicsFunctions.h"
 
@@ -83,8 +82,6 @@ namespace mathematics
 
 // Using declarations.
 using std::map;
-using std::vector;
-using std::accumulate;
 using std::pow;
 
 //! Get global random number generator.
@@ -270,34 +267,6 @@ void convertCylindricalToCartesian( double radius, double azimuthAngle,
 //! Compute modulo of double.
 double computeModulo( double dividend, double divisor )
 { return dividend - divisor * floor( dividend / divisor ); }
-
-//! Compute sample mean.
-double computeSampleMean( const vector< double >& sampleData )
-{
-    // Return sample mean.
-    return accumulate( sampleData.begin( ), sampleData.end( ), 0.0 )
-            / static_cast< double >( sampleData.size( ) );
-}
-
-//! Compute sample variance.
-double computeSampleVariance( const vector< double >& sampleData )
-{
-    // Declare local variables.
-    // Declare and compute sample mean.
-    double sampleMean_ = computeSampleMean( sampleData );
-
-    // Declare and initialize sum of residuals squared.
-    double sumOfResidualsSquared_ = 0.0;
-
-    // Compute sum of residuals of sample data squared.
-    for ( unsigned int i = 0; i < sampleData.size( ); i++ )
-    {
-        sumOfResidualsSquared_ += pow( sampleData.at( i ) - sampleMean_, 2.0 );
-    }
-
-    // Return sample variance.
-    return 1.0 / ( static_cast< double >( sampleData.size( ) ) - 1.0 ) * sumOfResidualsSquared_;
-}
 
 }
 

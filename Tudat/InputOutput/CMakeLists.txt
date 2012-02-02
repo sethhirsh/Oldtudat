@@ -60,7 +60,6 @@ setup_tudat_library_target(tudat_input_output "${SRCROOT}${INPUTOUTPUTDIR}")
 setup_headers("${INPUTOUTPUT_HEADERS}" "${INPUTOUTPUTDIR}")
 
 # Add unit tests.
-
 add_executable(test_MatrixTextFileReader "${SRCROOT}${INPUTOUTPUTDIR}/UnitTests/unitTestMatrixTextFileReader.cpp")
 setup_custom_test_program(test_MatrixTextFileReader "${SRCROOT}${INPUTDIR}")
 target_link_libraries(test_MatrixTextFileReader tudat_input_output ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})

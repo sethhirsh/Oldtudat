@@ -48,12 +48,20 @@
 
 // Include statements.
 #include <Eigen/Core>
+#include <vector>
 
 //! Tudat library namespace.
 /*!
  * The Tudat library namespace.
  */
 namespace tudat
+{
+
+//! Mathematics namespace.
+/*!
+ * The mathematics namespace.
+ */
+namespace mathematics
 {
 
 //! Statistics namespace.
@@ -79,7 +87,39 @@ double computeAverageOfVectorComponents( const Eigen::VectorXd& vectorOfData );
  */
 double computeStandardDeviationOfVectorComponents( const Eigen::VectorXd& vectorOfData );
 
-} // Namespace statistics
+//! Compute sample mean.
+/*!
+ * Computes sample mean based on the following unbiased estimator
+ * (Spiegel and Stephens, 2008):
+ * \f[
+ *      \mu_{s} = \frac{ \sum_{i=1}^{N} X_{i} } { N }
+ * \f]
+ * where \f$\mu_{s}\f$ is the unbiased estimate of the sample mean,
+ * \f$ N \f$ is the number of samples, and \f$ X \f$ is the sample value.
+ * \param sampleData Sample data.
+ * \return Sample mean.
+ */
+double computeSampleMean( const std::vector< double >& sampleData );
+
+//! Compute sample variance.
+/*!
+ * Computes sample variance based on the following unbiased estimator
+ * (Spiegel and Stephens, 2008):
+ * \f[
+ *      s^{2}_{s} = \frac{ 1 }{ N - 1 } * \sum_{i=1}^{N} X_{i}
+ *                  ( X_{i} - \bar{ X } )^{ 2 } )
+ * \f]
+ * where \f$ s^{2}_{s} \f$ is the unbiased estimate of the sample variance,
+ * \f$ N \f$ is the number of samples, \f$ X \f$ is the sample value, and
+ * \f$ \bar{ X } \f$ is the sample mean.
+ * \param sampleData Map containing sample data.
+ * \return Sample variance.
+ */
+double computeSampleVariance( const std::vector< double >& sampleData );
+
+} // Namespace statistics.
+
+} // Namespace mathematics.
 
 } // Namespace tudat.
 

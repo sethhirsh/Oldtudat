@@ -652,52 +652,6 @@ int main( )
        isBasicMathematicsFunctionsErroneous = true;
     }
 
-    // Test computation of sample mean and sample variance.
-    // Test 32: Test computation of sample mean and sample variance on finite
-    // population using unbiased estimators. The expected values are computed
-    // using the Microsoft Excel AVERAGE() and VAR() functions.
-
-    // Declare vector of sample data.
-    std::vector< double > sampleData;
-
-    // Populate vector with sample data.
-    sampleData.push_back( 2.5 );
-    sampleData.push_back( 6.4 );
-    sampleData.push_back( 8.9 );
-    sampleData.push_back( 12.7 );
-    sampleData.push_back( 15.0 );
-
-    // Declare expected sample mean.
-    double expectedSampleMean = 9.1;
-
-    // Declare expected sample variance.
-    double expectedSampleVariance = 24.665;
-
-    // Declare and compute sample mean.
-    double computedSampleMean = mathematics::computeSampleMean( sampleData );
-
-    // Declare and compute sample variance.
-    double computedSampleVariance
-            = mathematics::computeSampleVariance( sampleData );
-
-    // Check if differences between computed and expected sample means and
-    // variances are too large; if so print cerr statements.
-    if ( fabs( computedSampleMean - expectedSampleMean) / expectedSampleMean
-         > std::numeric_limits< double >::epsilon( )
-         || fabs( computedSampleVariance - expectedSampleVariance )
-         / expectedSampleVariance > std::numeric_limits< double >::epsilon( ) )
-    {
-        isBasicMathematicsFunctionsErroneous = true;
-
-        cerr << "The computeSampleMean() and/or computeSampleVariance "
-             << "functions are erroneous, as the computed sample mean "
-             << "( " << computedSampleMean << " ) and/or computed sample "
-             << "variance ( " << computedSampleVariance << " ) are/is not "
-             << "equal to the expected sample mean ( " << expectedSampleMean
-             << " ) and/or expected sample variance ( "
-             << expectedSampleVariance << " )." << endl;
-    }
-
     // Return test result.
     // If test is successful return false; if test fails, return true.
     if ( isBasicMathematicsFunctionsErroneous )

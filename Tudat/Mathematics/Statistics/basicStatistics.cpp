@@ -48,17 +48,30 @@
 
 // Include statements.
 #include <cmath>
+#include <numeric>
 #include "Mathematics/Statistics/basicStatistics.h"
 
+//! Tudat library namespace.
+namespace tudat
+{
+
+//! Namespace mathematics.
+namespace mathematics
+{
+
+//! Statistics namespace.
+namespace statistics
+{
+
 //! Compute average of the components of a vector.
-double tudat::statistics::computeAverageOfVectorComponents( const Eigen::VectorXd& vectorOfData )
+double computeAverageOfVectorComponents( const Eigen::VectorXd& vectorOfData )
 { return vectorOfData.sum( ) / vectorOfData.rows( ); }
 
 //! Compute standard deviation of the components of a vector.
 double computeStandardDeviationOfVectorComponents( const Eigen::VectorXd& vectorOfData )
 {
     // Compute average of components.
-    double averageOfComponents = tudat::statistics::
+    double averageOfComponents = tudat::mathematics::statistics::
             computeAverageOfVectorComponents( vectorOfData );
 
     // Declare variance of components.
@@ -75,5 +88,39 @@ double computeStandardDeviationOfVectorComponents( const Eigen::VectorXd& vector
     // Return square root of variance ( = standard deviation ).
     return std::sqrt( varianceOfComponents );
 }
+
+//! Compute sample mean.
+double computeSampleMean( const std::vector< double >& sampleData )
+{
+    // Return sample mean.
+    return std::accumulate( sampleData.begin( ), sampleData.end( ), 0.0 )
+            / static_cast< double >( sampleData.size( ) );
+}
+
+//! Compute sample variance.
+double computeSampleVariance( const std::vector< double >& sampleData )
+{
+    // Declare local variables.
+    // Declare and compute sample mean.
+    double sampleMean_ = computeSampleMean( sampleData );
+
+    // Declare and initialize sum of residuals squared.
+    double sumOfResidualsSquared_ = 0.0;
+
+    // Compute sum of residuals of sample data squared.
+    for ( unsigned int i = 0; i < sampleData.size( ); i++ )
+    {
+        sumOfResidualsSquared_ += std::pow( sampleData.at( i ) - sampleMean_, 2.0 );
+    }
+
+    // Return sample variance.
+    return 1.0 / ( static_cast< double >( sampleData.size( ) ) - 1.0 ) * sumOfResidualsSquared_;
+}
+
+} // Namespace statistics.
+
+} // Namespace mathematics.
+
+} // Namespace tudat.
 
 // End of file.
