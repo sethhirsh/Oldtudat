@@ -165,6 +165,15 @@ else()
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -isystem \"${Boost_INCLUDE_DIRS}\"")
 endif()
 
+
+# Find Tudat Core library on local system
+find_package(TudatCore 0.1 REQUIRED)
+if(NOT APPLE)
+  include_directories(SYSTEM AFTER "${TUDAT_CORE_INCLUDE_DIR}")
+else()
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -isystem \"${TUDAT_CORE_INCLUDE_DIR}\"")
+endif()
+
 # Set sub-directories.
 set(SUBDIRS ${APPLICATIONSDIR} ${ASTRODYNAMICSDIR} ${BASICSDIR} ${INPUTDIR} ${MATHEMATICSDIR} ${OUTPUTDIR})
 
