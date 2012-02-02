@@ -64,7 +64,7 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/External/CMake)
 # Set root-directory for code to current source directory.
 set(CODEROOT "${CMAKE_CURRENT_SOURCE_DIR}/..")
 
-# Deine the basic input (trunk) and output (lib & include) directories.
+# Define the basic input (trunk) and output (lib & include) directories.
 set(SRCROOT "${CODEROOT}/Tudat")
 
 # Set CMake build-type.
@@ -76,22 +76,33 @@ enable_testing()
 
 if (WIN32)
   if (MSVC)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc /Ox /W3 /FC -g -D_SCL_SECURE_NO_WARNINGS")
-    set(LIBROOT "${CODEROOT}/lib_msvc")
-    set(INCLUDEROOT "${CODEROOT}/include")
-    set(BINROOT "${CODEROOT}/bin_msvc")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc /Ox /W3 /FC -D_SCL_SECURE_NO_WARNINGS")
+    # Because we are using static boost libraries, with static runtime, we need to force MSVC to
+    # also use static runtime: (from http://www.cmake.org/Wiki/CMake_FAQ#Dynamic_Replace)
+    foreach(flag_var
+          CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
+          CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
+      # Find all dynamic runtime (MD) references and replace with static (MT)
+      if(${flag_var} MATCHES "/MD")
+        string(REGEX REPLACE "/MD" "/MT" ${flag_var} "${${flag_var}}")
+      endif(${flag_var} MATCHES "/MD")
+    endforeach(flag_var)
+    set(LIBROOT "${SRCROOT}/lib")
+    set(INCLUDEROOT "${SRCROOT}/include")
+    set(BINROOT "${SRCROOT}/bin")
   else()
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -g -Woverloaded-virtual -Wold-style-cast -Wnon-virtual-dtor")
-    set(LIBROOT "${CODEROOT}/lib_w32")
-    set(INCLUDEROOT "${CODEROOT}/include")
-    set(BINROOT "${CODEROOT}/bin_w32")
+    set(LIBROOT "${SRCROOT}/lib")
+    set(INCLUDEROOT "${SRCROOT}/include")
+    set(BINROOT "${SRCROOT}/bin")
   endif()
 else()
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -g -Woverloaded-virtual -Wold-style-cast -Wnon-virtual-dtor")
-  set(LIBROOT "${CODEROOT}/lib")
-  set(INCLUDEROOT "${CODEROOT}/include")
-  set(BINROOT "${CODEROOT}/bin")
+  set(LIBROOT "${SRCROOT}/lib")
+  set(INCLUDEROOT "${SRCROOT}/include")
+  set(BINROOT "${SRCROOT}/bin")
 endif()
+
 
 # Set the global macros for setting up targets.
 macro(setup_tudat_executable_target target_name CUSTOM_OUTPUT_PATH)
@@ -165,9 +176,15 @@ else()
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -isystem \"${Boost_INCLUDE_DIRS}\"")
 endif()
 
-
-# Find Tudat Core library on local system
+# Find Tudat Core library on local system.
 find_package(TudatCore 0.1 REQUIRED)
+# If TudatCore is not found, use the following to manually set the path to the TudatCore include and
+# library directories.
+#SET(TUDAT_CORE_INCLUDE_DIR "C:\My\Custom\Path\To\TudatCore\Include\Directory")
+#SET(TUDAT_CORE_LIBRARIES_DIR "C:\My\Custom\Path\To\TudatCore\Library\Directory")
+
+# Include TudatCore directories.
+# Set CMake flag to suppress TudatCore warnings (platform-dependent solution).
 if(NOT APPLE)
   include_directories(SYSTEM AFTER "${TUDAT_CORE_INCLUDE_DIR}")
 else()
