@@ -42,7 +42,6 @@
 
 // Include statements.
 #include <Eigen/Core>
-#include <vector>
 #include <string>
 
 //! Tudat library namespace.
@@ -52,48 +51,31 @@
 namespace tudat
 {
 
-// Using declarations.
-using std::vector;
-using std::string;
-
-//! Class to read a textfile and place its contents in a MatrixXd
-/*!
- * Class to read a textfile whith seperated (space, tab, comma etc...) numbers.
- * The class returns these numbers as a matrixXd. The first line with numbers is used
- * to define the number of columns.
- */
-class MatrixTextFileReader
+namespace input_output
 {
-public:
 
-    //! Read the file and return the data matrix.
-    /*!
-     *  Read the file and return the data matrix.
-     *  \param filename The filename of the to be read file.
-     *  \param seperators Separators used, every character in the string will be used
-     *         as seperator. (multiple seperators possible)
-     *  \param skipLinesCharacter Skip lines starting with this character.
-     *  \param relativePath set the relative path (can also be done via the filename.)
-     *  \return The datamatrix.
-     */
-    Eigen::MatrixXd getMatrixFromFile( const string& filename,
-                                       const string& seperators = "\t ;,",
-                                       const string& skipLinesCharacter = "%",
-                                       const string& relativePath = "" );
 
-protected:
+//! Read the file and return the data matrix.
+/*!
+ *  Read a textfile whith seperated (space, tab, comma etc...) numbers.
+ *  The class returns these numbers as a matrixXd. The first line with numbers is used
+ *  to define the number of columns.
+ *  \param filename The filename of the to be read file.
+ *  \param seperators Separators used, every character in the string will be used
+ *         as seperator. (multiple seperators possible)
+ *  \param skipLinesCharacter Skip lines starting with this character.
+ *  \param relativePath set the relative path (can also be done via the filename.)
+ *  \return The datamatrix.
+ */
+Eigen::MatrixXd readMatrixFromFile( const std::string& filename,
+                                    const std::string& separators = "\t ;,",
+                                    const std::string& skipLinesCharacter = "%",
+                                    const std::string& relativePath = "" );
 
-private:   
 
-    //! The datamatrix.
-    /*!
-     * The datamatrix.
-     */
-    Eigen::MatrixXd dataMatrix_;
+} // namespace input_output
 
-};
-
-} // Namespace tudat.
+} // namespace tudat.
 
 #endif // TUDAT_MATRIXTEXTFILEREADER_H
 

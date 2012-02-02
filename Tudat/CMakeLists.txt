@@ -118,10 +118,10 @@ macro(setup_headers HEADER_FILES HEADER_PATH)
 endmacro(setup_headers)
 
 # Set the main sub-directories
-set(APPLICATIONSDIR "/Applications")
 set(ASTRODYNAMICSDIR "/Astrodynamics")
 set(BASICSDIR "/Basics")
 set(EXTERNALDIR "/External")
+set(INPUTOUTPUTDIR "/InputOutput")
 set(INPUTDIR "/Input")
 set(MATHEMATICSDIR "/Mathematics")
 set(OUTPUTDIR "/Output")
@@ -151,7 +151,7 @@ set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME ON)
 
 # Find Boost libraries on local system.
-find_package(Boost 1.45.0 COMPONENTS thread date_time system unit_test_framework filesystem REQUIRED)
+find_package(Boost 1.45.0 COMPONENTS thread date_time system unit_test_framework filesystem regex iostreams REQUIRED)
 # If Boost is not found, use the following to manually set the path to the Boost include and
 # library directories.
 #SET(Boost_INCLUDE_DIRS "C:\My\Custom\Path\To\Boost\Include\Directory")
@@ -175,7 +175,7 @@ else()
 endif()
 
 # Set sub-directories.
-set(SUBDIRS ${APPLICATIONSDIR} ${ASTRODYNAMICSDIR} ${BASICSDIR} ${INPUTDIR} ${MATHEMATICSDIR} ${OUTPUTDIR})
+set(SUBDIRS ${APPLICATIONSDIR} ${ASTRODYNAMICSDIR} ${BASICSDIR} ${INPUTDIR} ${INPUTOUTPUTDIR} ${MATHEMATICSDIR} ${OUTPUTDIR})
 
 # Add sub-directories to CMake process.
 foreach(CURRENT_SUBDIR ${SUBDIRS})

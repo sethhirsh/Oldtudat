@@ -42,7 +42,7 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "Input/matrixTextFileReader.h"
+#include "InputOutput/matrixTextFileReader.h"
 
 //! Test matrix text file reader.
 /*!
@@ -56,8 +56,6 @@ int main( )
     using std::cout;
 
     bool isTestMatrixBroken = false;
-
-    tudat::MatrixTextFileReader matrixTextFileReader;
 
     Eigen::MatrixXd readMatrix;
 
@@ -75,8 +73,24 @@ int main( )
     expectedMatrix( 3,1 ) = 11.0;
     expectedMatrix( 3,2 ) = 12.0;
 
+    std::string path( __FILE__ );
+    if ( path.find( '/' ) != std::string::npos )
+    {
+        path = path.substr( 0, path.find_last_of( '/' ) + 1 );
+    }
+    else if ( path.find( '\\' ) != std::string::npos )
+    {
+        path = path.substr( 0, path.find_last_of( '\\' ) + 1 );
+    }
+    else
+    {
+        path = "";
+    }
+
     // Test 1: Test for semi-colon-separated files.
-    readMatrix = matrixTextFileReader.getMatrixFromFile( "Input/testMatrix.txt",";");
+    readMatrix = tudat::input_output::readMatrixFromFile(
+                "testMatrix.txt", ";",
+                "%", path );
 
     for ( int i = 0; i < 3; i++ )
     {
@@ -98,7 +112,8 @@ int main( )
     }
 
     // Test 2: Test for space-seperated files.
-    readMatrix =  matrixTextFileReader.getMatrixFromFile( "testMatrix2.txt"," \t","#","Input/");
+    readMatrix = tudat::input_output::readMatrixFromFile(
+                "testMatrix2.txt", " \t", "#", path );
 
     for ( int i = 0; i < 3; i++ )
     {
