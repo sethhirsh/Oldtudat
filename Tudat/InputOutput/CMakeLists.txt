@@ -65,10 +65,9 @@ add_executable(test_MatrixTextFileReader "${SRCROOT}${INPUTOUTPUTDIR}/UnitTests/
 setup_custom_test_program(test_MatrixTextFileReader "${SRCROOT}${INPUTDIR}")
 target_link_libraries(test_MatrixTextFileReader tudat_input_output ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
-
 add_executable(test_TwoLineElementsTextFileReader "${SRCROOT}${INPUTOUTPUTDIR}/UnitTests/unitTestTwoLineElementsTextFileReader.cpp")
 setup_custom_test_program(test_TwoLineElementsTextFileReader "${SRCROOT}${INPUTDIR}")
-target_link_libraries(test_TwoLineElementsTextFileReader tudat_input_output tudat_astrodynamics tudat_basics tudat_mathematics ${Boost_LIBRARIES})
+target_link_libraries(test_TwoLineElementsTextFileReader tudat_input_output tudat_astrodynamics tudat_basics tudat_mathematics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 
 # End of file.

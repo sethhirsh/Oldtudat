@@ -79,7 +79,7 @@ setup_headers("${STATES_HEADERS}" "${STATESDIR}")
 # Add unit tests.
 add_executable(test_ApproximatePlanetPositions "${SRCROOT}${STATESDIR}/unitTestApproximatePlanetPositions.cpp")
 setup_custom_test_program(test_ApproximatePlanetPositions "${SRCROOT}${STATESDIR}")
-target_link_libraries(test_ApproximatePlanetPositions tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_ApproximatePlanetPositions tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 add_executable(test_CartesianElements "${SRCROOT}${STATESDIR}/unitTestCartesianElements.cpp")
 setup_custom_test_program(test_CartesianElements "${SRCROOT}${STATESDIR}")
@@ -91,7 +91,7 @@ target_link_libraries(test_KeplerianElements tudat_astrodynamics tudat_input tud
 
 add_executable(test_OrbitalElementConversions "${SRCROOT}${STATESDIR}/unitTestOrbitalElementConversions.cpp")
 setup_custom_test_program(test_OrbitalElementConversions "${SRCROOT}${STATESDIR}")
-target_link_libraries(test_OrbitalElementConversions tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_OrbitalElementConversions tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 add_executable(test_State "${SRCROOT}${STATESDIR}/unitTestState.cpp")
 setup_custom_test_program(test_State "${SRCROOT}${STATESDIR}")

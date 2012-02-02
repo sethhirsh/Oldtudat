@@ -86,8 +86,8 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
+#include <TudatCore/Mathematics/linearAlgebra.h>
 #include "Astrodynamics/MissionSegments/lambertTargeter.h"
-#include "Mathematics/LinearAlgebra/linearAlgebra.h"
 
 //! Tudat library namespace.
 namespace tudat
@@ -102,7 +102,7 @@ using std::atan;
 using std::cos;
 using std::sin;
 using std::endl;
-using linear_algebra::determineAngleBetweenVectors;
+using mathematics::linear_algebra::computeAngleBetweenVectors;
 
 //! Overload ostream to print class information.
 std::ostream& operator<<( std::ostream& stream, LambertTargeter& lambertTargeter )
@@ -280,8 +280,7 @@ void LambertTargeter::execute( )
     planeNormalPosition_ = positionAtDeparture_.
                   cross( positionAtArrival_ ).normalized( );
 
-    reducedLambertAngle_ = determineAngleBetweenVectors( positionAtDeparture_,
-                                                         positionAtArrival_ );
+    reducedLambertAngle_ = computeAngleBetweenVectors( positionAtDeparture_, positionAtArrival_ );
 
     if ( planeNormalPosition_.z( ) < 0.0 )
     {

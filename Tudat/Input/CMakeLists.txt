@@ -60,10 +60,9 @@ setup_tudat_library_target(tudat_input "${SRCROOT}${INPUTDIR}")
 setup_headers("${INPUT_HEADERS}" "${INPUTDIR}")
 
 # Add unit tests.
-
 add_executable(test_TextFileReader "${SRCROOT}${INPUTDIR}/unitTestTextFileReader.cpp")
 setup_custom_test_program(test_TextFileReader "${SRCROOT}${INPUTDIR}")
-target_link_libraries(test_TextFileReader tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_TextFileReader tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 
 # End of file.

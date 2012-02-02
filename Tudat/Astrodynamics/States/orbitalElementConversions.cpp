@@ -60,7 +60,7 @@
  *      110107    E. Iorfida        Written a better definition of the range in which angles are
  *                                  computed, and made some punctuation modifications.
  *      110109    J. Melman         Incorporated function computeModulo and
- *                                  determineAngleBetweenVectors. Reduced number of if-statements
+ *                                  computeAngleBetweenVectors. Reduced number of if-statements
  *                                  considerably and bundled all eccentricity and inclination
  *                                  checks in convertCartesianTopointerToCartesianElements_
  *      110128    K. Kumar          Changed references to pointers.
@@ -73,13 +73,13 @@
  */
 
 // Include statements.
-#include <Eigen/Core>
-#include <Eigen/Geometry>
 #include <boost/math/special_functions/atanh.hpp>
 #include <cmath>
+#include <Eigen/Core>
+#include <Eigen/Geometry>
 #include <limits>
+#include <TudatCore/Mathematics/linearAlgebra.h>
 #include "Astrodynamics/States/orbitalElementConversions.h"
-#include "Mathematics/LinearAlgebra/linearAlgebra.h"
 
 //! Tudat library namespace.
 namespace tudat
@@ -95,7 +95,7 @@ using std::sinh;
 using std::sqrt;
 using std::pow;
 using std::fabs;
-using linear_algebra::determineAngleBetweenVectors;
+using mathematics::linear_algebra::computeAngleBetweenVectors;
 using tudat::mathematics::computeModulo;
 
 //! Orbital element conversions namespace.
@@ -274,8 +274,8 @@ KeplerianElements convertCartesianToKeplerianElements(
     if ( !isOrbitCircular_ && !isOrbitEquatorial_ )
     {
         keplerianElements_.setArgumentOfPeriapsis(
-                    determineAngleBetweenVectors( eccentricityVector_,
-                                                  unitVectorToAscendingNode_ ) );
+                    computeAngleBetweenVectors( eccentricityVector_,
+                                                unitVectorToAscendingNode_ ) );
 
         // Quadrant check.
         if ( eccentricityVector_( 2 ) < 0.0 )
@@ -323,8 +323,8 @@ KeplerianElements convertCartesianToKeplerianElements(
     if ( !isOrbitCircular_ )
     {
         keplerianElements_.setTrueAnomaly(
-                    determineAngleBetweenVectors( pointerToCartesianElements->getPosition( ),
-                                                  eccentricityVector_ ) );
+                    computeAngleBetweenVectors( pointerToCartesianElements->getPosition( ),
+                                                eccentricityVector_ ) );
 
         // Quadrant check. In the second half of the orbit, the angle
         // between position and velocity vector is larger than 90 degrees.
@@ -353,8 +353,8 @@ KeplerianElements convertCartesianToKeplerianElements(
         else
         {
             keplerianElements_.setTrueAnomaly(
-                        determineAngleBetweenVectors( pointerToCartesianElements->getPosition( ),
-                                                      unitVectorToAscendingNode_ ) );
+                        computeAngleBetweenVectors( pointerToCartesianElements->getPosition( ),
+                                                    unitVectorToAscendingNode_ ) );
 
             // Quadrant check. In the second half of the orbit, the body
             // will be below the xy-plane.

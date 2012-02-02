@@ -69,10 +69,10 @@
 // Include statements.
 #include <cmath>
 #include <limits>
+#include <TudatCore/Mathematics/linearAlgebra.h>
 #include "Astrodynamics/MissionSegments/gravityAssist.h"
 #include "Mathematics/basicMathematicsFunctions.h"
 #include "Mathematics/unitConversions.h"
-#include "Mathematics/LinearAlgebra/linearAlgebra.h"
 
 // Using directives.
 using std::pow;
@@ -80,7 +80,7 @@ using std::asin;
 using std::sqrt;
 using std::sin;
 using std::fabs;
-using tudat::linear_algebra::determineAngleBetweenVectors;
+using tudat::mathematics::linear_algebra::computeAngleBetweenVectors;
 using tudat::unit_conversions::convertRadiansToDegrees;
 
 // Using declarations.
@@ -134,8 +134,8 @@ double GravityAssist::computeDeltaV( )
     outgoingHyperbolicExcessVelocity_ = outgoingVelocity_ - centralBodyVelocity_;
 
     // Compute bending angle.
-    bendingAngle_ = determineAngleBetweenVectors( incomingHyperbolicExcessVelocity_ ,
-                                                  outgoingHyperbolicExcessVelocity_ );
+    bendingAngle_ = computeAngleBetweenVectors( incomingHyperbolicExcessVelocity_ ,
+                                                outgoingHyperbolicExcessVelocity_ );
 
     // Compute smallest allowable periapsis distance.
     double smallestPeriapsisDistance;

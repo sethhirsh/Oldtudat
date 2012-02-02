@@ -74,18 +74,18 @@ target_link_libraries(test_DeepSpaceManeuver tudat_astrodynamics tudat_input tud
 
 add_executable(test_EscapeAndCapture "${SRCROOT}${MISSIONSEGMENTSDIR}/unitTestEscapeAndCapture.cpp")
 setup_custom_test_program(test_EscapeAndCapture "${SRCROOT}${MISSIONSEGMENTSDIR}")
-target_link_libraries(test_EscapeAndCapture tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_EscapeAndCapture tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 add_executable(test_GravityAssist "${SRCROOT}${MISSIONSEGMENTSDIR}/unitTestGravityAssist.cpp")
 setup_custom_test_program(test_GravityAssist "${SRCROOT}${MISSIONSEGMENTSDIR}")
-target_link_libraries(test_GravityAssist tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_GravityAssist tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 add_executable(test_LambertTargeter "${SRCROOT}${MISSIONSEGMENTSDIR}/unitTestLambertTargeter.cpp")
 setup_custom_test_program(test_LambertTargeter "${SRCROOT}${MISSIONSEGMENTSDIR}")
-target_link_libraries(test_LambertTargeter tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_LambertTargeter tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 add_executable(test_LibrationPoints "${SRCROOT}${MISSIONSEGMENTSDIR}/unitTestLibrationPoints.cpp")
 setup_custom_test_program(test_LibrationPoints "${SRCROOT}${MISSIONSEGMENTSDIR}")
-target_link_libraries(test_LibrationPoints tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_LibrationPoints tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 # End of file.
