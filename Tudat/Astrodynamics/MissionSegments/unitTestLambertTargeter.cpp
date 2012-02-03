@@ -68,11 +68,11 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
+#include <TudatCore/Astrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
 #include "Tudat/Astrodynamics/MissionSegments/lambertTargeter.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
-#include "Tudat/Mathematics/unitConversions.h"
 
 //! Test Lambert targeting algorithm code.
 int main( )

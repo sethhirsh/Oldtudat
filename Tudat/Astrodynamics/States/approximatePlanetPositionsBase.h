@@ -68,7 +68,6 @@
 #include "Tudat/Astrodynamics/States/ephemeris.h"
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
-#include "Tudat/Mathematics/unitConversions.h"
 
 //! Tudat library namespace.
 /*!

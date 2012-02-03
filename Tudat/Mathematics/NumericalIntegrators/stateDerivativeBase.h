@@ -90,9 +90,9 @@ public:
      * \see NumericalIntegrator::StateDerivativeFunction
      */
 TUDAT_DEPRECATED("The use of StateDerivativeBase is deprecated an should be avoided, \
-it is here for legacy support", 
+it is here for legacy support",
     virtual void computeStateDerivative( double& independentVariable, State* pointerToState, \
-                                         State* pointerToStateDerivative ) = 0
+                                         State* pointerToStateDerivative ) = 0;
 );
 
 protected:

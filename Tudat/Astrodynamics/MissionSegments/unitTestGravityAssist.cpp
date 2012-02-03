@@ -59,9 +59,9 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <iostream>
+#include <TudatCore/Astrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/MissionSegments/gravityAssist.h"
-#include "Tudat/Mathematics/unitConversions.h"
 
 //! Test of gravity assist code.
 int main( )

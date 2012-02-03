@@ -79,6 +79,7 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
+#include <TudatCore/Astrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
@@ -87,7 +88,6 @@
 #include "Tudat/Astrodynamics/States/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
 #include "Tudat/Astrodynamics/States/orbitalElementConversions.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
-#include "Tudat/Mathematics/unitConversions.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 
 //! Test orbital element conversion code.

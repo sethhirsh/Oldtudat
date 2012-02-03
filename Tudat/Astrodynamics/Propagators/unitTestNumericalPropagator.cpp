@@ -58,6 +58,7 @@
 // Include statements.
 #include <iostream>
 #include <map>
+#include <TudatCore/Astrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Bodies/vehicle.h"
@@ -69,7 +70,6 @@
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
 #include "Tudat/Astrodynamics/States/cartesianPositionElements.h"
 #include "Tudat/Astrodynamics/States/state.h"
-#include "Tudat/Mathematics/unitConversions.h"
 #include "Tudat/Mathematics/NumericalIntegrators/rungeKutta4thOrderFixedStepsize.h"
 
 //! Test implementation of numerical propagator class.
