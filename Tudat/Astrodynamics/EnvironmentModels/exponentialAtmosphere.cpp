@@ -45,7 +45,7 @@
 
 // Include statements.
 #include <iostream>
-#include "Tudat/Astrodynamics/physicalConstants.h"
+#include <TudatCore/Astrodynamics/physicalConstants.h>
 #include "Tudat/Astrodynamics/EnvironmentModels/exponentialAtmosphere.h"
 
 //! Tudat library namespace.
@@ -68,14 +68,14 @@ void ExponentialAtmosphere::setPredefinedExponentialAtmosphere(
         // Set scale height.
         setScaleHeight( 7.200e3 );
 
-        //Set density at zero altitude.
+        // Set density at zero altitude.
         setDensityAtZeroAltitude( 1.225 );
 
-        //Set atmosphere temperature.
+        // Set atmosphere temperature.
         setConstantTemperature( 246.0 );
 
-        //Set specific gas constant.
-        setSpecificGasConstant( PhysicalConstants::SPECIFIC_GAS_CONSTANT_AIR );
+        // Set specific gas constant.
+        setSpecificGasConstant( tudat::physical_constants::SPECIFIC_GAS_CONSTANT_AIR );
 
         break;
 

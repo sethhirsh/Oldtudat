@@ -75,9 +75,9 @@
 #include <boost/format.hpp>
 #include <boost/exception/all.hpp>
 #include <boost/throw_exception.hpp>
+#include <TudatCore/Astrodynamics/physicalConstants.h>
 #include "Tudat/Basics/basicFunctions.h"
 #include "Tudat/InputOutput/twoLineElementsTextFileReader.h"
-#include "Tudat/Astrodynamics/physicalConstants.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
 #include "Tudat/Astrodynamics/States/orbitalElementConversions.h"
@@ -528,7 +528,7 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
                 .meanMotionInRevolutionsPerDay
                 * ( currentYear_
                     - twoLineElementData_[ objectNumberCounter_ ].fourDigitlaunchYear )
-                * PhysicalConstants::JULIAN_YEAR_IN_DAYS;
+                * tudat::physical_constants::JULIAN_YEAR_IN_DAYS;
         approximateNumberOfRevolutionsRemainder_ = approximateNumberOfRevolutions_ % 100000;
         lostNumberOfRevolutions_ = approximateNumberOfRevolutions_
                 - approximateNumberOfRevolutionsRemainder_;
@@ -560,7 +560,7 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
 
         // Semi-major axis of the object is calculated from the other TLE variables.
         meanMotion_ = twoLineElementData_[ objectNumberCounter_ ].meanMotionInRevolutionsPerDay
-                * 2.0 * M_PI / PhysicalConstants::JULIAN_DAY;
+                * 2.0 * M_PI / tudat::physical_constants::JULIAN_DAY;
         twoLineElementData_[ objectNumberCounter_ ].TLEKeplerianElements.setSemiMajorAxis(
                     orbital_element_conversions::convertMeanMotionToSemiMajorAxis(
                         meanMotion_, &earthWithWorldGeodeticSystem72GravityField_ ) );

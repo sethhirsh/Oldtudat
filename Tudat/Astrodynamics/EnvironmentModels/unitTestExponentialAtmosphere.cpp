@@ -46,7 +46,7 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "Tudat/Astrodynamics/physicalConstants.h"
+#include <TudatCore/Astrodynamics/physicalConstants.h>
 #include "Tudat/Astrodynamics/EnvironmentModels/exponentialAtmosphere.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
@@ -81,7 +81,7 @@ int main( )
     exponentialAtmosphere.setDensityAtZeroAltitude( densityAtZeroAltitude );
     exponentialAtmosphere.setScaleHeight( scaleHeight );
     exponentialAtmosphere.setSpecificGasConstant(
-                tudat::PhysicalConstants::SPECIFIC_GAS_CONSTANT_AIR );
+                tudat::physical_constants::SPECIFIC_GAS_CONSTANT_AIR );
 
     // Check if set and get functions work well.
     if ( fabs( ( exponentialAtmosphere.getConstantTemperature( )

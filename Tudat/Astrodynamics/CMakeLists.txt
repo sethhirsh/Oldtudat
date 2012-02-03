@@ -55,12 +55,10 @@ set(STATESDIR "${ASTRODYNAMICSDIR}/States")
 
 # Set the source files.
 set(ASTRODYNAMICS_SOURCES 
-  "${SRCROOT}${ASTRODYNAMICSDIR}/physicalConstants.cpp"
 )
 
 # Set the header files.
 set(ASTRODYNAMICS_HEADERS 
-  "${SRCROOT}${ASTRODYNAMICSDIR}/physicalConstants.h"
 )
 
 # Add subdirectories.
@@ -87,10 +85,5 @@ get_target_property(STATESSOURCES tudat_states SOURCES)
 add_library(tudat_astrodynamics STATIC ${ASTRODYNAMICS_SOURCES} ${ASTRODYNAMICS_HEADERS} ${BODIESSOURCES} ${ENVIRONMENTMODELSSOURCES} ${FORCEMODELSSOURCES} ${MISSIONSEGMENTSSOURCES} ${MOMENTMODELSSOURCE} ${PROPAGATORSSOURCES} ${REFERENCEFRAMESSOURCES} ${STATESSOURCES})
 setup_tudat_library_target(tudat_astrodynamics "${SRCROOT}${ASTRODYNAMICSDIR}")
 setup_headers("${ASTRODYNAMICS_HEADERS}" "${ASTRODYNAMICSDIR}")
-
-# Add unit tests.
-add_executable(test_PhysicalConstants "${SRCROOT}${ASTRODYNAMICSDIR}/unitTestPhysicalConstants.cpp")
-setup_custom_test_program(test_PhysicalConstants "${SRCROOT}${ASTRODYNAMICSDIR}")
-target_link_libraries(test_PhysicalConstants tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics)
 
 # End of file.
