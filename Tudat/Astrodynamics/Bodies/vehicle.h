@@ -41,8 +41,8 @@
  *      110112    K. Kumar          Minor comment changes.
  */
 
-#ifndef VEHICLEMODELS_H
-#define VEHICLEMODELS_H
+#ifndef TUDAT_VEHICLEMODELS_H
+#define TUDAT_VEHICLEMODELS_H
 
 // Include statements.
 #include <iostream>
@@ -120,6 +120,6 @@ private:
 
 }
 
-#endif // VEHICLEMODELS_H
+#endif // TUDAT_VEHICLEMODELS_H
 
 // End of file.

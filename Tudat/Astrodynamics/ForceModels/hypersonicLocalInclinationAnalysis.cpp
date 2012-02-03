@@ -92,7 +92,7 @@ void HypersonicLocalInclinationAnalysis::setVehicle( Vehicle& vehicle, int* numb
 {
     // Retrieve external surface geometry from vehicle.
     VehicleExternalModel* externalModel_ = vehicle.getPointerToExternalModel( );
-    GeometricShape* surface_ = externalModel_->getVehicleExternalGeometry( );
+    SurfaceGeometry* surface_ = externalModel_->getVehicleExternalGeometry( );
 
     // Set geometry if it is a single surface.
     if ( dynamic_cast< SingleSurfaceGeometry* > ( surface_ ) != NULL )

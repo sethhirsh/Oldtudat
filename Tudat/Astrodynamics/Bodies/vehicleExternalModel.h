@@ -39,12 +39,12 @@
  *      110112    K. Kumar          Minor comment changes.
  */
 
-#ifndef VEHICLEEXTERNALMODELS_H
-#define VEHICLEEXTERNALMODELS_H
+#ifndef TUDAT_VEHICLEEXTERNALMODELS_H
+#define TUDAT_VEHICLEEXTERNALMODELS_H
 
 // Include statements.
 #include <iostream>
-#include "Tudat/Mathematics/GeometricShapes/geometricShape.h"
+#include "Tudat/Mathematics/GeometricShapes/surfaceGeometry.h"
 
 //! Tudat library namespace.
 /*!
@@ -70,21 +70,21 @@ public:
      */
     VehicleExternalModel( ) : pointerToVehicleGeometry_( NULL ), isGeometrySet_( false ) { }
 
-    //! Function to set external geometry.
+    //! Function to set external surface geometry.
     /*!
-     * Function to set the external vehicle geometry. Geometry object is to be
+     * Function to set the external vehicle surface geometry. Geometry object is to be
      * created externally.
      * \param vehicleGeometry pointer to shape that is to be set.
      */
-    void setVehicleGeometry( GeometricShape& vehicleGeometry )
+    void setVehicleGeometry( SurfaceGeometry& vehicleGeometry )
     { pointerToVehicleGeometry_ = &vehicleGeometry; isGeometrySet_ = true; }
 
-    //! Get external geometry.
+    //! Get external surface geometry.
     /*!
-     * Returns the external geometry.
-     * \return Pointer to geometric shape.
+     * Returns the external surface geometry.
+     * \return Pointer to surface geometric shape.
      */
-    GeometricShape* getVehicleExternalGeometry( ) { return pointerToVehicleGeometry_; }
+    SurfaceGeometry* getVehicleExternalGeometry( ) { return pointerToVehicleGeometry_; }
 
     //! Overload ostream to print class information.
     /*!
@@ -105,11 +105,11 @@ public:
 
 private:
 
-    //! Pointer to vehicle geometry.
+    //! Pointer to vehicle surface geometry.
     /*!
-     * Pointer to geometric shape that represents the vehicle's external shape.
+     * Pointer to geometric surface shape that represents the vehicle's external shape.
      */
-    GeometricShape* pointerToVehicleGeometry_;
+    SurfaceGeometry* pointerToVehicleGeometry_;
 
     //! Flag that indicates if geometric shape has been set.
     /*!
@@ -120,6 +120,6 @@ private:
 
 }
 
-#endif // VEHICLEEXTERNALMODELS_H
+#endif // TUDAT_VEHICLEEXTERNALMODELS_H
 
 //End of file.

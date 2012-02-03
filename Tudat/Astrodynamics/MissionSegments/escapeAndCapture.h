@@ -53,8 +53,8 @@
  *                                  GeometricShapes.
  */
 
-#ifndef ESCAPEANDCAPTURE_H
-#define ESCAPEANDCAPTURE_H
+#ifndef TUDAT_ESCAPEANDCAPTURE_H
+#define TUDAT_ESCAPEANDCAPTURE_H
 
 // Include statements.
 #include <iostream>
@@ -80,15 +80,21 @@ public:
     /*!
      * Default constructor.
      */
-    EscapeAndCapture( ) : semiMajorAxis_ ( -0.0 ), eccentricity_ ( -1.0 ),
-        periapsisAltitude_ ( -0.0 ), apoapsisAltitude_( -0.0 ), hyperbolicExcessSpeed_( -1.0 ),
-        deltaV_ ( -0.0 ), pointerToCentralBody_( NULL ), pointerToCentralBodySphere_ ( NULL ) { }
+    EscapeAndCapture( );
 
     //! Default destructor.
     /*!
      * Default destructor.
      */
     virtual ~EscapeAndCapture( ) { }
+
+    //! Set central gravity field for the swing-by.
+    /*!
+     * Sets pointer to central body of the swing-by.
+     * \param gravityField Central body of the swing-by.
+     */
+    void setCentralGravityField( GravityFieldModel* gravityField )
+    { centralBodyGravityfield_ = gravityField; }
 
     //! Set semi-major axis of parking orbit.
     /*!
@@ -120,13 +126,12 @@ public:
     void setApoapsisAltitude( double apoapsisAltitude )
     { apoapsisAltitude_ = apoapsisAltitude; }
 
-    //! Set central body of parking orbit.
+    //! Set radius of the parking orbit.
     /*!
-     * Sets pointer to central body of parking orbit.
-     * \param pointerToCentralBody Central body of parking orbit.
+     * \param parkingOrbitRadius Set the radius of the departing/arriving parking orbit.
      */
-    void setCentralBody( CelestialBody *pointerToCentralBody )
-    { pointerToCentralBody_ = pointerToCentralBody; }
+    void setParkingOrbitRadius( double parkingOrbitRadius )
+    { parkingOrbitRadius_ = parkingOrbitRadius; }
 
     //! Set hyperbolic excess speed at launch/capture phase.
     /*!
@@ -146,6 +151,12 @@ public:
     double& computeDeltaV( );
 
 protected:
+
+    //! The gravity field produced by the CelestialBody.
+    /*!
+     * The gravity field in which the swing-by is performed.
+     */
+    GravityFieldModel* centralBodyGravityfield_;
 
     //! Semi-major axis of parking orbit.
     /*!
@@ -183,11 +194,11 @@ protected:
      */
     double deltaV_;
 
-    //! Pointer to CelestialBody class for parking orbit.
+    //! Radius of the parking orbit.
     /*!
-     * Pointer to CelestialBody class for parking orbit.
+     * Radius of the parking orbit.
      */
-    CelestialBody* pointerToCentralBody_;
+    double parkingOrbitRadius_;
 
     //! Pointer to SphereSegment class for central body.
     /*!
@@ -200,6 +211,6 @@ private:
 
 }
 
-#endif // ESCAPEANDCAPTURE_H
+#endif // TUDAT_ESCAPEANDCAPTURE_H
 
 // End of file.

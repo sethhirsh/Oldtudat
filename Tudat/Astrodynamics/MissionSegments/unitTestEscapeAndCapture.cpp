@@ -86,25 +86,21 @@ int main( )
     // Central body at launch phase.
     Planet predefinedEarth;
     predefinedEarth.setPredefinedPlanetSettings( Planet::earth );
-    SphereSegment earthSphere;
-    predefinedEarth.setShapeModel( &earthSphere );
-
+    
     // Central body at capture phase.
     Planet predefinedMars;
     predefinedMars.setPredefinedPlanetSettings( Planet::mars );
-    SphereSegment marsSphere;
-    predefinedMars.setShapeModel( &marsSphere );
-
+    
     // Set launch conditions.
-    escapePhaseTest.setCentralBody( &predefinedEarth );
-    earthSphere.setRadius( 6371.0e3 );
+    escapePhaseTest.setCentralGravityField( predefinedEarth.getGravityFieldModel() );
+    escapePhaseTest.setParkingOrbitRadius( 6371.0e3 );
     escapePhaseTest.setPeriapsisAltitude( 629.0e3 );
     escapePhaseTest.setEccentricity( 0.0 );
     escapePhaseTest.setHyperbolicExcessSpeed( 2.9444e3 );
 
     // Set capture conditions.
-    capturePhaseTest.setCentralBody( &predefinedMars );
-    marsSphere.setRadius( 3389.0e3 );
+    capturePhaseTest.setCentralGravityField( predefinedMars.getGravityFieldModel() );
+    capturePhaseTest.setParkingOrbitRadius( 3389.0e3 );
     capturePhaseTest.setPeriapsisAltitude( 2611.0e3 );
     capturePhaseTest.setEccentricity( 0.0 );
     capturePhaseTest.setHyperbolicExcessSpeed( 2.6486e3 );

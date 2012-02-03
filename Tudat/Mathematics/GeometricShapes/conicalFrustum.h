@@ -47,6 +47,7 @@
 #define CONICALFRUSTUM_H
 
 // Include statements.
+#include <iostream>
 #include <Eigen/Core>
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 

@@ -124,12 +124,9 @@ int main( )
     outgoingVelocityTest.setCartesianElementZDot( 0.0 );
 
     // Set values to compute gravity assist code.
-    SphereSegment sphereSegment;
-    sphereSegment.setRadius( 3398.0e3 );
-    predefinedMars.setShapeModel( &sphereSegment );
-    myGravityAssist.setCentralBody( &predefinedMars );
+    myGravityAssist.setCentralGravityField( predefinedMars.getGravityFieldModel() );
     myGravityAssist.setCentralBodyVelocity( marsVelocity );
-    myGravityAssist.setSmallestPeriapsisDistanceFactor( marsSmallestPeriapsisDistanceFactor );
+    myGravityAssist.setSmallestPeriapsisDistance( 3398.0e3 * marsSmallestPeriapsisDistanceFactor );
     myGravityAssist.setPointerToIncomingVelocity( &incomingVelocityTest );
     myGravityAssist.setPointerToOutgoingVelocity( &outgoingVelocityTest );
 

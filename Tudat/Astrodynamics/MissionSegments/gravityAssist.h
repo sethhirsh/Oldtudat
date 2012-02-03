@@ -65,8 +65,8 @@
  *                                  of GeometricShapes.
  */
 
-#ifndef GRAVITYASSIST_H
-#define GRAVITYASSIST_H
+#ifndef TUDAT_GRAVITYASSIST_H
+#define TUDAT_GRAVITYASSIST_H
 
 // Include statements.
 #include <Eigen/Core>
@@ -96,23 +96,26 @@ public:
     /*!
      * Default constructor.
      */
-    GravityAssist( ) : pointerToCentralBody_( NULL ), pointerToCentralBodySphere_( NULL ),
-        centralBodyVelocity_( Eigen::Vector3d::Zero( ) ), smallestPeriapsisDistanceFactor_( -0.0 ),
-        pointerToIncomingVelocity_( NULL ), pointerToOutgoingVelocity_( NULL ),
-        incomingHyperbolicExcessVelocity_ ( Eigen::Vector3d::Zero( ) ),
-        outgoingHyperbolicExcessVelocity_ ( Eigen::Vector3d::Zero( ) ), deltaV_( -0.0 ),
-        bendingAngle_( -0.0 ), incomingEccentricity_( -0.0 ), outgoingEccentricity_( -0.0 ),
-        incomingSemiMajorAxis_( -0.0 ), outgoingSemiMajorAxis_( -0.0 ),
-        bendingEffectDeltaV_( -0.0 ), velocityEffectDeltaV_( -0.0 ),
-        pointerToNewtonRaphson_( NULL ) { }
+    GravityAssist( );
 
-    //! Set central body of the swing-by.
+    //! Set central gravity field for the swing-by.
     /*!
      * Sets pointer to central body of the swing-by.
-     * \param pointerToCentralBody Central body of the swing-by.
+     * \param gravityField Central body of the swing-by.
      */
-    void setCentralBody( CelestialBody *pointerToCentralBody )
-    { pointerToCentralBody_ = pointerToCentralBody; }
+    void setCentralGravityField( GravityFieldModel* gravityField )
+    { centralBodyGravityfield_ = gravityField; }
+
+    //! Set smallest periapsis distance.
+    /*!
+     * Sets the smallest allowable periapsis distance of the swing-by.
+     * For maximum swing-by energy this is the central body radius.
+     *
+     * \param smallestPeriapsisDistanceFactor Smallest periapsis distance.
+     * \see   GravityAssist::smallestPeriapsisDistance
+     */
+    void setSmallestPeriapsisDistance( double smallestPeriapsisDistance )
+    { smallestPeriapsisDistance_ = smallestPeriapsisDistance; }
 
     // Its input will come from the ephemeris class.
     //! Set velocity of the swing-by central body.
@@ -123,17 +126,6 @@ public:
      */
     void setCentralBodyVelocity( Eigen::Vector3d centralBodyVelocity )
     { centralBodyVelocity_ = centralBodyVelocity; }
-
-    // TEMPORARY!! Needs to be part of CelestialBody object.
-    //! Set smallest periapsis distance factor.
-    /*!
-     * Sets the smallest allowable periapsis distance factor that has to be
-     * multiplied with the central body radius to find the smallest allowable
-     * periapsis distance.
-     * \param smallestPeriapsisDistanceFactor Smallest periapsis distance factor.
-     */
-    void setSmallestPeriapsisDistanceFactor( double smallestPeriapsisDistanceFactor )
-    { smallestPeriapsisDistanceFactor_ = smallestPeriapsisDistanceFactor; }
 
     //! Set pointer to incoming velocity of the satellite.
     /*!
@@ -181,17 +173,11 @@ protected:
 
 private:
 
-    //! Pointer to CelestialBody class for swing-by.
+    //! The gravity field produced by the CelestialBody.
     /*!
-     * Pointer to CelestialBody class for swing-by.
+     * The gravity field in which the swing-by is performed.
      */
-    CelestialBody* pointerToCentralBody_;
-
-    //! Pointer to SphereSegment class for central body.
-    /*!
-     * Pointer to SphereSegment class for central body.
-     */
-    SphereSegment* pointerToCentralBodySphere_;
+    GravityFieldModel* centralBodyGravityfield_;
 
     //! Velocity of the swing-by central body.
     /*!
@@ -199,13 +185,12 @@ private:
      */
     Eigen::Vector3d centralBodyVelocity_;
 
-    //! Smallest periapsisDistanceFactor.
+    //! Smallest periapsisDistance.
     /*!
-     * The smallest allowable periapsis distance factor
-     * that is to be multiplied with the central body radius to find the
-     * smallest allowable periapsis distance.
+     * The smallest allowable periapsis distance. This is the radius of closest possible approach to
+     * the planet. For maximal swing-by energy, this is the central body radius.
      */
-    double smallestPeriapsisDistanceFactor_;
+    double smallestPeriapsisDistance_;
 
     //! Pointer to CartesianVelocityElements object.
     /*!
@@ -314,6 +299,6 @@ private:
 
 }
 
-#endif // GRAVITYASSIST_H
+#endif // TUDAT_GRAVITYASSIST_H
 
 // End of file.

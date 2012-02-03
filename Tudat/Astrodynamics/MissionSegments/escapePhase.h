@@ -38,8 +38,8 @@
  *
  */
 
-#ifndef ESCAPEPHASE_H
-#define ESCAPEPHASE_H
+#ifndef TUDAT_ESCAPEPHASE_H
+#define TUDAT_ESCAPEPHASE_H
 
 // Include statements.
 #include "Tudat/Astrodynamics/MissionSegments/escapeAndCapture.h"
@@ -79,6 +79,6 @@ private:
 
 }
 
-#endif // ESCAPEPHASE_H
+#endif // TUDAT_ESCAPEPHASE_H
 
 // End of file.

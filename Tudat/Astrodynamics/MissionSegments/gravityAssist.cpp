@@ -90,6 +90,26 @@ using std::endl;
 namespace tudat
 {
 
+//! Default constructor.
+GravityAssist::GravityAssist() : 
+    centralBodyVelocity_( Eigen::Vector3d::Zero( ) ), 
+    smallestPeriapsisDistance_( std::numeric_limits<double>::signaling_NaN() ),
+    pointerToIncomingVelocity_( NULL ), 
+    pointerToOutgoingVelocity_( NULL ),
+    incomingHyperbolicExcessVelocity_ ( Eigen::Vector3d::Zero( ) ),
+    outgoingHyperbolicExcessVelocity_ ( Eigen::Vector3d::Zero( ) ), 
+    deltaV_(                std::numeric_limits<double>::signaling_NaN() ),
+    bendingAngle_(          std::numeric_limits<double>::signaling_NaN() ), 
+    incomingEccentricity_(  std::numeric_limits<double>::signaling_NaN() ), 
+    outgoingEccentricity_(  std::numeric_limits<double>::signaling_NaN() ),
+    incomingSemiMajorAxis_( std::numeric_limits<double>::signaling_NaN() ), 
+    outgoingSemiMajorAxis_( std::numeric_limits<double>::signaling_NaN() ),
+    bendingEffectDeltaV_(   std::numeric_limits<double>::signaling_NaN() ), 
+    velocityEffectDeltaV_(  std::numeric_limits<double>::signaling_NaN() ),
+    pointerToNewtonRaphson_( NULL )
+{
+}
+
 //! Define root-finder function for the velocity-effect delta-V.
 double GravityAssist::velocityEffectFunction( double &incomingEccentricity_ )
 {
@@ -112,10 +132,6 @@ double GravityAssist::firstDerivativeVelocityEffectFunction( double &incomingEcc
 //! Compute the delta-V of the powered swing-by.
 double GravityAssist::computeDeltaV( )
 {
-    // Get shape model of central body.
-    pointerToCentralBodySphere_ = static_cast< SphereSegment* >
-            ( pointerToCentralBody_->getShapeModel( ) );
-
     // Define local velocity vectors.
     Eigen::Vector3d incomingVelocity_;
     incomingVelocity_.x( ) = pointerToIncomingVelocity_->getCartesianElementXDot( );
@@ -137,20 +153,15 @@ double GravityAssist::computeDeltaV( )
     bendingAngle_ = computeAngleBetweenVectors( incomingHyperbolicExcessVelocity_ ,
                                                 outgoingHyperbolicExcessVelocity_ );
 
-    // Compute smallest allowable periapsis distance.
-    double smallestPeriapsisDistance;
-    smallestPeriapsisDistance = pointerToCentralBodySphere_->getRadius( ) *
-            smallestPeriapsisDistanceFactor_;
-
     // Compute maximum achievable bending angle.
     double maximumBendingAngle_;
     maximumBendingAngle_ =
-            asin( 1.0 / ( 1.0 + ( smallestPeriapsisDistance *
+            asin( 1.0 / ( 1.0 + ( smallestPeriapsisDistance_ *
                                   incomingHyperbolicExcessVelocity_.squaredNorm( ) /
-                                  pointerToCentralBody_->getGravitationalParameter( ) ) ) ) +
-            asin( 1.0 / ( 1.0 + ( smallestPeriapsisDistance *
+                                  centralBodyGravityfield_->getGravitationalParameter( ) ) ) ) +
+            asin( 1.0 / ( 1.0 + ( smallestPeriapsisDistance_ *
                                   outgoingHyperbolicExcessVelocity_.squaredNorm( ) /
-                                  pointerToCentralBody_->getGravitationalParameter( ) ) ) );
+                                  centralBodyGravityfield_->getGravitationalParameter( ) ) ) );
 
     // Verify necessity to apply an extra swing-by delta-V due to the
     // incapability of the body's gravity to bend the trajectory a
@@ -191,9 +202,9 @@ double GravityAssist::computeDeltaV( )
     else
     {
         // Compute semi-major axis of hyperbolic legs.
-        incomingSemiMajorAxis_ = -1.0 * pointerToCentralBody_->getGravitationalParameter( ) /
+        incomingSemiMajorAxis_ = -1.0 * centralBodyGravityfield_->getGravitationalParameter( ) /
                 incomingHyperbolicExcessVelocity_.squaredNorm( );
-        outgoingSemiMajorAxis_ = -1.0 * pointerToCentralBody_->getGravitationalParameter( ) /
+        outgoingSemiMajorAxis_ = -1.0 * centralBodyGravityfield_->getGravitationalParameter( ) /
                 outgoingHyperbolicExcessVelocity_.squaredNorm( );
 
         // Newton-Raphson method implementation.

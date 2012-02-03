@@ -60,8 +60,8 @@
  *                                  CartesianVelocityElements objects as output.
  */
 
-#ifndef LAMBERTTARGETER_H
-#define LAMBERTTARGETER_H
+#ifndef TUDAT_LAMBERTTARGETER_H
+#define TUDAT_LAMBERTTARGETER_H
 
 // Include statements.
 #include <iostream>
@@ -374,6 +374,6 @@ private:
 
 }
 
-#endif // LAMBERTTARGETER_H
+#endif // TUDAT_LAMBERTTARGETER_H
 
 // End of file.

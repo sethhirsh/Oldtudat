@@ -36,8 +36,8 @@
  *      101111    E. Iorfida        First creation of code.
  */
 
-#ifndef TRAJECTORYDESIGNMETHOD_H
-#define TRAJECTORYDESIGNMETHOD_H
+#ifndef TUDAT_TRAJECTORYDESIGNMETHOD_H
+#define TUDAT_TRAJECTORYDESIGNMETHOD_H
 
 //! Tudat library namespace.
 /*!
@@ -73,6 +73,6 @@ private:
 
 }
 
-#endif // TRAJECTORYDESIGNMETHOD_H
+#endif // TUDAT_TRAJECTORYDESIGNMETHOD_H
 
 // End of file.

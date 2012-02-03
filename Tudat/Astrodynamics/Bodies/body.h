@@ -44,12 +44,11 @@
  *      110815    K. Kumar          Added setMass() and getMass() functions.
  */
 
-#ifndef BODY_H
-#define BODY_H
+#ifndef TUDAT_BODY_H
+#define TUDAT_BODY_H
 
 // Include statements.
 #include <iostream>
-#include "Tudat/Mathematics/GeometricShapes/geometricShape.h"
 
 //! Tudat library namespace.
 /*!
@@ -66,11 +65,11 @@ class Body
 {
 public:
 
-    //! Default constructor.
+    //! Create a body with a given mass.
     /*!
-     * Default constructor.
+     * \param Mass of the body, default=0.
      */
-    Body( ) : mass_( -0.0 ), pointerToGeometricShape_( NULL ) { }
+    Body( double mass = 0) : mass_( mass ) { }
 
     //! Default destructor.
     /*!
@@ -85,27 +84,12 @@ public:
      */
     void setMass( double mass ) { mass_ = mass; }
 
-    //! Set the shape model.
-    /*!
-     * Sets the shape model.
-     * \param bodyGeometricShape Pointer to geometric shape of body.
-     */
-    void setShapeModel( GeometricShape* pointerToGeometricShape )
-    { pointerToGeometricShape_ = pointerToGeometricShape; }
-
     //! Get mass of body.
     /*!
      * Returns the mass of the body.
      * \return Mass.
      */
     double& getMass( ) { return mass_; }
-
-    //! Get shape model.
-    /*!
-     * Returns the shape model.
-     * \return bodyGeometricShape Pointer to geometric shape of body.
-     */
-    GeometricShape* getShapeModel( ) { return pointerToGeometricShape_; }
 
 protected:
 
@@ -117,15 +101,10 @@ private:
      */
     double mass_;
 
-    //! Pointer to GeometricShape object.
-    /*!
-     * Pointer to GeometricShape object.
-     */
-    GeometricShape* pointerToGeometricShape_;
 };
 
 }
 
-#endif // BODY_H
+#endif // TUDAT_BODY_H
 
 // End of file.

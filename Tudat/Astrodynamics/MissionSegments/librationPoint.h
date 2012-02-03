@@ -50,8 +50,8 @@
  *      111027    K. Kumar          Moved 1-line functions from source file.
  */
 
-#ifndef LIBRATIONPOINT_H
-#define LIBRATIONPOINT_H
+#ifndef TUDAT_LIBRATIONPOINT_H
+#define TUDAT_LIBRATIONPOINT_H
 
 // Include statements.
 #include <iostream>
@@ -302,6 +302,6 @@ private:
 
 }
 
-#endif // LIBRATIONPOINT_H
+#endif // TUDAT_LIBRATIONPOINT_H
 
 // End of file.

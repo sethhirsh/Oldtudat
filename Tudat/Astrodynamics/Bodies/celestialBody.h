@@ -41,8 +41,8 @@
  *      110310    K. Kumar          Added ephemeris; added missing destructor.
  */
 
-#ifndef CELESTIAL_BODY_H
-#define CELESTIAL_BODY_H
+#ifndef TUDAT_CELESTIAL_BODY_H
+#define TUDAT_CELESTIAL_BODY_H
 
 // Include statements.
 #include <iostream>
@@ -179,6 +179,6 @@ protected:
 
 }
 
-#endif // CELESTIAL_BODY_H
+#endif // TUDAT_CELESTIAL_BODY_H
 
 // End of file.

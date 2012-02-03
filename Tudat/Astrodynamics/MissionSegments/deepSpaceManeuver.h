@@ -37,8 +37,8 @@
  *      110406    K. Kumar          Minor modifications.
  */
 
-#ifndef DEEPSPACEMANEUVER_H
-#define DEEPSPACEMANEUVER_H
+#ifndef TUDAT_DEEPSPACEMANEUVER_H
+#define TUDAT_DEEPSPACEMANEUVER_H
 
 // Include statements.
 #include <iostream>
@@ -134,6 +134,6 @@ private:
 
 }
 
-#endif // DEEPSPACEMANEUVER_H
+#endif // TUDAT_DEEPSPACEMANEUVER_H
 
 // End of file.

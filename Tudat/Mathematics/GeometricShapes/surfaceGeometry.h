@@ -54,9 +54,6 @@
 #ifndef SURFACEGEOMETRY_H
 #define SURFACEGEOMETRY_H
 
-// Include statements.
-#include "Tudat/Mathematics/GeometricShapes/geometricShape.h"
-
 //! Tudat library namespace.
 /*!
  * The Tudat library namespace.
@@ -69,7 +66,7 @@ namespace tudat
  * Base class for surface geometry representations in terms of two
  * parameterizing variables 1 and 2.
  */
-class SurfaceGeometry : public GeometricShape
+class SurfaceGeometry
 {
 public:
 

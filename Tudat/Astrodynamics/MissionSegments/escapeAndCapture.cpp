@@ -54,6 +54,20 @@
 namespace tudat
 {
 
+//! Default constructor.
+EscapeAndCapture::EscapeAndCapture() : 
+    centralBodyGravityfield_( NULL ), 
+    semiMajorAxis_ ( std::numeric_limits<double>::signaling_NaN() ), 
+    eccentricity_ ( std::numeric_limits<double>::signaling_NaN() ),
+    periapsisAltitude_ ( std::numeric_limits<double>::signaling_NaN() ), 
+    apoapsisAltitude_( std::numeric_limits<double>::signaling_NaN() ), 
+    hyperbolicExcessSpeed_( std::numeric_limits<double>::signaling_NaN() ),
+    deltaV_ ( std::numeric_limits<double>::signaling_NaN() ), 
+    parkingOrbitRadius_( std::numeric_limits<double>::signaling_NaN() ),
+    pointerToCentralBodySphere_ ( NULL )
+{
+}
+
 //! Compute delta-V of launch/capture phase.
 double& EscapeAndCapture::computeDeltaV( )
 {
@@ -65,10 +79,6 @@ double& EscapeAndCapture::computeDeltaV( )
     // Local variables.
     double periapsisRadius_ = -0.0;
     double apoapsisRadius_ = -0.0;
-
-    // Get shape model of central body.
-    pointerToCentralBodySphere_ = static_cast< SphereSegment* >
-                                  ( pointerToCentralBody_->getShapeModel( ) );
 
     // Check input parameters.
     // For the correct functioning of this routine, the periapsis
@@ -85,8 +95,8 @@ double& EscapeAndCapture::computeDeltaV( )
               apoapsisAltitude_ != ( -0.0 ) )
     {
         // Compute periapsis and apoapsis radii.
-        periapsisRadius_ = periapsisAltitude_ + pointerToCentralBodySphere_->getRadius( );
-        apoapsisRadius_ = apoapsisAltitude_ + pointerToCentralBodySphere_->getRadius( );
+        periapsisRadius_ = periapsisAltitude_ + parkingOrbitRadius_;
+        apoapsisRadius_ = apoapsisAltitude_ + parkingOrbitRadius_;
 
         // Compute eccentricity.
         eccentricity_ = ( apoapsisRadius_ - periapsisRadius_ ) /
@@ -97,12 +107,12 @@ double& EscapeAndCapture::computeDeltaV( )
     else if ( periapsisAltitude_ != ( -0.0 ) && eccentricity_ != ( -1.0 ) )
     {
         // Compute periapsis radius.
-        periapsisRadius_ = periapsisAltitude_ + pointerToCentralBodySphere_->getRadius( );
+        periapsisRadius_ = periapsisAltitude_ + parkingOrbitRadius_;
     }
 
     // Compute escape velocity squared.
     double escapeVelocitySquared_;
-    escapeVelocitySquared_ = 2.0 * pointerToCentralBody_->getGravitationalParameter( )
+    escapeVelocitySquared_ = 2.0 * centralBodyGravityfield_->getGravitationalParameter( )
             / periapsisRadius_;
 
     // Compute delta-V.

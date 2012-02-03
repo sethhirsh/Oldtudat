@@ -36,8 +36,8 @@
  *      110623    K. Kumar          First creation of code.
  */
 
-#ifndef PLANET_H
-#define PLANET_H
+#ifndef TUDAT_PLANET_H
+#define TUDAT_PLANET_H
 
 // Include statements.
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
@@ -92,6 +92,6 @@ private:
 
 }
 
-#endif // PLANET_H
+#endif // TUDAT_PLANET_H
 
 // End of file.
