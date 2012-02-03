@@ -51,7 +51,6 @@ set(MATHEMATICS_SOURCES
 # Add header files.
 set(MATHEMATICS_HEADERS 
   "${SRCROOT}${MATHEMATICSDIR}/basicMathematicsFunctions.h"
-  "${SRCROOT}${MATHEMATICSDIR}/unitConversions.h"
 )
 
 # Add sub-directories.
@@ -78,9 +77,5 @@ setup_headers("${MATHEMATICS_HEADERS}" "${MATHEMATICSDIR}")
 add_executable(test_BasicMathematicsFunctions "${SRCROOT}${MATHEMATICSDIR}/unitTestBasicMathematicsFunctions.cpp")
 setup_custom_test_program(test_BasicMathematicsFunctions "${SRCROOT}${MATHEMATICSDIR}")
 target_link_libraries(test_BasicMathematicsFunctions tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
-
-add_executable(test_UnitConversions "${SRCROOT}${MATHEMATICSDIR}/unitTestUnitConversions.cpp")
-setup_custom_test_program(test_UnitConversions "${SRCROOT}${MATHEMATICSDIR}")
-target_link_libraries(test_UnitConversions tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics ${Boost_LIBRARIES})
 
 # End of file.
