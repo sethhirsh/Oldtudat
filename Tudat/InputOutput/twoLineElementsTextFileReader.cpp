@@ -72,15 +72,20 @@
 #include <map>
 #include <string>
 #include <utility>
+
+#include <boost/lexical_cast.hpp>
 #include <boost/format.hpp>
 #include <boost/exception/all.hpp>
 #include <boost/throw_exception.hpp>
+#include <boost/algorithm/string/trim.hpp>
+
+#include <TudatCore/Astrodynamics/orbitalElementConversions.h>
 #include <TudatCore/Astrodynamics/physicalConstants.h>
-#include "Tudat/Basics/basicFunctions.h"
+#include <TudatCore/InputOutput/basicInputOutput.h>
+
+#include "Tudat/InputOutput/basicInputOutput.h"
 #include "Tudat/InputOutput/twoLineElementsTextFileReader.h"
-#include "Tudat/Astrodynamics/Bodies/planet.h"
-#include "Tudat/Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
-#include "Tudat/Astrodynamics/States/orbitalElementConversions.h"
+
 
 //! Tudat library namespace.
 namespace tudat
@@ -97,7 +102,6 @@ using std::cerr;
 using std::vector;
 using std::multimap;
 using std::pair;
-using tudat::basic_functions::convertStringToTemplate;
 
 
 //! Open data file.
@@ -105,7 +109,7 @@ void TwoLineElementsTextFileReader::openFile( )
 {
     if ( absoluteDirectoryPath_.compare( "" ) == 0 )
     {
-        absoluteFilePath_ = basic_functions::getRootPath( ) + relativeDirectoryPath_ + fileName_;
+        absoluteFilePath_ = getPackageRootPath( ) + relativeDirectoryPath_ + fileName_;
     }
 
     else
@@ -246,6 +250,8 @@ void TwoLineElementsTextFileReader::stripEndOfLineCharacters( LineBasedStringDat
 //! Convert and store TLE data.
 void TwoLineElementsTextFileReader::storeTwoLineElementData( )
 {
+    using boost::algorithm::trim_copy;
+
     // Strip End-Of-Line characters from data container.
     stripEndOfLineCharacters( containerOfDataFromFile_ );
 
@@ -273,17 +279,8 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
     int approximateNumberOfRevolutionsRemainder_;
     int lostNumberOfRevolutions_;
 
-    // Create Earth World Geodetic System (WGS) 72 gravity field.
-    SphericalHarmonicsGravityField earthWorldGeodeticSystem72GravityField_;
-
-    // Set predefined settings for World Geodetic System (WGS) 72 gravity field.
-    earthWorldGeodeticSystem72GravityField_.setPredefinedSphericalHarmonicsGravityFieldSettings(
-                SphericalHarmonicsGravityField::earthWorldGeodeticSystem72 );
-
-    // Create Earth object and add WGS-72 gravity field.
-    Planet earthWithWorldGeodeticSystem72GravityField_;
-    earthWithWorldGeodeticSystem72GravityField_.setGravityFieldModel(
-                &earthWorldGeodeticSystem72GravityField_ );
+    // Reference: Table 2 in (Vallado, D.A., et al., 2006).
+    const double earthWithWorldGeodeticSystem72GravitationalParameter = 398600.8e9;
 
     // For every 3 lines, read the data from 3 consecutive strings of TLE data
     // and convert them to the TLE data variables
@@ -357,21 +354,24 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
         // See reference for which columns are assigned to which variable.
 
         // Get line number integer of line-1 from string.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 0, 1 ),
-                                 twoLineElementData_[ objectNumberCounter_ ].lineNumberLine1 );
+        twoLineElementData_[ objectNumberCounter_ ].lineNumberLine1  =
+                boost::lexical_cast<unsigned int>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 0, 1 ) ) );
 
         // Get object indentification number integer of line-1 from string
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 2, 5 ),
-                                 twoLineElementData_[ objectNumberCounter_ ]
-                                 .objectIdentificationNumber );
+        twoLineElementData_[ objectNumberCounter_ ].objectIdentificationNumber =
+                boost::lexical_cast<unsigned int>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 2, 5 ) ) );
+
 
         // Get classification character from string.
         twoLineElementData_[ objectNumberCounter_ ].tleClassification =
                 twoLineElementString_.at( 1 ) [ 7 ];
 
         // Get launch year integer from string.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 9, 2 ),
-                                 twoLineElementData_[ objectNumberCounter_ ].launchYear );
+        twoLineElementData_[ objectNumberCounter_ ].launchYear =
+                boost::lexical_cast<unsigned int>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 9, 2 ) ) );
 
         // Calculate four-digit launch year from the above.
         if ( twoLineElementData_[ objectNumberCounter_ ].launchYear > 56 )
@@ -387,16 +387,18 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
         }
 
         // Get launch number integer from string.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 11, 3 ),
-                                 twoLineElementData_[ objectNumberCounter_ ].launchNumber );
+        twoLineElementData_[ objectNumberCounter_ ].launchNumber =
+                boost::lexical_cast<unsigned int>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 11, 3 ) ) );
 
         // Get launch part string from string.
         twoLineElementData_[ objectNumberCounter_ ].launchPart =
                 twoLineElementString_.at( 1 ).substr( 14, 3 );
 
         // Get epoch year integer from string.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 18, 2 ),
-                                 twoLineElementData_[ objectNumberCounter_ ].epochYear );
+        twoLineElementData_[ objectNumberCounter_ ].epochYear =
+                boost::lexical_cast<unsigned int>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 18, 2 ) ) );
 
         // Calculate four-digit epoch year from the above.
         if ( twoLineElementData_[ objectNumberCounter_ ].epochYear > 56 )
@@ -412,28 +414,29 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
         }
 
         // Get epoch day double from string.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 20, 12 ),
-                                 twoLineElementData_[ objectNumberCounter_ ].epochDay );
+        twoLineElementData_[ objectNumberCounter_ ].epochDay =
+                boost::lexical_cast<double>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 20, 12 ) ) );
 
         // Get "first-derivative of mean motion divided by two" double from string.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 33, 10 ),
-                                 twoLineElementData_[ objectNumberCounter_]
-                                 .firstDerivativeOfMeanMotionDividedByTwo );
+        twoLineElementData_[ objectNumberCounter_].firstDerivativeOfMeanMotionDividedByTwo =
+                boost::lexical_cast<double>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 33, 10 ) ) );
 
         // Get coefficient of scientific notation of "second-derivative of mean motion divided
         // by six" double from string,
         // Apply implied leading decimal point.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 44, 6 ),
-                                 twoLineElementData_[ objectNumberCounter_ ]
-                                 .coefficientOfSecondDerivativeOfMeanMotionDividedBySix );
         twoLineElementData_[ objectNumberCounter_ ]
-                .coefficientOfSecondDerivativeOfMeanMotionDividedBySix /= 100000;
+                .coefficientOfSecondDerivativeOfMeanMotionDividedBySix =
+                boost::lexical_cast<double>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 44, 6 ) ) ) / 100000.0;
 
         // Get exponent of scientific notation of "second-derivative of mean motion divided
         // by six" integer from string.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 50, 2 ),
-                                 twoLineElementData_[ objectNumberCounter_]
-                                 .exponentOfSecondDerivativeOfMeanMotionDividedBySix );
+        twoLineElementData_[ objectNumberCounter_]
+                .exponentOfSecondDerivativeOfMeanMotionDividedBySix =
+                boost::lexical_cast<double>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 50, 2 ) ) );
 
         // Calculate "second-derivative of mean motion divided by six" double from the above two.
         twoLineElementData_[ objectNumberCounter_ ].secondDerivativeOfMeanMotionDividedBySix =
@@ -444,13 +447,15 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
 
         // Get coefficient of scientific notation of "B* divided by six" double
         // from string; apply implied leading decimal point.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 53, 6 ),
-                                 twoLineElementData_[ objectNumberCounter_ ].coefficientOfBStar );
-        twoLineElementData_[ objectNumberCounter_ ].coefficientOfBStar /= 100000;
+        twoLineElementData_[ objectNumberCounter_ ].coefficientOfBStar =
+                boost::lexical_cast<double>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 53, 6 ) ) ) /
+                100000.0;
 
         // Get exponent of scientific notation of B* integer from string
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 59, 2 ),
-                                 twoLineElementData_[ objectNumberCounter_ ].exponentOfBStar );
+        twoLineElementData_[ objectNumberCounter_ ].exponentOfBStar =
+                boost::lexical_cast<int>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 59, 2 ) ) );
 
         // Calculate B* double from the above two.
         twoLineElementData_[ objectNumberCounter_ ].bStar =
@@ -458,17 +463,19 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
                 * pow( 10.0, twoLineElementData_[ objectNumberCounter_ ].exponentOfBStar );
 
         // Get orbital model integer from string.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 62, 1 ),
-                                 twoLineElementData_[ objectNumberCounter_ ].orbitalModel );
+        twoLineElementData_[ objectNumberCounter_ ].orbitalModel =
+                boost::lexical_cast<unsigned int>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 62, 1 ) ) );
 
         // Get TLE number integer from string.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 64, 4 ),
-                                 twoLineElementData_[ objectNumberCounter_ ].tleNumber );
+        twoLineElementData_[ objectNumberCounter_ ].tleNumber =
+                boost::lexical_cast<unsigned int>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 64, 4 ) ) );
 
         // Get modulo-10 checksum integer from string.
-        convertStringToTemplate( twoLineElementString_.at( 1 ).substr( 68, 1 ),
-                                 twoLineElementData_[ objectNumberCounter_ ]
-                                 .modulo10CheckSumLine1 );
+        twoLineElementData_[ objectNumberCounter_ ].modulo10CheckSumLine1 =
+                boost::lexical_cast<unsigned int>(
+                    trim_copy( twoLineElementString_.at( 1 ).substr( 68, 1 ) ) );
 
         // Line-2 variable storing.
         //---------------------------------------------------------------------
@@ -509,18 +516,19 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
         line2StringStream_ >> twoLineElementData_[ objectNumberCounter_ ].meanAnomaly;
 
         // Get mean motion double from line-2 string.
-        convertStringToTemplate( twoLineElementString_[ 2 ].substr( 52, 11 ),
-                                 twoLineElementData_[ objectNumberCounter_ ]
-                                 .meanMotionInRevolutionsPerDay );
+        twoLineElementData_[ objectNumberCounter_ ].meanMotionInRevolutionsPerDay =
+                boost::lexical_cast<double>(
+                    trim_copy( twoLineElementString_[ 2 ].substr( 52, 11 ) ) );
 
         // Get revolution number integer from line-2 string.
-        convertStringToTemplate( twoLineElementString_[ 2 ].substr( 63, 5 ),
-                                 twoLineElementData_[ objectNumberCounter_ ].revolutionNumber );
+        twoLineElementData_[ objectNumberCounter_ ].revolutionNumber =
+                boost::lexical_cast<int>(
+                    trim_copy( twoLineElementString_[ 2 ].substr( 63, 5 ) ) );
 
         // Get modulo-10 checksum integer of line-2 from line-2 string.
-        convertStringToTemplate( twoLineElementString_[ 2 ].substr( 68, 1 ),
-                                 twoLineElementData_[ objectNumberCounter_ ]
-                                 .modulo10CheckSumLine2 );
+        twoLineElementData_[ objectNumberCounter_ ].modulo10CheckSumLine2 =
+                boost::lexical_cast<unsigned int>(
+                    trim_copy( twoLineElementString_[ 2 ].substr( 68, 1 ) ) );
 
         // Calculate the approximate total number of revolutions, as the counter resets to 0 after
         // passing by 99999, insert the current year in the following equation.
@@ -563,7 +571,7 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
                 * 2.0 * M_PI / tudat::physical_constants::JULIAN_DAY;
         twoLineElementData_[ objectNumberCounter_ ].TLEKeplerianElements.setSemiMajorAxis(
                     orbital_element_conversions::convertMeanMotionToSemiMajorAxis(
-                        meanMotion_, &earthWithWorldGeodeticSystem72GravityField_ ) );
+                        meanMotion_, earthWithWorldGeodeticSystem72GravitationalParameter ) );
 
         // Perigee of the object is calculated from the other TLE variables.
         twoLineElementData_[ objectNumberCounter_ ].perigee =
@@ -660,7 +668,6 @@ multimap< int, string > TwoLineElementsTextFileReader::checkTwoLineElementsFileI
 
         // Create calculated modulo-10 checksum of line 1 and temporary integer for addition.
         unsigned int line1Modulo10Sum_ = 0;
-        int temporaryInteger_ = 0;
 
         // Run loop over the 69-character long, line-2 string, but not the last character,
         // since this is the modulo-10 checksum itself and is not added.
@@ -674,12 +681,9 @@ multimap< int, string > TwoLineElementsTextFileReader::checkTwoLineElementsFileI
                  twoLineElementString_.at( 1 )[ j ] != '-' &&
                  j != 7 && j != 14 && j != 15 && j != 16 )
             {
-                // Convert char to int.
-                convertStringToTemplate( twoLineElementString_.at( 1 ).substr( j , 1 ),
-                                         temporaryInteger_ );
-
                 // Add int to checksum.
-                line1Modulo10Sum_ += temporaryInteger_;
+                line1Modulo10Sum_ += boost::lexical_cast<int>(
+                            twoLineElementString_.at( 1 ).substr( j , 1 ) );
             }
 
             // Check is the char is a minus sign
@@ -714,12 +718,9 @@ multimap< int, string > TwoLineElementsTextFileReader::checkTwoLineElementsFileI
             if ( twoLineElementString_.at( 2 )[ k ] != ' ' &&
                  twoLineElementString_.at( 2 )[ k ] != '.' )
             {
-                // Convert char to int
-                convertStringToTemplate( twoLineElementString_[ 2 ].substr( k , 1 ),
-                                         temporaryInteger_ );
-
                 // Add int to checksum.
-                line2Modulo10Sum_ += temporaryInteger_;
+                line2Modulo10Sum_ += boost::lexical_cast<int>(
+                            twoLineElementString_[ 2 ].substr( k , 1 ) );
             }
         }
 
@@ -773,3 +774,4 @@ multimap< int, string > TwoLineElementsTextFileReader::checkTwoLineElementsFileI
 } // namespace tudat
 
 // End of file.
+

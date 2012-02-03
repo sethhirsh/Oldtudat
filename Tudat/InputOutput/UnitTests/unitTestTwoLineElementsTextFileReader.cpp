@@ -106,7 +106,7 @@ int main( )
     {
         // Set input directory, file name, then open file and store data strings
         // with Textfilereader class, and finally close file.
-        twoLineElementsTextFileReaders[ i ]->setRelativeDirectoryPath( "Input/" );
+        twoLineElementsTextFileReaders[ i ]->setRelativeDirectoryPath( "InputOutput/UnitTests/" );
 
         if ( i == 0 )
         {

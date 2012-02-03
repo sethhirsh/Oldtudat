@@ -49,6 +49,7 @@ set(INPUTOUTPUT_SOURCES
 
 # Add header files.
 set(INPUTOUTPUT_HEADERS 
+  "${SRCROOT}${INPUTOUTPUTDIR}/basicInputOutput.h"
   "${SRCROOT}${INPUTOUTPUTDIR}/twoLineElementData.h"
   "${SRCROOT}${INPUTOUTPUTDIR}/twoLineElementsTextFileReader.h"
   "${SRCROOT}${INPUTOUTPUTDIR}/matrixTextFileReader.h"
@@ -66,7 +67,7 @@ target_link_libraries(test_MatrixTextFileReader tudat_input_output ${TUDAT_CORE_
 
 add_executable(test_TwoLineElementsTextFileReader "${SRCROOT}${INPUTOUTPUTDIR}/UnitTests/unitTestTwoLineElementsTextFileReader.cpp")
 setup_custom_test_program(test_TwoLineElementsTextFileReader "${SRCROOT}${INPUTDIR}")
-target_link_libraries(test_TwoLineElementsTextFileReader tudat_input_output tudat_astrodynamics tudat_basics tudat_mathematics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(test_TwoLineElementsTextFileReader tudat_input_output tudat_core_astrodynamics tudat_core_mathematics ${Boost_LIBRARIES})
 
 
 # End of file.

@@ -73,24 +73,9 @@ int main( )
     expectedMatrix( 3,1 ) = 11.0;
     expectedMatrix( 3,2 ) = 12.0;
 
-    std::string path( __FILE__ );
-    if ( path.find( '/' ) != std::string::npos )
-    {
-        path = path.substr( 0, path.find_last_of( '/' ) + 1 );
-    }
-    else if ( path.find( '\\' ) != std::string::npos )
-    {
-        path = path.substr( 0, path.find_last_of( '\\' ) + 1 );
-    }
-    else
-    {
-        path = "";
-    }
-
     // Test 1: Test for semi-colon-separated files.
     readMatrix = tudat::input_output::readMatrixFromFile(
-                "testMatrix.txt", ";",
-                "%", path );
+                "InputOutput/UnitTests/testMatrix.txt", ";"  );
 
     for ( int i = 0; i < 3; i++ )
     {
@@ -113,7 +98,7 @@ int main( )
 
     // Test 2: Test for space-seperated files.
     readMatrix = tudat::input_output::readMatrixFromFile(
-                "testMatrix2.txt", " \t", "#", path );
+                "InputOutput/UnitTests/testMatrix2.txt", " \t", "#" );
 
     for ( int i = 0; i < 3; i++ )
     {

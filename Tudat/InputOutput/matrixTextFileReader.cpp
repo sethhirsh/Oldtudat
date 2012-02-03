@@ -56,6 +56,7 @@
 #include <TudatCore/InputOutput/basicInputOutput.h>
 #include <TudatCore/InputOutput/streamFilters.h>
 
+#include "Tudat/InputOutput/basicInputOutput.h"
 #include "Tudat/InputOutput/matrixTextFileReader.h"
 
 
@@ -72,7 +73,7 @@ Eigen::MatrixXd readMatrixFromFile( const std::string& filename, const std::stri
                                     const std::string& skipLinesCharacter, const std::string& relativePath )
 {
     // Construct path
-    std::string path_ = relativePath.empty() ? getRootPath() + filename :
+    std::string path_ = relativePath.empty() ? getPackageRootPath() + filename :
                                                relativePath + filename;
     // Open input and output
     std::fstream file( path_.c_str(), std::ios::in );
