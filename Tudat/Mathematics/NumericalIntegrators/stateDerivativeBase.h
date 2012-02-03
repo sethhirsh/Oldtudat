@@ -48,6 +48,7 @@
 
 // Include statements.
 #include "Tudat/Astrodynamics/States/state.h"
+#include <TudatCore/Basics/utilityMacros.h>
 
 //! Tudat library namespace.
 /*!
@@ -58,7 +59,10 @@ namespace tudat
 
 //! An abstract base class for state derivative functions.
 /*!
- * An abstract base class for state derivative functions.
+ * You are no longer obligated to use this class to formulate your state derivative, from now on
+ * any function taking and returing any type (commonly Eigen::VectorXd) can be used.
+ *
+ * \see NumericalIntegrator::StateDerivativeFunction
  */
 class StateDerivativeBase
 {
@@ -73,14 +77,23 @@ public:
     //! Compute state derivative.
     /*!
      * Computes the state derivative for the numerical integrator being used.
+     *
+     * DEPRICATED: From now on, users are no longer obligated to use this function to compute there
+     *  State derivative. The new integrator architecture allows any function to be used 
+     * (using Boost.Bind). For more information see NumericalIntegrator::StateDerivativeFunction.
+     *
      * \param independentVariable Value of independent variable.
      * \param pointerToState State given as pointer to State object.
      * \param pointerToStateDerivative State derivative given as pointer to
      *          State object. The computed  state derivative is stored in the
      *          object that this pointer points to.
+     * \see NumericalIntegrator::StateDerivativeFunction
      */
-    virtual void computeStateDerivative( double& independentVariable, State* pointerToState,
-                                         State* pointerToStateDerivative ) = 0;
+TUDAT_DEPRECATED("The use of StateDerivativeBase is deprecated an should be avoided, \
+it is here for legacy support", 
+    virtual void computeStateDerivative( double& independentVariable, State* pointerToState, \
+                                         State* pointerToStateDerivative ) = 0
+);
 
 protected:
 
