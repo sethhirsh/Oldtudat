@@ -46,9 +46,9 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <iostream>
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/GeometricShapes/lawgsPartGeometry.h"
-#include "Mathematics/GeometricShapes/sphereSegment.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/GeometricShapes/lawgsPartGeometry.h"
+#include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 
 //! Test implementation of Lawgs surface geometry.
 int main( )

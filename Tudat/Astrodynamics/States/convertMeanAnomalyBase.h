@@ -43,13 +43,13 @@
 
 // Include statements.
 #include <ctime>
-#include "Astrodynamics/Bodies/body.h"
-#include "Astrodynamics/Bodies/celestialBody.h"
-#include "Astrodynamics/States/keplerianElements.h"
-#include "Astrodynamics/States/orbitalElementConversions.h"
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/RootFindingMethods/newtonRaphson.h"
-#include "Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
+#include "Tudat/Astrodynamics/Bodies/body.h"
+#include "Tudat/Astrodynamics/Bodies/celestialBody.h"
+#include "Tudat/Astrodynamics/States/keplerianElements.h"
+#include "Tudat/Astrodynamics/States/orbitalElementConversions.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
 
 //! Tudat library namespace.
 /*!

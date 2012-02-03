@@ -52,8 +52,8 @@
 
 // Include statements.
 #include <iostream>
-#include "Mathematics/RootFindingMethods/newtonRaphsonBase.h"
-#include "Mathematics/RootFindingMethods/rootFinder.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonBase.h"
+#include "Tudat/Mathematics/RootFindingMethods/rootFinder.h"
 
 //! Tudat library namespace.
 /*!

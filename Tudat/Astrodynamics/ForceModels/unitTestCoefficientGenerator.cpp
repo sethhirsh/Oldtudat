@@ -42,10 +42,10 @@
 
 // Include statements.
 #include <Eigen/Core>
-#include "Astrodynamics/ForceModels/hypersonicLocalInclinationAnalysis.h"
-#include "Mathematics/GeometricShapes/capsule.h"
-#include "Mathematics/GeometricShapes/sphereSegment.h"
-#include "Output/writingOutputToFile.h"
+#include "Tudat/Astrodynamics/ForceModels/hypersonicLocalInclinationAnalysis.h"
+#include "Tudat/Mathematics/GeometricShapes/capsule.h"
+#include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
+#include "Tudat/Output/writingOutputToFile.h"
 
 //! Test coefficient generator.
 int main( )

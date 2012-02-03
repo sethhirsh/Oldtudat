@@ -61,9 +61,9 @@
 // Include statements.
 #include <cmath>
 #include <iostream>
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/NumericalIntegrators/rungeKuttaFehlberg78VariableStepsize.h"
-#include "Mathematics/NumericalIntegrators/stateDerivativeBase.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/NumericalIntegrators/rungeKuttaFehlberg78VariableStepsize.h"
+#include "Tudat/Mathematics/NumericalIntegrators/stateDerivativeBase.h"
 
 //! Runge-Kutta-Fehlberg 7(8)th-order, variable stepsize integrator test class.
 /*!

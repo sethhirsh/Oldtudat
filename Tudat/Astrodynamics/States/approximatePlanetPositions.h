@@ -48,9 +48,9 @@
 #define APPROXIMATEPLANETPOSITIONS_H
 
 // Include statements.
-#include "Astrodynamics/States/approximatePlanetPositionsBase.h"
-#include "Astrodynamics/States/convertMeanAnomalyToEccentricAnomaly.h"
-#include "Mathematics/RootFindingMethods/newtonRaphson.h"
+#include "Tudat/Astrodynamics/States/approximatePlanetPositionsBase.h"
+#include "Tudat/Astrodynamics/States/convertMeanAnomalyToEccentricAnomaly.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 
 //! Tudat library namespace.
 /*!

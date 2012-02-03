@@ -52,9 +52,9 @@
 
 // Include statements.
 #include <cmath>
-#include "Astrodynamics/ForceModels/gravitationalForceModel.h"
-#include "Astrodynamics/MissionSegments/librationPoint.h"
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Astrodynamics/ForceModels/gravitationalForceModel.h"
+#include "Tudat/Astrodynamics/MissionSegments/librationPoint.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Tudat library namespace.
 namespace tudat

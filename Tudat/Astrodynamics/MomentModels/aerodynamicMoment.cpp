@@ -44,7 +44,7 @@
 // Include statements.
 #include <Eigen/Core>
 #include <Eigen/Geometry>
-#include "Astrodynamics/MomentModels/aerodynamicMoment.h"
+#include "Tudat/Astrodynamics/MomentModels/aerodynamicMoment.h"
 
 //! Tudat library namespace.
 namespace tudat

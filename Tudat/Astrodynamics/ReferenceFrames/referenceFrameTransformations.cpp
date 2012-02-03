@@ -52,7 +52,7 @@
  */
 
 // Include statements.
-#include "Astrodynamics/ReferenceFrames/referenceFrameTransformations.h"
+#include "Tudat/Astrodynamics/ReferenceFrames/referenceFrameTransformations.h"
 
 //! Tudat library namespace.
 namespace tudat

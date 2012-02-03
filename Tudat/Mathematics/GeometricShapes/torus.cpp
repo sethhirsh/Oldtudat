@@ -46,7 +46,7 @@
 
 // Include statements.
 #include <iostream>
-#include "Mathematics/GeometricShapes/torus.h"
+#include "Tudat/Mathematics/GeometricShapes/torus.h"
 
 //! Tudat library namespace.
 namespace tudat

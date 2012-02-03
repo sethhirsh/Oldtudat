@@ -60,10 +60,10 @@
 #include <iostream>
 #include <map>
 #include <vector>
-#include "Astrodynamics/Bodies/celestialBody.h"
-#include "Astrodynamics/ForceModels/forceModel.h"
-#include "Astrodynamics/Propagators/propagator.h"
-#include "Astrodynamics/States/state.h"
+#include "Tudat/Astrodynamics/Bodies/celestialBody.h"
+#include "Tudat/Astrodynamics/ForceModels/forceModel.h"
+#include "Tudat/Astrodynamics/Propagators/propagator.h"
+#include "Tudat/Astrodynamics/States/state.h"
 
 //! Tudat library namespace.
 /*!

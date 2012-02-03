@@ -43,8 +43,8 @@
 // Include statements.
 #include <cmath>
 #include <iostream>
-#include "Mathematics/NumericalIntegrators/euler.h"
-#include "Mathematics/NumericalIntegrators/stateDerivativeBase.h"
+#include "Tudat/Mathematics/NumericalIntegrators/euler.h"
+#include "Tudat/Mathematics/NumericalIntegrators/stateDerivativeBase.h"
 
 //! Euler integrator test class.
 /*!

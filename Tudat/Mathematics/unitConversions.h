@@ -62,8 +62,8 @@
 #define UNIT_CONVERSIONS_H
 
 // Include statements.
-#include "Astrodynamics/physicalConstants.h"
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Astrodynamics/physicalConstants.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Tudat library namespace.
 /*!

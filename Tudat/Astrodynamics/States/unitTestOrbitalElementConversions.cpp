@@ -79,16 +79,16 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "Astrodynamics/Bodies/celestialBody.h"
-#include "Astrodynamics/Bodies/planet.h"
-#include "Astrodynamics/EnvironmentModels/gravityFieldModel.h"
-#include "Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
-#include "Astrodynamics/States/convertMeanAnomalyToEccentricAnomaly.h"
-#include "Astrodynamics/States/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
-#include "Astrodynamics/States/orbitalElementConversions.h"
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/unitConversions.h"
-#include "Mathematics/RootFindingMethods/newtonRaphson.h"
+#include "Tudat/Astrodynamics/Bodies/celestialBody.h"
+#include "Tudat/Astrodynamics/Bodies/planet.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
+#include "Tudat/Astrodynamics/States/convertMeanAnomalyToEccentricAnomaly.h"
+#include "Tudat/Astrodynamics/States/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
+#include "Tudat/Astrodynamics/States/orbitalElementConversions.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/unitConversions.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 
 //! Test orbital element conversion code.
 int main( )

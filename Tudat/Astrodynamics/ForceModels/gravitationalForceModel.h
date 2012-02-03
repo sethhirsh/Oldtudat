@@ -58,10 +58,10 @@
 
 // Include statements.
 #include <iostream>
-#include "Astrodynamics/Bodies/body.h"
-#include "Astrodynamics/Bodies/celestialBody.h"
-#include "Astrodynamics/EnvironmentModels/gravityFieldModel.h"
-#include "Astrodynamics/ForceModels/forceModel.h"
+#include "Tudat/Astrodynamics/Bodies/body.h"
+#include "Tudat/Astrodynamics/Bodies/celestialBody.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
+#include "Tudat/Astrodynamics/ForceModels/forceModel.h"
 
 //! Tudat library namespace.
 /*!

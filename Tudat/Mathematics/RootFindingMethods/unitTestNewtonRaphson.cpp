@@ -57,9 +57,9 @@
 
 // Include statements.
 #include <cmath>
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/RootFindingMethods/newtonRaphson.h"
-#include "Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
 
 //! Struct for NewtonRaphson unit test code.
 /*!

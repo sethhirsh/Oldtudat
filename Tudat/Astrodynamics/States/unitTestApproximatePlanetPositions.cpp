@@ -60,13 +60,13 @@
 // Include statements.
 #include <iostream>
 #include <limits>
-#include "Astrodynamics/Bodies/celestialBody.h"
-#include "Astrodynamics/Bodies/planet.h"
-#include "Astrodynamics/States/approximatePlanetPositionsCircularCoplanar.h"
-#include "Astrodynamics/States/keplerianElements.h"
-#include "Astrodynamics/States/orbitalElementConversions.h"
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/unitConversions.h"
+#include "Tudat/Astrodynamics/Bodies/celestialBody.h"
+#include "Tudat/Astrodynamics/Bodies/planet.h"
+#include "Tudat/Astrodynamics/States/approximatePlanetPositionsCircularCoplanar.h"
+#include "Tudat/Astrodynamics/States/keplerianElements.h"
+#include "Tudat/Astrodynamics/States/orbitalElementConversions.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/unitConversions.h"
 
 //! Test ApproximatePlanetPositions class.
 int main( )

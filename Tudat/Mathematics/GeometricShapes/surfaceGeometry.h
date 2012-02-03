@@ -55,7 +55,7 @@
 #define SURFACEGEOMETRY_H
 
 // Include statements.
-#include "Mathematics/GeometricShapes/geometricShape.h"
+#include "Tudat/Mathematics/GeometricShapes/geometricShape.h"
 
 //! Tudat library namespace.
 /*!

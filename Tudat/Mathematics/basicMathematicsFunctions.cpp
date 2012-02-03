@@ -67,7 +67,7 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Tudat library namespace.
 namespace tudat

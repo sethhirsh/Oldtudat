@@ -69,8 +69,8 @@
 
 // Include statements.
 #include <vector>
-#include "Astrodynamics/States/state.h"
-#include "Mathematics/NumericalIntegrators/stateDerivativeBase.h"
+#include "Tudat/Astrodynamics/States/state.h"
+#include "Tudat/Mathematics/NumericalIntegrators/stateDerivativeBase.h"
 
 //! Tudat library namespace.
 /*!

@@ -58,9 +58,9 @@
 
 // Include statements.
 #include <cmath>
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/unitConversions.h"
-#include "Mathematics/GeometricShapes/sphereSegment.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/unitConversions.h"
+#include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 
 //! Tudat library namespace.
 namespace tudat

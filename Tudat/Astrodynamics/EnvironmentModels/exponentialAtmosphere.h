@@ -54,7 +54,7 @@
 
 // Include statements.
 #include <cmath>
-#include "Astrodynamics/EnvironmentModels/atmosphereModel.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/atmosphereModel.h"
 
 //! Tudat library namespace.
 /*!

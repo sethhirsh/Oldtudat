@@ -48,7 +48,7 @@
 // Include statements.
 #include <Eigen/Core>
 #include <iostream>
-#include "Astrodynamics/ForceModels/forceModel.h"
+#include "Tudat/Astrodynamics/ForceModels/forceModel.h"
 
 //! Tudat library namespace.
 /*!

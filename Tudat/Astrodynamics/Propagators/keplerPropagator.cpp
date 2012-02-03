@@ -47,8 +47,8 @@
  */
 
 // Include statements.
-#include "Astrodynamics/Propagators/keplerPropagator.h"
-#include "Astrodynamics/States/orbitalElementConversions.h"
+#include "Tudat/Astrodynamics/Propagators/keplerPropagator.h"
+#include "Tudat/Astrodynamics/States/orbitalElementConversions.h"
 
 //! Tudat library namespace.
 namespace tudat

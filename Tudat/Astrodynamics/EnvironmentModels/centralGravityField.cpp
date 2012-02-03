@@ -47,7 +47,7 @@
  */
 
 // Include statements.
-#include "Astrodynamics/EnvironmentModels/centralGravityField.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/centralGravityField.h"
 
 // Using declarations.
 using std::cerr;

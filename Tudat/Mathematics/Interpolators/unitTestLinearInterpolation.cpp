@@ -55,9 +55,9 @@
 #include <Eigen/Core>
 #include <iostream>
 #include <limits>
-#include "Astrodynamics/States/cartesianPositionElements.h"
-#include "Astrodynamics/States/state.h"
-#include "Mathematics/Interpolators/linearInterpolation.h"
+#include "Tudat/Astrodynamics/States/cartesianPositionElements.h"
+#include "Tudat/Astrodynamics/States/state.h"
+#include "Tudat/Mathematics/Interpolators/linearInterpolation.h"
 
 //! Test implementation of linear interpolation functions.
 int main( )

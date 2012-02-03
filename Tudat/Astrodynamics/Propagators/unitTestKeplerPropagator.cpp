@@ -51,18 +51,18 @@
 #include <fstream>
 #include <map>
 #include <string>
-#include "Astrodynamics/Bodies/celestialBody.h"
-#include "Astrodynamics/Bodies/planet.h"
-#include "Astrodynamics/Bodies/vehicle.h"
-#include "Astrodynamics/EnvironmentModels/centralGravityField.h"
-#include "Astrodynamics/Propagators/keplerPropagator.h"
-#include "Astrodynamics/Propagators/seriesPropagator.h"
-#include "Astrodynamics/States/cartesianElements.h"
-#include "Astrodynamics/States/state.h"
-#include "Basics/basicFunctions.h"
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/RootFindingMethods/newtonRaphson.h"
-#include "Mathematics/unitConversions.h"
+#include "Tudat/Astrodynamics/Bodies/celestialBody.h"
+#include "Tudat/Astrodynamics/Bodies/planet.h"
+#include "Tudat/Astrodynamics/Bodies/vehicle.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/centralGravityField.h"
+#include "Tudat/Astrodynamics/Propagators/keplerPropagator.h"
+#include "Tudat/Astrodynamics/Propagators/seriesPropagator.h"
+#include "Tudat/Astrodynamics/States/cartesianElements.h"
+#include "Tudat/Astrodynamics/States/state.h"
+#include "Tudat/Basics/basicFunctions.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
+#include "Tudat/Mathematics/unitConversions.h"
 
 //! Test implementation of Kepler propagator class.
 int main( )

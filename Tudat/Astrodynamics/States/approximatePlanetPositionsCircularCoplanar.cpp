@@ -45,8 +45,8 @@
 
 // Include statements.
 #include <cmath>
-#include "Astrodynamics/Bodies/planet.h"
-#include "Astrodynamics/States/approximatePlanetPositionsCircularCoplanar.h"
+#include "Tudat/Astrodynamics/Bodies/planet.h"
+#include "Tudat/Astrodynamics/States/approximatePlanetPositionsCircularCoplanar.h"
 
 //! Tudat library namespace.
 namespace tudat

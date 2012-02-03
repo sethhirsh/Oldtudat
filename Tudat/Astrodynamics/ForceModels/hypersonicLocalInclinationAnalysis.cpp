@@ -46,11 +46,11 @@
 // Include statements.
 #include <Eigen/Geometry>
 #include <string>
-#include "Astrodynamics/Bodies/vehicleExternalModel.h"
-#include "Astrodynamics/ForceModels/aerodynamics.h"
-#include "Astrodynamics/ForceModels/hypersonicLocalInclinationAnalysis.h"
-#include "Mathematics/GeometricShapes/compositeSurfaceGeometry.h"
-#include "Mathematics/GeometricShapes/surfaceGeometry.h"
+#include "Tudat/Astrodynamics/Bodies/vehicleExternalModel.h"
+#include "Tudat/Astrodynamics/ForceModels/aerodynamics.h"
+#include "Tudat/Astrodynamics/ForceModels/hypersonicLocalInclinationAnalysis.h"
+#include "Tudat/Mathematics/GeometricShapes/compositeSurfaceGeometry.h"
+#include "Tudat/Mathematics/GeometricShapes/surfaceGeometry.h"
 
 // Using declarations.
 using std::string;

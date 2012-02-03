@@ -71,11 +71,11 @@
 // Include statements.
 #include <Eigen/Core>
 #include <iostream>
-#include "Astrodynamics/Bodies/celestialBody.h"
-#include "Astrodynamics/States/cartesianVelocityElements.h"
-#include "Mathematics/GeometricShapes/sphereSegment.h"
-#include "Mathematics/RootFindingMethods/newtonRaphson.h"
-#include "Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
+#include "Tudat/Astrodynamics/Bodies/celestialBody.h"
+#include "Tudat/Astrodynamics/States/cartesianVelocityElements.h"
+#include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
 
 //! Tudat library namespace.
 /*!

@@ -53,7 +53,7 @@
 // Include statements.
 #include <boost/exception/all.hpp>
 #include <cmath>
-#include "Input/textFileReader.h"
+#include "Tudat/Input/textFileReader.h"
 
 //! Test implementation of textFileReader class.
 int main( )

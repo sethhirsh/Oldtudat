@@ -45,7 +45,7 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <iostream>
-#include "Mathematics/Interpolators/cubicSplineInterpolation.h"
+#include "Tudat/Mathematics/Interpolators/cubicSplineInterpolation.h"
 
 //! Test implementation of cubic spline class.
 int main( )

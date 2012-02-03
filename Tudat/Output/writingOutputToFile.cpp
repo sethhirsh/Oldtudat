@@ -54,7 +54,7 @@
 #include <map>
 #include <fstream>
 #include <string>
-#include "Output/writingOutputToFile.h"
+#include "Tudat/Output/writingOutputToFile.h"
 
 //! Tudat library namespace.
 namespace tudat

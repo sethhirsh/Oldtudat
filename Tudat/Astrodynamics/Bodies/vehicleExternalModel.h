@@ -44,7 +44,7 @@
 
 // Include statements.
 #include <iostream>
-#include "Mathematics/GeometricShapes/geometricShape.h"
+#include "Tudat/Mathematics/GeometricShapes/geometricShape.h"
 
 //! Tudat library namespace.
 /*!

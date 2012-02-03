@@ -54,7 +54,7 @@
 
 // Include statements.
 #include <iostream>
-#include "Mathematics/RootFindingMethods/rootFinderBase.h"
+#include "Tudat/Mathematics/RootFindingMethods/rootFinderBase.h"
 
 //! Tudat library namespace.
 /*!

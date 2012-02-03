@@ -48,7 +48,7 @@
  */
 
 // Include statements.
-#include "Mathematics/Interpolators/cubicSplineInterpolation.h"
+#include "Tudat/Mathematics/Interpolators/cubicSplineInterpolation.h"
 
 //! Tudat library namespace.
 namespace tudat

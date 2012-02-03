@@ -57,7 +57,7 @@
 
 // Include statements.
 #include <Eigen/Core>
-#include "Mathematics/GeometricShapes/singleSurfaceGeometry.h"
+#include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 
 //! Tudat library namespace.
 /*!

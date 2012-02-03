@@ -64,8 +64,8 @@
  */
 
 // Include statements.
-#include "Basics/basicFunctions.h"
-#include "Mathematics/Interpolators/linearInterpolation.h"
+#include "Tudat/Basics/basicFunctions.h"
+#include "Tudat/Mathematics/Interpolators/linearInterpolation.h"
 
 //! Tudat library namespace.
 namespace tudat

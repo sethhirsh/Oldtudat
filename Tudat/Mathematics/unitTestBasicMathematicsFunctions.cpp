@@ -54,8 +54,8 @@
 #include <Eigen/Core>
 #include <iostream> 
 #include <limits>
-#include "Astrodynamics/States/cartesianPositionElements.h"
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Astrodynamics/States/cartesianPositionElements.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test implementation of basic mathematics functions.
 int main( )

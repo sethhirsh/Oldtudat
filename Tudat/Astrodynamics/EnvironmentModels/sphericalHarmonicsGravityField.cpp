@@ -54,7 +54,7 @@
 
 // Include statements.
 #include <cmath>
-#include "Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
 
 // Using declarations.
 using std::endl;

@@ -51,8 +51,8 @@
 // Include statements.
 #include <Eigen/Core>
 #include <iostream>
-#include "Mathematics/GeometricShapes/quadrilateralMeshedSurfaceGeometry.h"
-#include "Mathematics/GeometricShapes/singleSurfaceGeometry.h"
+#include "Tudat/Mathematics/GeometricShapes/quadrilateralMeshedSurfaceGeometry.h"
+#include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 
 //! Tudat library namespace.
 /*!

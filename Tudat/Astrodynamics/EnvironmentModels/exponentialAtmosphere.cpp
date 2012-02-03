@@ -45,8 +45,8 @@
 
 // Include statements.
 #include <iostream>
-#include "Astrodynamics/physicalConstants.h"
-#include "Astrodynamics/EnvironmentModels/exponentialAtmosphere.h"
+#include "Tudat/Astrodynamics/physicalConstants.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/exponentialAtmosphere.h"
 
 //! Tudat library namespace.
 /*!

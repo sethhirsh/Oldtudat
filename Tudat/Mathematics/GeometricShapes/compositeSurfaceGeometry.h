@@ -52,8 +52,8 @@
 #define COMPOSITESURFACEGEOMETRY_H
 
 // Include statements.
-#include "Mathematics/GeometricShapes/singleSurfaceGeometry.h"
-#include "Mathematics/GeometricShapes/surfaceGeometry.h"
+#include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
+#include "Tudat/Mathematics/GeometricShapes/surfaceGeometry.h"
 
 //! Tudat library namespace.
 namespace tudat

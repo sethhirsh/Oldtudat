@@ -46,8 +46,8 @@
  */
 
 // Include statements.
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/GeometricShapes/conicalFrustum.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/GeometricShapes/conicalFrustum.h"
 
 //! Tudat library namespace.
 namespace tudat

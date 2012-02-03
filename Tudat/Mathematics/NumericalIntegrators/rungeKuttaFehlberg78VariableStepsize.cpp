@@ -58,8 +58,8 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/NumericalIntegrators/rungeKuttaFehlberg78VariableStepsize.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/NumericalIntegrators/rungeKuttaFehlberg78VariableStepsize.h"
 
 //! Tudat library namespace.
 namespace tudat

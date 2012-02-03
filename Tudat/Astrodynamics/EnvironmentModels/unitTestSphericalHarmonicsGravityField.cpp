@@ -57,10 +57,10 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <limits>
-#include "Astrodynamics/Bodies/planet.h"
-#include "Astrodynamics/EnvironmentModels/gravityFieldModel.h"
-#include "Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Astrodynamics/Bodies/planet.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test implementation of spherical harmonics gravity field class.
 int main( )

@@ -51,7 +51,7 @@
  */
 
 // Include statements.
-#include "Mathematics/GeometricShapes/compositeSurfaceGeometry.h"
+#include "Tudat/Mathematics/GeometricShapes/compositeSurfaceGeometry.h"
 
 //! Tudat library namespace.
 namespace tudat

@@ -70,9 +70,9 @@
 #include <cmath>
 #include <limits>
 #include <TudatCore/Mathematics/linearAlgebra.h>
-#include "Astrodynamics/MissionSegments/gravityAssist.h"
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/unitConversions.h"
+#include "Tudat/Astrodynamics/MissionSegments/gravityAssist.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/unitConversions.h"
 
 // Using directives.
 using std::pow;

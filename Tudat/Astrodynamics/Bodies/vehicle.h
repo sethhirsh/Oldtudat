@@ -46,8 +46,8 @@
 
 // Include statements.
 #include <iostream>
-#include "Astrodynamics/Bodies/vehicleExternalModel.h"
-#include "Astrodynamics/Bodies/body.h"
+#include "Tudat/Astrodynamics/Bodies/vehicleExternalModel.h"
+#include "Tudat/Astrodynamics/Bodies/body.h"
 
 //! Tudat library namespace.
 /*!

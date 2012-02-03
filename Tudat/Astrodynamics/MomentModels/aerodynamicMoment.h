@@ -43,8 +43,8 @@
 
 // Include statements.
 #include <iostream>
-#include "Astrodynamics/ForceModels/aerodynamicCoefficientInterface.h"
-#include "Astrodynamics/MomentModels/momentModel.h"
+#include "Tudat/Astrodynamics/ForceModels/aerodynamicCoefficientInterface.h"
+#include "Tudat/Astrodynamics/MomentModels/momentModel.h"
 
 //! Tudat library namespace.
 /*!

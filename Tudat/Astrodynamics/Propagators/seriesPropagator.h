@@ -45,11 +45,11 @@
 #include <iostream>
 #include <limits>
 #include <map>
-#include "Astrodynamics/Bodies/body.h"
-#include "Astrodynamics/Propagators/propagator.h"
-#include "Astrodynamics/Propagators/propagatorDataContainer.h"
-#include "Astrodynamics/States/cartesianElements.h"
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Astrodynamics/Bodies/body.h"
+#include "Tudat/Astrodynamics/Propagators/propagator.h"
+#include "Tudat/Astrodynamics/Propagators/propagatorDataContainer.h"
+#include "Tudat/Astrodynamics/States/cartesianElements.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Tudat library namespace.
 /*!

@@ -44,11 +44,11 @@
 #include <Eigen/Geometry>
 #include <iostream>
 #include <limits>
-#include "Astrodynamics/ForceModels/aerodynamicForce.h"
-#include "Astrodynamics/ForceModels/aerodynamicCoefficientInterface.h"
-#include "Astrodynamics/MomentModels/aerodynamicMoment.h"
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/unitConversions.h"
+#include "Tudat/Astrodynamics/ForceModels/aerodynamicForce.h"
+#include "Tudat/Astrodynamics/ForceModels/aerodynamicCoefficientInterface.h"
+#include "Tudat/Astrodynamics/MomentModels/aerodynamicMoment.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/unitConversions.h"
 
 //! Test implemntation of aerodynamic moment and aerodynamic force.
 int main( )

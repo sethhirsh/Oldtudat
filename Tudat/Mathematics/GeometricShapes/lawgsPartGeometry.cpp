@@ -44,7 +44,7 @@
  */
 
 // Include statements.
-#include "Mathematics/GeometricShapes/lawgsPartGeometry.h"
+#include "Tudat/Mathematics/GeometricShapes/lawgsPartGeometry.h"
 
 //! Tudat library namespace.
 namespace tudat

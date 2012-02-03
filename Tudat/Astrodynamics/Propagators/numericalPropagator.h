@@ -50,10 +50,10 @@
 
 // Include statements.
 #include <iostream>
-#include "Astrodynamics/Bodies/body.h"
-#include "Astrodynamics/Propagators/propagator.h"
-#include "Mathematics/NumericalIntegrators/integrator.h"
-#include "Mathematics/NumericalIntegrators/stateDerivativeBase.h"
+#include "Tudat/Astrodynamics/Bodies/body.h"
+#include "Tudat/Astrodynamics/Propagators/propagator.h"
+#include "Tudat/Mathematics/NumericalIntegrators/integrator.h"
+#include "Tudat/Mathematics/NumericalIntegrators/stateDerivativeBase.h"
 
 //! Tudat library namespace.
 /*!

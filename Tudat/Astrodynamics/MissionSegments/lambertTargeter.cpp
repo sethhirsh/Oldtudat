@@ -87,7 +87,7 @@
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 #include <TudatCore/Mathematics/linearAlgebra.h>
-#include "Astrodynamics/MissionSegments/lambertTargeter.h"
+#include "Tudat/Astrodynamics/MissionSegments/lambertTargeter.h"
 
 //! Tudat library namespace.
 namespace tudat

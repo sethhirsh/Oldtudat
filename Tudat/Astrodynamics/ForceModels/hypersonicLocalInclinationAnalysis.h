@@ -51,9 +51,9 @@
 // Include statements.
 #include <Eigen/Core>
 #include <iostream>
-#include "Astrodynamics/Bodies/vehicle.h"
-#include "Astrodynamics/ForceModels/aerodynamicCoefficientGenerator.h"
-#include "Mathematics/GeometricShapes/lawgsPartGeometry.h"
+#include "Tudat/Astrodynamics/Bodies/vehicle.h"
+#include "Tudat/Astrodynamics/ForceModels/aerodynamicCoefficientGenerator.h"
+#include "Tudat/Mathematics/GeometricShapes/lawgsPartGeometry.h"
 
 //! Tudat library namespace.
 /*!

@@ -48,7 +48,7 @@
 
 // Include statements.
 #include <Eigen/Core>
-#include "Astrodynamics/Propagators/cartesianStateNumericalPropagator.h"
+#include "Tudat/Astrodynamics/Propagators/cartesianStateNumericalPropagator.h"
 
 //! Tudat library namespace.
 namespace tudat

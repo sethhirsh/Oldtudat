@@ -45,8 +45,8 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "Astrodynamics/EnvironmentModels/tabulatedAtmosphere.h"
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/tabulatedAtmosphere.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test implementation of the tabulated atmosphere.
 int main( )

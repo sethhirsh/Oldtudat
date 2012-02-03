@@ -59,7 +59,7 @@
 // Include statements.
 #include <Eigen/Core>
 #include <iostream>
-#include "Astrodynamics/EnvironmentModels/gravityFieldModel.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
 
 //! Tudat library namespace.
 /*!

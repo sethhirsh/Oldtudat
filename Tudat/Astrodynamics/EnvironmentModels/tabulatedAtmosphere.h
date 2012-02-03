@@ -51,9 +51,9 @@
 #include <Eigen/Core>
 #include <iostream>
 #include <string>
-#include "Astrodynamics/EnvironmentModels/atmosphereModel.h"
-#include "Input/textFileReader.h"
-#include "Mathematics/Interpolators/cubicSplineInterpolation.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/atmosphereModel.h"
+#include "Tudat/Input/textFileReader.h"
+#include "Tudat/Mathematics/Interpolators/cubicSplineInterpolation.h"
 
 //! Tudat library namespace.
 /*!

@@ -52,11 +52,11 @@
 // Include statements.
 #include <cmath>
 #include <iostream>
-#include "Astrodynamics/Bodies/planet.h"
-#include "Astrodynamics/MissionSegments/capturePhase.h"
-#include "Astrodynamics/MissionSegments/escapeAndCapture.h"
-#include "Astrodynamics/MissionSegments/escapePhase.h"
-#include "Mathematics/GeometricShapes/sphereSegment.h"
+#include "Tudat/Astrodynamics/Bodies/planet.h"
+#include "Tudat/Astrodynamics/MissionSegments/capturePhase.h"
+#include "Tudat/Astrodynamics/MissionSegments/escapeAndCapture.h"
+#include "Tudat/Astrodynamics/MissionSegments/escapePhase.h"
+#include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 
 //! Test patched conics implementation.
 int main( )

@@ -45,8 +45,8 @@
 #define KEPLERIANELEMENTS_H
 
 // Include statements.
-#include "Astrodynamics/States/state.h"
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Astrodynamics/States/state.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Tudat library namespace.
 /*!

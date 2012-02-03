@@ -40,7 +40,7 @@
 
 // Include statements.
 #include <sstream>
-#include "Astrodynamics/EnvironmentModels/tabulatedAtmosphere.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/tabulatedAtmosphere.h"
 
 //! Tudat library namespace.
 namespace tudat

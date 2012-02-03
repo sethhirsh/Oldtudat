@@ -51,7 +51,7 @@
 
 // Include statements.
 #include <string>
-#include "Input/textFileReader.h"
+#include "Tudat/Input/textFileReader.h"
 
 //! Tudat library namespace.
 namespace tudat

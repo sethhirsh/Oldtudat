@@ -56,8 +56,8 @@
 
 // Include statements.
 #include <Eigen/Core>
-#include "Mathematics/NumericalIntegrators/integrator.h"
-#include "Astrodynamics/States/state.h"
+#include "Tudat/Mathematics/NumericalIntegrators/integrator.h"
+#include "Tudat/Astrodynamics/States/state.h"
 
 //! Tudat library namespace.
 /*!

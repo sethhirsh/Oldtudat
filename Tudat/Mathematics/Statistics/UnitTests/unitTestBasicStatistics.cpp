@@ -57,7 +57,7 @@
 #include <boost/test/floating_point_comparison.hpp>
 #include <boost/test/unit_test.hpp>
 #include <limits>
-#include "Mathematics/Statistics/basicStatistics.h"
+#include "Tudat/Mathematics/Statistics/basicStatistics.h"
 
 // Define Boost test suite.
 BOOST_AUTO_TEST_SUITE( test_basic_statistics )

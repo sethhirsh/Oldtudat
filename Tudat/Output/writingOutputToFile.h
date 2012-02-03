@@ -53,9 +53,9 @@
 
 // Include statements.
 #include <map>
-#include "Astrodynamics/States/state.h"
-#include "Mathematics/GeometricShapes/compositeSurfaceGeometry.h"
-#include "Mathematics/GeometricShapes/singleSurfaceGeometry.h"
+#include "Tudat/Astrodynamics/States/state.h"
+#include "Tudat/Mathematics/GeometricShapes/compositeSurfaceGeometry.h"
+#include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 
 //! Tudat library namespace.
 /*!

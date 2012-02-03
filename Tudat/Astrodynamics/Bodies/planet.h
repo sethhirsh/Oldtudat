@@ -40,9 +40,9 @@
 #define PLANET_H
 
 // Include statements.
-#include "Astrodynamics/Bodies/celestialBody.h"
-#include "Astrodynamics/EnvironmentModels/centralGravityField.h"
-#include "Astrodynamics/States/approximatePlanetPositions.h"
+#include "Tudat/Astrodynamics/Bodies/celestialBody.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/centralGravityField.h"
+#include "Tudat/Astrodynamics/States/approximatePlanetPositions.h"
 
 //! Tudat library namespace.
 /*!

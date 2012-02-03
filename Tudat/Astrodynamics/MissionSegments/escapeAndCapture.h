@@ -58,8 +58,8 @@
 
 // Include statements.
 #include <iostream>
-#include "Astrodynamics/Bodies/celestialBody.h"
-#include "Mathematics/GeometricShapes/sphereSegment.h"
+#include "Tudat/Astrodynamics/Bodies/celestialBody.h"
+#include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 
 //! Tudat library namespace.
 /*!

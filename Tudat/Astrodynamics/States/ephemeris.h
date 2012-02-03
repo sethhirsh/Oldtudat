@@ -43,8 +43,8 @@
 
 // Include statements.
 #include <sstream>
-#include "Astrodynamics/States/cartesianElements.h"
-#include "Input/textFileReader.h"
+#include "Tudat/Astrodynamics/States/cartesianElements.h"
+#include "Tudat/Input/textFileReader.h"
 
 //! Tudat library namespace.
 /*!

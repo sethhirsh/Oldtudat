@@ -64,7 +64,7 @@
  */
 
 // Include statements.
-#include "Mathematics/NumericalIntegrators/rungeKutta4thOrderFixedStepsize.h"
+#include "Tudat/Mathematics/NumericalIntegrators/rungeKutta4thOrderFixedStepsize.h"
 
 //! Tudat library namespace.
 namespace tudat

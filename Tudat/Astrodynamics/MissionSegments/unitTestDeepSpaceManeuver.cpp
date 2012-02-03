@@ -44,9 +44,9 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "Astrodynamics/MissionSegments/deepSpaceManeuver.h"
-#include "Astrodynamics/States/cartesianElements.h"
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Astrodynamics/MissionSegments/deepSpaceManeuver.h"
+#include "Tudat/Astrodynamics/States/cartesianElements.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test deep space maneuver.
 int main( )

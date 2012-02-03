@@ -47,7 +47,7 @@
 
 // Include statements.
 #include <string>
-#include "Astrodynamics/ForceModels/aerodynamicCoefficientGenerator.h"
+#include "Tudat/Astrodynamics/ForceModels/aerodynamicCoefficientGenerator.h"
 
 //! Tudat library namespace.
 namespace tudat

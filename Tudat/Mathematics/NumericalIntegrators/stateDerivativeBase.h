@@ -47,7 +47,7 @@
 #define STATEDERIVATIVEBASE_H
 
 // Include statements.
-#include "Astrodynamics/States/state.h"
+#include "Tudat/Astrodynamics/States/state.h"
 
 //! Tudat library namespace.
 /*!

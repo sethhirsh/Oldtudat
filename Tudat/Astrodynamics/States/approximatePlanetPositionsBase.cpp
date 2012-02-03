@@ -55,8 +55,8 @@
  */
 
 // Include statements.
-#include "Astrodynamics/Bodies/planet.h"
-#include "Astrodynamics/States/approximatePlanetPositionsBase.h"
+#include "Tudat/Astrodynamics/Bodies/planet.h"
+#include "Tudat/Astrodynamics/States/approximatePlanetPositionsBase.h"
 
 //! Tudat library namespace.
 namespace tudat

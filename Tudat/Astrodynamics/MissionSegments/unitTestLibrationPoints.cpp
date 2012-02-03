@@ -56,10 +56,10 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "Astrodynamics/Bodies/celestialBody.h"
-#include "Astrodynamics/Bodies/planet.h"
-#include "Astrodynamics/MissionSegments/librationPoint.h"
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Astrodynamics/Bodies/celestialBody.h"
+#include "Tudat/Astrodynamics/Bodies/planet.h"
+#include "Tudat/Astrodynamics/MissionSegments/librationPoint.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 // Using declarations.
 using std::cerr;

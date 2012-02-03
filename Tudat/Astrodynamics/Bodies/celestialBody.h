@@ -46,11 +46,11 @@
 
 // Include statements.
 #include <iostream>
-#include "Astrodynamics/Bodies/body.h"
-#include "Astrodynamics/EnvironmentModels/gravityFieldModel.h"
-#include "Astrodynamics/EnvironmentModels/atmosphereModel.h"
-#include "Astrodynamics/States/cartesianElements.h"
-#include "Astrodynamics/States/ephemeris.h"
+#include "Tudat/Astrodynamics/Bodies/body.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/atmosphereModel.h"
+#include "Tudat/Astrodynamics/States/cartesianElements.h"
+#include "Tudat/Astrodynamics/States/ephemeris.h"
 
 //! Tudat library namespace.
 /*!

@@ -51,10 +51,10 @@
 // Include statements.
 #include <cmath>
 #include <Eigen/Core>
-#include "Mathematics/GeometricShapes/capsule.h"
-#include "Mathematics/GeometricShapes/conicalFrustum.h"
-#include "Mathematics/GeometricShapes/sphereSegment.h"
-#include "Mathematics/GeometricShapes/torus.h"
+#include "Tudat/Mathematics/GeometricShapes/capsule.h"
+#include "Tudat/Mathematics/GeometricShapes/conicalFrustum.h"
+#include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
+#include "Tudat/Mathematics/GeometricShapes/torus.h"
 
 //! Tudat library namespace.
 namespace tudat

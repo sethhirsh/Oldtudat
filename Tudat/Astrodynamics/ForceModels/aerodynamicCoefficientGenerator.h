@@ -50,7 +50,7 @@
 
 // Include statements.
 #include <Eigen/Core>
-#include "Astrodynamics/ForceModels/aerodynamicCoefficientInterface.h"
+#include "Tudat/Astrodynamics/ForceModels/aerodynamicCoefficientInterface.h"
 
 //! Tudat library namespace.
 /*!

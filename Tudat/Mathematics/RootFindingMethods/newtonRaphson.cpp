@@ -49,8 +49,8 @@
  */
 
 // Include statements.
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/RootFindingMethods/newtonRaphson.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 
 //! Tudat library namespace.
 namespace tudat

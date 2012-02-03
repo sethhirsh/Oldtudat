@@ -41,7 +41,7 @@
 #define CENTRALGRAVITYFIELD_H
 
 // Include statements.
-#include "Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
 
 //! Tudat library namespace.
 /*!

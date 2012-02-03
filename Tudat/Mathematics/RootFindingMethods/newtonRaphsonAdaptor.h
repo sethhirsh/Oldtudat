@@ -43,7 +43,7 @@
 #define NEWTONRAPHSONADAPTOR_H
 
 // Include statements.
-#include "Mathematics/RootFindingMethods/newtonRaphsonBase.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonBase.h"
 
 //! Tudat library namespace.
 /*!

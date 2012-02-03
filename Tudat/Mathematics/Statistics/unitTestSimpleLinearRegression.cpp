@@ -54,8 +54,8 @@
 #include <iostream>
 #include <limits>
 #include <map>
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/Statistics/simpleLinearRegression.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/Statistics/simpleLinearRegression.h"
 
 //! Test implementation of simple linear regression method.
 int main( )

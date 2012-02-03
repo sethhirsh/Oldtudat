@@ -68,7 +68,7 @@
 #include <map>
 #include <string>
 #include <vector>
-#include "InputOutput/twoLineElementsTextFileReader.h"
+#include "Tudat/InputOutput/twoLineElementsTextFileReader.h"
 
 //! Test implementation of TLE text file reader class.
 int main( )

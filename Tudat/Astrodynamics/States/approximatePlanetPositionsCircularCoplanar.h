@@ -52,7 +52,7 @@
 #define APPROXIMATEPLANETPOSITIONSCIRCULARCOPLANAR_H
 
 // Include statements.
-#include "Astrodynamics/States/approximatePlanetPositionsBase.h"
+#include "Tudat/Astrodynamics/States/approximatePlanetPositionsBase.h"
 
 //! Tudat library namespace.
 /*!

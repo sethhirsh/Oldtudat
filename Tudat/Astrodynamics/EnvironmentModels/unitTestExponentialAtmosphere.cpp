@@ -46,9 +46,9 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "Astrodynamics/physicalConstants.h"
-#include "Astrodynamics/EnvironmentModels/exponentialAtmosphere.h"
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Astrodynamics/physicalConstants.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/exponentialAtmosphere.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test of implementation of the exponential atmosphere.
 int main( )

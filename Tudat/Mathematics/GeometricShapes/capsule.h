@@ -52,7 +52,7 @@
 
 // Include statements.
 #include <iostream>
-#include "Mathematics/GeometricShapes/compositeSurfaceGeometry.h"
+#include "Tudat/Mathematics/GeometricShapes/compositeSurfaceGeometry.h"
 
 //! Tudat library namespace.
 /*!

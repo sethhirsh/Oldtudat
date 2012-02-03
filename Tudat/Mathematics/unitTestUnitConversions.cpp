@@ -71,9 +71,9 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "Astrodynamics/physicalConstants.h"
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/unitConversions.h"
+#include "Tudat/Astrodynamics/physicalConstants.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/unitConversions.h"
 
 //! Test unit conversions.
 int main( )

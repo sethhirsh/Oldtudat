@@ -63,12 +63,12 @@
 #include <fstream>
 #include <map>
 #include <string>
-#include "Astrodynamics/States/approximatePlanetPositionsDataContainer.h"
-#include "Astrodynamics/States/cartesianElements.h"
-#include "Astrodynamics/States/ephemeris.h"
-#include "Astrodynamics/States/keplerianElements.h"
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/unitConversions.h"
+#include "Tudat/Astrodynamics/States/approximatePlanetPositionsDataContainer.h"
+#include "Tudat/Astrodynamics/States/cartesianElements.h"
+#include "Tudat/Astrodynamics/States/ephemeris.h"
+#include "Tudat/Astrodynamics/States/keplerianElements.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/unitConversions.h"
 
 //! Tudat library namespace.
 /*!

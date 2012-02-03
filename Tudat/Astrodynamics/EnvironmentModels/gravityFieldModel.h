@@ -49,8 +49,8 @@
 
 // Include statements.
 #include <Eigen/Core>
-#include "Astrodynamics/EnvironmentModels/environmentModel.h"
-#include "Astrodynamics/States/cartesianPositionElements.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/environmentModel.h"
+#include "Tudat/Astrodynamics/States/cartesianPositionElements.h"
 
 //! Tudat library namespace.
 /*!

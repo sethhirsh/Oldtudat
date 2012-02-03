@@ -48,7 +48,7 @@
 
 // Include statements.
 #include <cmath>
-#include "Mathematics/Statistics/simpleLinearRegression.h"
+#include "Tudat/Mathematics/Statistics/simpleLinearRegression.h"
 
 //! Tudat library namespace.
 namespace tudat

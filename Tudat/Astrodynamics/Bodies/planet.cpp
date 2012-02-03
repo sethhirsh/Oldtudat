@@ -37,7 +37,7 @@
  */
 
 // Include statements.
-#include "Astrodynamics/Bodies/planet.h"
+#include "Tudat/Astrodynamics/Bodies/planet.h"
 
 //! Tudat library namespace.
 namespace tudat

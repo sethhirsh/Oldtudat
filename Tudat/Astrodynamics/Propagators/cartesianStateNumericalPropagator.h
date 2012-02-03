@@ -43,8 +43,8 @@
 #define CARTESIANSTATENUMERICALPROPAGATOR_H
 
 // Include statements.
-#include "Astrodynamics/Propagators/numericalPropagator.h"
-#include "Astrodynamics/States/state.h"
+#include "Tudat/Astrodynamics/Propagators/numericalPropagator.h"
+#include "Tudat/Astrodynamics/States/state.h"
 
 //! Tudat library namespace.
 /*!

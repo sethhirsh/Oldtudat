@@ -75,12 +75,12 @@
 #include <boost/format.hpp>
 #include <boost/exception/all.hpp>
 #include <boost/throw_exception.hpp>
-#include "Basics/basicFunctions.h"
-#include "InputOutput/twoLineElementsTextFileReader.h"
-#include "Astrodynamics/physicalConstants.h"
-#include "Astrodynamics/Bodies/planet.h"
-#include "Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
-#include "Astrodynamics/States/orbitalElementConversions.h"
+#include "Tudat/Basics/basicFunctions.h"
+#include "Tudat/InputOutput/twoLineElementsTextFileReader.h"
+#include "Tudat/Astrodynamics/physicalConstants.h"
+#include "Tudat/Astrodynamics/Bodies/planet.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
+#include "Tudat/Astrodynamics/States/orbitalElementConversions.h"
 
 //! Tudat library namespace.
 namespace tudat

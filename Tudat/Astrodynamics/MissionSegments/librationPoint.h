@@ -55,10 +55,10 @@
 
 // Include statements.
 #include <iostream>
-#include "Astrodynamics/Bodies/celestialBody.h"
-#include "Astrodynamics/States/cartesianPositionElements.h"
-#include "Mathematics/RootFindingMethods/newtonRaphson.h"
-#include "Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
+#include "Tudat/Astrodynamics/Bodies/celestialBody.h"
+#include "Tudat/Astrodynamics/States/cartesianPositionElements.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
+#include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
 
 //! Tudat library namespace.
 /*!

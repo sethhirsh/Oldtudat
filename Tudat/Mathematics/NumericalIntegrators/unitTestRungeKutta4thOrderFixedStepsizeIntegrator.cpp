@@ -43,8 +43,8 @@
 // Include statements.
 #include <cmath>
 #include <iostream>
-#include "Mathematics/NumericalIntegrators/rungeKutta4thOrderFixedStepsize.h"
-#include "Mathematics/NumericalIntegrators/stateDerivativeBase.h"
+#include "Tudat/Mathematics/NumericalIntegrators/rungeKutta4thOrderFixedStepsize.h"
+#include "Tudat/Mathematics/NumericalIntegrators/stateDerivativeBase.h"
 
 //! Runge-Kutta 4th-order, fixed stepsize integrator test class.
 /*!

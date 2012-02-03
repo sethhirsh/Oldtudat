@@ -55,8 +55,8 @@
 // Include statements.
 #include <Eigen/Geometry>
 #include <limits>
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/GeometricShapes/quadrilateralMeshedSurfaceGeometry.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/GeometricShapes/quadrilateralMeshedSurfaceGeometry.h"
 
 //! Tudat library namespace.
 namespace tudat

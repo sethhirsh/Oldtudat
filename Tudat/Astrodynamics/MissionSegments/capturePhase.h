@@ -42,7 +42,7 @@
 #define CAPTUREPHASE_H
 
 // Include statements.
-#include "Astrodynamics/MissionSegments/escapeAndCapture.h"
+#include "Tudat/Astrodynamics/MissionSegments/escapeAndCapture.h"
 
 //! Tudat library namespace.
 /*!

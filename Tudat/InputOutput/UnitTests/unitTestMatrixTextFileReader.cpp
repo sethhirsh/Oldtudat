@@ -42,7 +42,7 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include "InputOutput/matrixTextFileReader.h"
+#include "Tudat/InputOutput/matrixTextFileReader.h"
 
 //! Test matrix text file reader.
 /*!

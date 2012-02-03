@@ -46,7 +46,7 @@
 // Include statements.
 #include <cmath>
 #include <iostream>
-#include "Astrodynamics/ForceModels/aerodynamics.h"
+#include "Tudat/Astrodynamics/ForceModels/aerodynamics.h"
 
 //! Test aerodynamics namespace.
 int main( )

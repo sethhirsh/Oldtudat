@@ -59,8 +59,8 @@
 
 // Include statements.
 #include <limits>
-#include "Mathematics/basicMathematicsFunctions.h"
-#include "Mathematics/NumericalIntegrators/integrator.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Mathematics/NumericalIntegrators/integrator.h"
 
 //! Tudat library namespace.
 namespace tudat

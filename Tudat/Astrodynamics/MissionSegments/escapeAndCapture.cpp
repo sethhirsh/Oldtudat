@@ -47,8 +47,8 @@
  */
 
 // Include statements.
-#include "Astrodynamics/MissionSegments/escapeAndCapture.h"
-#include "Mathematics/basicMathematicsFunctions.h"
+#include "Tudat/Astrodynamics/MissionSegments/escapeAndCapture.h"
+#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Tudat library namespace.
 namespace tudat

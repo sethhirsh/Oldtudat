@@ -38,7 +38,7 @@
 #define STANDARDATMOSPHERE_H
 
 // Include statements.
-#include "Astrodynamics/EnvironmentModels/atmosphereModel.h"
+#include "Tudat/Astrodynamics/EnvironmentModels/atmosphereModel.h"
 
 //! Tudat library namespace.
 /*!
