@@ -79,14 +79,16 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
+#include <TudatCore/Astrodynamics/orbitalElementConversions.h>
 #include <TudatCore/Astrodynamics/unitConversions.h>
+#include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToEccentricAnomaly.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h"
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
 #include "Tudat/Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
-#include "Tudat/Astrodynamics/States/convertMeanAnomalyToEccentricAnomaly.h"
-#include "Tudat/Astrodynamics/States/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
-#include "Tudat/Astrodynamics/States/orbitalElementConversions.h"
+
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 
@@ -406,162 +408,14 @@ int main( )
         cerr << "The orbital element conversion for the book example is erroneous." << endl;
     }
 
-    // Test 2: Test of true anomaly to eccentric anomaly conversion.
-    // Source: http://www.astro.uu.nl/~strous/AA/en/reken/kepler.html.
-
-    // Set tolerance for conversion.
-    double toleranceOrbitalElementConversion = 1e-8;
-
-    // Set eccentricity.
-    double eccentricity = 0.01671;
-
-    // Set true anomaly.
-    double trueAnomaly = unit_conversions::convertDegreesToRadians( 61.6755418 );
-
-    // Compute eccentric anomaly.
-    double eccentricAnomaly = orbital_element_conversions::convertTrueAnomalyToEccentricAnomaly(
-                trueAnomaly, eccentricity );
-
-    // Check if computed eccentric anomaly is equal to reference value.
-    if ( fabs( eccentricAnomaly - 1.061789204 ) > toleranceOrbitalElementConversion )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of true anomaly to eccentric anomaly is "
-             << "erroneous as the computed eccentric anomaly after applying the conversion ( "
-             << unit_conversions::convertRadiansToDegrees( eccentricAnomaly )
-             << " ) does not match the expected value of the eccentric anomaly ( "
-             << unit_conversions::convertRadiansToDegrees( 1.061789204 ) << " ) " << endl;
-    }
-
-    // Test 3: Test of eccentric anomaly to true anomaly conversion.
-    // Source: http://www.astro.uu.nl/~strous/AA/en/reken/kepler.html.
-
-    // Set tolerance for conversion.
-    toleranceOrbitalElementConversion = 1e-8;
-
-    // Set eccentricity.
-    eccentricity = 0.01671;
-
-    // Set eccentric anomaly.
-    eccentricAnomaly = 1.061789204;
-
-    // Compute true anomaly.
-    trueAnomaly = orbital_element_conversions::convertEccentricAnomalyToTrueAnomaly(
-                eccentricAnomaly, eccentricity );
-
-    // Check if computed true anomaly is equal to reference value.
-    if ( fabs( trueAnomaly - unit_conversions::convertDegreesToRadians( 61.6755418 ) )
-         > toleranceOrbitalElementConversion )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of eccentric anomaly to true anomaly is "
-             << "erroneous as the computed true anomaly after applying the conversion ( "
-             << unit_conversions::convertRadiansToDegrees( trueAnomaly )
-             << " ) does not match the expected value of the true anomaly "
-             << "( " << 61.6755418 << " ) " << endl;
-    }
-
-    // Test 4: Test of true anomaly to hyperbolic eccentric anomaly conversion.
-    // Source: ( Fortescue, 2003 ).
-
-    // Set tolerance for orbital element conversion.
-    toleranceOrbitalElementConversion = 1e-4;
-
-    // Set eccentricity.
-    eccentricity = 3.0;
-
-    // Set true anomaly.
-    trueAnomaly = 0.5291;
-
-    // Compute hyperbolic eccentric anomaly.
-    double hyperbolicEccentricAnomaly = orbital_element_conversions::
-            convertTrueAnomalyToHyperbolicEccentricAnomaly( trueAnomaly, eccentricity );
-
-    // Check if computed hyperbolic eccentric anomaly is equal to reference
-    // value.
-    if ( fabs( hyperbolicEccentricAnomaly - 0.3879 ) > toleranceOrbitalElementConversion )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of true anomaly to hyperbolic eccentric "
-             << "anomaly is erroneous as the computed hyperbolic eccentric "
-             << "anomaly after applying the conversion ( "
-             << unit_conversions::convertRadiansToDegrees( hyperbolicEccentricAnomaly )
-             << " ) does not match the expected value of the hyperbolic eccentric anomaly ( "
-             << unit_conversions::convertRadiansToDegrees( 0.3879 ) << " ) " << endl;
-    }
-
-    // Test 5: Test of hyperbolic eccentric anomaly to true anomaly conversion.
-    // Source: ( Fortescue, 2003 ).
-
-    // Set tolerance for orbital element conversion.
-    toleranceOrbitalElementConversion = 1e-4;
-
-    // Set eccentricity.
-    eccentricity = 3.0;
-
-    // Set hyperbolic eccentric anomaly.
-    hyperbolicEccentricAnomaly = 0.3879;
-
-    // Compute true anomaly.
-    trueAnomaly = orbital_element_conversions::convertHyperbolicEccentricAnomalyToTrueAnomaly(
-                hyperbolicEccentricAnomaly, eccentricity );
-
-    // Check if computed true anomaly is equal to reference value.
-    if ( fabs( trueAnomaly - 0.5291 ) > toleranceOrbitalElementConversion )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of hyperbolic eccentric anomaly to true "
-             << "anomaly is erroneous as the computed true anomaly after "
-             << "applying the conversion ( "
-             << unit_conversions::convertRadiansToDegrees( trueAnomaly )
-             << " ) does not match the expected value of the true anomaly ( "
-             << unit_conversions::convertRadiansToDegrees( 0.5291 ) << " ) " << endl;
-    }
-
-    // Test 6: Test of eccentric anomaly to mean anomaly conversion.
-    // Source: ( Vallado, 2004 ).
-
-    // Set tolerance for conversion.
-    toleranceOrbitalElementConversion = 1e-8;
-
-    // Set eccentricity.
-    eccentricity = 0.01671;
-
-    // Set eccentric anomaly.
-    eccentricAnomaly = 1.061789204;
-
-    // Compute mean anomaly.
-    double meanAnomaly = orbital_element_conversions::convertEccentricAnomalyToMeanAnomaly(
-                eccentricAnomaly, eccentricity );
-
-    // Check if computed mean anomaly is equal to reference value.
-    if ( fabs( meanAnomaly - unit_conversions::convertDegreesToRadians( 60.0 ) )
-         > toleranceOrbitalElementConversion )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of eccentric anomaly to mean anomaly is "
-             << "erroneous as the computed mean anomaly after applying the conversion ( "
-             << unit_conversions::convertRadiansToDegrees( meanAnomaly )
-             << " ) does not match the expected value of the mean anomaly "
-             << "( " << 60.0 << " ) " << endl;
-    }
-
     // Test 7: Test of mean anomaly to eccentric anomaly conversion.
     // Source: ( Vallado, 2004 ).
 
     // Set tolerance for conversion.
-    toleranceOrbitalElementConversion = 1e-8;
-
-    // Set eccentricity.
-    eccentricity = 0.01671;
+    double toleranceOrbitalElementConversion = 1e-8;
 
     // Set mean anomaly.
-    meanAnomaly = unit_conversions::convertDegreesToRadians( 60.0 );
+    double meanAnomaly = unit_conversions::convertDegreesToRadians( 60.0 );
 
     // Create object for mean anomaly to eccentric anomaly conversion.
     orbital_element_conversions::ConvertMeanAnomalyToEccentricAnomaly
@@ -580,7 +434,7 @@ int main( )
     convertMeanAnomalyToEccentricAnomaly.setNewtonRaphson( pointerToNewtonRaphson );
 
     // Compute eccentric anomaly.
-    eccentricAnomaly = convertMeanAnomalyToEccentricAnomaly.convert( );
+    double eccentricAnomaly = convertMeanAnomalyToEccentricAnomaly.convert( );
 
     // Check if computed eccentric anomaly is equal to reference value.
     if ( fabs( eccentricAnomaly - 1.061789204 ) > toleranceOrbitalElementConversion )
@@ -592,80 +446,6 @@ int main( )
              << unit_conversions::convertRadiansToDegrees( eccentricAnomaly )
              << " ) does not match the expected value of the eccentric anomaly ( "
              << unit_conversions::convertRadiansToDegrees( 1.061789204 ) << " ) " << endl;
-    }
-
-    // Test 8: Test of hyperbolic eccentric anomaly to mean anomaly conversion.
-    // Source: ( Vallado, 2004 ).
-
-    // Set tolerance for conversion.
-    toleranceOrbitalElementConversion = 1e-8;
-
-    // Set eccentricity.
-    eccentricity = 2.4;
-
-    // Set hyperbolic eccentric anomaly.
-    hyperbolicEccentricAnomaly = 1.6013761449;
-
-    // Compute mean anomaly.
-    meanAnomaly = orbital_element_conversions::convertHyperbolicEccentricAnomalyToMeanAnomaly(
-                hyperbolicEccentricAnomaly, eccentricity );
-
-    // Check if computed mean anomaly is equal to reference value.
-    if ( fabs( meanAnomaly - unit_conversions::convertDegreesToRadians( 235.4  ) )
-         > toleranceOrbitalElementConversion )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of hyperbolic eccentric anomaly to mean "
-             << "anomaly is erroneous as the computed mean anomaly after "
-             << "applying the conversion ( "
-             << unit_conversions::convertRadiansToDegrees( hyperbolicEccentricAnomaly )
-             << " ) does not match the expected value of the mean anomaly "
-             << "( " << 235.4 << " ) " << endl;
-    }
-
-    // Test 9: Test of mean anomaly to hyperbolic eccentric anomaly conversion.
-    // Source: ( Vallado, 2004 ).
-
-    // Set tolerance for conversion.
-    toleranceOrbitalElementConversion = 1e-8;
-
-    // Set eccentricity.
-    eccentricity = 2.4;
-
-    // Set mean anomaly.
-    meanAnomaly = unit_conversions::convertDegreesToRadians( 235.4 );
-
-    // Create object for mean anomaly to hyperbolic eccentric anomaly
-    // conversion.
-    orbital_element_conversions::ConvertMeanAnomalyToHyperbolicEccentricAnomaly
-            convertMeanAnomalyToHyperbolicEccentricAnomaly;
-
-    // Set eccentricity.
-    convertMeanAnomalyToHyperbolicEccentricAnomaly.setEccentricity( 2.4 );
-
-    // Set mean anomaly.
-    convertMeanAnomalyToHyperbolicEccentricAnomaly.setMeanAnomaly( meanAnomaly );
-
-    // Set Newton-Raphson method.
-    convertMeanAnomalyToHyperbolicEccentricAnomaly.setNewtonRaphson( pointerToNewtonRaphson );
-
-    // Compute hyperbolic eccentric anomaly.
-    hyperbolicEccentricAnomaly = convertMeanAnomalyToHyperbolicEccentricAnomaly.convert( );
-
-    // Check if computed hyperbolic eccentric anomaly is equal to reference
-    // value.
-    if ( fabs( hyperbolicEccentricAnomaly - 1.6013761449 ) > toleranceOrbitalElementConversion )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of mean anomaly to hyperbolic eccentric "
-             << "anomaly is erroneous as the computed hyperbolic eccentric "
-             << "anomaly after applying the conversion ( "
-             << unit_conversions::convertRadiansToDegrees( hyperbolicEccentricAnomaly )
-             << " ) does not match the expected value of the hyperbolic "
-             << "eccentric anomaly ( "
-             << unit_conversions::convertRadiansToDegrees( 1.6013761449 ) << " ) " << endl;
     }
 
     // Test 10: Test of elapsed time to mean anomaly for elliptical orbits.

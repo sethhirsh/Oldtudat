@@ -41,7 +41,7 @@
 
 // Include statements.
 #include <iostream>
-#include "Tudat/Astrodynamics/States/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
 
 //! Tudat library namespace.
 /*!

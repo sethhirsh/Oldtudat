@@ -44,7 +44,7 @@
 #define CONVERTMEANANOMALYTOHYPERBOLICECCENTRICANOMALY_H
 
 // Include statements.
-#include "Tudat/Astrodynamics/States/convertMeanAnomalyBase.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyBase.h"
 
 //! Tudat library namespace.
 /*!

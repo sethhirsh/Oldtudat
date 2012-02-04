@@ -48,9 +48,6 @@ set(STATES_SOURCES
   "${SRCROOT}${STATESDIR}/approximatePlanetPositions.cpp"
   "${SRCROOT}${STATESDIR}/approximatePlanetPositionsBase.cpp"
   "${SRCROOT}${STATESDIR}/approximatePlanetPositionsCircularCoplanar.cpp"
-  "${SRCROOT}${STATESDIR}/convertMeanAnomalyToEccentricAnomaly.cpp"
-  "${SRCROOT}${STATESDIR}/convertMeanAnomalyToHyperbolicEccentricAnomaly.cpp"
-  "${SRCROOT}${STATESDIR}/orbitalElementConversions.cpp"
 )
 
 # Add header files.
@@ -62,12 +59,8 @@ set(STATES_HEADERS
   "${SRCROOT}${STATESDIR}/cartesianElements.h"
   "${SRCROOT}${STATESDIR}/cartesianPositionElements.h"
   "${SRCROOT}${STATESDIR}/cartesianVelocityElements.h"
-  "${SRCROOT}${STATESDIR}/convertMeanAnomalyBase.h"
-  "${SRCROOT}${STATESDIR}/convertMeanAnomalyToEccentricAnomaly.h"
-  "${SRCROOT}${STATESDIR}/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
   "${SRCROOT}${STATESDIR}/ephemeris.h"
   "${SRCROOT}${STATESDIR}/keplerianElements.h"
-  "${SRCROOT}${STATESDIR}/orbitalElementConversions.h"
   "${SRCROOT}${STATESDIR}/state.h"
 )
 
@@ -89,16 +82,8 @@ add_executable(test_KeplerianElements "${SRCROOT}${STATESDIR}/unitTestKeplerianE
 setup_custom_test_program(test_KeplerianElements "${SRCROOT}${STATESDIR}")
 target_link_libraries(test_KeplerianElements tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
 
-add_executable(test_OrbitalElementConversions "${SRCROOT}${STATESDIR}/unitTestOrbitalElementConversions.cpp")
-setup_custom_test_program(test_OrbitalElementConversions "${SRCROOT}${STATESDIR}")
-target_link_libraries(test_OrbitalElementConversions tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
-
 add_executable(test_State "${SRCROOT}${STATESDIR}/unitTestState.cpp")
 setup_custom_test_program(test_State "${SRCROOT}${STATESDIR}")
 target_link_libraries(test_State tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
-
-add_executable(test_MeanToEccenticAnomalyConversion "${SRCROOT}${STATESDIR}/unitTestConvertMeanAnomalyToEccentricAnomaly.cpp")
-setup_custom_test_program(test_MeanToEccenticAnomalyConversion "${SRCROOT}${STATESDIR}")
-target_link_libraries(test_MeanToEccenticAnomalyConversion tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
 
 # End of file.

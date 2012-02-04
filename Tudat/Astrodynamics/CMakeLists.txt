@@ -44,6 +44,7 @@
  #/
 
 # Define the main sub-directories.
+set(BASICASTRODYNAMICSDIR "${ASTRODYNAMICSDIR}/BasicAstrodynamics")
 set(BODIESDIR "${ASTRODYNAMICSDIR}/Bodies")
 set(ENVIRONMENTMODELSDIR "${ASTRODYNAMICSDIR}/EnvironmentModels")
 set(FORCEMODELSDIR "${ASTRODYNAMICSDIR}/ForceModels")
@@ -62,6 +63,7 @@ set(ASTRODYNAMICS_HEADERS
 )
 
 # Add subdirectories.
+add_subdirectory("${SRCROOT}${BASICASTRODYNAMICSDIR}")
 add_subdirectory("${SRCROOT}${BODIESDIR}")
 add_subdirectory("${SRCROOT}${ENVIRONMENTMODELSDIR}")
 add_subdirectory("${SRCROOT}${FORCEMODELSDIR}")
@@ -72,6 +74,7 @@ add_subdirectory("${SRCROOT}${REFERENCEFRAMESDIR}")
 add_subdirectory("${SRCROOT}${STATESDIR}")
 
 # Get target properties for static libraries.
+get_target_property(BASICASTRODYNAMICSSOURCES tudat_basic_astrodynamics SOURCES)
 get_target_property(BODIESSOURCES tudat_bodies SOURCES)
 get_target_property(ENVIRONMENTMODELSSOURCES tudat_environment_models SOURCES)
 get_target_property(FORCEMODELSSOURCES tudat_force_models SOURCES)
@@ -82,7 +85,7 @@ get_target_property(REFERENCEFRAMESSOURCES tudat_reference_frames SOURCES)
 get_target_property(STATESSOURCES tudat_states SOURCES)
 
 # Add static libraries.
-add_library(tudat_astrodynamics STATIC ${ASTRODYNAMICS_SOURCES} ${ASTRODYNAMICS_HEADERS} ${BODIESSOURCES} ${ENVIRONMENTMODELSSOURCES} ${FORCEMODELSSOURCES} ${MISSIONSEGMENTSSOURCES} ${MOMENTMODELSSOURCE} ${PROPAGATORSSOURCES} ${REFERENCEFRAMESSOURCES} ${STATESSOURCES})
+add_library(tudat_astrodynamics STATIC ${ASTRODYNAMICS_SOURCES} ${ASTRODYNAMICS_HEADERS} ${BASICASTRODYNAMICSSOURCES} ${BODIESSOURCES} ${ENVIRONMENTMODELSSOURCES} ${FORCEMODELSSOURCES} ${MISSIONSEGMENTSSOURCES} ${MOMENTMODELSSOURCE} ${PROPAGATORSSOURCES} ${REFERENCEFRAMESSOURCES} ${STATESSOURCES})
 setup_tudat_library_target(tudat_astrodynamics "${SRCROOT}${ASTRODYNAMICSDIR}")
 setup_headers("${ASTRODYNAMICS_HEADERS}" "${ASTRODYNAMICSDIR}")
 

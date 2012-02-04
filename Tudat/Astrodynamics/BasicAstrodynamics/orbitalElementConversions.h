@@ -1,8 +1,8 @@
 /*! \file orbitalElementConversions.h
  *    This header file contains a namespace with orbital element conversion functions.
  *
- *    Path              : /Astrodynamics/States/
- *    Version           : 10
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
+ *    Version           : 11
  *    Check status      : Checked
  *
  *    Author            : E. Iorfida
@@ -14,7 +14,7 @@
  *    E-mail address    : J.C.P.Melman@tudelft.nl
  *
  *    Date created      : 20 October, 2010
- *    Last modified     : 10 August, 2011
+ *    Last modified     : 3 February, 2012
  *
  *    References
  *      Chobotov, V.A. Orbital Mechanics, Third Edition, AIAA Education Series,
@@ -46,6 +46,8 @@
  *                                  allocation.
  *      110805    K. Kumar          Added mean motion to semi-major axis conversion.
  *      110810    J. Leloux         Corrected doxygen documentation.
+ *      120203    K. Kumar          Removed functions available in Tudat Core; moved to new
+ *                                  BasicAstrodynamics sub-directory.
  */
 
 // Include statements.
@@ -90,57 +92,6 @@ CartesianElements convertKeplerianToCartesianElements(
 KeplerianElements convertCartesianToKeplerianElements(
         CartesianElements* pointerToCartesianElements, CelestialBody* pointerToCelestialBody );
 
-//! Convert true anomaly to eccentric anomaly.
-/*!
- * Converts true anomaly to eccentric anomaly for elliptical orbits ( 0 <= eccentricity < 1.0 ).
- * The equations used can be found in ( Chobotov, 2000 ).
- * \param trueAnomaly True anomaly.
- * \param eccentricity Eccentricity.
- * \return Eccentric anomaly.
- */
-double convertTrueAnomalyToEccentricAnomaly( double trueAnomaly, double eccentricity );
-
-//! Convert eccentric anomaly to true anomaly.
-/*!
- * Converts eccentric anomaly to true anomaly for elliptical orbits ( 0 <= eccentricity < 1.0 ).
- * The equations used can be found in ( Chobotov, 2000 ).
- * \param eccentricAnomaly Eccentric anomaly.
- * \param eccentricity Eccentricity.
- * \return True anomaly.
- */
-double convertEccentricAnomalyToTrueAnomaly( double eccentricAnomaly, double eccentricity );
-
-//! Convert true anomaly to hyperbolic eccentric anomaly.
-/*!
- * Converts true anomaly to hyperbolic eccentric anomaly for hyperbolic orbits
- * ( eccentricity > 1.0 ). The equations used can be found in ( Chobotov, 2000 ).
- * \param trueAnomaly True anomaly.
- * \param eccentricity Eccentricity.
- * \return Hyperbolic eccentric anomaly.
- */
-double convertTrueAnomalyToHyperbolicEccentricAnomaly( double trueAnomaly, double eccentricity );
-
-//! Convert hyperbolic eccentric anomaly to true anomaly.
-/*!
- * Converts hyperbolic eccentric anomaly to true anomaly for hyperbolic orbits
- * ( eccentricity > 1.0 ). The equations used can be found in ( Chobotov, 2000 ).
- * \param hyperbolicEccentricAnomaly Hyperbolic eccentric anomaly.
- * \param eccentricity Eccentricity.
- * \return True anomaly.
- */
-double convertHyperbolicEccentricAnomalyToTrueAnomaly( double hyperbolicEccentricAnomaly,
-                                                       double eccentricity );
-
-//! Convert eccentric anomaly to mean anomaly.
-/*!
- * Converts eccentric anomaly to mean anomaly for elliptical orbits ( 0 <= eccentricity < 1.0 ).
- * The equations used can be found in ( Chobotov, 2000 ).
- * \param eccentricity Eccentricity.
- * \param eccentricAnomaly Eccentric anomaly.
- * \return Mean anomaly.
- */
-double convertEccentricAnomalyToMeanAnomaly( double eccentricAnomaly, double eccentricity );
-
 //! Class to convert mean anomaly to eccentric anomaly.
 /*!
  * This class is defines and implements conversion from mean anomaly to eccentric anomaly for
@@ -148,17 +99,6 @@ double convertEccentricAnomalyToMeanAnomaly( double eccentricAnomaly, double ecc
  * range of eccentricity is restricted to: 0 <= eccentricity < 0.8.
  */
 class convertMeanAnomalyToEccentricAnomaly;
-
-//! Convert hyperbolic eccentric anomaly to mean anomaly.
-/*!
- * Converts hyperbolic eccentric anomaly to mean anomaly for hyperbolic orbits
- * ( eccentricity > 1.0 ). The equations used can be found in ( Chobotov, 2000 ).
- * \param hyperbolicEccentricAnomaly Hyperbolic eccentric anomaly.
- * \param eccentricity Eccentricity.
- * \return Mean anomaly.
- */
-double convertHyperbolicEccentricAnomalyToMeanAnomaly( double hyperbolicEccentricAnomaly,
-                                                       double eccentricity );
 
 //! Class to convert mean anomaly to hyperbolic eccentric anomaly.
 /*!

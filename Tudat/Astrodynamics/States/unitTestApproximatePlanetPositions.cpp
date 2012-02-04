@@ -65,7 +65,7 @@
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/States/approximatePlanetPositionsCircularCoplanar.h"
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
-#include "Tudat/Astrodynamics/States/orbitalElementConversions.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test ApproximatePlanetPositions class.

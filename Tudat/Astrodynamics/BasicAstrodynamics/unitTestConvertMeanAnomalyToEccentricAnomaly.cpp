@@ -52,8 +52,8 @@
 #include <boost/test/unit_test.hpp>
 #include <boost/math/special_functions/fpclassify.hpp>
 #include <TudatCore/Astrodynamics/unitConversions.h>
-#include "Tudat/Astrodynamics/States/convertMeanAnomalyToEccentricAnomaly.h"
-#include "Tudat/Astrodynamics/States/orbitalElementConversions.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToEccentricAnomaly.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h"
 
 //! Conversion test fixture.
 /*!
