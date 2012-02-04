@@ -58,7 +58,7 @@
 
 // Include statements.
 #include <cmath>
-#include "TudatCore/Astrodynamics/unitConversions.h"
+#include "TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 

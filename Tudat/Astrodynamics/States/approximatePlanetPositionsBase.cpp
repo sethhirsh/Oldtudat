@@ -200,7 +200,7 @@ void ApproximatePlanetPositionsBase::parseExtraTermsEphemerisLineData_(
 //! Load in ephemeris data for planets.
 void ApproximatePlanetPositionsBase::reloadData( )
 {
-    /*
+
     // Set relative directory path to ephemeris file in file reader.
     ephemerisTextFileReader_.setRelativeDirectoryPath( "External/EphemerisData/" );
 
@@ -227,8 +227,7 @@ void ApproximatePlanetPositionsBase::reloadData( )
 
     // Get container of data from file.
     containerOfDataFromEphemerisFile_ = ephemerisTextFileReader_.getContainerOfData( );
-    */
-    throw "This should not happen!";
+
 }
 
 }

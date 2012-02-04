@@ -79,8 +79,8 @@
 #include <boost/throw_exception.hpp>
 #include <boost/algorithm/string/trim.hpp>
 
-#include <TudatCore/Astrodynamics/orbitalElementConversions.h>
-#include <TudatCore/Astrodynamics/physicalConstants.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/physicalConstants.h>
 #include <TudatCore/InputOutput/basicInputOutput.h>
 
 #include "Tudat/InputOutput/basicInputOutput.h"

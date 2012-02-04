@@ -94,7 +94,7 @@ protected:
     /*!
      * Ephemeris text file reader.
      */
-    //TextFileReader ephemerisTextFileReader_;
+    TextFileReader ephemerisTextFileReader_;
 
     //! String stream for ephemeris line data.
     /*!
