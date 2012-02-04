@@ -46,7 +46,6 @@
 #include "Tudat/Astrodynamics/Bodies/body.h"
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
-#include "Tudat/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"

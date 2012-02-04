@@ -39,7 +39,6 @@
 
 # Set the source files.
 set(BASICASTRODYNAMICS_SOURCES
-  "${SRCROOT}${BASICASTRODYNAMICSDIR}/orbitalElementConversions.cpp"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/keplerPropagator.cpp"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/convertMeanAnomalyToEccentricAnomaly.cpp"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/convertMeanAnomalyToHyperbolicEccentricAnomaly.cpp"
@@ -48,7 +47,6 @@ set(BASICASTRODYNAMICS_SOURCES
 
 # Set the header files.
 set(BASICASTRODYNAMICS_HEADERS 
-  "${SRCROOT}${BASICASTRODYNAMICSDIR}/orbitalElementConversions.h"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/keplerPropagator.h"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/convertMeanAnomalyBase.h"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/convertMeanAnomalyToEccentricAnomaly.h"

@@ -66,7 +66,6 @@
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/States/approximatePlanetPositionsCircularCoplanar.h"
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
-#include "Tudat/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test ApproximatePlanetPositions class.
@@ -224,14 +223,14 @@ int main( )
 
     // Compute Keplerian elements of Test 2.
     KeplerianElements keplerianElementsTest;
-    keplerianElementsTest = convertCartesianToKeplerianElements( &marsEphemerisCircularCoplanar,
-                                                                 &predefinedSun );
+    keplerianElementsTest.state = convertCartesianToKeplerianElements(
+                marsEphemerisCircularCoplanar.state, predefinedSun.getGravitationalParameter( ) );
 
     // Convert Cartesian to Keplerian elements of Test 1.
     // Use these elements as reference values in Test 2.
     KeplerianElements keplerianElementsTest3D;
-    keplerianElementsTest3D = convertCartesianToKeplerianElements( &marsEphemeris,
-                                                                   &predefinedSun );
+    keplerianElementsTest3D.state = convertCartesianToKeplerianElements(
+                marsEphemeris.state, predefinedSun.getGravitationalParameter( ) );
 
 //    // Compute the difference in semi-major axis between Test 2 and
 //    // the external EphemerisData "p_elem_t2.txt".

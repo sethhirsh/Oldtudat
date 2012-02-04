@@ -48,7 +48,6 @@
 
 // Include statements.
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
-#include "Tudat/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/keplerPropagator.h"
 
 //! Tudat library namespace.
@@ -68,13 +67,13 @@ void KeplerPropagator::propagate( )
     {
         // Convert initial state given in Cartesian elements to Keplerian
         // elements.
-        keplerianElements_
+        keplerianElements_.state
                 = orbital_element_conversions::
-                convertCartesianToKeplerianElements( static_cast< CartesianElements* >
-                                                     ( iteratorBodiesToPropagate_
-                                                       ->second.pointerToInitialState ),
-                                                     iteratorBodiesToPropagate_
-                                                     ->second.pointerToCentralBody );
+                convertCartesianToKeplerianElements(
+                    static_cast< CartesianElements* >( iteratorBodiesToPropagate_
+                                                       ->second.pointerToInitialState )->state,
+                    iteratorBodiesToPropagate_
+                    ->second.pointerToCentralBody->getGravitationalParameter( ) );
 
 
         if ( keplerianElements_.getEccentricity( ) < 0.8
@@ -105,10 +104,11 @@ void KeplerPropagator::propagate( )
             // propagation step.
             meanAnomalyChange_
                     = orbital_element_conversions::
-                      convertElapsedTimeToMeanAnomalyForEllipticalOrbits(
-                              ( propagationIntervalEnd_ - propagationIntervalStart_ ),
-                              iteratorBodiesToPropagate_->second.pointerToCentralBody,
-                              keplerianElements_.getSemiMajorAxis( ) );
+                    convertElapsedTimeToMeanAnomalyChangeForEllipticalOrbits(
+                        ( propagationIntervalEnd_ - propagationIntervalStart_ ),
+                        iteratorBodiesToPropagate_->second
+                        .pointerToCentralBody->getGravitationalParameter( ),
+                        keplerianElements_.getSemiMajorAxis( ) );
 
             // Set mean anomaly change in mean anomaly to eccentric anomaly
             // conversions.
@@ -157,10 +157,11 @@ void KeplerPropagator::propagate( )
             // propagation step.
             meanAnomalyChange_
                     = orbital_element_conversions::
-                      convertElapsedTimeToMeanAnomalyForHyperbolicOrbits(
-                              ( propagationIntervalEnd_ - propagationIntervalStart_ ),
-                              iteratorBodiesToPropagate_->second.pointerToCentralBody,
-                              keplerianElements_.getSemiMajorAxis( ) );
+                    convertElapsedTimeToMeanAnomalyChangeForHyperbolicOrbits(
+                        ( propagationIntervalEnd_ - propagationIntervalStart_ ),
+                        iteratorBodiesToPropagate_->second
+                        .pointerToCentralBody->getGravitationalParameter( ),
+                        keplerianElements_.getSemiMajorAxis( ) );
 
             // Set mean anomaly change in mean anomaly to eccentric anomaly
             // conversions
