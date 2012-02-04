@@ -68,7 +68,7 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
-#include <TudatCore/Astrodynamics/unitConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
 #include "Tudat/Astrodynamics/MissionSegments/lambertTargeter.h"

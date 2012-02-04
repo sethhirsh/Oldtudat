@@ -51,7 +51,7 @@
 #include <fstream>
 #include <map>
 #include <string>
-#include <TudatCore/Astrodynamics/unitConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Bodies/vehicle.h"

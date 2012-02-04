@@ -47,7 +47,7 @@
  */
 
 // Include statements.
-#include <TudatCore/Astrodynamics/orbitalElementConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
 #include "Tudat/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h"
 #include "Tudat/Astrodynamics/Propagators/keplerPropagator.h"
 
@@ -191,9 +191,11 @@ void KeplerPropagator::propagate( )
         }
 
         // Convert Keplerian elements to Cartesian elements.
-        cartesianElements_ = orbital_element_conversions::
-                             convertKeplerianToCartesianElements( &keplerianElements_,
-                                     iteratorBodiesToPropagate_->second.pointerToCentralBody );
+        cartesianElements_.state = orbital_element_conversions::
+                convertKeplerianToCartesianElements(
+                    keplerianElements_.state,
+                    iteratorBodiesToPropagate_->second.pointerToCentralBody
+                    ->getGravitationalParameter( ) );
 
         // Store final state in CartesianElements for given body.
         iteratorBodiesToPropagate_->second.finalState = cartesianElements_;

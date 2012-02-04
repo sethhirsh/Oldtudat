@@ -59,7 +59,7 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <iostream>
-#include <TudatCore/Astrodynamics/unitConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/MissionSegments/gravityAssist.h"
 

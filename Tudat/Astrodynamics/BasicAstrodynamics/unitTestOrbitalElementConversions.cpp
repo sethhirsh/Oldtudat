@@ -79,8 +79,8 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include <TudatCore/Astrodynamics/orbitalElementConversions.h>
-#include <TudatCore/Astrodynamics/unitConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToEccentricAnomaly.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h"
@@ -128,446 +128,169 @@ int main( )
     // Initialize unit test result to false.
     bool isOrbitalElementConversionErroneous = false;
 
-    // Define tolerance.
-    double errorTolerance_ = 1.0e2 * std::numeric_limits< double >::epsilon( );
-
-    // Create predefind Earth and set different gravitational parameter value.
-    Planet predefinedEarth;
-    predefinedEarth.setPredefinedPlanetSettings( Planet::earth );
-    GravityFieldModel* pointerToEarthGravityField = predefinedEarth.getGravityFieldModel( );
-    pointerToEarthGravityField->setGravitationalParameter( 398600.4418e9 );
-
-    // Create predefined Mars.
-    Planet predefinedMars;
-    predefinedMars.setPredefinedPlanetSettings( Planet::mars );
-
-    // Create custom-defined Sun with central gravity field.
-    CelestialBody customDefinedSun;
-    SphericalHarmonicsGravityField sunCentralGravity;
-    sunCentralGravity.setGravitationalParameter( 1.32712440018e20 );
-    sunCentralGravity.setDegreeOfExpansion( 0 );
-    sunCentralGravity.setOrderOfExpansion( 0 );
-    customDefinedSun.setGravityFieldModel( &sunCentralGravity );
-
-    // Create custom-defined central body.
-    CelestialBody customDefinedBody;
-    SphericalHarmonicsGravityField customBodyCentralGravity;
-    customBodyCentralGravity.setGravitationalParameter( 1.0 );
-    customBodyCentralGravity.setDegreeOfExpansion( 0 );
-    customBodyCentralGravity.setOrderOfExpansion( 0 );
-    customDefinedBody.setGravityFieldModel( &customBodyCentralGravity );
-
-    // *************************************************************************
-    // Elliptical orbit case around the Earth.
-    // *************************************************************************
-
-    // From Keplerian to Cartesian.
-    KeplerianElements keplerianEllipticalElements1;
-
-    // Define Keplerian elements.
-    keplerianEllipticalElements1.setSemiMajorAxis(
-                unit_conversions::convertAstronomicalUnitsToMeters( 0.3 ) );
-    keplerianEllipticalElements1.setEccentricity( 0.2 );
-    keplerianEllipticalElements1.setInclination( M_PI / 4.0 );
-    keplerianEllipticalElements1.setArgumentOfPeriapsis( 4.0 * M_PI / 3.0 );
-    keplerianEllipticalElements1.setLongitudeOfAscendingNode( M_PI
-                                                              / 8.0 );
-    keplerianEllipticalElements1.setTrueAnomaly( M_PI / 3.0 );
-    keplerianEllipticalElements1.setSemiLatusRectum(
-                keplerianEllipticalElements1.getSemiMajorAxis( )
-                * ( 1.0 - pow( keplerianEllipticalElements1.getEccentricity( ), 2.0 ) ) );
-
-    // Compute Cartesian elements.
-    CartesianElements cartesianEllipticalElements;
-
-    cartesianEllipticalElements = convertKeplerianToCartesianElements(
-                &keplerianEllipticalElements1, &predefinedEarth );
-
-    // From Cartesian to Keplerian.
-    // Compute Keplerian elements.
-    KeplerianElements keplerianEllipticalElements2;
-
-    keplerianEllipticalElements2 = convertCartesianToKeplerianElements(
-                &cartesianEllipticalElements, &predefinedEarth );
-
-    // Set test result to false if the output Keplerian elements of the
-    // conversion from Cartesian to Keplerian are equal to the input Keplerian
-    // elements of the conversion from Keplerian to Cartesian, within a
-    // tolerance limit.
-    if ( fabs( ( keplerianEllipticalElements2.getSemiMajorAxis( ) -
-                 keplerianEllipticalElements1.getSemiMajorAxis( ) ) /
-               keplerianEllipticalElements1.getSemiMajorAxis( ) ) >= errorTolerance_ ||
-         fabs( keplerianEllipticalElements2.getEccentricity( ) -
-               keplerianEllipticalElements1.getEccentricity( ) ) >= errorTolerance_ ||
-         fabs( keplerianEllipticalElements2.getInclination( ) -
-               keplerianEllipticalElements1.getInclination( ) ) >= errorTolerance_ ||
-         fabs( keplerianEllipticalElements2.getArgumentOfPeriapsis( ) -
-               keplerianEllipticalElements1.getArgumentOfPeriapsis( ) ) >= errorTolerance_ ||
-         fabs( keplerianEllipticalElements2.getLongitudeOfAscendingNode( ) -
-               keplerianEllipticalElements1.getLongitudeOfAscendingNode( ) ) >= errorTolerance_ ||
-         fabs( keplerianEllipticalElements2.getTrueAnomaly( ) -
-               keplerianEllipticalElements1.getTrueAnomaly( ) ) >= errorTolerance_ ||
-         fabs( ( keplerianEllipticalElements2.getSemiLatusRectum( ) -
-                 keplerianEllipticalElements1.getSemiLatusRectum( ) ) /
-               keplerianEllipticalElements1.getSemiLatusRectum( ) ) >= errorTolerance_ )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The orbital element conversion for an elliptical orbit is erroneous." << endl;
-    }
-
-    // *************************************************************************
-    // Parabolic orbit case around Mars.
-    // *************************************************************************
-
-    // From Keplerian to Cartesian.
-    KeplerianElements keplerianParabolicElements1;
-
-    // Define Keplerian elements.
-    keplerianParabolicElements1.setSemiLatusRectum(
-            unit_conversions::convertAstronomicalUnitsToMeters( 4.0 ) );
-    keplerianParabolicElements1.setEccentricity( 1.0 );
-    keplerianParabolicElements1.setInclination( M_PI / 6.0 );
-    keplerianParabolicElements1.setArgumentOfPeriapsis( M_PI / 8.0 );
-    keplerianParabolicElements1.setLongitudeOfAscendingNode( 8.0 * M_PI / 7.0 );
-    keplerianParabolicElements1.setTrueAnomaly( 7.0 * M_PI / 4.0 );
-
-    // Compute Cartesian elements.
-    CartesianElements cartesianParabolicElements = convertKeplerianToCartesianElements(
-                &keplerianParabolicElements1, &predefinedMars );
-
-    // From Cartesian to Keplerian.
-    // Compute Keplerian elements.
-    KeplerianElements keplerianParabolicElements2 =  convertCartesianToKeplerianElements(
-                &cartesianParabolicElements, &predefinedMars );
-
-    // Set test result to false if the output Keplerian elements of the
-    // conversion from Cartesian to Keplerian are equal to the input Keplerian
-    // elements of the conversion from Keplerian to Cartesian, within a
-    // tolerance limit.
-    if ( fabs( ( keplerianParabolicElements2.getSemiLatusRectum( ) -
-                 keplerianParabolicElements1.getSemiLatusRectum( ) ) /
-               keplerianParabolicElements1.getSemiLatusRectum( ) ) >=  errorTolerance_ ||
-         fabs( keplerianParabolicElements2.getEccentricity( ) -
-               keplerianParabolicElements1.getEccentricity( ) ) >= errorTolerance_ ||
-         fabs( keplerianParabolicElements2.getInclination( ) -
-               keplerianParabolicElements1.getInclination( ) ) >= errorTolerance_ ||
-         fabs( keplerianParabolicElements2.getArgumentOfPeriapsis( ) -
-               keplerianParabolicElements1.getArgumentOfPeriapsis( ) ) >= errorTolerance_ ||
-         fabs( keplerianParabolicElements2.getLongitudeOfAscendingNode( ) -
-               keplerianParabolicElements1.getLongitudeOfAscendingNode( ) ) >= errorTolerance_ ||
-         fabs( keplerianParabolicElements2.getTrueAnomaly( ) -
-               keplerianParabolicElements1.getTrueAnomaly( ) ) >= errorTolerance_ )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The orbital element conversion for a parabolic orbit is erroneous." << endl;
-    }
-
-    // *************************************************************************
-    // Circular equatorial orbit case around the Earth.
-    // *************************************************************************
-
-    // From Keplerian to Cartesian.
-    KeplerianElements keplerianCircularElements1;
-
-    // Define Keplerian elements.
-    keplerianCircularElements1.setSemiMajorAxis(
-            unit_conversions::convertKilometersToMeters( 7.0e3 ) );
-    keplerianCircularElements1.setEccentricity( 0.0 );
-    keplerianCircularElements1.setInclination( 0.0 );
-    keplerianCircularElements1.setArgumentOfPeriapsis( 0.0 );
-    keplerianCircularElements1.setLongitudeOfAscendingNode( 0.0 );
-    keplerianCircularElements1.setTrueAnomaly( M_PI / 4.0 );
-
-    // Compute Cartesian elements.
-    CartesianElements cartesianCircularElements = convertKeplerianToCartesianElements(
-                &keplerianCircularElements1, &predefinedEarth );
-
-    // From Cartesian to Keplerian.
-    // Compute Keplerian elements.
-    KeplerianElements keplerianCircularElements2 = convertCartesianToKeplerianElements(
-                &cartesianCircularElements, &predefinedEarth );
-
-    // Set test result to false if the output Keplerian elements of the
-    // conversion from Cartesian to Keplerian are equal to the input Keplerian
-    // elements of the conversion from Keplerian to Cartesian, within a
-    // tolerance limit.
-
-    if ( fabs( ( keplerianCircularElements2.getSemiMajorAxis( ) -
-                 keplerianCircularElements1.getSemiMajorAxis( ) ) /
-               keplerianCircularElements1.getSemiMajorAxis( ) ) >= errorTolerance_ ||
-         fabs( keplerianCircularElements2.getEccentricity( ) -
-               keplerianCircularElements1.getEccentricity( ) ) >= errorTolerance_ ||
-         fabs( keplerianCircularElements2.getInclination( ) -
-               keplerianCircularElements1.getInclination( ) ) >=  errorTolerance_ ||
-         fabs( keplerianCircularElements2.getArgumentOfPeriapsis( ) -
-               keplerianCircularElements1.getArgumentOfPeriapsis( ) ) >= errorTolerance_ ||
-         fabs( keplerianCircularElements2.getLongitudeOfAscendingNode( ) -
-               keplerianCircularElements1.getLongitudeOfAscendingNode( ) ) >= errorTolerance_ ||
-         fabs( keplerianCircularElements2.getTrueAnomaly( ) -
-               keplerianCircularElements1.getTrueAnomaly( ) ) >= errorTolerance_ )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The orbital element conversion for a circular orbit is erroneous." << endl;
-    }
-
-    // *************************************************************************
-    // Hyperbolic equatorial orbit case around the Sun.
-    // *************************************************************************
-
-    // From Keplerian to Cartesian.
-    KeplerianElements keplerianHyperbolicElements1;
-
-    // Define Keplerian elements.
-    keplerianHyperbolicElements1.setSemiMajorAxis(
-                unit_conversions::convertAstronomicalUnitsToMeters( -3.0 ) );
-    keplerianHyperbolicElements1.setEccentricity( 2.0 );
-    keplerianHyperbolicElements1.setInclination( 0.0 );
-    keplerianHyperbolicElements1.setArgumentOfPeriapsis( 11.0 * M_PI / 8.0 );
-    keplerianHyperbolicElements1.setLongitudeOfAscendingNode( 0.0 );
-    keplerianHyperbolicElements1.setTrueAnomaly( 9.0 * M_PI / 16.0 );
-
-    // Compute Cartesian elements.
-    CartesianElements cartesianHyperbolicElements = convertKeplerianToCartesianElements(
-                &keplerianHyperbolicElements1, &customDefinedSun );
-
-    // From Cartesian to Keplerian.
-    // Compute Keplerian elements.
-    KeplerianElements keplerianHyperbolicElements2 = convertCartesianToKeplerianElements(
-                &cartesianHyperbolicElements, &customDefinedSun );
-
-    // Set test result to false if the output Keplerian elements of the
-    // conversion from Cartesian to Keplerian are equal to the input Keplerian
-    // elements of the conversion from Keplerian to Cartesian, within a
-    // tolerance limit.
-
-    if ( fabs( ( keplerianHyperbolicElements2.getSemiMajorAxis( ) -
-                 keplerianHyperbolicElements1.getSemiMajorAxis( ) ) /
-               keplerianHyperbolicElements1.getSemiMajorAxis( ) ) >= errorTolerance_ ||
-         fabs( keplerianHyperbolicElements2.getEccentricity( ) -
-               keplerianHyperbolicElements1.getEccentricity( ) ) >= errorTolerance_ ||
-         fabs( keplerianHyperbolicElements2.getInclination( ) -
-               keplerianHyperbolicElements1.getInclination( ) ) >= errorTolerance_ ||
-         fabs( keplerianHyperbolicElements2.getArgumentOfPeriapsis( ) -
-               keplerianHyperbolicElements1.getArgumentOfPeriapsis( ) ) >= errorTolerance_ ||
-         fabs( keplerianHyperbolicElements2.getLongitudeOfAscendingNode( ) -
-               keplerianHyperbolicElements1.getLongitudeOfAscendingNode( ) ) >= errorTolerance_ ||
-         fabs( keplerianHyperbolicElements2.getTrueAnomaly( ) -
-               keplerianHyperbolicElements1.getTrueAnomaly( ) ) >= errorTolerance_ )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The orbital element conversion for a hyperbolic orbit is erroneous." << endl;
-    }
-
-    // *************************************************************************
-    // Book example.
-    // *************************************************************************
-
-    // Define tolerance, related to the precision of the values in the book.
-    double errorToleranceBookExample_ = 1.0e-04;
-
-    // From Cartesian to Keplerian.
-    CartesianElements cartesianElements;
-
-    // Define Cartesian elements.
-    // Position expressed in canonical units.
-    cartesianElements.setCartesianElementX( 1.0 );
-    cartesianElements.setCartesianElementY( 2.0 );
-    cartesianElements.setCartesianElementZ( 1.0 );
-
-    // Velocity expressed in canonical units.
-    cartesianElements.setCartesianElementXDot( -0.25 );
-    cartesianElements.setCartesianElementYDot( -0.25 );
-    cartesianElements.setCartesianElementZDot( 0.5 );
-
-    // Define Keplerian elements.
-    KeplerianElements keplerianElements;
-
-    // Convert Cartesian to Keplerian elements.
-    // Gravitational parameter is equal to 1 in the applied units.
-    keplerianElements = convertCartesianToKeplerianElements( &cartesianElements,
-                                                             &customDefinedBody );
-
-    // Set test result to false if the output Keplerian elements of the
-    // conversion from Cartesian to Keplerian are equal to the output Keplerian
-    // elements of the exercise, within a tolerance limit.
-    if ( fabs( keplerianElements.getSemiMajorAxis( ) - 2.265 ) >= errorToleranceBookExample_ ||
-         fabs( keplerianElements.getEccentricity( ) - 0.185 ) >= errorToleranceBookExample_ ||
-         fabs( keplerianElements.getInclination( ) - 1.401 ) >= errorToleranceBookExample_ ||
-         fabs( keplerianElements.getArgumentOfPeriapsis( ) - 2.6143 ) >=
-         errorToleranceBookExample_ ||
-         fabs( keplerianElements.getLongitudeOfAscendingNode( ) - 1.0304 ) >=
-         errorToleranceBookExample_ ||
-         fabs( keplerianElements.getTrueAnomaly( ) - 4.0959 ) >= errorToleranceBookExample_ )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The orbital element conversion for the book example is erroneous." << endl;
-    }
-
-    // Test 7: Test of mean anomaly to eccentric anomaly conversion.
-    // Source: ( Vallado, 2004 ).
-
-    // Set tolerance for conversion.
-    double toleranceOrbitalElementConversion = 1e-8;
-
-    // Set mean anomaly.
-    double meanAnomaly = unit_conversions::convertDegreesToRadians( 60.0 );
-
-    // Create object for mean anomaly to eccentric anomaly conversion.
-    orbital_element_conversions::ConvertMeanAnomalyToEccentricAnomaly
-            convertMeanAnomalyToEccentricAnomaly;
-
-    // Create pointer to Newton-Raphson object.
-    NewtonRaphson* pointerToNewtonRaphson = new NewtonRaphson;
-
-    // Set eccentricity.
-    convertMeanAnomalyToEccentricAnomaly.setEccentricity( 0.01671 );
-
-    // Set mean anomaly.
-    convertMeanAnomalyToEccentricAnomaly.setMeanAnomaly( meanAnomaly );
-
-    // Set Newton-Raphson method.
-    convertMeanAnomalyToEccentricAnomaly.setNewtonRaphson( pointerToNewtonRaphson );
-
-    // Compute eccentric anomaly.
-    double eccentricAnomaly = convertMeanAnomalyToEccentricAnomaly.convert( );
-
-    // Check if computed eccentric anomaly is equal to reference value.
-    if ( fabs( eccentricAnomaly - 1.061789204 ) > toleranceOrbitalElementConversion )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of mean anomaly to eccentric anomaly is "
-             << "erroneous as the computed eccentric anomaly after applying the conversion ( "
-             << unit_conversions::convertRadiansToDegrees( eccentricAnomaly )
-             << " ) does not match the expected value of the eccentric anomaly ( "
-             << unit_conversions::convertRadiansToDegrees( 1.061789204 ) << " ) " << endl;
-    }
-
-    // Test 10: Test of elapsed time to mean anomaly for elliptical orbits.
-
-    // Set tolerance for conversion.
-    toleranceOrbitalElementConversion = 1.0e-11;
-
-    // Expected mean anomaly value;
-    double expectedMeanAnomalyForTest10 = 20.203139666972554;
-
-    // Set elapsed time.
-    double expectedElapsedTime = 4000.0;
-
-    // Set semi-major axis.
-    double semiMajorAxis = unit_conversions::convertKilometersToMeters( 2500.0 );
-
-    // Compute mean anomaly.
-    meanAnomaly = orbital_element_conversions::convertElapsedTimeToMeanAnomalyForEllipticalOrbits(
-                expectedElapsedTime, &predefinedEarth, semiMajorAxis );
-
-    // Declare and compute absolute and relative errors.
-    double absoluteDifference = fabs( meanAnomaly - expectedMeanAnomalyForTest10 );
-
-    double relativeDifference = absoluteDifference / expectedMeanAnomalyForTest10;
-
-    // Check if relative error is too large.
-    if ( relativeDifference > std::numeric_limits< double >::epsilon( ) )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of elapsed time to mean anomaly is erroneous "
-             << "as the computed mean anomaly after applying the conversion ( "
-             << unit_conversions::convertRadiansToDegrees( meanAnomaly )
-             << " ) does not match the expected value of the mean anomaly ( "
-             << unit_conversions::convertRadiansToDegrees( expectedMeanAnomalyForTest10 )
-             << " ) " << endl;
-    }
-
-    // Test 11: Test of mean anomaly to elapsed time for elliptical orbits.
-    //          Reversal of computation for Test 10.
-
-    // Set tolerance for conversion.
-    toleranceOrbitalElementConversion = 1e-11;
-
-    // Set mean anomaly.
-    meanAnomaly = expectedMeanAnomalyForTest10;
-
-    // Declare and compute elapsed time.
-    double elapsedTime = orbital_element_conversions::
-            convertMeanAnomalyToElapsedTimeForEllipticalOrbits(
-                meanAnomaly, &predefinedEarth, semiMajorAxis );
-
-    // Compute absolute and relative errors.
-    absoluteDifference = fabs( elapsedTime - expectedElapsedTime );
-
-    relativeDifference = absoluteDifference / expectedElapsedTime;
-
-    // Check if computed elapsed time is equal to reference value.
-    if ( relativeDifference > toleranceOrbitalElementConversion )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of mean anomaly to elapsed time is erroneous "
-             << "as the computed elapsed time after applying the conversion ( " << elapsedTime
-             << " ) does not match the expected value of the elapsed time ( "
-             << expectedElapsedTime << " ) " << endl;
-    }
-
-    // Test 12: Test of elapsed time to mean anomaly for hyperbolic orbits.
-
-    // Set tolerance for conversion.
-    toleranceOrbitalElementConversion = 1e-11;
-
-    // Set elapsed time.
-    elapsedTime = 1000.0;
-
-    // Set semi-major axis.
-    semiMajorAxis = unit_conversions::convertKilometersToMeters( -40000.0 );
-
-    // Compute mean anomaly.
-    meanAnomaly = orbital_element_conversions::
-            convertElapsedTimeToMeanAnomalyForHyperbolicOrbits(
-                elapsedTime, &predefinedEarth, semiMajorAxis );
-
-    // Check if computed mean anomaly is equal to reference value.
-    if ( fabs( meanAnomaly - 0.078918514324112 ) > toleranceOrbitalElementConversion )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of elapsed time to mean anomaly is erroneous "
-             << "as the computed mean anomaly after applying the conversion ( "
-             << unit_conversions::convertRadiansToDegrees( meanAnomaly )
-             << " ) does not match the expected value of the mean anomaly ( "
-             << unit_conversions::convertRadiansToDegrees( 0.078918514324112 ) << " ) " << endl;
-    }
-
-    // Test 13: Test of mean anomaly to elapsed time for hyperbolic orbits.
-
-    // Set tolerance for conversion.
-    toleranceOrbitalElementConversion = 1e-11;
-
-    // Set mean anomaly.
-    meanAnomaly = 0.078918514324112;
-
-    // Set semi-major axis.
-    semiMajorAxis = unit_conversions::convertKilometersToMeters( -40000.0 );
-
-    // Compute elapsed time.
-    elapsedTime = orbital_element_conversions::
-            convertMeanAnomalyToElapsedTimeForHyperbolicOrbits(
-                meanAnomaly, &predefinedEarth, semiMajorAxis );
-
-    // Check if computed elapsed time is equal to reference value.
-    if ( fabs( elapsedTime - 1000.0 ) > toleranceOrbitalElementConversion )
-    {
-        isOrbitalElementConversionErroneous = true;
-
-        cerr << "The conversion of mean anomaly to elapsed time is erroneous "
-             << "as the computed elapsed time after applying the conversion ( " << elapsedTime
-             << " ) does not match the expected value of the elapsed time ( "
-             << 1000.0 << " ) " << endl;
-    }
+//    // Define tolerance.
+//    double errorTolerance_ = 1.0e2 * std::numeric_limits< double >::epsilon( );
+
+//    // Test 7: Test of mean anomaly to eccentric anomaly conversion.
+//    // Source: ( Vallado, 2004 ).
+
+//    // Set tolerance for conversion.
+//    double toleranceOrbitalElementConversion = 1e-8;
+
+//    // Set mean anomaly.
+//    double meanAnomaly = unit_conversions::convertDegreesToRadians( 60.0 );
+
+//    // Create object for mean anomaly to eccentric anomaly conversion.
+//    orbital_element_conversions::ConvertMeanAnomalyToEccentricAnomaly
+//            convertMeanAnomalyToEccentricAnomaly;
+
+//    // Create pointer to Newton-Raphson object.
+//    NewtonRaphson* pointerToNewtonRaphson = new NewtonRaphson;
+
+//    // Set eccentricity.
+//    convertMeanAnomalyToEccentricAnomaly.setEccentricity( 0.01671 );
+
+//    // Set mean anomaly.
+//    convertMeanAnomalyToEccentricAnomaly.setMeanAnomaly( meanAnomaly );
+
+//    // Set Newton-Raphson method.
+//    convertMeanAnomalyToEccentricAnomaly.setNewtonRaphson( pointerToNewtonRaphson );
+
+//    // Compute eccentric anomaly.
+//    double eccentricAnomaly = convertMeanAnomalyToEccentricAnomaly.convert( );
+
+//    // Check if computed eccentric anomaly is equal to reference value.
+//    if ( fabs( eccentricAnomaly - 1.061789204 ) > toleranceOrbitalElementConversion )
+//    {
+//        isOrbitalElementConversionErroneous = true;
+
+//        cerr << "The conversion of mean anomaly to eccentric anomaly is "
+//             << "erroneous as the computed eccentric anomaly after applying the conversion ( "
+//             << unit_conversions::convertRadiansToDegrees( eccentricAnomaly )
+//             << " ) does not match the expected value of the eccentric anomaly ( "
+//             << unit_conversions::convertRadiansToDegrees( 1.061789204 ) << " ) " << endl;
+//    }
+
+//    // Test 10: Test of elapsed time to mean anomaly for elliptical orbits.
+
+//    // Set tolerance for conversion.
+//    toleranceOrbitalElementConversion = 1.0e-11;
+
+//    // Expected mean anomaly value;
+//    double expectedMeanAnomalyForTest10 = 20.203139666972554;
+
+//    // Set elapsed time.
+//    double expectedElapsedTime = 4000.0;
+
+//    // Set semi-major axis.
+//    double semiMajorAxis = unit_conversions::convertKilometersToMeters( 2500.0 );
+
+//    // Compute mean anomaly.
+//    meanAnomaly = orbital_element_conversions::convertElapsedTimeToMeanAnomalyForEllipticalOrbits(
+//                expectedElapsedTime, &predefinedEarth, semiMajorAxis );
+
+//    // Declare and compute absolute and relative errors.
+//    double absoluteDifference = fabs( meanAnomaly - expectedMeanAnomalyForTest10 );
+
+//    double relativeDifference = absoluteDifference / expectedMeanAnomalyForTest10;
+
+//    // Check if relative error is too large.
+//    if ( relativeDifference > std::numeric_limits< double >::epsilon( ) )
+//    {
+//        isOrbitalElementConversionErroneous = true;
+
+//        cerr << "The conversion of elapsed time to mean anomaly is erroneous "
+//             << "as the computed mean anomaly after applying the conversion ( "
+//             << unit_conversions::convertRadiansToDegrees( meanAnomaly )
+//             << " ) does not match the expected value of the mean anomaly ( "
+//             << unit_conversions::convertRadiansToDegrees( expectedMeanAnomalyForTest10 )
+//             << " ) " << endl;
+//    }
+
+//    // Test 11: Test of mean anomaly to elapsed time for elliptical orbits.
+//    //          Reversal of computation for Test 10.
+
+//    // Set tolerance for conversion.
+//    toleranceOrbitalElementConversion = 1e-11;
+
+//    // Set mean anomaly.
+//    meanAnomaly = expectedMeanAnomalyForTest10;
+
+//    // Declare and compute elapsed time.
+//    double elapsedTime = orbital_element_conversions::
+//            convertMeanAnomalyToElapsedTimeForEllipticalOrbits(
+//                meanAnomaly, &predefinedEarth, semiMajorAxis );
+
+//    // Compute absolute and relative errors.
+//    absoluteDifference = fabs( elapsedTime - expectedElapsedTime );
+
+//    relativeDifference = absoluteDifference / expectedElapsedTime;
+
+//    // Check if computed elapsed time is equal to reference value.
+//    if ( relativeDifference > toleranceOrbitalElementConversion )
+//    {
+//        isOrbitalElementConversionErroneous = true;
+
+//        cerr << "The conversion of mean anomaly to elapsed time is erroneous "
+//             << "as the computed elapsed time after applying the conversion ( " << elapsedTime
+//             << " ) does not match the expected value of the elapsed time ( "
+//             << expectedElapsedTime << " ) " << endl;
+//    }
+
+//    // Test 12: Test of elapsed time to mean anomaly for hyperbolic orbits.
+
+//    // Set tolerance for conversion.
+//    toleranceOrbitalElementConversion = 1e-11;
+
+//    // Set elapsed time.
+//    elapsedTime = 1000.0;
+
+//    // Set semi-major axis.
+//    semiMajorAxis = unit_conversions::convertKilometersToMeters( -40000.0 );
+
+//    // Compute mean anomaly.
+//    meanAnomaly = orbital_element_conversions::
+//            convertElapsedTimeToMeanAnomalyForHyperbolicOrbits(
+//                elapsedTime, &predefinedEarth, semiMajorAxis );
+
+//    // Check if computed mean anomaly is equal to reference value.
+//    if ( fabs( meanAnomaly - 0.078918514324112 ) > toleranceOrbitalElementConversion )
+//    {
+//        isOrbitalElementConversionErroneous = true;
+
+//        cerr << "The conversion of elapsed time to mean anomaly is erroneous "
+//             << "as the computed mean anomaly after applying the conversion ( "
+//             << unit_conversions::convertRadiansToDegrees( meanAnomaly )
+//             << " ) does not match the expected value of the mean anomaly ( "
+//             << unit_conversions::convertRadiansToDegrees( 0.078918514324112 ) << " ) " << endl;
+//    }
+
+//    // Test 13: Test of mean anomaly to elapsed time for hyperbolic orbits.
+
+//    // Set tolerance for conversion.
+//    toleranceOrbitalElementConversion = 1e-11;
+
+//    // Set mean anomaly.
+//    meanAnomaly = 0.078918514324112;
+
+//    // Set semi-major axis.
+//    semiMajorAxis = unit_conversions::convertKilometersToMeters( -40000.0 );
+
+//    // Compute elapsed time.
+//    elapsedTime = orbital_element_conversions::
+//            convertMeanAnomalyToElapsedTimeForHyperbolicOrbits(
+//                meanAnomaly, &predefinedEarth, semiMajorAxis );
+
+//    // Check if computed elapsed time is equal to reference value.
+//    if ( fabs( elapsedTime - 1000.0 ) > toleranceOrbitalElementConversion )
+//    {
+//        isOrbitalElementConversionErroneous = true;
+
+//        cerr << "The conversion of mean anomaly to elapsed time is erroneous "
+//             << "as the computed elapsed time after applying the conversion ( " << elapsedTime
+//             << " ) does not match the expected value of the elapsed time ( "
+//             << 1000.0 << " ) " << endl;
+//    }
 
     // Return test result.
     // If test is successful return false; if test fails, return true.

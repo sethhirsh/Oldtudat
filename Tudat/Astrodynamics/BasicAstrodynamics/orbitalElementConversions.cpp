@@ -81,7 +81,7 @@
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 #include <limits>
-#include <TudatCore/Astrodynamics/orbitalElementConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
 #include <TudatCore/Mathematics/linearAlgebra.h>
 #include "Tudat/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h"
 

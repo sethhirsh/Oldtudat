@@ -72,16 +72,6 @@ namespace tudat
 namespace orbital_element_conversions
 {
 
-//! Convert Keplerian to Cartesian orbital elements.
-/*!
- * Converts Keplerian to Cartesian orbital elements.
- * \param pointerToKeplerianElements Pointer to KeplerianElements object.
- * \param pointerToCelestialBody Pointer to CelestialBody object.
- * \return CartesianElements object.
- */
-CartesianElements convertKeplerianToCartesianElements(
-        KeplerianElements* pointerToKeplerianElements, CelestialBody* pointerToCelestialBody );
-
 //! Convert Cartesian to Keplerian orbital elements.
 /*!
  * Converts Cartesian to Keplerian orbital elements.

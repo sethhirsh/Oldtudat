@@ -44,7 +44,7 @@
 #include <Eigen/Geometry>
 #include <iostream>
 #include <limits>
-#include <TudatCore/Astrodynamics/unitConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/ForceModels/aerodynamicForce.h"
 #include "Tudat/Astrodynamics/ForceModels/aerodynamicCoefficientInterface.h"
 #include "Tudat/Astrodynamics/MomentModels/aerodynamicMoment.h"

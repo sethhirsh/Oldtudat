@@ -46,7 +46,7 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
-#include <TudatCore/Astrodynamics/physicalConstants.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/physicalConstants.h>
 #include "Tudat/Astrodynamics/EnvironmentModels/exponentialAtmosphere.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 

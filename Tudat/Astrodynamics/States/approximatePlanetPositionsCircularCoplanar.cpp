@@ -45,7 +45,7 @@
 
 // Include statements.
 #include <cmath>
-#include <TudatCore/Astrodynamics/unitConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/States/approximatePlanetPositionsCircularCoplanar.h"
 

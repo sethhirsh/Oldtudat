@@ -45,8 +45,8 @@
 
 // Include statements.
 #include <cmath>
-#include <TudatCore/Astrodynamics/unitConversions.h>
-#include <TudatCore/Astrodynamics/orbitalElementConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
 #include "Tudat/Astrodynamics/States/approximatePlanetPositions.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 
@@ -185,9 +185,10 @@ CartesianElements* ApproximatePlanetPositions::
     predefinedSun_.setPredefinedPlanetSettings( Planet::sun );
 
     // Convert planet Elements in Keplerian elements to Cartesian elements.
-    planetCartesianElementsAtGivenJulianDate_
+    planetCartesianElementsAtGivenJulianDate_.state
             = orbital_element_conversions::convertKeplerianToCartesianElements(
-                &planetKeplerianElementsAtGivenJulianDate_, &predefinedSun_ );
+                planetKeplerianElementsAtGivenJulianDate_.state,
+                predefinedSun_.getGravitationalParameter( ) );
 
     // Return Cartesian elements of planet at given Julian date.
     return &planetCartesianElementsAtGivenJulianDate_;

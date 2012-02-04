@@ -60,7 +60,8 @@
 // Include statements.
 #include <iostream>
 #include <limits>
-#include <TudatCore/Astrodynamics/unitConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
+#include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/States/approximatePlanetPositionsCircularCoplanar.h"
@@ -114,8 +115,9 @@ int main( )
 
     // Convert expected result to Cartesian elements.
     CartesianElements expectedMarsEphemeris;
-    expectedMarsEphemeris = orbital_element_conversions::
-            convertKeplerianToCartesianElements( &marsOrbitalElementsForTest1, &predefinedSun );
+    expectedMarsEphemeris.state = orbital_element_conversions::
+            convertKeplerianToCartesianElements( marsOrbitalElementsForTest1.state,
+                                                 predefinedSun.getGravitationalParameter( ) );
 
     // Retrieve state of Mars in Cartesian elements at Julian date 2455626.5.
     CartesianElements marsEphemeris;
