@@ -53,8 +53,8 @@
  *      110920    K. Kumar          Corrected simple errors outlined by M. Persson.
  */
 
-#ifndef PROPAGATORDATACONTAINER_H
-#define PROPAGATORDATACONTAINER_H
+#ifndef TUDAT_PROPAGATOR_DATA_CONTAINER_H
+#define TUDAT_PROPAGATOR_DATA_CONTAINER_H
 
 // Include statements.
 #include <iostream>
@@ -62,7 +62,7 @@
 #include <vector>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/ForceModels/forceModel.h"
-#include "Tudat/Astrodynamics/Propagators/propagator.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/propagator.h"
 #include "Tudat/Astrodynamics/States/state.h"
 
 //! Tudat library namespace.
@@ -173,8 +173,8 @@ protected:
 private:
 };
 
-}
+} // namespace tudat.
 
-#endif // PROPAGATORDATACONTAINER_H
+#endif // TUDAT_PROPAGATOR_DATA_CONTAINER_H
 
 // End of file.

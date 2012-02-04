@@ -52,8 +52,8 @@
 #include <cmath>
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToEccentricAnomaly.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/propagator.h"
 #include "Tudat/Astrodynamics/Bodies/body.h"
-#include "Tudat/Astrodynamics/Propagators/propagator.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"

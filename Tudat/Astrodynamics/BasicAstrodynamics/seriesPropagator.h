@@ -1,7 +1,7 @@
 /*! \file seriesPropagator.h
  *    Header file that defines a class that executes a series of propagation steps.
  *
- *    Path              : /Astrodynamics/Propagators/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 2
  *    Check status      : Checked
  *
@@ -46,8 +46,8 @@
 #include <limits>
 #include <map>
 #include "Tudat/Astrodynamics/Bodies/body.h"
-#include "Tudat/Astrodynamics/Propagators/propagator.h"
-#include "Tudat/Astrodynamics/Propagators/propagatorDataContainer.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/propagator.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/propagatorDataContainer.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 

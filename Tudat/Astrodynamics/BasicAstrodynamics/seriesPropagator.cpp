@@ -38,7 +38,7 @@
  */
 
 // Include statements.
-#include "Tudat/Astrodynamics/Propagators/seriesPropagator.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/seriesPropagator.h"
 
 //! Tudat library namespace.
 namespace tudat

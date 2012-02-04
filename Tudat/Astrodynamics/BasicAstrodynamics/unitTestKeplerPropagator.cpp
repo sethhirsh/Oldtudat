@@ -1,7 +1,7 @@
 /*! \file unitTestKeplerPropagator.cpp
  *    Source file that defines a unit test that tests the Kepler propagator included in Tudat.
  *
- *    Path              : /Astrodynamics/Propagators/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 4
  *    Check status      : Checked
  *
@@ -56,8 +56,8 @@
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Bodies/vehicle.h"
 #include "Tudat/Astrodynamics/EnvironmentModels/centralGravityField.h"
-#include "Tudat/Astrodynamics/Propagators/keplerPropagator.h"
-#include "Tudat/Astrodynamics/Propagators/seriesPropagator.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/keplerPropagator.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/seriesPropagator.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
 #include "Tudat/Astrodynamics/States/state.h"
 #include "Tudat/Basics/basicFunctions.h"
@@ -81,7 +81,7 @@ int main( )
     // package Propagate.
 
     // Load file with benchmark data.
-    std::string relativePathToBenchmarkData = "Astrodynamics/Propagators/twoBodyKeplerData.dat";
+    std::string relativePathToBenchmarkData = "Astrodynamics/BasicAstrodynamics/twoBodyKeplerData.dat";
 
     std::string absolutePathToBenchmarkData = basic_functions::getRootPath( )
             + relativePathToBenchmarkData;
