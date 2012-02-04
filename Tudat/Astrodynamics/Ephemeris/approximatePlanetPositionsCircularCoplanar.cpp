@@ -47,7 +47,7 @@
 #include <cmath>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/Bodies/planet.h"
-#include "Tudat/Astrodynamics/States/approximatePlanetPositionsCircularCoplanar.h"
+#include "Tudat/Astrodynamics/Ephemeris/approximatePlanetPositionsCircularCoplanar.h"
 
 //! Tudat library namespace.
 namespace tudat

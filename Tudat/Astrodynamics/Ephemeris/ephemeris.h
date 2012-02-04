@@ -44,7 +44,6 @@
 // Include statements.
 #include <sstream>
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
-#include "Tudat/Input/textFileReader.h"
 
 //! Tudat library namespace.
 /*!
@@ -89,12 +88,6 @@ public:
     virtual CartesianElements* getStateFromEphemeris( double julianDate ) = 0;
 
 protected:
-
-    //! Ephemeris text file reader.
-    /*!
-     * Ephemeris text file reader.
-     */
-    TextFileReader ephemerisTextFileReader_;
 
     //! String stream for ephemeris line data.
     /*!

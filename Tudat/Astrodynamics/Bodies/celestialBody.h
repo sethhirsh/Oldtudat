@@ -50,7 +50,7 @@
 #include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
 #include "Tudat/Astrodynamics/EnvironmentModels/atmosphereModel.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
-#include "Tudat/Astrodynamics/States/ephemeris.h"
+#include "Tudat/Astrodynamics/Ephemeris/ephemeris.h"
 
 //! Tudat library namespace.
 /*!

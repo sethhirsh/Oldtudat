@@ -63,9 +63,9 @@
 #include <fstream>
 #include <map>
 #include <string>
-#include "Tudat/Astrodynamics/States/approximatePlanetPositionsDataContainer.h"
+#include "Tudat/Astrodynamics/Ephemeris/approximatePlanetPositionsDataContainer.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
-#include "Tudat/Astrodynamics/States/ephemeris.h"
+#include "Tudat/Astrodynamics/Ephemeris/ephemeris.h"
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
@@ -157,7 +157,7 @@ protected:
     /*!
      * Map container of string data from ephemeris data file.
      */
-    map< unsigned int, string > containerOfDataFromEphemerisFile_;
+    map< unsigned int, std::string > containerOfDataFromEphemerisFile_;
 
     //! Approximate planet positions data container.
     /*!

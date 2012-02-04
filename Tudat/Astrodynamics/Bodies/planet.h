@@ -42,7 +42,7 @@
 // Include statements.
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/EnvironmentModels/centralGravityField.h"
-#include "Tudat/Astrodynamics/States/approximatePlanetPositions.h"
+#include "Tudat/Astrodynamics/Ephemeris/approximatePlanetPositions.h"
 
 //! Tudat library namespace.
 /*!

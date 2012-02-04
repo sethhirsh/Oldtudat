@@ -64,7 +64,7 @@
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
-#include "Tudat/Astrodynamics/States/approximatePlanetPositionsCircularCoplanar.h"
+#include "Tudat/Astrodynamics/Ephemeris/approximatePlanetPositionsCircularCoplanar.h"
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 

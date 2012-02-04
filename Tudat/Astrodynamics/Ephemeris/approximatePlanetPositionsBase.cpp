@@ -55,8 +55,12 @@
  */
 
 // Include statements.
-#include "Tudat/Astrodynamics/Bodies/planet.h"
-#include "Tudat/Astrodynamics/States/approximatePlanetPositionsBase.h"
+#include <iostream>
+#include <boost/format.hpp>
+#include <boost/exception/all.hpp>
+#include <boost/throw_exception.hpp>
+#include "Tudat/Astrodynamics/Ephemeris/approximatePlanetPositionsBase.h"
+#include "Tudat/InputOutput/basicInputOutput.h"
 
 //! Tudat library namespace.
 namespace tudat
@@ -201,32 +205,38 @@ void ApproximatePlanetPositionsBase::parseExtraTermsEphemerisLineData_(
 void ApproximatePlanetPositionsBase::reloadData( )
 {
 
-    // Set relative directory path to ephemeris file in file reader.
-    ephemerisTextFileReader_.setRelativeDirectoryPath( "External/EphemerisData/" );
-
-    // Set file name of ephemeris data file.
-    ephemerisTextFileReader_.setFileName( "p_elem_t2.txt" );
+    // Set  path to ephemeris file in file reader.
+    std::string filePath_ = input_output::getPackageRootPath( ) +
+            "External/EphemerisData/p_elem_t2.txt";
 
     // Open ephemeris file.
-    ephemerisTextFileReader_.openFile( );
+    std::ifstream ephemerisFile_( filePath_.c_str() );
+    if ( ephemerisFile_.fail() )
+    {
+        boost::throw_exception(
+                    boost::enable_error_info(
+                        std::runtime_error(
+                            boost::str( boost::format( "Data file '%s' could not be opened." )
+                                 % filePath_.c_str( ) ) ) )
+            << boost::errinfo_file_name( filePath_.c_str( ) )
+            << boost::errinfo_file_open_mode( "std::ios::binary" )
+            << boost::errinfo_api_function( "std::ifstream::open" ) );
+    }
 
-    // Skip first 17 lines of file.
-    ephemerisTextFileReader_.skipLines( 17 );
+    // Read the file into a container
+    for ( int line = 1; line < 53; line++ )
+    {
+        std::string lineData;
+        getline( ephemerisFile_, lineData );
+        containerOfDataFromEphemerisFile_[line] = lineData;
+        if ( ephemerisFile_.fail() )
+        {
+            break;
+        }
+    }
 
-    // Read and store next 18 lines of file.
-    ephemerisTextFileReader_.readAndStoreData( 18 );
-
-    // Skip next 12 lines of file.
-    ephemerisTextFileReader_.skipLines( 12 );
-
-    // Read and store next 5 lines of file.
-    ephemerisTextFileReader_.readAndStoreData( 5 );
-
-    // Close file.
-    ephemerisTextFileReader_.closeFile( );
-
-    // Get container of data from file.
-    containerOfDataFromEphemerisFile_ = ephemerisTextFileReader_.getContainerOfData( );
+    // Close file
+    ephemerisFile_.close();
 
 }
 

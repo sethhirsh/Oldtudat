@@ -1,7 +1,7 @@
 # \file CMakeLists.txt
- #    This is the CMake file for the States sub-directory.
+ #    This is the CMake file for the Ephemeris sub-directory.
  #
- #    Path              : /Astrodynamics/States/
+ #    Path              : /Astrodynamics/Ephemeris/
  #    Version           : 4
  #    Check status      : Checked
  #
@@ -41,39 +41,34 @@
  #      111025    K. Kumar          Adapted file to work with Revision 194.
  #      111026    K. Kumar          Adapted file so all headers show in project tree in Qt Creator.
  #      111123    B. Tong Minh      Added unit test for State.
+ #      120204    B. Tong Minh      Copied from States 
  #/
 
 # Add source files.
-set(STATES_SOURCES
-  "${SRCROOT}${STATESDIR}/state.cpp"
+set(EPHEMERIS_SOURCES
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositions.cpp"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositionsBase.cpp"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositionsCircularCoplanar.cpp"
 )
 
 # Add header files.
-set(STATES_HEADERS 
-  "${SRCROOT}${STATESDIR}/cartesianElements.h"
-  "${SRCROOT}${STATESDIR}/cartesianPositionElements.h"
-  "${SRCROOT}${STATESDIR}/cartesianVelocityElements.h"
-  "${SRCROOT}${STATESDIR}/keplerianElements.h"
-  "${SRCROOT}${STATESDIR}/state.h"
+set(EPHEMERIS_HEADERS 
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositions.h"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositionsBase.h"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositionsCircularCoplanar.h"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositionsDataContainer.h"
+  "${SRCROOT}${EPHEMERISDIR}/ephemeris.h"
 )
 
 # Add static libraries.
-add_library(tudat_states STATIC ${STATES_SOURCES} ${STATES_HEADERS})
-setup_tudat_library_target(tudat_states "${SRCROOT}${STATESDIR}")
-setup_headers("${STATES_HEADERS}" "${STATESDIR}")
+add_library(tudat_ephemeris STATIC ${EPHEMERIS_SOURCES} ${EPHEMERIS_HEADERS})
+setup_tudat_library_target(tudat_ephemeris "${SRCROOT}${EPHEMERISDIR}")
+setup_headers("${EPHEMERIS_HEADERS}" "${EPHEMERISDIR}")
 
 # Add unit tests.
+add_executable(test_ApproximatePlanetPositions "${SRCROOT}${EPHEMERISDIR}/UnitTests/unitTestApproximatePlanetPositions.cpp")
+setup_custom_test_program(test_ApproximatePlanetPositions "${SRCROOT}${EPHEMERISDIR}")
+target_link_libraries(test_ApproximatePlanetPositions tudat_ephemeris tudat_astrodynamics tudat_basic_astrodynamics tudat_states tudat_input_output tudat_mathematics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
-add_executable(test_CartesianElements "${SRCROOT}${STATESDIR}/unitTestCartesianElements.cpp")
-setup_custom_test_program(test_CartesianElements "${SRCROOT}${STATESDIR}")
-target_link_libraries(test_CartesianElements tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
-
-add_executable(test_KeplerianElements "${SRCROOT}${STATESDIR}/unitTestKeplerianElements.cpp")
-setup_custom_test_program(test_KeplerianElements "${SRCROOT}${STATESDIR}")
-target_link_libraries(test_KeplerianElements tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
-
-add_executable(test_State "${SRCROOT}${STATESDIR}/unitTestState.cpp")
-setup_custom_test_program(test_State "${SRCROOT}${STATESDIR}")
-target_link_libraries(test_State tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
 
 # End of file.
