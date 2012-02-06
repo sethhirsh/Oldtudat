@@ -52,6 +52,7 @@ set(GEOMETRICSHAPES_SOURCES
   "${SRCROOT}${MATHEMATICSDIR}/GeometricShapes/singleSurfaceGeometry.cpp"
   "${SRCROOT}${MATHEMATICSDIR}/GeometricShapes/sphereSegment.cpp"
   "${SRCROOT}${MATHEMATICSDIR}/GeometricShapes/torus.cpp"
+  "${SRCROOT}${MATHEMATICSDIR}/GeometricShapes/geometricShapesToFile.cpp"
 )
 
 # Add header files.
@@ -65,6 +66,7 @@ set(GEOMETRICSHAPES_HEADERS
   "${SRCROOT}${MATHEMATICSDIR}/GeometricShapes/sphereSegment.h"
   "${SRCROOT}${MATHEMATICSDIR}/GeometricShapes/surfaceGeometry.h"
   "${SRCROOT}${MATHEMATICSDIR}/GeometricShapes/torus.h"
+  "${SRCROOT}${MATHEMATICSDIR}/GeometricShapes/geometricShapesToFile.h"
 )
 
 # Add static libraries.
