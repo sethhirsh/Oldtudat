@@ -1,8 +1,8 @@
 /*! \file matrixTextFileReader.cpp
  *    This file contains the source file of the matrix text file reader included in Tudat.
  *
- *    Path              : /Input/
- *    Version           : 2
+ *    Path              : /InputOutput/
+ *    Version           : 3
  *    Check status      : Unchecked
  *
  *    Author            : F. M. Engelen
@@ -14,7 +14,7 @@
  *    E-mail address    : simon@angelcorp.be
  *
  *    Date created      : 30 May, 2011
- *    Last modified     : 11 January, 2011
+ *    Last modified     : 6 February, 2012
  *
  *    References
  *
@@ -36,26 +36,24 @@
  *      YYMMDD    Author            Comment
  *      110530    F.M. Engelen      First creation of code.
  *      120111    F.M. Engelen      Replaced part of the code with boost alternatives.
+ *      120206    K. Kumar          Added Boost::trim() function to trim output of filter
+ *                                  before casting it to doubles.
  */
 
 // Include statements.
 #include <boost/format.hpp>
 #include <boost/throw_exception.hpp>
-
 #include <boost/iostreams/device/file.hpp>
 #include <boost/iostreams/copy.hpp>
 #include <boost/iostreams/filtering_stream.hpp>
-
 #include <boost/algorithm/string.hpp>
+#include <boost/algorithm/string/trim.hpp>
 #include <boost/lexical_cast.hpp>
-
 #include <vector>
 #include <fstream>
 #include <sstream>
-
 #include <TudatCore/InputOutput/basicInputOutput.h>
 #include <TudatCore/InputOutput/streamFilters.h>
-
 #include "Tudat/InputOutput/basicInputOutput.h"
 #include "Tudat/InputOutput/matrixTextFileReader.h"
 
@@ -140,8 +138,9 @@ Eigen::MatrixXd readMatrixFromFile( const std::string& filename, const std::stri
                                  boost::algorithm::token_compress_on );
         for ( int columnIndex = 0; columnIndex < dataMatrix_.cols(); columnIndex++ )
         {
+            boost::trim( lineSplit_.at( columnIndex ) );
             dataMatrix_( rowIndex, columnIndex ) =
-                    boost::lexical_cast<double>( lineSplit_.at( columnIndex ) );
+                    boost::lexical_cast< double >( lineSplit_.at( columnIndex ) );
         }
     }
 

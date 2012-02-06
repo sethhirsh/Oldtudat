@@ -570,7 +570,7 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
         meanMotion_ = twoLineElementData_[ objectNumberCounter_ ].meanMotionInRevolutionsPerDay
                 * 2.0 * M_PI / tudat::physical_constants::JULIAN_DAY;
         twoLineElementData_[ objectNumberCounter_ ].TLEKeplerianElements.setSemiMajorAxis(
-                    orbital_element_conversions::convertMeanMotionToSemiMajorAxis(
+                    orbital_element_conversions::convertEllipticalMeanMotionToSemiMajorAxis(
                         meanMotion_, earthWithWorldGeodeticSystem72GravitationalParameter ) );
 
         // Perigee of the object is calculated from the other TLE variables.
