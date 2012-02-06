@@ -51,7 +51,7 @@
  *      110212    J. Melman         Added comments to clarify test case.
  *      110512    K. Kumar          Updated code to not use dynamic memory
  *                                  allocation and new
- *                                  createPredefinedCelestialBody() function.
+ *                                  createPredefinedCelestialBody( ) function.
  *      110627    K. Kumar          Updated to use new predefined planets code.
  */
 
@@ -124,7 +124,7 @@ int main( )
     outgoingVelocityTest.setCartesianElementZDot( 0.0 );
 
     // Set values to compute gravity assist code.
-    myGravityAssist.setCentralGravityField( predefinedMars.getGravityFieldModel() );
+    myGravityAssist.setCentralGravityField( predefinedMars.getGravityFieldModel( ) );
     myGravityAssist.setCentralBodyVelocity( marsVelocity );
     myGravityAssist.setSmallestPeriapsisDistance( 3398.0e3 * marsSmallestPeriapsisDistanceFactor );
     myGravityAssist.setPointerToIncomingVelocity( &incomingVelocityTest );

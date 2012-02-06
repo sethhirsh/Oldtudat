@@ -47,7 +47,7 @@
  *                                  and capture paths.
  *      110206    E. Iorfida        Modified some comments and name of base class to
  *                                  EscapeAndCapture.
- *      110208    E. Iorfida        Deleted inheritance from TrajectoryDesignMethod, and execute(),
+ *      110208    E. Iorfida        Deleted inheritance from TrajectoryDesignMethod, and execute( ),
  *                                  function too. Modified getDeltaV into computeDeltaV.
  *      110214    E. Iorfida        Deleted temporary centralBodyRadius, replaced by an element of
  *                                  GeometricShapes.

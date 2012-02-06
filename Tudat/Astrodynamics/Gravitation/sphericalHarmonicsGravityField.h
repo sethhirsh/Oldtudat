@@ -41,8 +41,8 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      101116    K. Kumar          File created.
- *      101117    K. Kumar          Added getPotential() and getGradientOfPotential functions.
- *      101214    K. Kumar          Updated getGradientOfPotential() and getLaplacianOfPotential().
+ *      101117    K. Kumar          Added getPotential( ) and getGradientOfPotential functions.
+ *      101214    K. Kumar          Updated getGradientOfPotential( ) and getLaplacianOfPotential( ).
  *      110106    K. Kumar          Added order and degree of expansion variables and set/get
  *                                  functions.
  *      110202    K. Kumar          Updated code to make use of the CartesianPositionElements

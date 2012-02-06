@@ -48,15 +48,15 @@
  *      100903    K. Kumar          File header and footer added.
  *      100916    L. Abdulkadir     File checked.
  *      100929    K. Kumar          Checked code by D. Dirkx added.
- *      101110    K. Kumar          Added raiseToIntegerExponent() function.
+ *      101110    K. Kumar          Added raiseToIntegerExponent( ) function.
  *      102410    D. Dirkx          Minor comment changes during code check.
- *      101213    K. Kumar          Modified raiseToIntegerExponent() function;
- *                                  renamed raiseToIntegerPower().
- *                                  Added computeAbsoluteValue() functions.
- *      110111    J. Melman         Added computeModulo() function.
- *      110202    K. Kumar          Added overload for State* for computeLinearInterpolation().
- *      110411    K. Kumar          Added convertCartesianToSpherical() function.
- *      110707    K. Kumar          Added computeSampleMean(), computeSampleVariance() functions.
+ *      101213    K. Kumar          Modified raiseToIntegerExponent( ) function;
+ *                                  renamed raiseToIntegerPower( ).
+ *                                  Added computeAbsoluteValue( ) functions.
+ *      110111    J. Melman         Added computeModulo( ) function.
+ *      110202    K. Kumar          Added overload for State* for computeLinearInterpolation( ).
+ *      110411    K. Kumar          Added convertCartesianToSpherical( ) function.
+ *      110707    K. Kumar          Added computeSampleMean( ), computeSampleVariance( ) functions.
  *      110810    J. Leloux         Corrected doxygen documentation (equations).
  *      110824    J. Leloux         Corrected doxygen documentation.
  *      110905    S. Billemont      Reorganized includes.

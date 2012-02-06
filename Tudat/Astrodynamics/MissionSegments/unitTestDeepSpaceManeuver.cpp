@@ -57,8 +57,8 @@ int main( )
     using namespace tudat;
 
     // Summary of tests.
-    // Test 1: Test setTime() and getTime() functions.
-    // Test 2: Test setState() and getState() functions with Cartesian elements state.
+    // Test 1: Test setTime( ) and getTime( ) functions.
+    // Test 2: Test setState( ) and getState( ) functions with Cartesian elements state.
 
     // Test result initialised to false.
     bool isDeepSpaceManeuverErroneous_ = false;
@@ -66,23 +66,23 @@ int main( )
     // Create DSM object.
     DeepSpaceManeuver deepSpaceManeuver_;
 
-    // Test 1: Test setTime() and getTime() functions.
+    // Test 1: Test setTime( ) and getTime( ) functions.
     // Declare and initialize time of DSM.
     double timeOfDeepSpaceManeuver_ = 123.3;
 
     // Set time of DSM.
     deepSpaceManeuver_.setTime( timeOfDeepSpaceManeuver_ );
 
-    // Test if getTime() function results in set time for DSM.
+    // Test if getTime( ) function results in set time for DSM.
     if ( std::fabs( timeOfDeepSpaceManeuver_ - deepSpaceManeuver_.getTime( ) )
          > std::numeric_limits< double >::epsilon( ) )
     {
-        cerr << "The setTime()/getTime() functions do not work properly." << endl;
+        cerr << "The setTime( )/getTime( ) functions do not work properly." << endl;
 
         isDeepSpaceManeuverErroneous_ = true;
     }
 
-    // Test 2: Test setState() and getState() functions with Cartesian elements
+    // Test 2: Test setState( ) and getState( ) functions with Cartesian elements
     //         state.
     // Declare and initialize Cartesian elements state for DSM.
     CartesianElements deepSpaceManeuverState_;
@@ -96,27 +96,27 @@ int main( )
     // Set DSM state.
     deepSpaceManeuver_.setState( &deepSpaceManeuverState_ );
 
-    // Test if getState() function results in set state for DSM.
+    // Test if getState( ) function results in set state for DSM.
     if ( std::fabs( deepSpaceManeuverState_.state.norm( )
                     - deepSpaceManeuver_.getState( )->state.norm( ) )
          > std::numeric_limits< double >::epsilon( ) )
     {
-        cerr << "The setState()/getState() functions do not work properly." << endl;
+        cerr << "The setState( )/getState( ) functions do not work properly." << endl;
         isDeepSpaceManeuverErroneous_ = true;
     }
 
-    // Test 1: Test setDeltaV() and getDeltaV() functions.
+    // Test 1: Test setDeltaV( ) and getDeltaV( ) functions.
     // Declare and initialize deltaV for DSM.
     double deltaVOfDeepSpaceManeuver_ = 254.78;
 
     // Set deltaV of DSM.
     deepSpaceManeuver_.setDeltaV( deltaVOfDeepSpaceManeuver_ );
 
-    // Test if getDeltaV() function results in set deltaV for DSM.
+    // Test if getDeltaV( ) function results in set deltaV for DSM.
     if ( std::fabs( deltaVOfDeepSpaceManeuver_ - deepSpaceManeuver_.getDeltaV( ) )
          > std::numeric_limits< double >::epsilon( ) )
     {
-        cerr << "The setDeltaV()/getDeltaV() functions do not work properly." << endl;
+        cerr << "The setDeltaV( )/getDeltaV( ) functions do not work properly." << endl;
         isDeepSpaceManeuverErroneous_ = true;
     }
 

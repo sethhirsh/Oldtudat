@@ -24,8 +24,8 @@ struct RungeKuttaCoefficients
     unsigned int lowerOrder;
 
 
-    RungeKuttaCoefficients() :
-        aCoefficients(), bCoefficients(), cCoefficients(),
+    RungeKuttaCoefficients( ) :
+        aCoefficients( ), bCoefficients( ), cCoefficients( ),
         higherOrder( 0 ), lowerOrder( 0 )
     { }
     RungeKuttaCoefficients( const Eigen::MatrixXd& aCoefficients_,

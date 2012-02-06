@@ -45,7 +45,7 @@ endmacro(_tudat_core_check_version)
 if (TUDAT_CORE_INCLUDE_DIR)
 
   # in cache already
-  _tudat_core_check_version()
+  _tudat_core_check_version( )
   set(TUDAT_CORE_FOUND ${TUDAT_CORE_VERSION_OK})
 
 else (TUDAT_CORE_INCLUDE_DIR)
@@ -62,7 +62,7 @@ else (TUDAT_CORE_INCLUDE_DIR)
   set(TUDAT_CORE_LIBRARIES_DIR ${TUDAT_CORE_BASE_PATH}/lib)
 
   if(TUDAT_CORE_INCLUDE_DIR)
-    _tudat_core_check_version()
+    _tudat_core_check_version( )
   endif(TUDAT_CORE_INCLUDE_DIR)
 
   include(FindPackageHandleStandardArgs)

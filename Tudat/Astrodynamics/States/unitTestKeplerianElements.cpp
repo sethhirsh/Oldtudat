@@ -62,8 +62,8 @@ int main( )
     // Three tests.
     // Test 1: Set Keplerian elements using individual set functions; and get
     //         Keplerian elements using individual get functions.
-    // Test 2: Set Keplerian elements using setState() function; and get
-    //         Keplerian elements using getState() function.
+    // Test 2: Set Keplerian elements using setState( ) function; and get
+    //         Keplerian elements using getState( ) function.
     // Test 3: Get auxilliary Keplerian elements.
 
     // Initialize unit test result to false.
@@ -121,7 +121,7 @@ int main( )
     differenceBetweenResultsTest1_
             = keplerianElementsStateVectorTest1 - vectorOfKeplerianElements_;
 
-    // Test 2: Set Keplerian elements using setState() function.
+    // Test 2: Set Keplerian elements using setState( ) function.
     keplerianElementsStateTest2_.state = vectorOfKeplerianElements_;
 
     // Test 2: Difference between setting the Keplerian state as a whole and

@@ -41,11 +41,11 @@
  *      110223    K. Kumar          First creation of code.
  *      110315    J. Leloux         Checked code.
  *      110316    K. Kumar          Added ostream >> operator overload.
- *      110521    K. Kumar          Modified stripEndOfLineCharacters().
+ *      110521    K. Kumar          Modified stripEndOfLineCharacters( ).
  *      110607    F.M. Engelen      Added skipKeyWord Feature.
- *      110627    K. Kumar          Moved skipLinesWithKeyword() to FileReader.
+ *      110627    K. Kumar          Moved skipLinesWithKeyword( ) to FileReader.
  *      110810    J. Leloux         Changed if-statement of readAndStoreData function.
- *      111117    K. Kumar          Modified stripEndOfLineCharacters() function.
+ *      111117    K. Kumar          Modified stripEndOfLineCharacters( ) function.
  *      111220    F.M. Engelen      Solved minor bug when reusing the code.
  */
 

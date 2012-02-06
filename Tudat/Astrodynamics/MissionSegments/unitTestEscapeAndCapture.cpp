@@ -42,7 +42,7 @@
  *      110131    E. Iorfida        First creation of the code.
  *      110202    E. Iorfida        Modified structure of the code, unique
  *                                  base class for launch and capture paths.
- *      110208    E. Iorfida        Deleted execute() function. Modified getDeltaV into
+ *      110208    E. Iorfida        Deleted execute( ) function. Modified getDeltaV into
  *                                  computeDeltaV.
  *      110214    E. Iorfida        Code updated with the modification made in .h/.cpp files
  *                                  about radius of central body.
@@ -92,14 +92,14 @@ int main( )
     predefinedMars.setPredefinedPlanetSettings( Planet::mars );
     
     // Set launch conditions.
-    escapePhaseTest.setCentralGravityField( predefinedEarth.getGravityFieldModel() );
+    escapePhaseTest.setCentralGravityField( predefinedEarth.getGravityFieldModel( ) );
     escapePhaseTest.setParkingOrbitRadius( 6371.0e3 );
     escapePhaseTest.setPeriapsisAltitude( 629.0e3 );
     escapePhaseTest.setEccentricity( 0.0 );
     escapePhaseTest.setHyperbolicExcessSpeed( 2.9444e3 );
 
     // Set capture conditions.
-    capturePhaseTest.setCentralGravityField( predefinedMars.getGravityFieldModel() );
+    capturePhaseTest.setCentralGravityField( predefinedMars.getGravityFieldModel( ) );
     capturePhaseTest.setParkingOrbitRadius( 3389.0e3 );
     capturePhaseTest.setPeriapsisAltitude( 2611.0e3 );
     capturePhaseTest.setEccentricity( 0.0 );

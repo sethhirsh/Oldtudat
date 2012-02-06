@@ -44,7 +44,7 @@
  *      100929    K. Kumar          EigenRoutines.h replaced in include statements by
  *                                  linearAlgebra.h.
  *      110201    K. Kumar          Updated code to make use of State class; moved
- *                                  computeSumOfStateDerivatives_() to NumericalPropagator class.
+ *                                  computeSumOfStateDerivatives_( ) to NumericalPropagator class.
  *      110207    K. Kumar          Added ostream overload.
  *      110216    K. Kumar          Added get function for fixedOutputInterval_.
  *      110920    K. Kumar          Corrected simple errors outlined by M. Persson.

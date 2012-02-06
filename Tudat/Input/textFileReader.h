@@ -41,8 +41,8 @@
  *      110315    J. Leloux         Checked code.
  *      110316    K. Kumar          Added ostream >> operator overload.
  *      110607    F.M. Engelen      Added skipKeyWord Feature.
- *      110627    K. Kumar          Moved skipLinesWithKeyword() to FileReader.
- *      111117    K. Kumar          Modified stripEndOfLineCharacters() function.
+ *      110627    K. Kumar          Moved skipLinesWithKeyword( ) to FileReader.
+ *      111117    K. Kumar          Modified stripEndOfLineCharacters( ) function.
  */
 
 #ifndef TEXTFILEREADER_H

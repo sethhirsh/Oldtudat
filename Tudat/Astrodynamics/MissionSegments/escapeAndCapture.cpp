@@ -40,7 +40,7 @@
  *      110131    E. Iorfida        Added pointerToCentralBody.
  *      110202    E. Iorfida        Modified structure of the code, unique base class for launch
  *                                  and capture paths.
- *      110208    E. Iorfida        Deleted inheritance from TrajectoryDesignMethod, and execute(),
+ *      110208    E. Iorfida        Deleted inheritance from TrajectoryDesignMethod, and execute( ),
  *                                  function too. Modified getDeltaV into computeDeltaV.
  *      110214    E. Iorfida        Deleted temporary centralBodyRadius, replaced by an element of
  *                                  GeometricShapes.
@@ -55,15 +55,15 @@ namespace tudat
 {
 
 //! Default constructor.
-EscapeAndCapture::EscapeAndCapture() : 
+EscapeAndCapture::EscapeAndCapture( ) : 
     centralBodyGravityfield_( NULL ), 
-    semiMajorAxis_ ( std::numeric_limits<double>::signaling_NaN() ), 
-    eccentricity_ ( std::numeric_limits<double>::signaling_NaN() ),
-    periapsisAltitude_ ( std::numeric_limits<double>::signaling_NaN() ), 
-    apoapsisAltitude_( std::numeric_limits<double>::signaling_NaN() ), 
-    hyperbolicExcessSpeed_( std::numeric_limits<double>::signaling_NaN() ),
-    deltaV_ ( std::numeric_limits<double>::signaling_NaN() ), 
-    parkingOrbitRadius_( std::numeric_limits<double>::signaling_NaN() ),
+    semiMajorAxis_ ( std::numeric_limits<double>::signaling_NaN( ) ), 
+    eccentricity_ ( std::numeric_limits<double>::signaling_NaN( ) ),
+    periapsisAltitude_ ( std::numeric_limits<double>::signaling_NaN( ) ), 
+    apoapsisAltitude_( std::numeric_limits<double>::signaling_NaN( ) ), 
+    hyperbolicExcessSpeed_( std::numeric_limits<double>::signaling_NaN( ) ),
+    deltaV_ ( std::numeric_limits<double>::signaling_NaN( ) ), 
+    parkingOrbitRadius_( std::numeric_limits<double>::signaling_NaN( ) ),
     pointerToCentralBodySphere_ ( NULL )
 {
 }

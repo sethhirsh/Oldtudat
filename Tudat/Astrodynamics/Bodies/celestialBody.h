@@ -37,7 +37,7 @@
  *      100910    J. Melman         No more switch statement and enum.
  *      100929    K. Kumar          Minor comment changes.
  *      110112    K. Kumar          Modified to use GravityFieldModel; corrected path.
- *      110113    K. Kumar          Added getGravityFieldModel() function.
+ *      110113    K. Kumar          Added getGravityFieldModel( ) function.
  *      110310    K. Kumar          Added ephemeris; added missing destructor.
  */
 

@@ -38,9 +38,9 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      101117    K. Kumar          File created.
- *      101214    K. Kumar          Updated getGradientOfPotential() and getLaplacianOfPotential().
- *      101215    K. Kumar          Simplified getGradientOfPotential() and
- *                                  getLaplacianOfPotential().
+ *      101214    K. Kumar          Updated getGradientOfPotential( ) and getLaplacianOfPotential( ).
+ *      101215    K. Kumar          Simplified getGradientOfPotential( ) and
+ *                                  getLaplacianOfPotential( ).
  *      101216    K. Kumar          Updated functions to use position of origin for relative
  *                                  position.
  *      110106    K. Kumar          Added set/get functions for degree and order of expansion.

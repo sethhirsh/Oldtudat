@@ -37,10 +37,10 @@
  *      110215    K. Kumar          Minor modifications to layout, comments
  *                                  and variable-naming.
  *      110411    K. Kumar          Added unit test for
- *                                  convertCartesianToSpherical() function.
+ *                                  convertCartesianToSpherical( ) function.
  *      110701    K. Kumar          Updated failing tests with relative errors.
- *      110708    K. Kumar          Added unit tests for computeSampleMean()
- *                                  and computeSampleVariance() functions.
+ *      110708    K. Kumar          Added unit tests for computeSampleMean( )
+ *                                  and computeSampleVariance( ) functions.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
  *      111111    K. Kumar          Strange error with convertCylindricalToCartesian function;
@@ -192,11 +192,11 @@ int main( )
     std::map < double, tudat::State* > stateMap;
     tudat::State* interpolatedState;
     tudat::CartesianPositionElements* cartesianPostitionStateOne =
-            new tudat::CartesianPositionElements();
+            new tudat::CartesianPositionElements( );
     tudat::CartesianPositionElements* cartesianPostitionStateTwo =
-            new tudat::CartesianPositionElements();
+            new tudat::CartesianPositionElements( );
     tudat::CartesianPositionElements* cartesianPostitionStateThree =
-            new tudat::CartesianPositionElements();
+            new tudat::CartesianPositionElements( );
 
     // Set position elements for three states.
     cartesianPostitionStateOne->setCartesianElementX( -7.0 );

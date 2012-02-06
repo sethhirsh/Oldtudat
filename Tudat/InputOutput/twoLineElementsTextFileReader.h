@@ -336,7 +336,7 @@ protected:
 
     //! Starting character.
     /*!
-     * Starting character used by the skipLinesStartingWithCharacter() function.
+     * Starting character used by the skipLinesStartingWithCharacter( ) function.
      */
     std::string startingCharacter_;
 

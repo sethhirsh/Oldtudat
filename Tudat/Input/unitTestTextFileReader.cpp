@@ -43,9 +43,9 @@
  *      110330    K. Kumar          Minor corrections; test unsuccessful.
  *      110407    J. Leloux         Changed setup/order of file and tests -> successful.
  *      110408    K. Kumar          Added carriage return to string ( temp solution ).
- *      110521    K. Kumar          Updated to reflect changes to stripEndOfLineCharacters().
- *      110607    F.M. Engelen      Updated with skipKeyword() test.
- *      110627    K. Kumar          Fixed skipKeyword() test.
+ *      110521    K. Kumar          Updated to reflect changes to stripEndOfLineCharacters( ).
+ *      110607    F.M. Engelen      Updated with skipKeyword( ) test.
+ *      110627    K. Kumar          Fixed skipKeyword( ) test.
  *      111117    K. Kumar          Added invalid input file exception test based on suggestion by
  *                                  S. Billemont.
  */

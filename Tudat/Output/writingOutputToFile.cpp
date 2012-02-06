@@ -45,7 +45,7 @@
  *      100929    B. Romgens          Spelling mistakes corrected and output to
  *                                    file corrected.
  *      100929    K. Kumar            Added checked code written by D. Dirkx.
- *      110202    K. Kumar            Updated writePropagationHistoryToFile()
+ *      110202    K. Kumar            Updated writePropagationHistoryToFile( )
  *                                    to work with State*.
  */
 

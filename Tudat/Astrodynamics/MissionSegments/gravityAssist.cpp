@@ -91,21 +91,21 @@ namespace tudat
 {
 
 //! Default constructor.
-GravityAssist::GravityAssist() : 
+GravityAssist::GravityAssist( ) : 
     centralBodyVelocity_( Eigen::Vector3d::Zero( ) ), 
-    smallestPeriapsisDistance_( std::numeric_limits<double>::signaling_NaN() ),
+    smallestPeriapsisDistance_( std::numeric_limits<double>::signaling_NaN( ) ),
     pointerToIncomingVelocity_( NULL ), 
     pointerToOutgoingVelocity_( NULL ),
     incomingHyperbolicExcessVelocity_ ( Eigen::Vector3d::Zero( ) ),
     outgoingHyperbolicExcessVelocity_ ( Eigen::Vector3d::Zero( ) ), 
-    deltaV_(                std::numeric_limits<double>::signaling_NaN() ),
-    bendingAngle_(          std::numeric_limits<double>::signaling_NaN() ), 
-    incomingEccentricity_(  std::numeric_limits<double>::signaling_NaN() ), 
-    outgoingEccentricity_(  std::numeric_limits<double>::signaling_NaN() ),
-    incomingSemiMajorAxis_( std::numeric_limits<double>::signaling_NaN() ), 
-    outgoingSemiMajorAxis_( std::numeric_limits<double>::signaling_NaN() ),
-    bendingEffectDeltaV_(   std::numeric_limits<double>::signaling_NaN() ), 
-    velocityEffectDeltaV_(  std::numeric_limits<double>::signaling_NaN() ),
+    deltaV_(                std::numeric_limits<double>::signaling_NaN( ) ),
+    bendingAngle_(          std::numeric_limits<double>::signaling_NaN( ) ), 
+    incomingEccentricity_(  std::numeric_limits<double>::signaling_NaN( ) ), 
+    outgoingEccentricity_(  std::numeric_limits<double>::signaling_NaN( ) ),
+    incomingSemiMajorAxis_( std::numeric_limits<double>::signaling_NaN( ) ), 
+    outgoingSemiMajorAxis_( std::numeric_limits<double>::signaling_NaN( ) ),
+    bendingEffectDeltaV_(   std::numeric_limits<double>::signaling_NaN( ) ), 
+    velocityEffectDeltaV_(  std::numeric_limits<double>::signaling_NaN( ) ),
     pointerToNewtonRaphson_( NULL )
 {
 }

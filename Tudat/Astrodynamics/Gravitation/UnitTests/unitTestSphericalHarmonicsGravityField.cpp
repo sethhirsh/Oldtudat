@@ -38,8 +38,8 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      101215    K. Kumar          First creation of code.
- *      101216    K. Kumar          Updated to include test of getPotential().
- *      101230    K. Kumar          Updated to include test of getGradient() and getLaplacian().
+ *      101216    K. Kumar          Updated to include test of getPotential( ).
+ *      101230    K. Kumar          Updated to include test of getGradient( ) and getLaplacian( ).
  *      110104    J. Melman         Some minor comment and layout changes.
  *      110106    K. Kumar          Updated test using predefined gravity field and added machine
  *                                  precision variable.

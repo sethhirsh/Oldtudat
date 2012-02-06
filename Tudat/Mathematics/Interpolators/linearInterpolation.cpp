@@ -47,16 +47,16 @@
  *      100903    K. Kumar          File created.
  *      100916    L. Abdulkadir     File checked.
  *      100929    K. Kumar          Checked code by D. Dirkx added.
- *      101110    K. Kumar          Added raiseToExponentPower() function.
+ *      101110    K. Kumar          Added raiseToExponentPower( ) function.
  *      102410    D. Dirkx          Minor comment changes as code check.
- *      101213    K. Kumar          Bugfix raiseToIntegerExponent(); renamed raiseToIntegerPower().
- *                                  Added computeAbsoluteValue() functions.
- *      110202    K. Kumar          Added overload for State* for computeLinearInterpolation().
- *      110111    J. Melman         Added computeModulo() function.
- *      110411    K. Kumar          Added convertCartesianToSpherical() function.
+ *      101213    K. Kumar          Bugfix raiseToIntegerExponent( ); renamed raiseToIntegerPower( ).
+ *                                  Added computeAbsoluteValue( ) functions.
+ *      110202    K. Kumar          Added overload for State* for computeLinearInterpolation( ).
+ *      110111    J. Melman         Added computeModulo( ) function.
+ *      110411    K. Kumar          Added convertCartesianToSpherical( ) function.
  *      110606    J. Melman         Removed possible singularity from
  *                                  convertCartesianToSpherical.
- *      110707    K. Kumar          Added computeSampleMean(), computeSampleVariance() functions.
+ *      110707    K. Kumar          Added computeSampleMean( ), computeSampleVariance( ) functions.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
  *      120202    K. Kumar          Moved linear interpolation functions into new Interpolators

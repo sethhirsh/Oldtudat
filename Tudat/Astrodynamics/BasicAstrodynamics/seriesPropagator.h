@@ -97,10 +97,10 @@ public:
     /*!
      * Sets the fixed output interval at which propagation output should be
      * generated and stored for each body being propagated. This function
-     * can only be called after both setSeriesPropagationStart() and
-     * setSeriesPropagationEnd() are called. Also computes number of propagation
-     * steps minus one. This will only lead to a sensible result if setSeriesPropagationStart()
-     * and setSeriesPropagationEnd() have been called. To prevent numerical instabilities from
+     * can only be called after both setSeriesPropagationStart( ) and
+     * setSeriesPropagationEnd( ) are called. Also computes number of propagation
+     * steps minus one. This will only lead to a sensible result if setSeriesPropagationStart( )
+     * and setSeriesPropagationEnd( ) have been called. To prevent numerical instabilities from
      * occuring (e.g., ceil( 4 / 2 ) != ceil( ( 4 + 1e-16 ) / 2 )), the square root of the machine
      * precision is subtracted before applying the ceil function.
      * \param fixedOutputInterval Fixed output interval.

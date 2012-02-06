@@ -37,8 +37,8 @@
  *      YYMMDD    Author            Comment
  *      110701    K. Kumar          First creation of code.
  *      110726    K. Kumar          Changed filename and class name.
- *      110802    K. Kumar          Added computeFitErrors() function and
- *                                  split code from computeFit(); changed
+ *      110802    K. Kumar          Added computeFitErrors( ) function and
+ *                                  split code from computeFit( ); changed
  *                                  filename and class name.
  *      110810    J. Leloux         Corrected doxygen documentation.
  *      110905    S. Billemont      Reorganized includes.

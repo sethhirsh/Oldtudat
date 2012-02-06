@@ -69,7 +69,7 @@ namespace tudat
  * a SphereSegment object for the nose region, a ConicalFrustum
  * object for the afterbody, a SphereSegment object for the
  * rear cap, and a Torus object for the connection between the nose and torus
- * parts. The setCapsule() function needs to be called after  each of the
+ * parts. The setCapsule( ) function needs to be called after  each of the
  * parameters has been set to initialize the capsule.
  */
 class Capsule: public CompositeSurfaceGeometry

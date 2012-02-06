@@ -62,9 +62,9 @@ namespace input_output
  * to define the number of columns.
  * \param filename The filename of the to be read file.
  * \param seperators Separators used, every character in the string will be used
- *         as seperator. (multiple seperators possible)
+ *         as seperator. (multiple seperators possible).
  * \param skipLinesCharacter Skip lines starting with this character.
- * \param relativePath set the relative path (can also be done via the filename.)
+ * \param relativePath set the relative path (can also be done via the filename).
  * \return The datamatrix.
  */
 Eigen::MatrixXd readMatrixFromFile( const std::string& filename,

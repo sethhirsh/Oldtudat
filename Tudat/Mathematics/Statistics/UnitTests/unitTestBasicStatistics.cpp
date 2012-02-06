@@ -37,10 +37,10 @@
  *      110215    K. Kumar          Minor modifications to layout, comments
  *                                  and variable-naming.
  *      110411    K. Kumar          Added unit test for
- *                                  convertCartesianToSpherical() function.
+ *                                  convertCartesianToSpherical( ) function.
  *      110701    K. Kumar          Updated failing tests with relative errors.
- *      110708    K. Kumar          Added unit tests for computeSampleMean()
- *                                  and computeSampleVariance() functions.
+ *      110708    K. Kumar          Added unit tests for computeSampleMean( )
+ *                                  and computeSampleVariance( ) functions.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
  *      111111    K. Kumar          Strange error with convertCylindricalToCartesian function;
@@ -66,7 +66,7 @@ BOOST_AUTO_TEST_SUITE( test_basic_statistics )
 BOOST_AUTO_TEST_CASE( testSampleMean )
 {
     // Test computation of sample mean on finite population using unbiased estimators.
-    // The expected values are computed using the Microsoft Excel the AVERAGE() function.
+    // The expected values are computed using the Microsoft Excel the AVERAGE( ) function.
 
     // Declare vector of sample data.
     std::vector< double > sampleData;
@@ -94,7 +94,7 @@ BOOST_AUTO_TEST_CASE( testSampleMean )
 BOOST_AUTO_TEST_CASE( testSampleVariance )
 {
     // Test computation of sample variance on finite population using unbiased estimators.
-    // The expected values are computed using the Microsoft Excel the VAR() function.
+    // The expected values are computed using the Microsoft Excel the VAR( ) function.
 
     // Declare vector of sample data.
     std::vector< double > sampleData;

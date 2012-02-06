@@ -108,7 +108,7 @@ double ConvertMeanAnomalyToEccentricAnomaly::convert( )
              << "and mean anomaly is not possible for eccentricities larger than: 0.98" << endl;
 
         // Set eccentric anomaly to error value.
-        eccentricAnomaly_ = std::numeric_limits<double>::signaling_NaN() ;
+        eccentricAnomaly_ = std::numeric_limits<double>::signaling_NaN( ) ;
     }
 
     // Return eccentric anomaly.

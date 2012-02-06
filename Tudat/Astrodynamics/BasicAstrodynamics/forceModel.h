@@ -47,7 +47,7 @@
  *      100929    K. Kumar          Minor corrections to include statements and comments.
  *      110113    K. Kumar          Modified CelestialBody object to pointer; minor comment
  *                                  changes.
- *      110119    K. Kumar          Changed computeStateDerivatives() to computeForce().
+ *      110119    K. Kumar          Changed computeStateDerivatives( ) to computeForce( ).
  *      110202    K. Kumar          Updated code to make use of State class.
  *      110707    F.M. Engelen      Replaced code with new code.
  *      110809    K. Kumar          Split code into base class and derived class

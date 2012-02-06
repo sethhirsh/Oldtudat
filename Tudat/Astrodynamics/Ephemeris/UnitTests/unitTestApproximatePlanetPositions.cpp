@@ -53,8 +53,8 @@
  *      110701    K. Kumar          Updated to use new predefined planets architecture; removed
  *                                  dynamic memory allocation.
  *      110714    L. van der Ham    Added circular coplanar case.
- *      111024    K. Kumar          Spotted error in circular coplanar test after changing abs()
- *                                  to fabs(). Needs to be fixed.
+ *      111024    K. Kumar          Spotted error in circular coplanar test after changing abs( )
+ *                                  to fabs( ). Needs to be fixed.
  */
 
 // Include statements.

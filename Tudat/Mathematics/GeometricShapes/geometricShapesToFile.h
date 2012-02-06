@@ -77,7 +77,7 @@ void writeSingleSurfaceGeometryPointsToFile(
 //! Write composite surface geometry to a file.
 /*!
  *  Writes the single surface geometries in a composite surface geometry to
- *  a file. The writeSingleGeometryPointsToFile() function is called for
+ *  a file. The writeSingleGeometryPointsToFile( ) function is called for
  *  each surface geometry.
  *  \param pointerToCompositeSurfaceGeometry Geometry from which there
  *          is to be written.

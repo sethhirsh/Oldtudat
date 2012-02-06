@@ -57,7 +57,7 @@ project( Tudat )
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/External/CMake)
 
 # Set full-path to Tudat trunk directory.
-# This should be used in case the FILE token does not given the full-path in the getRootPath()
+# This should be used in case the FILE token does not given the full-path in the getRootPath( )
 # function in basicFunctions.cpp.
 #add_definitions(-DTUDAT_CUSTOM_ROOT_PATH="C:\My\Custom\Path\To\Tudat\trunk")
 
@@ -72,7 +72,7 @@ set(CMAKE_BUILD_TYPE Debug)
 #set(CMAKE_BUILD_TYPE Release)
 
 # Set testing options based on platform.
-enable_testing()
+enable_testing( )
 
 if (WIN32)
   if (MSVC)
@@ -90,18 +90,18 @@ if (WIN32)
     set(LIBROOT "${SRCROOT}/lib")
     set(INCLUDEROOT "${SRCROOT}/include")
     set(BINROOT "${SRCROOT}/bin")
-  else()
+  else( )
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -g -Woverloaded-virtual -Wold-style-cast -Wnon-virtual-dtor")
     set(LIBROOT "${SRCROOT}/lib")
     set(INCLUDEROOT "${SRCROOT}/include")
     set(BINROOT "${SRCROOT}/bin")
-  endif()
-else()
+  endif( )
+else( )
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -g -Woverloaded-virtual -Wold-style-cast -Wnon-virtual-dtor")
   set(LIBROOT "${SRCROOT}/lib")
   set(INCLUDEROOT "${SRCROOT}/include")
   set(BINROOT "${SRCROOT}/bin")
-endif()
+endif( )
 
 
 # Set the global macros for setting up targets.
@@ -152,9 +152,9 @@ find_package(Eigen3 REQUIRED)
 # Set CMake flag to suppress Eigen warnings (platform-dependent solution).
 if(NOT APPLE)
   include_directories(SYSTEM AFTER "${EIGEN3_INCLUDE_DIR}")
-else()
+else( )
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -isystem \"${EIGEN3_INCLUDE_DIR}\"")
-endif()
+endif( )
 
 # Configure Boost libraries.
 set(Boost_USE_STATIC_LIBS ON)
@@ -172,9 +172,9 @@ find_package(Boost 1.45.0 COMPONENTS thread date_time system unit_test_framework
 # Set CMake flag to suppress Boost warnings (platform-dependent solution).
 if(NOT APPLE)
   include_directories(SYSTEM AFTER "${Boost_INCLUDE_DIRS}")
-else()
+else( )
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -isystem \"${Boost_INCLUDE_DIRS}\"")
-endif()
+endif( )
 
 # Find Tudat Core library on local system.
 find_package(TudatCore 0.1 REQUIRED)
@@ -187,9 +187,9 @@ find_package(TudatCore 0.1 REQUIRED)
 # Set CMake flag to suppress TudatCore warnings (platform-dependent solution).
 if(NOT APPLE)
   include_directories(SYSTEM AFTER "${TUDAT_CORE_INCLUDE_DIR}")
-else()
+else( )
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -isystem \"${TUDAT_CORE_INCLUDE_DIR}\"")
-endif()
+endif( )
 
 # Set sub-directories.
 set(SUBDIRS ${APPLICATIONSDIR} ${ASTRODYNAMICSDIR} ${BASICSDIR} ${INPUTDIR} ${INPUTOUTPUTDIR} ${MATHEMATICSDIR} ${OUTPUTDIR})

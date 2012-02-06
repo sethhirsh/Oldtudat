@@ -133,7 +133,7 @@ public:
     //! Get location of Lagrange libration point.
     /*!
      * Returns the position vector in Cartesian elements of a Lagrange libration point. The
-     * libration point is selected when the computeLocationOfLibrationPoint() function is
+     * libration point is selected when the computeLocationOfLibrationPoint( ) function is
      * called.
      * \return Cartesian position elements of Lagrange libration point.
      */
@@ -142,8 +142,8 @@ public:
 
     //! Compute mass parameter.
     /*!
-     * Computes dimensionless mass parameter. This requires that the setPrimaryCelestialBody() and
-     * setSecondaryCelestialBody() functions have been called.
+     * Computes dimensionless mass parameter. This requires that the setPrimaryCelestialBody( ) and
+     * setSecondaryCelestialBody( ) functions have been called.
      */
     void computeMassParameter( )
     {

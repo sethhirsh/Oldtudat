@@ -27,7 +27,7 @@
  *    Notes
  *      The variable state is public as opposed to being protected and accessed
  *      by set and get functions to simplify the use of Eigen functions for
- *      vectors in the rest of the code, e.g. setZero(), segment().
+ *      vectors in the rest of the code, e.g. setZero( ), segment( ).
  *
  *    Copyright (c) 2010-2011 Delft University of Technology.
  *
@@ -43,7 +43,7 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      101026    K. Kumar          First creation of code.
- *      101110    K. Kumar          Added setState() function for matrices.
+ *      101110    K. Kumar          Added setState( ) function for matrices.
  *      101202    J. Melman         Changed path and blank line removed.
  *      110110    K. Kumar          Changed matrices to vectors.
  *      110202    K. Kumar          Removed set/get functions for state and made state a public

@@ -119,7 +119,7 @@ public:
      * \param intervalStart The start of the integration interval
      * \param initialState The initial state
      * \param minimumStepSize The minimum step size to take. If this constraint is violated, a
-     * flag will be set that can be retrieved with isMinimumStepSizeViolated()
+     * flag will be set that can be retrieved with isMinimumStepSizeViolated( )
      * \param relativeErrorTolerance The relative error tolerance, for each individual state
      * vector element
      * \sa NumericalIntegrator::NumericalIntegrator
@@ -149,7 +149,7 @@ public:
      * \param intervalStart The start of the integration interval
      * \param initialState The initial state
      * \param minimumStepSize The minimum step size to take. If this constraint is violated, a
-     * flag will be set that can be retrieved with isMinimumStepSizeViolated()
+     * flag will be set that can be retrieved with isMinimumStepSizeViolated( )
      * \param relativeErrorTolerance The relative error tolerance, equal for all individual state
      * vector elements
      * \sa NumericalIntegrator::NumericalIntegrator
@@ -167,8 +167,8 @@ public:
         lastInterval_( intervalStart ),
         coefficients_( coefficients ),
         minimumStepSize_( minimumStepSize ),
-        relativeErrorTolerance_( StateType::Constant( initialState.rows(),
-                                                      initialState.cols(),
+        relativeErrorTolerance_( StateType::Constant( initialState.rows( ),
+                                                      initialState.cols( ),
                                                       relativeErrorTolerance ) ),
         isMinimumStepSizeViolated_( false )
     { }
@@ -183,18 +183,18 @@ public:
     //! Returns the current state
     /*!
      * Returns the current state of the integrator. Child classes should override this and provide
-     * the computed state by performIntegrationStep().
+     * the computed state by performIntegrationStep( ).
      * \return Current integrated state
      */
-    virtual StateType getCurrentState() const { return currentState_; }
+    virtual StateType getCurrentState( ) const { return currentState_; }
 
     //! Returns the current interval
     /*!
      * Returns the current interval of the integrator. Child classes should override this and
-     * provide the computed interval by performIntegrationStep().
+     * provide the computed interval by performIntegrationStep( ).
      * \return Current interval
      */
-    virtual IndependentVariableType getCurrentInterval() const { return currentInterval_; }
+    virtual IndependentVariableType getCurrentInterval( ) const { return currentInterval_; }
 
 
     //! Perform a single integration step
@@ -232,7 +232,7 @@ public:
      * was constructed.
      * \return True if the minimum step size constraint was violated
      */
-    bool const isMinimumStepSizeViolated() const { return isMinimumStepSizeViolated_; }
+    bool const isMinimumStepSizeViolated( ) const { return isMinimumStepSizeViolated_; }
 
     //! Set the minimum step size constraint
     /*!
@@ -263,8 +263,8 @@ public:
      */
     void setRelativeErrorTolerance( const typename StateType::Scalar relativeErrorTolerance )
     {
-        setRelativeErrorTolerance( StateType::Constant( currentState_.rows(),
-                                                        currentState_.cols(),
+        setRelativeErrorTolerance( StateType::Constant( currentState_.rows( ),
+                                                        currentState_.cols( ),
                                                         relativeErrorTolerance ) );
     }
 
@@ -284,30 +284,30 @@ protected:
 
     //! Last used step size
     /*!
-     * Last used step size, passed to either integrateTo() or performIntegrationStep()
+     * Last used step size, passed to either integrateTo( ) or performIntegrationStep( )
      */
     IndependentVariableType stepSize_;
 
     //! Current interval
     /*!
-     * Current interval as computed by performIntegrationStep()
+     * Current interval as computed by performIntegrationStep( )
      */
     IndependentVariableType currentInterval_;
     //! Current state
     /*!
-     * Current state as computed by performIntegrationStep()
+     * Current state as computed by performIntegrationStep( )
      */
     StateType currentState_;
 
     //! Last interval
     /*!
-     * Last interval as computed by performIntegrationStep()
+     * Last interval as computed by performIntegrationStep( )
      */
     IndependentVariableType lastInterval_;
 
     //! Last state
     /*!
-     * Last state as computed by performIntegrationStep()
+     * Last state as computed by performIntegrationStep( )
      */
     StateType lastState_;
 
@@ -349,12 +349,12 @@ RungeKuttaVariableStepSizeIntegrator< IndependentVariableType, StateType, StateD
 {
     // Define and allocated vector for the number of stages
     std::vector<StateDerivativeType> stateDerivatives; // vector of k_i
-    stateDerivatives.reserve( coefficients_.cCoefficients.rows() );
+    stateDerivatives.reserve( coefficients_.cCoefficients.rows( ) );
 
     StateType lowerOrderEstimate( currentState_ ), higherOrderEstimate( currentState_ );
 
     // Compute the k_i state derivatives per stage
-    for ( int stage = 0; stage < coefficients_.cCoefficients.rows(); stage++ )
+    for ( int stage = 0; stage < coefficients_.cCoefficients.rows( ); stage++ )
     {
         // Compute the state to pass to the state derivative for this stage
         StateType state( currentState_ );
@@ -405,17 +405,17 @@ RungeKuttaVariableStepSizeIntegrator< IndependentVariableType, StateType, StateD
 {
     // Calculate the error in the lower order estimate
     StateType truncationError_ = higherOrderEstimate - lowerOrderEstimate;
-    StateType dampedAbsoluteTolerance_ = ( currentState_.array().abs() *
-                                           relativeErrorTolerance_.array() ).matrix() +
+    StateType dampedAbsoluteTolerance_ = ( currentState_.array( ).abs( ) *
+                                           relativeErrorTolerance_.array( ) ).matrix( ) +
                                          relativeErrorTolerance_;
 
-    StateType relativeTruncationError_ = truncationError_.array().abs() /
-            dampedAbsoluteTolerance_.array();
+    StateType relativeTruncationError_ = truncationError_.array( ).abs( ) /
+            dampedAbsoluteTolerance_.array( );
 
-    typename StateType::Scalar maximumErrorInState_ = relativeTruncationError_.maxCoeff();
+    typename StateType::Scalar maximumErrorInState_ = relativeTruncationError_.maxCoeff( );
 
     if ( std::abs( maximumErrorInState_ ) <=
-         std::numeric_limits<typename StateType::Scalar>::epsilon() )
+         std::numeric_limits<typename StateType::Scalar>::epsilon( ) )
     {
         // The estimates are equal, so there is no proper guess for a new step size. Continue with
         // the current step size
@@ -452,7 +452,7 @@ RungeKuttaVariableStepSizeIntegrator< IndependentVariableType, StateType, StateD
         // Return true if the previous step size is already equal to the minimum step size to
         // allow the integrator to continue
         return std::abs( stepSize - minimumStepSize_ ) <=
-                std::numeric_limits<typename StateType::Scalar>::epsilon();
+                std::numeric_limits<typename StateType::Scalar>::epsilon( );
     }
 
     // Check if computed error in state is too large and reject step if true.

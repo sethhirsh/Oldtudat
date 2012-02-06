@@ -315,7 +315,7 @@ const RungeKuttaCoefficients& RungeKuttaCoefficients::get(
             return rungeKuttaFehlberg78Coefficients;
 
         default: // The default case will never occur because CoefficientsSet is an enum
-            throw RungeKuttaCoefficients();
+            throw RungeKuttaCoefficients( );
     }
 }
 

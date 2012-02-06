@@ -55,14 +55,14 @@
  *      100928    K. Kumar          Small comment modifications.
  *      100929    K. Kumar          Small comment modifications.
  *      110202    K. Kumar          Added overload for map with State* for
- *                                  computeNearestLeftNeighborUsingBinarySearch().
+ *                                  computeNearestLeftNeighborUsingBinarySearch( ).
  *      110803    J. Leloux         Added convertStringToTemplate.
- *      110805    J. Leloux         Added outputCurrentRunningTime().
+ *      110805    J. Leloux         Added outputCurrentRunningTime( ).
  *      110807    K. Kumar          Minor comment modifications.
  *      110810    J. Leloux         Minor comment modifications.
  *      110913    K. Kumar          Implemented automatic root-path functions based on
  *                                  suggestions by M. Persson.
- *      111117    K. Kumar          Added listAllFilesInDirectory() function.
+ *      111117    K. Kumar          Added listAllFilesInDirectory( ) function.
  */
 
 // Include statements.

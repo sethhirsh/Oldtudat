@@ -58,8 +58,8 @@ int main( )
     // Two tests.
     // Test 1: Set Cartesian elements using individual set functions; and get
     //         Cartesian elements using individual get functions.
-    // Test 2: Set Cartesian elements using setState() function; and get
-    //         Cartesian elements using getState() function.
+    // Test 2: Set Cartesian elements using setState( ) function; and get
+    //         Cartesian elements using getState( ) function.
 
     // Initialize unit test result to false.
     bool isCartesianElementsErroneous = false;
@@ -103,7 +103,7 @@ int main( )
     Eigen::VectorXd differenceBetweenResultsTest1( 6 );
     differenceBetweenResultsTest1 = cartesianElementsStateVectorTest1 - vectorOfCartesianElements;
 
-    // Test 2: Set Cartesian elements using setState() function.
+    // Test 2: Set Cartesian elements using setState( ) function.
     cartesianElementsStateTest2.state = vectorOfCartesianElements;
 
     // Test 2: Difference between setting the Cartesian state as a whole and

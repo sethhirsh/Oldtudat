@@ -42,7 +42,7 @@
  *      YYMMDD    Author            Comment
  *      110701    K. Kumar          First creation of code.
  *      110726    K. Kumar          Changed filename and class name.
- *      110802    K. Kumar          Added computeFitErrors() function; removed
+ *      110802    K. Kumar          Added computeFitErrors( ) function; removed
  *                                  DataModeling class inheritance; changed
  *                                  filename and class name.
  *      110905    S. Billemont      Reorganized includes.
@@ -140,7 +140,7 @@ public:
     //! Compute fit errors.
     /*!
      * Computes the standard deviations and chi-squared value based on the
-     * computed linear fit. This functin must be called after the computeFit()
+     * computed linear fit. This functin must be called after the computeFit( )
      * function. The algorithm implemented is based on
      * (Press W.H., et al., 2002).
      */
@@ -219,7 +219,7 @@ private:
     /*!
      * Computes sum of independent variable input data. The independent
      * variable data is stored as the key in the map inputDataToFit_. This is
-     * an auxilliary function for the computeFit() function.
+     * an auxilliary function for the computeFit( ) function.
      */
     void sumIndependentVariableData_( );
 
@@ -227,7 +227,7 @@ private:
     /*!
      * Computes sum of dependent variable input data. The dependent variable
      * data is stored as the value in the map inputDataToFit_. This is
-     * an auxilliary function for the computeFit() function.
+     * an auxilliary function for the computeFit( ) function.
      */
     void sumDependentVariableData_( );
 };

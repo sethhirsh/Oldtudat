@@ -103,7 +103,7 @@ int main( )
     lawgsSurface.setName( partName_ );
 
     // Test if part name is properly retrieved.
-    if ( lawgsSurface.getName () != partName_ )
+    if ( lawgsSurface.getName ( ) != partName_ )
     {
         std::cerr << " Error in part name of mesh." << std::endl;
         isLawgsSurfaceGeometryBad = true;

@@ -43,14 +43,14 @@
  *      100916    K. Kumar          Filename modified.
  *      100929    D. Dirkx          File checked.
  *      100929    K. Kumar          Minor corrections to include statements and comments.
- *      110113    K. Kumar          Changed setBody() argument to pointer; added pointer to
+ *      110113    K. Kumar          Changed setBody( ) argument to pointer; added pointer to
  *                                  GravityFieldModel.
- *      110119    K. Kumar          Changed computeStateDerivatives() to computeForce().
+ *      110119    K. Kumar          Changed computeStateDerivatives( ) to computeForce( ).
  *      110202    K. Kumar          Updated code to make use of the State and
  *                                  CartesianPositionElements classes.
  *      110810    J. Leloux         Corrected doxygen documentation.
- *      110815    K. Kumar          Changed filename and class name; changed computeForce()
- *                                  function and added setMass() function.
+ *      110815    K. Kumar          Changed filename and class name; changed computeForce( )
+ *                                  function and added setMass( ) function.
  */
 
 #ifndef GRAVITATIONALFORCEMODEL_H

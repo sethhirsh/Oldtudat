@@ -36,7 +36,7 @@
  *      YYMMDD    Author            Comment
  *      110530    F.M. Engelen      First creation of code.
  *      120111    F.M. Engelen      Replaced part of the code with boost alternatives.
- *      120206    K. Kumar          Added Boost::trim() function to trim output of filter
+ *      120206    K. Kumar          Added Boost::trim( ) function to trim output of filter
  *                                  before casting it to doubles.
  */
 
@@ -71,11 +71,11 @@ Eigen::MatrixXd readMatrixFromFile( const std::string& filename, const std::stri
                                     const std::string& skipLinesCharacter, const std::string& relativePath )
 {
     // Construct path
-    std::string path_ = relativePath.empty() ? getPackageRootPath() + filename :
+    std::string path_ = relativePath.empty( ) ? getPackageRootPath( ) + filename :
                                                relativePath + filename;
     // Open input and output
-    std::fstream file( path_.c_str(), std::ios::in );
-    if ( file.fail() )
+    std::fstream file( path_.c_str( ), std::ios::in );
+    if ( file.fail( ) )
     {
         boost::throw_exception( std::runtime_error( boost::str(
                 boost::format( "Data file '%s' could not be opened." ) % path_.c_str( ) ) ) );
@@ -84,10 +84,10 @@ Eigen::MatrixXd readMatrixFromFile( const std::string& filename, const std::stri
     std::stringstream filteredStream( std::ios::in | std::ios::out );
     {
         // Filter the file stream. This needs to be in its own scope, because filtering_stream::
-        // flush() does not work if the underlying end point is a stringstream, so the flush has
+        // flush( ) does not work if the underlying end point is a stringstream, so the flush has
         // to be forced by letting the filtering_stream go out of scope
         boost::iostreams::filtering_ostream filterProcessor;
-        for ( unsigned int i = 0; i < skipLinesCharacter.size(); i++ )
+        for ( unsigned int i = 0; i < skipLinesCharacter.size( ); i++ )
         {
             // Remove all comments from the stream
             filterProcessor.push( tudat::input_output::stream_filters::RemoveComment(
@@ -104,20 +104,20 @@ Eigen::MatrixXd readMatrixFromFile( const std::string& filename, const std::stri
 
     // Read the filtered stream into lines
     std::vector< std::string > lines_;
-    while ( !filteredStream.eof() )
+    while ( !filteredStream.eof( ) )
     {
         std::string line_;
         getline( filteredStream, line_ );
-        if ( !line_.empty() )
+        if ( !line_.empty( ) )
         {
             lines_.push_back( line_ );
         }
     }
 
     // If there are no lines, return an empty matrix
-    if ( lines_.empty() )
+    if ( lines_.empty( ) )
     {
-        return Eigen::MatrixXd();
+        return Eigen::MatrixXd( );
     }
 
     const std::string realSeparators = std::string( separators ) + " ";
@@ -129,14 +129,14 @@ Eigen::MatrixXd readMatrixFromFile( const std::string& filename, const std::stri
 
     // Initialize the matrix with sizes obtained from the number of lines and the entries in the
     // first line.
-    Eigen::MatrixXd dataMatrix_( lines_.size(), lineSplit_.size() );
-    for ( int rowIndex = 0; rowIndex < dataMatrix_.rows(); rowIndex++ )
+    Eigen::MatrixXd dataMatrix_( lines_.size( ), lineSplit_.size( ) );
+    for ( int rowIndex = 0; rowIndex < dataMatrix_.rows( ); rowIndex++ )
     {
-        lineSplit_.clear();
+        lineSplit_.clear( );
 
         boost::algorithm::split( lineSplit_, lines_[rowIndex], boost::is_any_of( realSeparators ),
                                  boost::algorithm::token_compress_on );
-        for ( int columnIndex = 0; columnIndex < dataMatrix_.cols(); columnIndex++ )
+        for ( int columnIndex = 0; columnIndex < dataMatrix_.cols( ); columnIndex++ )
         {
             boost::trim( lineSplit_.at( columnIndex ) );
             dataMatrix_( rowIndex, columnIndex ) =

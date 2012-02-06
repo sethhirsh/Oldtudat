@@ -210,8 +210,8 @@ void ApproximatePlanetPositionsBase::reloadData( )
             "External/EphemerisData/p_elem_t2.txt";
 
     // Open ephemeris file.
-    std::ifstream ephemerisFile_( filePath_.c_str() );
-    if ( ephemerisFile_.fail() )
+    std::ifstream ephemerisFile_( filePath_.c_str( ) );
+    if ( ephemerisFile_.fail( ) )
     {
         boost::throw_exception(
                     boost::enable_error_info(
@@ -229,14 +229,14 @@ void ApproximatePlanetPositionsBase::reloadData( )
         std::string lineData;
         getline( ephemerisFile_, lineData );
         containerOfDataFromEphemerisFile_[line] = lineData;
-        if ( ephemerisFile_.fail() )
+        if ( ephemerisFile_.fail( ) )
         {
             break;
         }
     }
 
     // Close file
-    ephemerisFile_.close();
+    ephemerisFile_.close( );
 
 }
 

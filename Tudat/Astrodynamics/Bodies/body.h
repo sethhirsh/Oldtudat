@@ -41,7 +41,7 @@
  *      100920    J. Melman         First creation of code.
  *      100929    K. Kumar          Minor comment changes.
  *      110115    J. Melman         Added set and get shape model functions.
- *      110815    K. Kumar          Added setMass() and getMass() functions.
+ *      110815    K. Kumar          Added setMass( ) and getMass( ) functions.
  */
 
 #ifndef TUDAT_BODY_H

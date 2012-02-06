@@ -42,7 +42,7 @@
  *      100929    K. Kumar          Minor comment modifications.
  *      110201    K. Kumar          Updated code to make use of State class.
  *      110203    J. Melman         File checked.
- *      110207    K. Kumar          Path changed; moved integrat() function
+ *      110207    K. Kumar          Path changed; moved integrat( ) function
  *                                  to SingleStepIntegrationMethods.
  *      110810    J. Leloux         Corrected doxygen documentation.
  *      110905    S. Billemont      Reorganized includes.
@@ -122,18 +122,18 @@ public:
     //! Returns the current state
     /*!
      * Returns the current state of the integrator. Child classes should override this and provide
-     * the computed state by performIntegrationStep().
+     * the computed state by performIntegrationStep( ).
      * \return Current integrated state
      */
-    virtual StateType getCurrentState() const { return currentState_; }
+    virtual StateType getCurrentState( ) const { return currentState_; }
 
     //! Returns the current interval
     /*!
      * Returns the current interval of the integrator. Child classes should override this and
-     * provide the computed interval by performIntegrationStep().
+     * provide the computed interval by performIntegrationStep( ).
      * \return Current interval
      */
-    virtual IndependentVariableType getCurrentInterval() const { return currentInterval_; }
+    virtual IndependentVariableType getCurrentInterval( ) const { return currentInterval_; }
 
     //! Perform a single integration step
     /*!
@@ -181,30 +181,30 @@ public:
 protected:
     //! Last used step size
     /*!
-     * Last used step size, passed to either integrateTo() or performIntegrationStep()
+     * Last used step size, passed to either integrateTo( ) or performIntegrationStep( )
      */
     IndependentVariableType stepSize_;
 
     //! Current interval
     /*!
-     * Current interval as computed by performIntegrationStep()
+     * Current interval as computed by performIntegrationStep( )
      */
     IndependentVariableType currentInterval_;
     //! Current state
     /*!
-     * Current state as computed by performIntegrationStep()
+     * Current state as computed by performIntegrationStep( )
      */
     StateType currentState_;
 
     //! Last interval
     /*!
-     * Last interval as computed by performIntegrationStep()
+     * Last interval as computed by performIntegrationStep( )
      */
     IndependentVariableType lastInterval_;
 
     //! Last state
     /*!
-     * Last state as computed by performIntegrationStep()
+     * Last state as computed by performIntegrationStep( )
      */
     StateType lastState_;
 

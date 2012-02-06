@@ -90,7 +90,7 @@ int main( )
         }
     }
 
-    if ( readMatrix.rows( ) != 4 || readMatrix.cols () != 3 )
+    if ( readMatrix.rows( ) != 4 || readMatrix.cols ( ) != 3 )
     {
         isTestMatrixBroken = true;
         cerr << "The unit test for the matrix file reader gives an incorrect size matrix.\n";
