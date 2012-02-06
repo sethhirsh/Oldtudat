@@ -104,7 +104,7 @@ void KeplerPropagator::propagate( )
             // propagation step.
             meanAnomalyChange_
                     = orbital_element_conversions::
-                    convertElapsedTimeToMeanAnomalyChangeForEllipticalOrbits(
+                    convertElapsedTimeToEllipticalMeanAnomalyChange(
                         ( propagationIntervalEnd_ - propagationIntervalStart_ ),
                         iteratorBodiesToPropagate_->second
                         .pointerToCentralBody->getGravitationalParameter( ),
@@ -157,7 +157,7 @@ void KeplerPropagator::propagate( )
             // propagation step.
             meanAnomalyChange_
                     = orbital_element_conversions::
-                    convertElapsedTimeToMeanAnomalyChangeForHyperbolicOrbits(
+                    convertElapsedTimeToHyperbolicMeanAnomalyChange(
                         ( propagationIntervalEnd_ - propagationIntervalStart_ ),
                         iteratorBodiesToPropagate_->second
                         .pointerToCentralBody->getGravitationalParameter( ),
