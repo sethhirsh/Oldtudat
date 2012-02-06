@@ -1,7 +1,7 @@
 /*! \file aerodynamics.cpp
  *    This file contains the definition of the aerodynamics namespace.
  *
- *    Path              : /Astrodynamics/ForceModels/
+*    Path              : /Astrodynamics/Aerodynamics/
  *    Version           : 6
  *    Check status      : Checked
  *

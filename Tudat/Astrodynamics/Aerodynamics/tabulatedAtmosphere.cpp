@@ -1,7 +1,7 @@
 /*! \file tabulatedAtmosphere.cpp
  *    Source file that defines the tabulated atmosphere included in Tudat.
  *
- *    Path              : /Astrodynamics/EnvironmentModels/
+*    Path              : /Astrodynamics/Aerodynamics/
  *    Version           : 3
  *    Check status      : Checked
  *
@@ -41,6 +41,7 @@
 // Include statements.
 #include <sstream>
 #include "Tudat/Astrodynamics/Aerodynamics/tabulatedAtmosphere.h"
+#include "Tudat/InputOutput/matrixTextFileReader.h"
 
 //! Tudat library namespace.
 namespace tudat
@@ -52,49 +53,33 @@ void TabulatedAtmosphere::initialize( std::string atmosphereTableFile )
     // Locally store the atmosphere table file name.
     atmosphereTableFile_ = atmosphereTableFile;
 
-    // Set the file reader.
-    textFileReader.setRelativeDirectoryPath( relativeDirectoryPath_ );
-    textFileReader.setFileName( atmosphereTableFile_ );
-    textFileReader.openFile( );
-
-    std::string skipcharacter = "%";
-    textFileReader.skipLinesStartingWithCharacter( skipcharacter );
-
-    // Read and store the data file.
-    textFileReader.readAndStoreData( );
-    containerOfAtmosphereTableFileData = textFileReader.getContainerOfData( );
-
-    // Close data file.
-    textFileReader.closeFile( );
+    Eigen::MatrixXd containerOfAtmosphereTableFileData = tudat::input_output::readMatrixFromFile(
+                atmosphereTableFile_, " \t", "%" );
 
     // Check whether data is present in the file.
-    if ( containerOfAtmosphereTableFileData.size( ) < 1 )
+    if ( containerOfAtmosphereTableFileData.rows( ) < 1 || containerOfAtmosphereTableFileData.cols( ) < 1 )
     {
         std::cerr << "The atmosphere table file is empty." << std::endl;
         std::cerr << atmosphereTableFile_ << std::endl;
     }
 
     // Initialize vectors.
-    altitudeData_ = Eigen::VectorXd( containerOfAtmosphereTableFileData.size( ) );
-    densityData_ = Eigen::VectorXd( containerOfAtmosphereTableFileData.size( ) );
-    pressureData_= Eigen::VectorXd( containerOfAtmosphereTableFileData.size( ) );
-    temperatureData_ = Eigen::VectorXd( containerOfAtmosphereTableFileData.size( ) );
-    std::stringstream lineStringStream( std::stringstream::in | std::stringstream::out );
+    altitudeData_ = Eigen::VectorXd( containerOfAtmosphereTableFileData.rows( ) );
+    densityData_ = Eigen::VectorXd( containerOfAtmosphereTableFileData.rows( ) );
+    pressureData_= Eigen::VectorXd( containerOfAtmosphereTableFileData.rows( ) );
+    temperatureData_ = Eigen::VectorXd( containerOfAtmosphereTableFileData.rows( ) );
 
-    int index = 0;
 
     // Loop through all the strings stored in the container and store the data
     // in the right Eigen::VectorXd.
-    for ( DatafileLinesMap::iterator iteratorContainerOfData_
-          = containerOfAtmosphereTableFileData.begin( );
-          iteratorContainerOfData_ != containerOfAtmosphereTableFileData.end( );
-          iteratorContainerOfData_++ )
+    for ( int i = 0; i < containerOfAtmosphereTableFileData.rows( ); i++  )
     {
-        lineStringStream << iteratorContainerOfData_->second;
-        lineStringStream >> altitudeData_( index ) >> densityData_( index )
-                         >> pressureData_( index ) >> temperatureData_ ( index );
-        index++;
+        altitudeData_( i ) = containerOfAtmosphereTableFileData( i, 0 );
+        densityData_( i ) = containerOfAtmosphereTableFileData( i, 1 );
+        pressureData_( i ) = containerOfAtmosphereTableFileData( i, 2 );
+        temperatureData_( i ) = containerOfAtmosphereTableFileData( i, 3 );
     }
+
 
     cubicSplineInterpolationForDensity_.initializeCubicSplineInterpolation(
                 altitudeData_, densityData_ );

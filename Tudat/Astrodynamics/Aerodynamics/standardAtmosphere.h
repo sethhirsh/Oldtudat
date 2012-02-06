@@ -1,7 +1,7 @@
 /*! \file standardAtmosphere.h
  *    Header file that defines the a base class for standard atmospheres in Tudat.
  *
- *    Path              : /Astrodynamics/EnvironmentModels/
+*    Path              : /Astrodynamics/Aerodynamics/
  *    Version           : 2
  *    Check status      : Checked
  *

@@ -1,7 +1,7 @@
 /*! \file atmosphereModel.h
  *    Header file that defines the baseclass atmosphere model included in Tudat.
  *
- *    Path              : /Astrodynamics/EnvironmentModels/
+*    Path              : /Astrodynamics/Aerodynamics/
  *    Version           : 5
  *    Check status      : Checked
  *

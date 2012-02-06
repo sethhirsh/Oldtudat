@@ -1,7 +1,7 @@
 /*! \file exponentialAtmosphere.cpp
  *    Source file that defines the exponential atmosphere model included in Tudat.
  *
- *    Path              : /Astrodynamics/EnvironmentModels/
+*    Path              : /Astrodynamics/Aerodynamics/
  *    Version           : 5
  *    Check status      : Checked
  *

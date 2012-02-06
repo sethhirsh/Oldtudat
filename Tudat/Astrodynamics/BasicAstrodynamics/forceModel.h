@@ -2,7 +2,7 @@
  *    Header file that defines the base class for all force models included in
  *    Tudat.
  *
- *    Path              : /Astrodynamics/ForceModels/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 8
  *    Check status      : Checked
  *

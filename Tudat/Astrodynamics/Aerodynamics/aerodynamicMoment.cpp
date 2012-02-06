@@ -1,7 +1,7 @@
 /*! \file aerodynamicMoment.cpp
 *    This source file contains the aerodynamic moment model included in Tudat.
 *
-*    Path              : /Astrodynamics/MomentModels/
+*    Path              : /Astrodynamics/Aerodynamics/
 *    Version           : 2
 *    Check status      : Checked
 *

@@ -1,7 +1,7 @@
 /*! \file keplerPropagator.h
  *    Header file that defines the kepler propagator class included in Tudat.
  *
- *    Path              : /Astrodynamics/Propagators/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 4
  *    Check status      : Checked
  *

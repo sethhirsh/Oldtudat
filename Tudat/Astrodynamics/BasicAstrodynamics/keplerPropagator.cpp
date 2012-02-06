@@ -1,7 +1,7 @@
 /*! \file keplerPropagator.cpp
  *    Source file that defines the kepler propagator class included in Tudat.
  *
- *    Path              : /Astrodynamics/Propagators/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 5
  *    Check status      : Unchecked
  *

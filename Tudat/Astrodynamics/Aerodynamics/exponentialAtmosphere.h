@@ -1,7 +1,7 @@
 /*! \file exponentialAtmosphere.h
  *    Header file that defines the exponential atmosphere model included in Tudat.
  *
- *    Path              : /Astrodynamics/EnvironmentModels/
+*    Path              : /Astrodynamics/Aerodynamics/
  *    Version           : 6
  *    Check status      : Checked
  *

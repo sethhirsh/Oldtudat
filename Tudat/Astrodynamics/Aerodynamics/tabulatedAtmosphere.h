@@ -1,7 +1,7 @@
 /*! \file tabulatedAtmosphere.h
  *    Header file that defines the tabulatedAtmosphere class included in Tudat.
  *
- *    Path              : /Astrodynamics/EnvironmentModels/
+*    Path              : /Astrodynamics/Aerodynamics/
  *    Version           : 2
  *    Check status      : Checked
  *
@@ -52,7 +52,6 @@
 #include <iostream>
 #include <string>
 #include "Tudat/Astrodynamics/Aerodynamics/atmosphereModel.h"
-#include "Tudat/Input/textFileReader.h"
 #include "Tudat/Mathematics/Interpolators/cubicSplineInterpolation.h"
 
 using tudat::mathematics::interpolators::CubicSplineInterpolation;
@@ -82,7 +81,7 @@ public:
      */
     TabulatedAtmosphere( ) :
         relativeDirectoryPath_( "Astrodynamics/Aerodynamics/AtmosphereTables/" ),
-        atmosphereTableFile_( "" ), containerOfAtmosphereTableFileData( ) { }
+        atmosphereTableFile_( "" ) { }
 
     //! Initialize atmosphere table reader.
     /*!
@@ -163,12 +162,6 @@ protected:
 
 private:
 
-    //! Type definition for map of line-based string data.
-    /*!
-     * Type definition for map of line-based string data.
-     */
-    typedef FileReader::LineBasedStringDataMap DatafileLinesMap;
-
     //! The relative directory path.
     /*!
      *  The relative path directory path.
@@ -180,18 +173,6 @@ private:
      *  The file name of the atmosphere table.
      */
     std::string atmosphereTableFile_;
-
-    //! The file reader.
-    /*!
-     *  The file reader.
-     */
-    TextFileReader textFileReader;
-
-    //! Container to store the read atmosphere table file.
-    /*!
-     *  Container to store the read atmosphere table file.
-     */
-    DatafileLinesMap containerOfAtmosphereTableFileData;
 
     //! Vector containing the altitude.
     /*!

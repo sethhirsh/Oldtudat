@@ -2,7 +2,7 @@
  *    This header file contains a class to convert mean anomly to eccentric anomaly for elliptical
  *    orbits.
  *
- *    Path              : /Astrodynamics/States/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 3
  *    Check status      : Checked
  *

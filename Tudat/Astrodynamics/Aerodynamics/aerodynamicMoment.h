@@ -1,7 +1,7 @@
 /*! \file aerodynamicMoment.h
 *    This header file contains the aerodynamic moment model included in Tudat.
 *
-*    Path              : /Astrodynamics/MomentModels/
+*    Path              : /Astrodynamics/Aerodynamics/
 *    Version           : 2
 *    Check status      : Checked
 *
@@ -44,7 +44,7 @@
 // Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamicCoefficientInterface.h"
-#include "Tudat/Astrodynamics/BasicAstrodynamics/momentModel.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/pureMomentModel.h"
 
 //! Tudat library namespace.
 /*!
@@ -53,7 +53,7 @@
 namespace tudat
 {
 
-class AerodynamicMoment : public MomentModel
+class AerodynamicMoment : public PureMomentModel
 {
 public:
 

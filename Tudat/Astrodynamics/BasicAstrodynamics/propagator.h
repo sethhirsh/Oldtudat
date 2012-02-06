@@ -1,7 +1,7 @@
 /*! \file propagator.h
  *    Header file that defines the base class for all propagators included in Tudat.
  *
- *    Path              : /Astrodynamics/Propagators/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 8
  *    Check status      : Checked
  *

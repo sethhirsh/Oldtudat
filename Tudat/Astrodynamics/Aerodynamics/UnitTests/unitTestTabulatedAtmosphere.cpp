@@ -74,7 +74,7 @@ int main( )
     TabulatedAtmosphere tabulatedAtmosphere;
 
     // Initialize it with the desired file.
-    tabulatedAtmosphere.initialize( "USSA1976Until100kmPer100mUntil1000kmPer1000m.dat" );
+    tabulatedAtmosphere.initialize( "Astrodynamics/Aerodynamics/AtmosphereTables/USSA1976Until100kmPer100mUntil1000kmPer1000m.dat" );
 
     // Test 1: Check if the atmosphere is calculated correctly at sea level.
     // Values from "US Standard Atmosphere 1976,
@@ -182,7 +182,7 @@ int main( )
     // Test 6: Test if the atmosphere file can be read multiple times.
     try
     {
-        tabulatedAtmosphere.initialize( "USSA1976Until100kmPer100mUntil1000kmPer1000m.dat" );
+        tabulatedAtmosphere.initialize( "Astrodynamics/Aerodynamics/AtmosphereTables/USSA1976Until100kmPer100mUntil1000kmPer1000m.dat" );
     }
 
     catch ( std::runtime_error multipleFileReadError )

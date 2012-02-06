@@ -1,7 +1,7 @@
 /*! \file aerodynamics.h
  *    This file contains the definition of the aerodynamics namespace.
  *
- *    Path              : /Astrodynamics/ForceModels/
+*    Path              : /Astrodynamics/Aerodynamics/
  *    Version           : 4
  *    Check status      : Checked
  *

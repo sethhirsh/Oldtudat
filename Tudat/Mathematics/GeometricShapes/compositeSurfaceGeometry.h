@@ -54,6 +54,9 @@
 // Include statements.
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 #include "Tudat/Mathematics/GeometricShapes/surfaceGeometry.h"
+#include <vector>
+
+using std::vector;
 
 //! Tudat library namespace.
 namespace tudat
@@ -86,7 +89,7 @@ public:
     /*!
      * Default destructor, deallocates surface lists and resets them to NULL.
      */
-    virtual ~CompositeSurfaceGeometry();
+    virtual ~CompositeSurfaceGeometry( ) { }
 
     //! Set pointer to SingleSurfaceGeometry object.
     /*!
@@ -124,8 +127,7 @@ public:
     void setNumberOfSingleSurfaceGeometries( const unsigned int& numberOfSingleSurfaceGeometries )
     {
         numberOfSingleSurfaceGeometries_ = numberOfSingleSurfaceGeometries;
-        singleSurfaceGeometryList_ = new SingleSurfaceGeometry*[
-                numberOfSingleSurfaceGeometries_ ];
+        singleSurfaceGeometryList_.resize( numberOfSingleSurfaceGeometries_ );
     }
 
     //! Set number of composite surface geometries.
@@ -138,8 +140,7 @@ public:
                                                 numberOfCompositeSurfaceGeometries )
     {
         numberOfCompositeSurfaceGeometries_ = numberOfCompositeSurfaceGeometries;
-        compositeSurfaceGeometryList_  = new CompositeSurfaceGeometry*[
-                numberOfCompositeSurfaceGeometries_ ];
+        compositeSurfaceGeometryList_.resize( numberOfCompositeSurfaceGeometries_ );
     }
 
     //! Get pointer to stored SingleSurfaceGeometry object.
@@ -214,13 +215,13 @@ protected:
     /*!
      *  Array of pointers to SingleSurfaceGeometries.
      */
-    SingleSurfaceGeometry** singleSurfaceGeometryList_;
+    vector< SingleSurfaceGeometry* > singleSurfaceGeometryList_;
 
     //! Array of pointers to CompositeSurfaceGeometries.
     /*!
      *  Array of pointers to CompositeSurfaceGeometries.
      */
-    CompositeSurfaceGeometry** compositeSurfaceGeometryList_;
+    vector< CompositeSurfaceGeometry* > compositeSurfaceGeometryList_;
 
 private:
 };

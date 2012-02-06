@@ -57,18 +57,6 @@
 namespace tudat
 {
 
-//! Default destructor.
-CompositeSurfaceGeometry::~CompositeSurfaceGeometry( )
-{
-    // Delete single surface geometry list.
-    delete [ ] singleSurfaceGeometryList_;
-    singleSurfaceGeometryList_ = NULL;
-
-    // Delete composite surface geometry list.
-    delete [ ] compositeSurfaceGeometryList_ ;
-    compositeSurfaceGeometryList_ = NULL;
-}
-
 //! Overload ostream to print class information.
 std::ostream &operator<<( std::ostream &stream,
                           CompositeSurfaceGeometry& compositeSurfaceGeometry )

@@ -1,7 +1,7 @@
 /*!   \file hypersonicLocalInclinationAnalysis.h
  *    This file contains the definition of the hypersonic local inclination analysis class.
  *
- *    Path              : /Astrodynamics/ForceModels/
+*    Path              : /Astrodynamics/Aerodynamics/
  *    Version           : 5
  *    Check status      : Checked
  *

@@ -56,7 +56,7 @@ set(BASICASTRODYNAMICS_HEADERS
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/propagator.h"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/propagatorDataContainer.h"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/seriesPropagator.h"
-  "${SRCROOT}${BASICASTRODYNAMICSDIR}/momentModel.h"
+  "${SRCROOT}${BASICASTRODYNAMICSDIR}/pureMomentModel.h"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/momentDueToForceModel.h"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/forceModel.h"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/generalizedForceModel.h"
@@ -78,6 +78,6 @@ target_link_libraries(test_MeanToEccenticAnomalyConversion tudat_astrodynamics t
 
 add_executable(test_KeplerPropagator "${SRCROOT}${BASICASTRODYNAMICSDIR}/unitTestKeplerPropagator.cpp")
 setup_custom_test_program(test_KeplerPropagator "${SRCROOT}${BASICASTRODYNAMICSDIR}")
-target_link_libraries(test_KeplerPropagator tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(test_KeplerPropagator tudat_astrodynamics tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 # End of file.

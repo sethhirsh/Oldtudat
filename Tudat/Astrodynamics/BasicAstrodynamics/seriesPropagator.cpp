@@ -1,7 +1,7 @@
 /*! \file seriesPropagator.cpp
  *    Source file that defines a class that executes a series of propagation steps.
  *
- *    Path              : /Astrodynamics/Propagators/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 2
  *    Check status      : Checked
  *

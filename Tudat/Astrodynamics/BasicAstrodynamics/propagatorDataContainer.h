@@ -2,7 +2,7 @@
  *    Header file that defines the class that contains all the data required by the Tudat
  *    propagators.
  *
- *    Path              : /Astrodynamics/Propagators/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 9
  *    Check status      : Checked
  *

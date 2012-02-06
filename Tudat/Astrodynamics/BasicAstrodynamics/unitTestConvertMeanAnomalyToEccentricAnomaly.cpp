@@ -4,7 +4,7 @@
  *    with independent code, namely the Mean2Eccentric function found in ESA's Advanced Concepts
  *    Team GTOP toolbox.
  *
- *    Path              : /Astrodynamics/States/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 2
  *    Check status      : Checked
  *

@@ -2,7 +2,7 @@
  *    This header file contains a base class to convert mean anomaly to eccentric and hyperbolic
  *    eccentric anomalies.
  *
- *    Path              : /Astrodynamics/States/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 2
  *    Check status      : Checked
  *

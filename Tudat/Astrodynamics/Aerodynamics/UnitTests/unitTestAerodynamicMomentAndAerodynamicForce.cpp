@@ -118,9 +118,9 @@ int main( )
         cerr << "Test 1 of unitTestAerodynamicMomentAndAerodynamicForce failed" << endl;
     }
 
-    /*
+
      // Test 2: Check the moment model without extra moment due to the force.
-    AerodynamicMoment aerodynamicMoment( &aerodynamicCoefficientInterface ;
+    AerodynamicMoment aerodynamicMoment( &aerodynamicCoefficientInterface );
     aerodynamicMoment.setDynamicPressure( dynamicPressure );
 
     Eigen::Vector3d moment;
@@ -146,6 +146,7 @@ int main( )
         cerr << "Test 2 of unitTestAerodynamicMomentAndAerodynamicForce failed" << endl;
     }
 
+    /*
     // Test 3: Check the moment model when the forcemodel is set and a constant arm is provided.
     aerodynamicMoment.setForceModel( &aerodynamicForce );
     aerodynamicMoment.setForceApplicationArm( momentArm );

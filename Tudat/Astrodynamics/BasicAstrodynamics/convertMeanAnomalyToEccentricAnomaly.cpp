@@ -2,7 +2,7 @@
  *    This source file contains a class to convert mean anomly to eccentric anomaly for elliptical
  *    orbits. It makes use of the simple iterative method to solve Kepler's equation.
  *
- *    Path              : /Astrodynamics/States/
+ *    Path              : /Astrodynamics/BasicAstrodynamics/
  *    Version           : 3
  *    Check status      : Checked
  *

@@ -87,7 +87,7 @@ public:
      * Default destructor, deallocates singleSurfaceList's constituent
      * surface geometries.
      */
-    ~Capsule( );
+    ~Capsule( ) { }
 
     //! Set nose radius.
     /*!

@@ -82,16 +82,6 @@ Capsule::Capsule( ) : middleRadius_( -0.0 ), noseRadius_( -0.0 ), rearLength_( -
     }
 }
 
-//! Default destructor.
-Capsule::~Capsule( )
-{
-    // Deallocate surfa cegeometries allocated in setCapsule( ) function.
-    for ( unsigned i = 0; i < numberOfSingleSurfaceGeometries_; i++ )
-    {
-        delete singleSurfaceGeometryList_[ i ];
-    }
-}
-
 //! Create capsule.
 void Capsule::setCapsule( )
 {
