@@ -52,7 +52,7 @@
 
 // Include statements.
 #include <cmath>
-#include "Tudat/Astrodynamics/ForceModels/gravitationalForceModel.h"
+#include "Tudat/Astrodynamics/Gravitation/gravitationalForceModel.h"
 #include "Tudat/Astrodynamics/MissionSegments/librationPoint.h"
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 

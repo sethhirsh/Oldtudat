@@ -70,7 +70,7 @@
 #include <Eigen/Geometry>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/Bodies/planet.h"
-#include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
+#include "Tudat/Astrodynamics/Gravitation/gravityFieldModel.h"
 #include "Tudat/Astrodynamics/MissionSegments/lambertTargeter.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
 

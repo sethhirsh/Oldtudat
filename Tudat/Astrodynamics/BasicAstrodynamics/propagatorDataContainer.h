@@ -61,7 +61,7 @@
 #include <map>
 #include <vector>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
-#include "Tudat/Astrodynamics/ForceModels/forceModel.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/forceModel.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/propagator.h"
 #include "Tudat/Astrodynamics/States/state.h"
 

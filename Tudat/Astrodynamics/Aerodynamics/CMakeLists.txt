@@ -1,0 +1,94 @@
+# \file CMakeLists.txt
+ #    This is the CMake file for the MissionSegments sub-directory.
+ #
+ #    Path              : /Astrodynamics/MissionSegments/
+ #    Version           : 3
+ #    Check status      : Checked
+ #
+ #    Author            : S.M. Persson
+ #    Affiliation       : McGill University, Department of Mechanical Engineering
+ #    E-mail address    : mikael.s.persson@gmail.com
+ #
+ #    Author            : K. Kumar
+ #    Affiliation       : Delft University of Technology
+ #    E-mail address    : K.Kumar@tudelft.nl
+ #
+ #    Author            : S.M. Persson
+ #    Affiliation       : McGill University, Department of Mechanical Engineering
+ #    E-mail address    : mikael.s.persson@gmail.com
+ #
+ #    Date created      : 20 August, 2011
+ #    Last modified     : 26 October, 2011
+ #
+ #    References
+ #
+ #    Notes
+ #
+ #    Copyright (c) 2010-2011 Delft University of Technology.
+ #
+ #    This software is protected by national and international copyright.
+ #    Any unauthorized use, reproduction or modification is unlawful and
+ #    will be prosecuted. Commercial and non-private application of the
+ #    software in any form is strictly prohibited unless otherwise granted
+ #    by the authors.
+ #
+ #    The code is provided without any warranty; without even the implied
+ #    warranty of merchantibility or fitness for a particular purpose.
+ #
+ #    Changelog
+ #      YYMMDD    Author            Comment
+ #      110820    S.M. Persson      File created.
+ #      111025    K. Kumar          Adapted file to work with Revision 194.
+ #      111026    K. Kumar          Adapted file so all headers show in project tree in Qt Creator.
+ #/
+
+# Set the source files.
+set(AERODYNAMICS_SOURCES
+  "${SRCROOT}${AERODYNAMICSDIR}/aerodynamicCoefficientGenerator.cpp"
+  "${SRCROOT}${AERODYNAMICSDIR}/aerodynamicMoment.cpp"
+  "${SRCROOT}${AERODYNAMICSDIR}/aerodynamics.cpp"
+  "${SRCROOT}${AERODYNAMICSDIR}/exponentialAtmosphere.cpp"
+  "${SRCROOT}${AERODYNAMICSDIR}/hypersonicLocalInclinationAnalysis.cpp"
+  "${SRCROOT}${AERODYNAMICSDIR}/tabulatedAtmosphere.cpp"
+)
+
+# Set the header files.
+set(AERODYNAMICS_HEADERS 
+  "${SRCROOT}${AERODYNAMICSDIR}/aerodynamicCoefficientGenerator.h"
+  "${SRCROOT}${AERODYNAMICSDIR}/aerodynamicMoment.h"
+  "${SRCROOT}${AERODYNAMICSDIR}/aerodynamicForce.h"
+  "${SRCROOT}${AERODYNAMICSDIR}/aerodynamics.h"
+  "${SRCROOT}${AERODYNAMICSDIR}/exponentialAtmosphere.h"
+  "${SRCROOT}${AERODYNAMICSDIR}/hypersonicLocalInclinationAnalysis.h"
+  "${SRCROOT}${AERODYNAMICSDIR}/tabulatedAtmosphere.h"
+  "${SRCROOT}${AERODYNAMICSDIR}/aerodynamicForce.h"
+  "${SRCROOT}${AERODYNAMICSDIR}/atmosphereModel.h"
+  "${SRCROOT}${AERODYNAMICSDIR}/standardAtmosphere.h"
+)
+
+# Add static libraries.
+add_library(tudat_aerodynamics STATIC ${AERODYNAMICS_SOURCES} ${AERODYNAMICS_HEADERS})
+setup_tudat_library_target(tudat_aerodynamics "${SRCROOT}{AERODYNAMICSDIR}")
+setup_headers("${AERODYNAMICS_HEADERS}" "${AERODYNAMICSDIR}")
+
+# Add unit tests.
+add_executable(test_AerodynamicMomentAndAerodynamicForce "${SRCROOT}${AERODYNAMICSDIR}/UnitTests/unitTestAerodynamicMomentAndAerodynamicForce.cpp")
+setup_custom_test_program(test_AerodynamicMomentAndAerodynamicForce "${SRCROOT}${AERODYNAMICSDIR}")
+target_link_libraries(test_AerodynamicMomentAndAerodynamicForce tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics tudat_aerodynamics tudat_aerodynamics)
+
+add_executable(test_AerodynamicsNamespace "${SRCROOT}${AERODYNAMICSDIR}/UnitTests/unitTestAerodynamicsNamespace.cpp")
+setup_custom_test_program(test_AerodynamicsNamespace "${SRCROOT}${AERODYNAMICSDIR}")
+target_link_libraries(test_AerodynamicsNamespace tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics tudat_aerodynamics)
+
+add_executable(test_CoefficientGenerator "${SRCROOT}${AERODYNAMICSDIR}/UnitTests/unitTestCoefficientGenerator.cpp")
+setup_custom_test_program(test_CoefficientGenerator "${SRCROOT}${AERODYNAMICSDIR}")
+target_link_libraries(test_CoefficientGenerator tudat_input tudat_output tudat_astrodynamics tudat_mathematics tudat_astrodynamics tudat_basics tudat_aerodynamics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+
+add_executable(test_ExponentialAtmosphere "${SRCROOT}${AERODYNAMICSDIR}/UnitTests/unitTestExponentialAtmosphere.cpp")
+setup_custom_test_program(test_ExponentialAtmosphere "${SRCROOT}${AERODYNAMICSDIR}")
+target_link_libraries(test_ExponentialAtmosphere tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics ${Boost_LIBRARIES})
+
+add_executable(test_TabulatedAtmosphere "${SRCROOT}${AERODYNAMICSDIR}/UnitTests/unitTestTabulatedAtmosphere.cpp")
+setup_custom_test_program(test_TabulatedAtmosphere "${SRCROOT}${AERODYNAMICSDIR}")
+target_link_libraries(test_TabulatedAtmosphere tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics tudat_output tudat_input ${Boost_LIBRARIES})
+# End of file.

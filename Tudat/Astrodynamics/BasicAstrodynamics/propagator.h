@@ -57,7 +57,7 @@
 #include <map>
 #include <vector>
 #include "Tudat/Astrodynamics/Bodies/body.h"
-#include "Tudat/Astrodynamics/ForceModels/forceModel.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/forceModel.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/propagatorDataContainer.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
 #include "Tudat/Astrodynamics/States/state.h"

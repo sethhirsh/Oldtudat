@@ -55,7 +55,7 @@
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Bodies/vehicle.h"
-#include "Tudat/Astrodynamics/EnvironmentModels/centralGravityField.h"
+#include "Tudat/Astrodynamics/Gravitation/centralGravityField.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/keplerPropagator.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/seriesPropagator.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"

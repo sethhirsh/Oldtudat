@@ -85,8 +85,8 @@
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
-#include "Tudat/Astrodynamics/EnvironmentModels/gravityFieldModel.h"
-#include "Tudat/Astrodynamics/EnvironmentModels/sphericalHarmonicsGravityField.h"
+#include "Tudat/Astrodynamics/Gravitation/gravityFieldModel.h"
+#include "Tudat/Astrodynamics/Gravitation/sphericalHarmonicsGravityField.h"
 
 #include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"

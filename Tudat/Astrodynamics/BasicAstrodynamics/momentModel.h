@@ -1,0 +1,112 @@
+/*! \file momentModel.h
+ *    This header file contains the moment model base class included in Tudat.
+ *
+ *    Path              : /Astrodynamics/MomentModels/
+ *    Version           : 3
+ *    Check status      : Checked
+ *
+ *    Checker           : F. M. Engelen
+ *    Affiliation       : Delft University of Technology
+ *    E-mail address    : F.M.Engelen@student.tudelft.nl
+ *
+ *    Checker           : K. Kumar
+ *    Affiliation       : Delft University of Technology
+ *    E-mail address    : K.Kumar@tudelft.nl
+ *
+ *    Date created      : 10 May, 2011
+ *    Last modified     : 24 August, 2011
+ *
+ *    References
+ *
+ *    Notes
+ *      This baseclass already has the architecture to calculate the extra
+ *      moment due to a force, in other words:
+ *     total moment = arm x force + moment.
+ *
+ *    Copyright (c) 2010-2011 Delft University of Technology.
+ *
+ *    This software is protected by national and international copyright.
+ *    Any unauthorized use, reproduction or modification is unlawful and
+ *    will be prosecuted. Commercial and non-private application of the
+ *    software in any form is strictly prohibited unless otherwise granted
+ *    by the authors.
+ *
+ *    The code is provided without any warranty; without even the implied
+ *    warranty of merchantibility or fitness for a particular purpose.
+ *
+ *    Changelog
+ *      YYMMDD    Author            Comment
+ *      110510    F.M. Engelen      First creation of code.
+ *      110810    K. Kumar          Minor corrections; changed function names and removed redundant
+ *                                  functions.
+ *      110824    J. Leloux         Corrected doxygen documentation.
+ */
+
+#ifndef MOMENTMODEL_H
+#define MOMENTMODEL_H
+
+// Include statements.
+#include <Eigen/Core>
+#include <iostream>
+#include "Tudat/Astrodynamics/BasicAstrodynamics/forceModel.h"
+#include "Tudat/Astrodynamics/BasicAstrodynamics/generalizedForceModel.h"
+
+//! Tudat library namespace.
+/*!
+ *  The Tudat library namespace.
+ */
+namespace tudat
+{
+
+//! Base class for moment models.
+/*!
+ * Base class for the moment models used in Tudat.
+ */
+class MomentModel: public GeneralizedForceModel< Eigen::Vector3d, 3 >
+{
+public:
+
+    //! Default constructor.
+    /*!
+     * Default constructor.
+     */
+    MomentModel( ){ }
+
+    //! Default destructor.
+    /*!
+     * Default destructor.
+     */
+    virtual ~MomentModel( ) { }
+
+    //! Get moment.
+    /*!
+     * Returns the moment.
+     * \return Moment.
+     */
+    Eigen::Vector3d getMoment( ) { return moment_; }
+
+    virtual Eigen::Vector3d  getGeneralizedForce(  ) { return getMoment( ); }
+
+    /*!
+     * Computes the force due to the gravity field in Newtons.
+     * \param pointerToState Pointer to an object of the State class containing current state.
+     * \param time Current time.
+     */
+    virtual void computeMoment( State* pointerToState, double time ) = 0;
+
+protected:
+
+    //! Moment.
+    /*!
+     * Moment.
+     */
+    Eigen::Vector3d moment_;
+
+private:
+};
+
+}
+
+#endif // MOMENTMODEL_H
+
+// End of file.

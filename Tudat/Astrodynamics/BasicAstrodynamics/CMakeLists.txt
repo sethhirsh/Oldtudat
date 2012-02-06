@@ -43,6 +43,8 @@ set(BASICASTRODYNAMICS_SOURCES
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/convertMeanAnomalyToEccentricAnomaly.cpp"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/convertMeanAnomalyToHyperbolicEccentricAnomaly.cpp"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/seriesPropagator.cpp"
+  "${SRCROOT}${BASICASTRODYNAMICSDIR}/momentDueToForceModel.cpp"
+  "${SRCROOT}${BASICASTRODYNAMICSDIR}/generalizedForceModel.cpp"
 )
 
 # Set the header files.
@@ -54,6 +56,10 @@ set(BASICASTRODYNAMICS_HEADERS
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/propagator.h"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/propagatorDataContainer.h"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/seriesPropagator.h"
+  "${SRCROOT}${BASICASTRODYNAMICSDIR}/momentModel.h"
+  "${SRCROOT}${BASICASTRODYNAMICSDIR}/momentDueToForceModel.h"
+  "${SRCROOT}${BASICASTRODYNAMICSDIR}/forceModel.h"
+  "${SRCROOT}${BASICASTRODYNAMICSDIR}/generalizedForceModel.h"
 )
 
 # Add static libraries.
