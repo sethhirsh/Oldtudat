@@ -57,4 +57,8 @@ add_library(tudat_basics STATIC ${BASICS_SOURCES} ${BASICS_HEADERS})
 setup_tudat_library_target(tudat_basics "${SRCROOT}${BASICSDIR}")
 setup_headers("${BASICS_HEADERS}" "${BASICSDIR}")
 
+add_executable(test_BasicFunctions "${SRCROOT}${BASICSDIR}/unitTestBasicFunctions.cpp")
+setup_custom_test_program(test_BasicFunctions "${SRCROOT}${BASICSDIR}")
+target_link_libraries(test_BasicFunctions tudat_input_output tudat_basics ${Boost_LIBRARIES})
+
 # End of file.
