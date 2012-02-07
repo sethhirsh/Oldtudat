@@ -54,7 +54,7 @@ add_executable(test_EulerIntegrator "${SRCROOT}${MATHEMATICSDIR}/NumericalIntegr
 setup_custom_test_program(test_EulerIntegrator "${SRCROOT}${MATHEMATICSDIR}/NumericalIntegrators")
 target_link_libraries(test_EulerIntegrator)
 
-add_executable(test_RungeKuttaVariableStepsizeIntegrator "${SRCROOT}${MATHEMATICSDIR}/NumericalIntegrators/UnitTests/unitTestRungeKuttaVariableStepsizeIntegrator.cpp")
+add_executable(test_RungeKuttaVariableStepsizeIntegrator "${SRCROOT}${MATHEMATICSDIR}/NumericalIntegrators/UnitTests/unitTestRungeKuttaVariableStepSizeIntegrator.cpp")
 setup_custom_test_program(test_RungeKuttaVariableStepsizeIntegrator "${SRCROOT}${MATHEMATICSDIR}/NumericalIntegrators")
 target_link_libraries(test_RungeKuttaVariableStepsizeIntegrator tudat_numerical_integrators)
 

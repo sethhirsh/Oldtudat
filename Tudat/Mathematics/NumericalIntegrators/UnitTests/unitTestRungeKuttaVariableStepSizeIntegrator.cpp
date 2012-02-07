@@ -1,8 +1,8 @@
 /*! \file unitTestRungeKuttaVariableStepSizeIntegrator.cpp
  *    Source file that defines the unit test for the fixed stepsize forward RungeKuttaVariableStepSize integrator.
  *
- *    Path              : /Mathematics/NumericalIntegrators/
- *    Version           : 1
+ *    Path              : /Mathematics/NumericalIntegrators/UnitTests/
+ *    Version           : 2
  *    Check status      : Unchecked
  *
  *    Author            : B. Tong Minh
@@ -10,7 +10,7 @@
  *    E-mail address    : b.tongminh@student.tudelft.nl
  *
  *    Date created      : 3 February, 2012
- *    Last modified     : 3 February, 2012
+ *    Last modified     : 7 February, 2012
  *
  *    References
  *      Burden, R.L., Faires, J.D. Numerical Analysis, 7th Edition, Books/Cole, 2001.
@@ -30,13 +30,13 @@
  *
  *    Changelog
  *      YYMMDD    Author            Comment
- *      120203    B. Tong Minh      Copied RungeKutta4Stepsize unit test
+ *      120203    B. Tong Minh      Copied RungeKutta4Stepsize unit test.
+ *      120207    K. Kumar          Adapted to use modified benchmark functions in Tudat Core.
  */
 
 // Include statements.
 #include <limits>
 #include <iostream>
-
 #include <TudatCore/Mathematics/NumericalIntegrators/UnitTests/benchmarkFunctions.h>
 #include "Tudat/Mathematics/NumericalIntegrators/rungeKuttaVariableStepsizeIntegrator.h"
 #include "Tudat/Mathematics/NumericalIntegrators/rungeKuttaCoefficients.h"
@@ -45,25 +45,25 @@
 using tudat::mathematics::numerical_integrators::RungeKuttaVariableStepSizeIntegratorXd;
 using tudat::mathematics::numerical_integrators::RungeKuttaCoefficients;
 
-
-
-//! Test the result of the RungeKuttaVariableStepsize integrator
+//! Test the result of the RungeKuttaVariableStepsize integrator.
 /*!
- * Test the result of the RungeKuttaVariableStepsize integrator
- * \param stateDerivativeFunction Function pointer to the state derivative function
- * \param intervalStart The start of the integration interval
- * \param intervalEnd The end of the integration interval
- * \param stepSize The step size to take
- * \param initialState The initial state
- * \param expectedState Expected final state
- * \param tolerance Tolerance when comparing
- * \return true if actual final state equals the expected final state within the specified tolerance
+ * Test the result of the RungeKuttaVariableStepsize integrator.
+ * \param stateDerivativeFunction Function pointer to the state derivative function.
+ * \param intervalStart The start of the integration interval.
+ * \param intervalEnd The end of the integration interval.
+ * \param stepSize The step size to take.
+ * \param initialState_ The initial state.
+ * \param expectedState Expected final state.
+ * \param tolerance Tolerance when comparing.
+ * \return True if actual final state equals the expected final state within the specified
+ *          tolerance.
  */
 bool testRungeKuttaVariableStepsizeIntegrator(
         const RungeKuttaCoefficients& coefficients,
-        const RungeKuttaVariableStepSizeIntegratorXd::StateDerivativeFunction& stateDerivativeFunction,
+        const RungeKuttaVariableStepSizeIntegratorXd::StateDerivativeFunction&
+        stateDerivativeFunction,
         const double intervalStart, const double intervalEnd, const double stepSize,
-        const Eigen::VectorXd& initialState, const Eigen::VectorXd expectedState,
+        const Eigen::VectorXd& initialState_, const Eigen::VectorXd expectedState,
         const double tolerance )
 {
     using std::endl;
@@ -71,7 +71,7 @@ bool testRungeKuttaVariableStepsizeIntegrator(
     // Create forward RungeKuttaVariableStepsize, fixed stepsize integrator.
     {
         RungeKuttaVariableStepSizeIntegratorXd integrator( coefficients, stateDerivativeFunction,
-                                                           intervalStart, initialState,
+                                                           intervalStart, initialState_,
                                                            1.0e-15, tolerance / 10 );
 
         Eigen::VectorXd finalState = integrator.integrateTo( intervalEnd, stepSize );
@@ -79,7 +79,7 @@ bool testRungeKuttaVariableStepsizeIntegrator(
         // Compute differences between computed and expected interval end and generate
         // cerr statement if test fails.
         if ( std::abs( integrator.getCurrentInterval( ) - intervalEnd ) / intervalEnd >
-             10 * std::numeric_limits<double>::epsilon( ) )
+             10 * std::numeric_limits< double >::epsilon( ) )
         {
             std::cerr << "RungeKuttaVariableStepsizeIntegrator end interval mismatch" << endl
                       << "Expected interval end: " << intervalEnd << endl
@@ -103,7 +103,7 @@ bool testRungeKuttaVariableStepsizeIntegrator(
     // Try the same again, but in two steps
     {
         RungeKuttaVariableStepSizeIntegratorXd integrator( coefficients, stateDerivativeFunction,
-                                                           intervalStart, initialState,
+                                                           intervalStart, initialState_,
                                                            1.0e-15, tolerance / 10 );
 
         const double intermediateInterval = intervalStart + ( intervalEnd - intervalStart ) / 2.0;
@@ -114,7 +114,7 @@ bool testRungeKuttaVariableStepsizeIntegrator(
         // cerr statement if test fails.
         if ( std::abs( integrator.getCurrentInterval( ) - intermediateInterval ) /
              intermediateInterval >
-             std::numeric_limits<double>::epsilon( ) )
+             std::numeric_limits< double >::epsilon( ) )
         {
             std::cerr << "RungeKuttaVariableStepsizeIntegrator intermediate interval mismatch" << endl
                       << "Expected intermediate interval: " << intermediateInterval << endl
@@ -129,7 +129,7 @@ bool testRungeKuttaVariableStepsizeIntegrator(
         // Compute differences between computed and expected interval end and generate
         // cerr statement if test fails.
         if ( std::abs( integrator.getCurrentInterval( ) - intervalEnd ) / intervalEnd >
-             10 * std::numeric_limits<double>::epsilon( ) )
+             10 * std::numeric_limits< double >::epsilon( ) )
         {
             std::cerr << "RungeKuttaVariableStepsizeIntegrator end interval mismatch" << endl
                       << "Expected interval end: " << intervalEnd << endl
@@ -155,7 +155,7 @@ bool testRungeKuttaVariableStepsizeIntegrator(
         }
         // No need to check machine precision, because this interval is stored exact
         if ( std::abs( integrator.getCurrentInterval( ) - intervalEnd ) / intervalEnd >
-             10 * std::numeric_limits<double>::epsilon( ) )
+             10 * std::numeric_limits< double >::epsilon( ) )
         {
             std::cerr << "RungeKuttaVariableStepsizeIntegrator rollback to invalid interval" << endl
                       << "Expected result: " << intervalEnd << endl
@@ -190,11 +190,11 @@ bool testRungeKuttaVariableStepsizeIntegrator(
  */
 bool testDifferentStateAndStateDerivativeTypes( )
 {
-    using tudat::unit_tests::numerical_integrators::zeroStateDerivative;
+    using tudat::mathematics::numerical_integrators::computeZeroStateDerivative;
     tudat::mathematics::numerical_integrators::RungeKuttaVariableStepSizeIntegrator
-            <double, Eigen::Vector3d, Eigen::VectorXd> integrator( RungeKuttaCoefficients( ),
-                                                                   &zeroStateDerivative,
-                                                                   0.0, Eigen::Vector3d::Zero( ) );
+            < double, Eigen::Vector3d, Eigen::VectorXd > integrator(
+                RungeKuttaCoefficients( ),  &computeZeroStateDerivative,
+                0.0, Eigen::Vector3d::Zero( ) );
     integrator.integrateTo( 0.0, 0.1 );
 
     // No need to test anything, this is just to check compile time errors
@@ -209,7 +209,7 @@ bool testRungeKuttaVariableStepsizeIntegrator( const RungeKuttaCoefficients& coe
     // Test result initialised to false.
     bool testRungeKuttaVariableStepsizeIsOk = true;
 
-    using namespace tudat::unit_tests::numerical_integrators;
+    using namespace tudat::mathematics::numerical_integrators;
     std::map< BenchmarkFunctions, BenchmarkFunction >& benchmarkFunctions =
              getBenchmarkFunctions( );
 
@@ -218,25 +218,25 @@ bool testRungeKuttaVariableStepsizeIntegrator( const RungeKuttaCoefficients& coe
     {
         testRungeKuttaVariableStepsizeIsOk &= testRungeKuttaVariableStepsizeIntegrator(
                     coefficients,
-                    benchmarkFunctions[Zero].pointerToStateDerivativeFunction,
-                    benchmarkFunctions[Zero].initialInterval,
-                    benchmarkFunctions[Zero].endInterval,
+                    benchmarkFunctions[Zero].pointerToStateDerivativeFunction_,
+                    benchmarkFunctions[Zero].initialInterval_,
+                    benchmarkFunctions[Zero].endInterval_,
                     0.2,
-                    benchmarkFunctions[Zero].initialState,
-                    benchmarkFunctions[Zero].endState,
-                    std::numeric_limits<double>::epsilon( ) );
+                    benchmarkFunctions[Zero].initialState_,
+                    benchmarkFunctions[Zero].endState_,
+                    std::numeric_limits< double >::epsilon( ) );
     }
 
     // Test with x_dot = 1, which results in x_f = x_0 + t_f
     {
         testRungeKuttaVariableStepsizeIsOk &= testRungeKuttaVariableStepsizeIntegrator(
                     coefficients,
-                    benchmarkFunctions[Constant].pointerToStateDerivativeFunction,
-                    benchmarkFunctions[Constant].initialInterval,
-                    benchmarkFunctions[Constant].endInterval,
+                    benchmarkFunctions[Constant].pointerToStateDerivativeFunction_,
+                    benchmarkFunctions[Constant].initialInterval_,
+                    benchmarkFunctions[Constant].endInterval_,
                     0.2,
-                    benchmarkFunctions[Constant].initialState,
-                    benchmarkFunctions[Constant].endState,
+                    benchmarkFunctions[Constant].initialState_,
+                    benchmarkFunctions[Constant].endState_,
                     1.0e-14 );
     }
 
@@ -244,26 +244,26 @@ bool testRungeKuttaVariableStepsizeIntegrator( const RungeKuttaCoefficients& coe
     {
         testRungeKuttaVariableStepsizeIsOk &= testRungeKuttaVariableStepsizeIntegrator(
                     coefficients,
-                    benchmarkFunctions[Exponential].pointerToStateDerivativeFunction,
-                    benchmarkFunctions[Exponential].initialInterval,
-                    benchmarkFunctions[Exponential].endInterval,
+                    benchmarkFunctions[Exponential].pointerToStateDerivativeFunction_,
+                    benchmarkFunctions[Exponential].initialInterval_,
+                    benchmarkFunctions[Exponential].endInterval_,
                     1.0,
-                    benchmarkFunctions[Exponential].initialState,
-                    benchmarkFunctions[Exponential].endState,
-                    1e-12 );
+                    benchmarkFunctions[Exponential].initialState_,
+                    benchmarkFunctions[Exponential].endState_,
+                    1.0e-12 );
     }
 
     // Test with an example from numerical recipes
     {
         testRungeKuttaVariableStepsizeIsOk &= testRungeKuttaVariableStepsizeIntegrator(
                     coefficients,
-                    benchmarkFunctions[NumericalRecipes].pointerToStateDerivativeFunction,
-                    benchmarkFunctions[NumericalRecipes].initialInterval,
-                    benchmarkFunctions[NumericalRecipes].endInterval,
+                    benchmarkFunctions[ BurdenAndFaires ].pointerToStateDerivativeFunction_,
+                    benchmarkFunctions[ BurdenAndFaires ].initialInterval_,
+                    benchmarkFunctions[ BurdenAndFaires ].endInterval_,
                     0.1,
-                    benchmarkFunctions[NumericalRecipes].initialState,
-                    benchmarkFunctions[NumericalRecipes].endState,
-                    1e-4 );
+                    benchmarkFunctions[ BurdenAndFaires ].initialState_,
+                    benchmarkFunctions[ BurdenAndFaires ].endState_,
+                    1.0e-4 );
     }
 
     return !testRungeKuttaVariableStepsizeIsOk;

@@ -1,8 +1,8 @@
 /*! \file unitTestEulerIntegrator.cpp
  *    Source file that defines the unit test for the fixed stepsize forward Euler integrator.
  *
- *    Path              : /Mathematics/NumericalIntegrators/
- *    Version           : 1
+ *    Path              : /Mathematics/NumericalIntegrators/UnitTests/
+ *    Version           : 2
  *    Check status      : Unchecked
  *
  *    Author            : B. Tong Minh
@@ -10,7 +10,7 @@
  *    E-mail address    : b.tongminh@student.tudelft.nl
  *
  *    Date created      : 3 February, 2012
- *    Last modified     : 3 February, 2012
+ *    Last modified     : 7 February, 2012
  *
  *    References
  *      Burden, R.L., Faires, J.D. Numerical Analysis, 7th Edition, Books/Cole, 2001.
@@ -30,50 +30,49 @@
  *
  *    Changelog
  *      YYMMDD    Author            Comment
- *      120203    B. Tong Minh      Copied Euler unit test
+ *      120203    B. Tong Minh      Copied Euler unit test.
+ *      120207    K. Kumar          Adapted to use modified benchmark functions in Tudat Core.
  */
 
 // Include statements.
-#include <limits>
 #include <iostream>
-
+#include <limits>
 #include <TudatCore/Mathematics/NumericalIntegrators/UnitTests/benchmarkFunctions.h>
 #include "Tudat/Mathematics/NumericalIntegrators/euler.h"
 
 //! Using declaration of the EulerIntegratorXd.
 using tudat::mathematics::numerical_integrators::EulerIntegratorXd;
 
-
-
-//! Test the result of the Euler integrator
+//! Test the result of the Euler integrator.
 /*!
- * Test the result of the Euler integrator
- * \param stateDerivativeFunction Function pointer to the state derivative function
- * \param intervalStart The start of the integration interval
- * \param intervalEnd The end of the integration interval
- * \param stepSize The step size to take
- * \param initialState The initial state
- * \param expectedState Expected final state
- * \param tolerance Tolerance when comparing
- * \return true if actual final state equals the expected final state within the specified tolerance
+ * Test the result of the Euler integrator.
+ * \param stateDerivativeFunction Function pointer to the state derivative function.
+ * \param intervalStart The start of the integration interval.
+ * \param intervalEnd The end of the integration interval.
+ * \param stepSize The step size to take.
+ * \param initialState_ The initial state.
+ * \param expectedState Expected final state.
+ * \param tolerance Tolerance when comparing.
+ * \return True if actual final state equals the expected final state within the specified
+ *          tolerance.
  */
 bool testEulerIntegrator( const EulerIntegratorXd::StateDerivativeFunction& stateDerivativeFunction,
-                                const double intervalStart, const double intervalEnd, const double stepSize,
-                                const Eigen::VectorXd& initialState, const Eigen::VectorXd expectedState,
-                                const double tolerance )
+                          const double intervalStart, const double intervalEnd, const double stepSize,
+                          const Eigen::VectorXd& initialState_, const Eigen::VectorXd expectedState,
+                          const double tolerance )
 {
     using std::endl;
 
     // Create forward Euler, fixed stepsize integrator.
     {
-        EulerIntegratorXd integrator( stateDerivativeFunction, intervalStart, initialState );
+        EulerIntegratorXd integrator( stateDerivativeFunction, intervalStart, initialState_ );
 
         Eigen::VectorXd finalState = integrator.integrateTo( intervalEnd, stepSize );
 
         // Compute differences between computed and expected interval end and generate
         // cerr statement if test fails.
-        if ( std::abs( integrator.getCurrentInterval( ) - intervalEnd ) / intervalEnd >
-             std::numeric_limits<double>::epsilon( ) )
+        if ( std::fabs( integrator.getCurrentInterval( ) - intervalEnd ) / intervalEnd >
+             std::numeric_limits< double >::epsilon( ) )
         {
             std::cerr << "EulerIntegrator end interval mismatch" << endl
                       << "Expected interval end: " << intervalEnd << endl
@@ -94,7 +93,7 @@ bool testEulerIntegrator( const EulerIntegratorXd::StateDerivativeFunction& stat
 
     // Try the same again, but in two steps
     {
-        EulerIntegratorXd integrator( stateDerivativeFunction, intervalStart, initialState );
+        EulerIntegratorXd integrator( stateDerivativeFunction, intervalStart, initialState_ );
 
         const double intermediateInterval = intervalStart + ( intervalEnd - intervalStart ) / 2.0;
 
@@ -102,9 +101,9 @@ bool testEulerIntegrator( const EulerIntegratorXd::StateDerivativeFunction& stat
                                                                           stepSize );
         // Compute differences between computed and expected interval end and generate
         // cerr statement if test fails.
-        if ( std::abs( integrator.getCurrentInterval( ) - intermediateInterval ) /
+        if ( std::fabs( integrator.getCurrentInterval( ) - intermediateInterval ) /
              intermediateInterval >
-             std::numeric_limits<double>::epsilon( ) )
+             std::numeric_limits< double >::epsilon( ) )
         {
             std::cerr << "EulerIntegrator intermediate interval mismatch" << endl
                       << "Expected intermediate interval: " << intermediateInterval << endl
@@ -118,8 +117,8 @@ bool testEulerIntegrator( const EulerIntegratorXd::StateDerivativeFunction& stat
 
         // Compute differences between computed and expected interval end and generate
         // cerr statement if test fails.
-        if ( std::abs( integrator.getCurrentInterval( ) - intervalEnd ) / intervalEnd >
-             std::numeric_limits<double>::epsilon( ) )
+        if ( std::fabs( integrator.getCurrentInterval( ) - intervalEnd ) / intervalEnd >
+             std::numeric_limits< double >::epsilon( ) )
         {
             std::cerr << "EulerIntegrator end interval mismatch" << endl
                       << "Expected interval end: " << intervalEnd << endl
@@ -143,8 +142,8 @@ bool testEulerIntegrator( const EulerIntegratorXd::StateDerivativeFunction& stat
             std::cerr << "EulerIntegrator rollback returned false" << endl;
             return false;
         }
-        if ( std::abs( integrator.getCurrentInterval( ) != intervalEnd ) /
-             intervalEnd > std::numeric_limits<double>::epsilon( ) )
+        if ( std::fabs( integrator.getCurrentInterval( ) != intervalEnd ) /
+             intervalEnd > std::numeric_limits< double >::epsilon( ) )
         {
             std::cerr << "EulerIntegrator rollback to invalid interval" << endl
                       << "Expected result: " << intervalEnd << endl
@@ -177,13 +176,13 @@ bool testEulerIntegrator( const EulerIntegratorXd::StateDerivativeFunction& stat
  */
 bool testDifferentStateAndStateDerivativeTypes( )
 {
-    using tudat::unit_tests::numerical_integrators::zeroStateDerivative;
+    using tudat::mathematics::numerical_integrators::computeZeroStateDerivative;
     tudat::mathematics::numerical_integrators::EulerIntegrator
-            <double, Eigen::Vector3d, Eigen::VectorXd> integrator( &zeroStateDerivative,
-                                                                   0.0, Eigen::Vector3d::Zero( ) );
+            < double, Eigen::Vector3d, Eigen::VectorXd > integrator( &computeZeroStateDerivative,
+                                                                     0.0, Eigen::Vector3d::Zero( ) );
     integrator.integrateTo( 1.0, 0.1 );
 
-    // No need to test anything, this is just to check compile time errors
+    // No need to test anything, this is just to check compile time errors.
     return true;
 }
 
@@ -195,64 +194,64 @@ int main( )
     // Test result initialised to false.
     bool testEulerIsOk = true;
 
-    using namespace tudat::unit_tests::numerical_integrators;
+    using namespace tudat::mathematics::numerical_integrators;
     std::map< BenchmarkFunctions, BenchmarkFunction >& benchmarkFunctions =
              getBenchmarkFunctions( );
 
 
-    // Test with x_dot = 0, which results in x_f = x_0
+    // Test with x_dot = 0, which results in x_f = x_0.
     {
-        testEulerIsOk &= testEulerIntegrator( benchmarkFunctions[Zero].pointerToStateDerivativeFunction,
-                                                  benchmarkFunctions[Zero].initialInterval,
-                                                  benchmarkFunctions[Zero].endInterval,
-                                                  0.2,
-                                                  benchmarkFunctions[Zero].initialState,
-                                                  benchmarkFunctions[Zero].endState,
-                                                  std::numeric_limits<double>::epsilon( ) );
+        testEulerIsOk &= testEulerIntegrator(
+                    benchmarkFunctions[ Zero ].pointerToStateDerivativeFunction_,
+                    benchmarkFunctions[ Zero ].initialInterval_,
+                    benchmarkFunctions[ Zero ].endInterval_, 0.2,
+                    benchmarkFunctions[ Zero ].initialState_,
+                    benchmarkFunctions[ Zero ].endState_,
+                    std::numeric_limits< double >::epsilon( ) );
     }
 
-    // Test with x_dot = 1, which results in x_f = x_0 + t_f
+    // Test with x_dot = 1, which results in x_f = x_0 + t_f.
     {
-        testEulerIsOk &= testEulerIntegrator( benchmarkFunctions[Constant].pointerToStateDerivativeFunction,
-                                                  benchmarkFunctions[Constant].initialInterval,
-                                                  benchmarkFunctions[Constant].endInterval,
-                                                  0.2,
-                                                  benchmarkFunctions[Constant].initialState,
-                                                  benchmarkFunctions[Constant].endState,
-                                                  std::numeric_limits<double>::epsilon( ) );
+        testEulerIsOk &= testEulerIntegrator(
+                    benchmarkFunctions[ Constant ].pointerToStateDerivativeFunction_,
+                    benchmarkFunctions[ Constant ].initialInterval_,
+                    benchmarkFunctions[ Constant ].endInterval_, 0.2,
+                    benchmarkFunctions[ Constant ].initialState_,
+                    benchmarkFunctions[ Constant ].endState_,
+                    std::numeric_limits< double >::epsilon( ) );
     }
 
     // Test with x_dot = x, which results in x_f = x0 * exp( t_f )
     {
-        testEulerIsOk &= testEulerIntegrator( benchmarkFunctions[Exponential].pointerToStateDerivativeFunction,
-                                                  benchmarkFunctions[Exponential].initialInterval,
-                                                  benchmarkFunctions[Exponential].endInterval,
-                                                  0.0001,
-                                                  benchmarkFunctions[Exponential].initialState,
-                                                  benchmarkFunctions[Exponential].endState,
-                                                  1e-2 );
+        testEulerIsOk &= testEulerIntegrator(
+                    benchmarkFunctions[ Exponential ].pointerToStateDerivativeFunction_,
+                    benchmarkFunctions[ Exponential ].initialInterval_,
+                    benchmarkFunctions[ Exponential ].endInterval_, 0.0001,
+                    benchmarkFunctions[ Exponential ].initialState_,
+                    benchmarkFunctions[ Exponential ].endState_,
+                    1.0e-2 );
     }
 
     // Test with x_dot = x, but integrate backwards
     {
-        testEulerIsOk &= testEulerIntegrator( benchmarkFunctions[InverseExponential].pointerToStateDerivativeFunction,
-                                                  benchmarkFunctions[InverseExponential].initialInterval,
-                                                  benchmarkFunctions[InverseExponential].endInterval,
-                                                  -0.0001,
-                                                  benchmarkFunctions[InverseExponential].initialState,
-                                                  benchmarkFunctions[InverseExponential].endState,
-                                                  1e-2 );
+        testEulerIsOk &= testEulerIntegrator(
+                    benchmarkFunctions[ BackwardsExponential ].pointerToStateDerivativeFunction_,
+                    benchmarkFunctions[ BackwardsExponential ].initialInterval_,
+                    benchmarkFunctions[ BackwardsExponential ].endInterval_, -0.0001,
+                    benchmarkFunctions[ BackwardsExponential ].initialState_,
+                    benchmarkFunctions[ BackwardsExponential ].endState_,
+                    1.0e-2 );
     }
 
     // Test with an example from numerical recipes
     {
-        testEulerIsOk &= testEulerIntegrator( benchmarkFunctions[NumericalRecipes].pointerToStateDerivativeFunction,
-                                                  benchmarkFunctions[NumericalRecipes].initialInterval,
-                                                  benchmarkFunctions[NumericalRecipes].endInterval,
-                                                  0.001,
-                                                  benchmarkFunctions[NumericalRecipes].initialState,
-                                                  benchmarkFunctions[NumericalRecipes].endState,
-                                                  1e-2 );
+        testEulerIsOk &= testEulerIntegrator(
+                    benchmarkFunctions[ BurdenAndFaires ].pointerToStateDerivativeFunction_,
+                    benchmarkFunctions[ BurdenAndFaires ].initialInterval_,
+                    benchmarkFunctions[ BurdenAndFaires ].endInterval_, 0.001,
+                    benchmarkFunctions[ BurdenAndFaires ].initialState_,
+                    benchmarkFunctions[ BurdenAndFaires ].endState_,
+                    1.0e-2 );
     }
 
     testEulerIsOk &= testDifferentStateAndStateDerivativeTypes( );
