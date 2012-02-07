@@ -1,3 +1,40 @@
+/*! \file rungeKuttaCoefficients.cpp
+ *    Source file that defines coefficients for the Runge-Kutta-Fehlberg-45, -56 and -78
+ *    integrators.
+ *
+ *    Path              : /Mathematics/NumericalIntegrators/
+ *    Version           : 1
+ *    Check status      : Unchecked
+ *
+ *    Author            : B. Tong Minh
+ *    Affiliation       : Delft University of Technology
+ *    E-mail address    : b.tongminh@student.tudelft.nl
+ *
+ *    Date created      : 3 February, 2012
+ *    Last modified     : 7 February, 2012
+ *
+ *    References
+ *      Burden, R.L., Faires, J.D. Numerical Analysis, 7th Edition, Books/Cole, 2001.
+ *
+ *    Notes
+ *
+ *    Copyright (c) 2010-2012 Delft University of Technology.
+ *
+ *    This software is protected by national and international copyright.
+ *    Any unauthorized use, reproduction or modification is unlawful and
+ *    will be prosecuted. Commercial and non-private application of the
+ *    software in any form is strictly prohibited unless otherwise granted
+ *    by the authors.
+ *
+ *    The code is provided without any warranty; without even the implied
+ *    warranty of merchantibility or fitness for a particular purpose.
+ *
+ *    Changelog
+ *      YYMMDD    Author            Comment
+ *      120203    B. Tong Minh      File created
+ */
+
+
 #include <Eigen/Core>
 #include "Tudat/Mathematics/NumericalIntegrators/rungeKuttaCoefficients.h"
 
@@ -13,6 +50,7 @@ namespace mathematics
 namespace numerical_integrators
 {
 
+//! Initialize RKF45 coefficients
 void initializeRungeKuttaFehlberg45Coefficients( RungeKuttaCoefficients&
                                                  rungeKuttaFehlberg45Coefficients )
 {
@@ -71,6 +109,7 @@ void initializeRungeKuttaFehlberg45Coefficients( RungeKuttaCoefficients&
 
 }
 
+//! Initialize RKF56 coefficients
 void initializeRungeKuttaFehlberg56Coefficients( RungeKuttaCoefficients&
                                                  rungeKuttaFehlberg56Coefficients )
 {
@@ -143,6 +182,7 @@ void initializeRungeKuttaFehlberg56Coefficients( RungeKuttaCoefficients&
 
 }
 
+//! Initialize RKF78 coefficients
 void initializeRungeKuttaFehlberg78Coefficients( RungeKuttaCoefficients&
                                                  rungeKuttaFehlberg78Coefficients )
 {
@@ -285,6 +325,7 @@ void initializeRungeKuttaFehlberg78Coefficients( RungeKuttaCoefficients&
 
 }
 
+//! Get coefficients for a specified coefficient set
 const RungeKuttaCoefficients& RungeKuttaCoefficients::get(
         RungeKuttaCoefficients::CoefficientSets coefficientSet )
 {

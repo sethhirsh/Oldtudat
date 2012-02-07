@@ -3,7 +3,7 @@
  #
  #    Path              : /Mathematics/NumericalIntegrators/
  #    Version           : 1
- #    Check status      : Broken
+ #    Check status      : Unchecked
  #
  #    Author            : B. Tong Minh
  #    Affiliation       : Delft University of Technology
@@ -34,7 +34,6 @@
 
 # Add source files.
 set(NUMERICALINTEGRATORS_SOURCES
-  "${SRCROOT}${MATHEMATICSDIR}/NumericalIntegrators/numericalIntegrator.cpp"
   "${SRCROOT}${MATHEMATICSDIR}/NumericalIntegrators/rungeKuttaCoefficients.cpp"
 )
 

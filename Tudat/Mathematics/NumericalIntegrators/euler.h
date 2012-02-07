@@ -2,12 +2,16 @@
  *    Header file that defines the Euler integrator implemented in Tudat.
  *
  *    Path              : /Mathematics/NumericalIntegrators/
- *    Version           : 8
- *    Check status      : Checked
+ *    Version           : 9
+ *    Check status      : Unchecked
  *
  *    Author            : K. Kumar
  *    Affiliation       : Delft University of Technology
  *    E-mail address    : K.Kumar@tudelft.nl
+ *
+ *    Author            : B. Tong Minh
+ *    Affiliation       : Delft University of Technology
+ *    E-mail address    : B.TongMinh@student.tudelft.nl
  *
  *    Checker           : D. Dirkx
  *    Affiliation       : Delft University of Technology
@@ -17,7 +21,7 @@
  *    Affiliation       : Delft University of Technology
  *    E-mail address    : J.C.P.Melman@tudelft.nl
  *
- *    Date created      : 27 July, 2010
+ *    Date created      : 7 February, 2012
  *    Last modified     : 5 September, 2011
  *
  *    References
@@ -47,6 +51,7 @@
  *      110810    J. Leloux         Corrected doxygen documentation.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *      120207    B. Tong Minh      Updated to TudatCore compatibility
  */
 
 #ifndef TUDAT_EULER_H
