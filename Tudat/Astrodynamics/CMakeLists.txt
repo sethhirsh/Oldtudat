@@ -53,15 +53,6 @@ set(MISSIONSEGMENTSDIR "${ASTRODYNAMICSDIR}/MissionSegments")
 set(REFERENCEFRAMESDIR "${ASTRODYNAMICSDIR}/ReferenceFrames")
 set(STATESDIR "${ASTRODYNAMICSDIR}/States")
 
-
-# Set the source files.
-set(ASTRODYNAMICS_SOURCES 
-)
-
-# Set the header files.
-set(ASTRODYNAMICS_HEADERS 
-)
-
 # Add subdirectories.
 add_subdirectory("${SRCROOT}${BASICASTRODYNAMICSDIR}")
 add_subdirectory("${SRCROOT}${BODIESDIR}")
@@ -81,10 +72,5 @@ get_target_property(EPHEMERISSOURCES tudat_ephemeris SOURCES)
 get_target_property(MISSIONSEGMENTSSOURCES tudat_mission_segments SOURCES)
 get_target_property(REFERENCEFRAMESSOURCES tudat_reference_frames SOURCES)
 get_target_property(STATESSOURCES tudat_states SOURCES)
-
-# Add static libraries.
-add_library(tudat_astrodynamics STATIC ${ASTRODYNAMICS_SOURCES} ${ASTRODYNAMICS_HEADERS} ${BASICASTRODYNAMICSSOURCES} ${BODIESSOURCES} ${ENVIRONMENTMODELSSOURCES} ${EPHEMERISSOURCES} ${FORCEMODELSSOURCES} ${MISSIONSEGMENTSSOURCES} ${MOMENTMODELSSOURCE} ${REFERENCEFRAMESSOURCES} ${STATESSOURCES} ${AERODYNAMICSSOURCES} ${GRAVITATIONSOURCES})
-setup_tudat_library_target(tudat_astrodynamics "${SRCROOT}${ASTRODYNAMICSDIR}")
-setup_headers("${ASTRODYNAMICS_HEADERS}" "${ASTRODYNAMICSDIR}")
 
 # End of file.

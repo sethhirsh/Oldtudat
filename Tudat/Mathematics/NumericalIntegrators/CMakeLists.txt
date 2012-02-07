@@ -52,11 +52,11 @@ setup_headers("${NUMERICALINTEGRATORS_HEADERS}" "${MATHEMATICSDIR}/NumericalInte
 
 add_executable(test_EulerIntegrator "${SRCROOT}${MATHEMATICSDIR}/NumericalIntegrators/UnitTests/unitTestEulerIntegrator.cpp")
 setup_custom_test_program(test_EulerIntegrator "${SRCROOT}${MATHEMATICSDIR}/NumericalIntegrators")
-target_link_libraries(test_EulerIntegrator)
+target_link_libraries(test_EulerIntegrator tudat_numerical_integrators ${TUDAT_CORE_LIBRARIES})
 
 add_executable(test_RungeKuttaVariableStepsizeIntegrator "${SRCROOT}${MATHEMATICSDIR}/NumericalIntegrators/UnitTests/unitTestRungeKuttaVariableStepSizeIntegrator.cpp")
 setup_custom_test_program(test_RungeKuttaVariableStepsizeIntegrator "${SRCROOT}${MATHEMATICSDIR}/NumericalIntegrators")
-target_link_libraries(test_RungeKuttaVariableStepsizeIntegrator tudat_numerical_integrators)
+target_link_libraries(test_RungeKuttaVariableStepsizeIntegrator tudat_numerical_integrators ${TUDAT_CORE_LIBRARIES})
 
 
 # End of file.

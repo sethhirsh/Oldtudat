@@ -60,6 +60,6 @@ setup_headers("${REFERENCEFRAMES_HEADERS}" "${REFERENCEFRAMESDIR}")
 # Add unit tests.
 add_executable(test_ReferenceFrameTransformations "${SRCROOT}${REFERENCEFRAMESDIR}/unitTestReferenceFrameTransformations.cpp")
 setup_custom_test_program(test_ReferenceFrameTransformations "${SRCROOT}${REFERENCEFRAMESDIR}")
-target_link_libraries(test_ReferenceFrameTransformations tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics)
+target_link_libraries(test_ReferenceFrameTransformations tudat_reference_frames ${TUDAT_CORE_LIBRARIES})
 
 # End of file.

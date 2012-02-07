@@ -43,14 +43,6 @@
  #      111027    K. Kumar          Removed RandomNumberGenerators as sub-directory.
  #/
 
-# Add source files.
-set(MATHEMATICS_SOURCES
-)
-
-# Add header files.
-set(MATHEMATICS_HEADERS 
-)
-
 # Add sub-directories.
 add_subdirectory("${SRCROOT}${MATHEMATICSDIR}/GeometricShapes")
 add_subdirectory("${SRCROOT}${MATHEMATICSDIR}/Interpolators")
@@ -66,10 +58,6 @@ get_target_property(NUMERICALINTEGRATORSSOURCES tudat_numerical_integrators SOUR
 get_target_property(ROOTFINDINGMETHODSSOURCES tudat_root_finding_methods SOURCES)
 get_target_property(STATISTICSSOURCES tudat_statistics SOURCES)
 
-# Add static libraries.
-add_library(tudat_mathematics STATIC ${MATHEMATICS_SOURCES} ${MATHEMATICS_HEADERS} ${GEOMETRICSHAPESSOURCES} ${INTERPOLATORSSOURCES} ${NUMERICALINTEGRATORSSOURCES} ${ROOTFINDINGMETHODSSOURCES} ${STATISTICSSOURCES})
-setup_tudat_library_target(tudat_mathematics "${SRCROOT}${MATHEMATICSDIR}")
-setup_headers("${MATHEMATICS_HEADERS}" "${MATHEMATICSDIR}")
 
 
 # End of file.

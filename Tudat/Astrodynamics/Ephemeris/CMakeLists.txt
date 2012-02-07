@@ -68,7 +68,7 @@ setup_headers("${EPHEMERIS_HEADERS}" "${EPHEMERISDIR}")
 # Add unit tests.
 add_executable(test_ApproximatePlanetPositions "${SRCROOT}${EPHEMERISDIR}/UnitTests/unitTestApproximatePlanetPositions.cpp")
 setup_custom_test_program(test_ApproximatePlanetPositions "${SRCROOT}${EPHEMERISDIR}")
-target_link_libraries(test_ApproximatePlanetPositions tudat_ephemeris tudat_astrodynamics tudat_basic_astrodynamics tudat_states tudat_input_output tudat_mathematics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(test_ApproximatePlanetPositions tudat_ephemeris tudat_basic_astrodynamics tudat_states tudat_bodies tudat_gravitation tudat_root_finding_methods ${TUDAT_CORE_LIBRARIES})
 
 
 # End of file.

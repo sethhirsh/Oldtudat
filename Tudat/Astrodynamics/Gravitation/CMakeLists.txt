@@ -67,7 +67,7 @@ setup_headers("${GRAVITATION_HEADERS}" "${GRAVITATIONDIR}")
 
 add_executable(test_SphericalHarmonicsGravityField "${SRCROOT}${GRAVITATIONDIR}/UnitTests/unitTestSphericalHarmonicsGravityField.cpp")
 setup_custom_test_program(test_SphericalHarmonicsGravityField "${SRCROOT}${GRAVITATIONDIR}")
-target_link_libraries(test_SphericalHarmonicsGravityField tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics tudat_gravitation tudat_bodies ${Boost_LIBRARIES})
+target_link_libraries(test_SphericalHarmonicsGravityField tudat_gravitation tudat_bodies ${Boost_LIBRARIES})
 
 
 

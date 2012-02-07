@@ -56,7 +56,6 @@
 #include "Tudat/Astrodynamics/MissionSegments/capturePhase.h"
 #include "Tudat/Astrodynamics/MissionSegments/escapeAndCapture.h"
 #include "Tudat/Astrodynamics/MissionSegments/escapePhase.h"
-#include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 
 //! Test patched conics implementation.
 int main( )

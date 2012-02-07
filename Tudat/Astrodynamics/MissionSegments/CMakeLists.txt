@@ -70,22 +70,22 @@ setup_headers("${MISSIONSEGMENTS_HEADERS}" "${MISSIONSEGMENTSDIR}")
 # Add unit tests.
 add_executable(test_DeepSpaceManeuver "${SRCROOT}${MISSIONSEGMENTSDIR}/unitTestDeepSpaceManeuver.cpp")
 setup_custom_test_program(test_DeepSpaceManeuver "${SRCROOT}${MISSIONSEGMENTSDIR}")
-target_link_libraries(test_DeepSpaceManeuver tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_DeepSpaceManeuver tudat_states tudat_mission_segments )
 
 add_executable(test_EscapeAndCapture "${SRCROOT}${MISSIONSEGMENTSDIR}/unitTestEscapeAndCapture.cpp")
 setup_custom_test_program(test_EscapeAndCapture "${SRCROOT}${MISSIONSEGMENTSDIR}")
-target_link_libraries(test_EscapeAndCapture tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(test_EscapeAndCapture tudat_bodies tudat_ephemeris tudat_mission_segments tudat_root_finding_methods tudat_gravitation tudat_basic_astrodynamics ${TUDAT_CORE_LIBRARIES})
 
 add_executable(test_GravityAssist "${SRCROOT}${MISSIONSEGMENTSDIR}/unitTestGravityAssist.cpp")
 setup_custom_test_program(test_GravityAssist "${SRCROOT}${MISSIONSEGMENTSDIR}")
-target_link_libraries(test_GravityAssist tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(test_GravityAssist tudat_bodies tudat_gravitation tudat_mission_segments tudat_ephemeris tudat_basic_astrodynamics tudat_root_finding_methods ${TUDAT_CORE_LIBRARIES})
 
 add_executable(test_LambertTargeter "${SRCROOT}${MISSIONSEGMENTSDIR}/unitTestLambertTargeter.cpp")
 setup_custom_test_program(test_LambertTargeter "${SRCROOT}${MISSIONSEGMENTSDIR}")
-target_link_libraries(test_LambertTargeter tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(test_LambertTargeter tudat_bodies tudat_gravitation tudat_ephemeris tudat_mission_segments tudat_root_finding_methods tudat_basic_astrodynamics ${TUDAT_CORE_LIBRARIES})
 
 add_executable(test_LibrationPoints "${SRCROOT}${MISSIONSEGMENTSDIR}/unitTestLibrationPoints.cpp")
 setup_custom_test_program(test_LibrationPoints "${SRCROOT}${MISSIONSEGMENTSDIR}")
-target_link_libraries(test_LibrationPoints tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(test_LibrationPoints tudat_bodies tudat_mission_segments tudat_root_finding_methods tudat_ephemeris tudat_gravitation tudat_basic_astrodynamics ${TUDAT_CORE_LIBRARIES})
 
 # End of file.

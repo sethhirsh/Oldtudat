@@ -74,21 +74,21 @@ setup_headers("${AERODYNAMICS_HEADERS}" "${AERODYNAMICSDIR}")
 # Add unit tests.
 add_executable(test_AerodynamicMomentAndAerodynamicForce "${SRCROOT}${AERODYNAMICSDIR}/UnitTests/unitTestAerodynamicMomentAndAerodynamicForce.cpp")
 setup_custom_test_program(test_AerodynamicMomentAndAerodynamicForce "${SRCROOT}${AERODYNAMICSDIR}")
-target_link_libraries(test_AerodynamicMomentAndAerodynamicForce tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics tudat_aerodynamics tudat_aerodynamics)
+target_link_libraries(test_AerodynamicMomentAndAerodynamicForce tudat_aerodynamics)
 
 add_executable(test_AerodynamicsNamespace "${SRCROOT}${AERODYNAMICSDIR}/UnitTests/unitTestAerodynamicsNamespace.cpp")
 setup_custom_test_program(test_AerodynamicsNamespace "${SRCROOT}${AERODYNAMICSDIR}")
-target_link_libraries(test_AerodynamicsNamespace tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics tudat_aerodynamics)
+target_link_libraries(test_AerodynamicsNamespace tudat_aerodynamics)
 
 add_executable(test_CoefficientGenerator "${SRCROOT}${AERODYNAMICSDIR}/UnitTests/unitTestCoefficientGenerator.cpp")
 setup_custom_test_program(test_CoefficientGenerator "${SRCROOT}${AERODYNAMICSDIR}")
-target_link_libraries(test_CoefficientGenerator tudat_input tudat_output tudat_astrodynamics tudat_mathematics tudat_astrodynamics tudat_basics tudat_aerodynamics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(test_CoefficientGenerator tudat_aerodynamics tudat_geometric_shapes ${TUDAT_CORE_LIBRARIES})
 
 add_executable(test_ExponentialAtmosphere "${SRCROOT}${AERODYNAMICSDIR}/UnitTests/unitTestExponentialAtmosphere.cpp")
 setup_custom_test_program(test_ExponentialAtmosphere "${SRCROOT}${AERODYNAMICSDIR}")
-target_link_libraries(test_ExponentialAtmosphere tudat_input tudat_output tudat_mathematics tudat_astrodynamics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_ExponentialAtmosphere tudat_aerodynamics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 add_executable(test_TabulatedAtmosphere "${SRCROOT}${AERODYNAMICSDIR}/UnitTests/unitTestTabulatedAtmosphere.cpp")
 setup_custom_test_program(test_TabulatedAtmosphere "${SRCROOT}${AERODYNAMICSDIR}")
-target_link_libraries(test_TabulatedAtmosphere tudat_mathematics tudat_astrodynamics tudat_basics tudat_input_output ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(test_TabulatedAtmosphere tudat_aerodynamics tudat_interpolators tudat_input_output tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 # End of file.

@@ -46,6 +46,7 @@
 # Add source files.
 set(STATES_SOURCES
   "${SRCROOT}${STATESDIR}/state.cpp"
+  "${SRCROOT}${STATESDIR}/writeStateHistoryToFile.cpp"
 )
 
 # Add header files.
@@ -55,6 +56,7 @@ set(STATES_HEADERS
   "${SRCROOT}${STATESDIR}/cartesianVelocityElements.h"
   "${SRCROOT}${STATESDIR}/keplerianElements.h"
   "${SRCROOT}${STATESDIR}/state.h"
+  "${SRCROOT}${STATESDIR}/writeStateHistoryToFile.h"
 )
 
 # Add static libraries.
@@ -66,14 +68,14 @@ setup_headers("${STATES_HEADERS}" "${STATESDIR}")
 
 add_executable(test_CartesianElements "${SRCROOT}${STATESDIR}/unitTestCartesianElements.cpp")
 setup_custom_test_program(test_CartesianElements "${SRCROOT}${STATESDIR}")
-target_link_libraries(test_CartesianElements tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_CartesianElements tudat_states)
 
 add_executable(test_KeplerianElements "${SRCROOT}${STATESDIR}/unitTestKeplerianElements.cpp")
 setup_custom_test_program(test_KeplerianElements "${SRCROOT}${STATESDIR}")
-target_link_libraries(test_KeplerianElements tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_KeplerianElements tudat_states)
 
 add_executable(test_State "${SRCROOT}${STATESDIR}/unitTestState.cpp")
 setup_custom_test_program(test_State "${SRCROOT}${STATESDIR}")
-target_link_libraries(test_State tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_State tudat_states)
 
 # End of file.

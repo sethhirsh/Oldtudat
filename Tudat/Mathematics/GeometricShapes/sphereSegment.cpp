@@ -76,9 +76,11 @@ using tudat::unit_conversions::convertRadiansToDegrees;
 //! Get surface point on sphere segment.
 Eigen::VectorXd SphereSegment::getSurfacePoint( double azimuthAngle, double zenithAngle )
 {
+    Eigen::Vector3d sphericalPositionVector = Eigen::Vector3d( radius_, zenithAngle, azimuthAngle );
+
     // Gets surface point on sphere, unrotated and centered at origin.
     cartesianPositionVector_ = mathematics::coordinate_conversions::convertSphericalToCartesian(
-                Eigen::Vector3d( radius_, zenithAngle, azimuthAngle ) );
+                  sphericalPositionVector );
 
     // Translate point.
     transformPoint( cartesianPositionVector_ );

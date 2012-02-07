@@ -62,10 +62,10 @@ setup_headers("${STATISTICS_HEADERS}" "${MATHEMATICSDIR}/Statistics")
 # Add unit tests.
 add_executable(test_SimpleLinearRegression "${SRCROOT}${MATHEMATICSDIR}/Statistics/unitTestSimpleLinearRegression.cpp")
 setup_custom_test_program(test_SimpleLinearRegression "${SRCROOT}${MATHEMATICSDIR}/Statistics")
-target_link_libraries(test_SimpleLinearRegression tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics)
+target_link_libraries(test_SimpleLinearRegression tudat_statistics)
 
 add_executable(test_BasicStatistics "${SRCROOT}${MATHEMATICSDIR}/Statistics/UnitTests/unitTestBasicStatistics.cpp")
 setup_custom_test_program(test_BasicStatistics "${SRCROOT}${MATHEMATICSDIR}/Statistics")
-target_link_libraries(test_BasicStatistics tudat_astrodynamics tudat_input tudat_output tudat_mathematics tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_BasicStatistics tudat_statistics ${Boost_LIBRARIES})
 
 # End of file.
