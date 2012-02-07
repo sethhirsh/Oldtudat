@@ -60,7 +60,6 @@
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Gravitation/gravityFieldModel.h"
 #include "Tudat/Astrodynamics/Gravitation/sphericalHarmonicsGravityField.h"
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test implementation of spherical harmonics gravity field class.
 int main( )

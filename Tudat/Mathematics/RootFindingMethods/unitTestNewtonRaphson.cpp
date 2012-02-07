@@ -57,7 +57,6 @@
 
 // Include statements.
 #include <cmath>
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
 

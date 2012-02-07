@@ -87,8 +87,6 @@
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Gravitation/gravityFieldModel.h"
 #include "Tudat/Astrodynamics/Gravitation/sphericalHarmonicsGravityField.h"
-
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 
 //! Test orbital element conversion code.

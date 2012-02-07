@@ -48,7 +48,6 @@
 #include <limits>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test Keplerian elements state class.
 int main( )

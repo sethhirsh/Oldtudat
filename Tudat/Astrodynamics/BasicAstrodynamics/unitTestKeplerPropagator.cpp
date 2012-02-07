@@ -61,7 +61,6 @@
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
 #include "Tudat/Astrodynamics/States/state.h"
 #include "Tudat/Basics/basicFunctions.h"
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 
 //! Test implementation of Kepler propagator class.

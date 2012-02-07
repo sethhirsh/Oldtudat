@@ -49,8 +49,8 @@
  */
 
 // Include statements.
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
+#include <cmath>
 
 //! Tudat library namespace.
 namespace tudat
@@ -59,7 +59,6 @@ namespace tudat
 // Using declarations.
 using std::cerr;
 using std::endl;
-using namespace tudat::mathematics;
 
 //! Set adaptor class for Newton-Raphson.
 void NewtonRaphson::setNewtonRaphsonAdaptor( NewtonRaphsonBase* pointerToNewtonRaphsonBase )

@@ -59,7 +59,6 @@
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/MissionSegments/librationPoint.h"
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 // Using declarations.
 using std::cerr;

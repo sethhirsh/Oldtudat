@@ -62,11 +62,11 @@
 #include <limits>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
+#include <TudatCore/Mathematics/coordinateConversions.h>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Ephemeris/approximatePlanetPositionsCircularCoplanar.h"
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test ApproximatePlanetPositions class.
 int main( )
@@ -77,13 +77,14 @@ int main( )
     using std::fabs;
     using std::cos;
     using std::sqrt;
-    using tudat::mathematics::convertCartesianToSpherical;
     using tudat::unit_conversions::convertDegreesToRadians;
     using tudat::unit_conversions::convertRadiansToDegrees;
     using tudat::unit_conversions::convertDegreesToArcminutes;
     using tudat::unit_conversions::convertArcminutesToArcseconds;
     using tudat::unit_conversions::convertAstronomicalUnitsToMeters;
     using tudat::orbital_element_conversions::convertCartesianToKeplerianElements;
+    using tudat::mathematics::coordinate_conversions::convertCartesianToSpherical;
+
     using namespace tudat;
 
     // Initialize unit test result to false.
@@ -124,12 +125,12 @@ int main( )
 
     // Compute absolute differences in position in spherical coordinates.
     Eigen::VectorXd positionInSphericalCoordinates( 3 );
-    convertCartesianToSpherical( marsEphemeris.state.segment( 0, 3 ),
-                                 positionInSphericalCoordinates );
+    positionInSphericalCoordinates = convertCartesianToSpherical(
+                marsEphemeris.state.segment( 0, 3 ) );
 
     Eigen::VectorXd expectedPositionInSphericalCoordinates( 3 );
-    convertCartesianToSpherical( expectedMarsEphemeris.state.segment( 0, 3 ),
-                                 expectedPositionInSphericalCoordinates );
+    expectedPositionInSphericalCoordinates = convertCartesianToSpherical(
+                expectedMarsEphemeris.state.segment( 0, 3 ) );
 
     Eigen::VectorXd differenceInSphericalCoordinates( 3 );
     differenceInSphericalCoordinates = positionInSphericalCoordinates

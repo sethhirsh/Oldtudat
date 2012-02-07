@@ -49,7 +49,6 @@
 #include "Tudat/Astrodynamics/BasicAstrodynamics/propagator.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/propagatorDataContainer.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Tudat library namespace.
 /*!

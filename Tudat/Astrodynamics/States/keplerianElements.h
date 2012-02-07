@@ -46,7 +46,7 @@
 
 // Include statements.
 #include "Tudat/Astrodynamics/States/state.h"
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include <TudatCore/Mathematics/basicMathematicsFunctions.h>
 
 //! Tudat library namespace.
 /*!

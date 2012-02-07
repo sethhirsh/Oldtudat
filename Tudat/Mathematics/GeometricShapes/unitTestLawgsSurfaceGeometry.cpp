@@ -46,7 +46,6 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <iostream>
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/GeometricShapes/lawgsPartGeometry.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 

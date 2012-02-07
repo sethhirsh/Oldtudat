@@ -46,7 +46,7 @@
  */
 
 // Include statements.
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
+#include <TudatCore/Mathematics/coordinateConversions.h>
 #include "Tudat/Mathematics/GeometricShapes/conicalFrustum.h"
 
 //! Tudat library namespace.
@@ -66,8 +66,8 @@ Eigen::VectorXd ConicalFrustum::getSurfacePoint( double azimuthAngle, double len
     double localRadius_ = startRadius_ + length_ * lengthFraction * std::tan( coneHalfAngle_ );
 
     // Set x and y coordinate of untransformed cone.
-    mathematics::convertCylindricalToCartesian( localRadius_, azimuthAngle,
-                                                cartesianPositionVector_ );
+    cartesianPositionVector_ = mathematics::coordinate_conversions::convertCylindricalToCartesian(
+                Eigen::Vector3d( localRadius_, azimuthAngle, 0.0 ) );
 
     // Set z coordinate of untransformed cone.
     cartesianPositionVector_( 2 ) = -length_ * lengthFraction;

@@ -59,8 +59,8 @@
 // Include statements.
 #include <cmath>
 #include "TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h"
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
+#include <TudatCore/Mathematics/coordinateConversions.h>
 
 //! Tudat library namespace.
 namespace tudat
@@ -77,8 +77,8 @@ using tudat::unit_conversions::convertRadiansToDegrees;
 Eigen::VectorXd SphereSegment::getSurfacePoint( double azimuthAngle, double zenithAngle )
 {
     // Gets surface point on sphere, unrotated and centered at origin.
-    mathematics::convertSphericalToCartesian( radius_, azimuthAngle, zenithAngle,
-                                              cartesianPositionVector_ );
+    cartesianPositionVector_ = mathematics::coordinate_conversions::convertSphericalToCartesian(
+                Eigen::Vector3d( radius_, zenithAngle, azimuthAngle ) );
 
     // Translate point.
     transformPoint( cartesianPositionVector_ );

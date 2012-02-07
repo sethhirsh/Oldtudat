@@ -54,7 +54,6 @@
 #include <cmath>
 #include "Tudat/Astrodynamics/Gravitation/gravitationalForceModel.h"
 #include "Tudat/Astrodynamics/MissionSegments/librationPoint.h"
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Tudat library namespace.
 namespace tudat

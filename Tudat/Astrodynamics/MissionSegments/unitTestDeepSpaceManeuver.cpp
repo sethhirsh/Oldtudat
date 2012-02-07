@@ -46,7 +46,6 @@
 #include <limits>
 #include "Tudat/Astrodynamics/MissionSegments/deepSpaceManeuver.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test deep space maneuver.
 int main( )

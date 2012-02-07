@@ -125,7 +125,7 @@ CartesianElements* ApproximatePlanetPositions::
 
     // Compute modulo of mean anomaly for interval :
     // 0 <= meanAnomalyAtGivenJulianDate_ < 360.
-    meanAnomalyAtGivenJulianDate_ = mathematics::computeModulo(
+    meanAnomalyAtGivenJulianDate_ = mathematics::computeModuloForSignedValues(
                 meanAnomalyAtGivenJulianDate_, 360.0 );
 
     // Translate mean anomaly to:

@@ -54,6 +54,8 @@
 #ifndef SURFACEGEOMETRY_H
 #define SURFACEGEOMETRY_H
 
+#include <iostream>
+
 //! Tudat library namespace.
 /*!
  * The Tudat library namespace.

@@ -55,7 +55,6 @@
 // Include statements.
 #include <Eigen/Geometry>
 #include <limits>
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/GeometricShapes/quadrilateralMeshedSurfaceGeometry.h"
 
 //! Tudat library namespace.
@@ -167,7 +166,7 @@ void QuadrilateralMeshedSurfaceGeometry::setReversalOperator( bool isMeshInverte
 
     else
     {
-        reversalOperator_ = 0;
+        reversalOperator_ = -1;
     }
 }
 

@@ -45,7 +45,6 @@
 #include <iostream>
 #include <limits>
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 
 //! Test Cartesian elements state class.
 int main( )

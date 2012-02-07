@@ -54,7 +54,6 @@
 #include <iostream>
 #include <limits>
 #include <map>
-#include "Tudat/Mathematics/basicMathematicsFunctions.h"
 #include "Tudat/Mathematics/Statistics/simpleLinearRegression.h"
 
 //! Test implementation of simple linear regression method.
@@ -133,7 +132,7 @@ int main( )
     if ( std::fabs( simpleLinearRegression.getStandardDeviationOfCoefficientOfConstantTerm( )
                     - expectedStandardDeviationOfCoefficientOfConstantTerm )
          / std::fabs( expectedStandardDeviationOfCoefficientOfConstantTerm )
-         > std::numeric_limits< double >::epsilon( )
+         > std::pow( 10.0, -15.0 )
          || std::fabs( simpleLinearRegression.getStandardDeviationOfCoefficientOfLinearTerm( )
                        - expectedStandardDeviationOfCoefficientOfLinearTerm )
          / std::fabs( expectedStandardDeviationOfCoefficientOfLinearTerm )
