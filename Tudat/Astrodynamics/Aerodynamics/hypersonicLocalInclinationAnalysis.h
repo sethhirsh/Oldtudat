@@ -54,6 +54,7 @@
 #include "Tudat/Astrodynamics/Bodies/vehicle.h"
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamicCoefficientGenerator.h"
 #include "Tudat/Mathematics/GeometricShapes/lawgsPartGeometry.h"
+#include <vector>
 
 //! Tudat library namespace.
 /*!
@@ -342,7 +343,7 @@ private:
     /*!
      * Array of vehicle parts.
      */
-    LawgsPartGeometry* vehicleParts_;
+    std::vector< LawgsPartGeometry > vehicleParts_;
 
     //! Number of entries in vehicleParts_ member variable.
     /*!

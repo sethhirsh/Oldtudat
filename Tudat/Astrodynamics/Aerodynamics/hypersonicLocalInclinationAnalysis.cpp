@@ -83,7 +83,6 @@ HypersonicLocalInclinationAnalysis::~HypersonicLocalInclinationAnalysis( )
     }
     delete [ ] inclination_;
     delete [ ] pressureCoefficient_;
-    delete [ ] vehicleParts_;
 }
 
 //! Constructor to set geometry and reference quantities.
@@ -99,9 +98,9 @@ void HypersonicLocalInclinationAnalysis::setVehicle( Vehicle& vehicle, int* numb
     {
         // Set number of geometries and allocate memory.
         numberOfVehicleParts_ = 1;
-        vehicleParts_ = new LawgsPartGeometry[ 1 ];
+        vehicleParts_.resize(1);
 
-        vehicleParts_->setReversalOperator( invertOrders[ 0 ] );
+        vehicleParts_[0].setReversalOperator( invertOrders[ 0 ] );
 
         // Convert geometry to LaWGS surface mesh and set in vehicleParts_ list.
         vehicleParts_[ 0 ].setMesh(
@@ -119,7 +118,7 @@ void HypersonicLocalInclinationAnalysis::setVehicle( Vehicle& vehicle, int* numb
         // Set number of geometries and allocate memory.
         numberOfVehicleParts_ =
                 compositeSurfaceGeometry_->getNumberOfSingleSurfaceGeometries( );
-        vehicleParts_ = new LawgsPartGeometry[ numberOfVehicleParts_];
+        vehicleParts_.resize( numberOfVehicleParts_);
 
         // Iterate through all parts and set them in vehicleParts_ list.
         for ( int i = 0; i<numberOfVehicleParts_ ; i++)

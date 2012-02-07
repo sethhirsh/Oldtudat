@@ -58,6 +58,7 @@
 // Include statements.
 #include <Eigen/Core>
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
+#include "boost/multi_array.hpp"
 
 //! Tudat library namespace.
 /*!
@@ -79,14 +80,13 @@ public:
      * Default constructor.
      */
     QuadrilateralMeshedSurfaceGeometry( ) : numberOfLines_( -0 ), numberOfPoints_( -0 ),
-        reversalOperator_( 1 ), meshPoints_( NULL ), panelCentroids_( NULL ),
-        panelSurfaceNormals_( NULL ), panelAreas_( NULL ), totalArea_( -0.0 ) { }
+        reversalOperator_( 1 ), totalArea_( -0.0 ) { }
 
     //! Default destructor.
     /*!
      * Default destructor.
      */
-    virtual ~QuadrilateralMeshedSurfaceGeometry( );
+    virtual ~QuadrilateralMeshedSurfaceGeometry( ) { }
 
     //! Calculate panel characteristics.
     /*!
@@ -208,25 +208,25 @@ protected:
     /*!
      * 2-Dimensional array containing mesh point locations.
      */
-    Eigen::Vector3d** meshPoints_;
+    boost::multi_array< Eigen::Vector3d, 2 > meshPoints_;
 
     //! Panel centroids.
     /*!
      * 2-Dimensional array containing panel centroid locations.
      */
-    Eigen::Vector3d** panelCentroids_;
+    boost::multi_array< Eigen::Vector3d, 2 > panelCentroids_;
 
     //! Panel surface normals.
     /*!
      * 2-Dimensional array containing outward panel surface normal vectors.
      */
-    Eigen::Vector3d** panelSurfaceNormals_;
+    boost::multi_array< Eigen::Vector3d, 2 > panelSurfaceNormals_;
 
     //! Panel doubles.
     /*!
      * 2-Dimensional array containing panel areas.
      */
-    double** panelAreas_;
+    boost::multi_array< double, 2 > panelAreas_;
 
     //! Total mesh surface area/
     /*!

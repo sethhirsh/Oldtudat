@@ -61,54 +61,13 @@
 namespace tudat
 {
 
-//! Default destructor.
-QuadrilateralMeshedSurfaceGeometry::~QuadrilateralMeshedSurfaceGeometry( )
-{
-    // Loop through all lines on surface to deallocate variables. Set pointers
-    // to NULL afterwards to prevent possible problems when calling this
-    // function multiple times.
-    for ( int j = 0; j < numberOfLines_ - 1; j++)
-    {
-        delete[ ] meshPoints_[ j ];
-        delete[ ] panelCentroids_[ j ];
-        delete[ ] panelSurfaceNormals_[ j ];
-        delete[ ] panelAreas_[ j ];
-        meshPoints_[ j ] = NULL;
-        panelCentroids_[ j ] = NULL;
-        panelSurfaceNormals_[ j ] = NULL;
-        panelAreas_[ j ] = NULL;
-    }
-
-    // Delete final surface point line.
-    delete[ ] meshPoints_[ numberOfLines_ - 1 ];
-    meshPoints_[ numberOfLines_ - 1 ] = NULL;
-
-    // Delete entire pointers and reset to NULL.
-    delete[ ] meshPoints_;
-    delete[ ] panelCentroids_;
-    delete[ ] panelSurfaceNormals_;
-    delete[ ] panelAreas_;
-    meshPoints_ = NULL;
-    panelCentroids_ = NULL;
-    panelSurfaceNormals_ = NULL;
-    panelAreas_ = NULL;
-}
-
 //! Calculate panel characteristics.
 void QuadrilateralMeshedSurfaceGeometry::performPanelCalculations( )
 {
     // Allocate memory for panel properties.
-    panelCentroids_ = new Eigen::Vector3d* [ numberOfLines_ - 1 ];
-    panelSurfaceNormals_ = new Eigen::Vector3d* [ numberOfLines_ - 1 ];
-    panelAreas_ = new double* [ numberOfLines_ - 1 ];
-
-    // Allocate memory for panel properties per line.
-    for ( int i = 0; i < numberOfLines_ - 1 ; i++ )
-    {
-        panelCentroids_[ i ] = new Eigen::Vector3d[ numberOfPoints_ - 1 ];
-        panelSurfaceNormals_[ i ] = new Eigen::Vector3d[ numberOfPoints_ - 1 ];
-        panelAreas_[ i ] = new double[ numberOfPoints_ - 1 ];
-    }
+    panelCentroids_.resize(boost::extents[ numberOfLines_ - 1 ][ numberOfPoints_ - 1 ]);
+    panelSurfaceNormals_.resize(boost::extents[ numberOfLines_ - 1 ][ numberOfPoints_ - 1 ]);
+    panelAreas_.resize(boost::extents[ numberOfLines_ - 1 ][ numberOfPoints_ - 1 ]);
 
     // Declare local variables for normal and area determination.
     Eigen::Vector3d crossVector1;

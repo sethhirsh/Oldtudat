@@ -62,7 +62,7 @@ void LawgsPartGeometry::setMesh( SingleSurfaceGeometry* originalSurface,
     numberOfPoints_ = numberOfPointsIn;
 
     // Allocate mesh points.
-    meshPoints_ = new Eigen::Vector3d*[ numberOfLines_ ];
+    meshPoints_.resize( boost::extents[ numberOfLines_ ][ numberOfPoints_ ] );
 
     // Set grid sizes from requested number of sample points.
     double independentVariableGridSize1 =
@@ -86,8 +86,6 @@ void LawgsPartGeometry::setMesh( SingleSurfaceGeometry* originalSurface,
     // geometry at fixed intervals.
     for ( int i = 0; i < numberOfLines_; i++ )
     {
-        meshPoints_[ i ] = new Eigen::Vector3d[ numberOfPoints_ ];
-
         for ( int j = 0; j < numberOfPoints_; j++ )
         {
             // Set sampling point of original geometry.
@@ -116,21 +114,8 @@ LawgsPartGeometry::LawgsPartGeometry( const LawgsPartGeometry& partToCopy )
     scalingMatrix_ = partToCopy.scalingMatrix_;
     offset_= partToCopy.offset_;
 
-    // Deep copy surface points array.
-    meshPoints_ = new Eigen::Vector3d* [ numberOfLines_ ];
-
-    for ( int i = 0; i < numberOfLines_; i++ )
-    {
-        meshPoints_[ i ] = new Eigen::Vector3d[ numberOfPoints_ ];
-    }
-
-    for ( int i = 0; i < numberOfLines_; i++ )
-    {
-        for ( int j = 0; j < numberOfPoints_; j++ )
-        {
-            meshPoints_[ i ][ j ] = partToCopy.meshPoints_[ i ][ j ];
-        }
-    }
+    // Copy surface points array.
+    meshPoints_ = partToCopy.meshPoints_;
 }
 
 //! Get surface point.
