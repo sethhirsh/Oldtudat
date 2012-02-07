@@ -50,7 +50,7 @@
  */
 
 #include <fstream>
-#include "Tudat/Output/writingOutputToFile.h"
+#include "Tudat/Astrodynamics/States/writeStateHistoryToFile.h"
 
 namespace tudat{
 

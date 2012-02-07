@@ -53,6 +53,8 @@
 #define WRITESTATEHISTORYTOFILE_H
 
 #include "Tudat/Astrodynamics/States/state.h"
+#include <map>
+#include <string>
 
 namespace tudat{
 
