@@ -46,6 +46,7 @@
 
 // Include statements.
 #include <iostream>
+#include <TudatCore/Mathematics/mathematicalConstants.h>
 #include "Tudat/Mathematics/GeometricShapes/torus.h"
 
 //! Tudat library namespace.
@@ -53,6 +54,7 @@ namespace tudat
 {
 
 // Using declarations.
+using tudat::mathematics::PI;
 using std::cerr;
 using std::endl;
 using std::sin;
@@ -270,11 +272,11 @@ std::ostream &operator<<( std::ostream &stream, Torus& torus )
 {
     stream << "This is a torus geometry." << endl;
     stream << "The minor angle runs from: "
-           << torus.getMinimumMinorCircumferentialAngle( ) * 180.0 / M_PI << " degrees to "
-           << torus.getMaximumMinorCircumferentialAngle( ) * 180.0 / M_PI << " degrees" << endl;
+           << torus.getMinimumMinorCircumferentialAngle( ) * 180.0 / PI << " degrees to "
+           << torus.getMaximumMinorCircumferentialAngle( ) * 180.0 / PI << " degrees" << endl;
     stream << "The major angle runs from: "
-           << torus.getMinimumMajorCircumferentialAngle( ) * 180.0 / M_PI << " degrees to "
-           << torus.getMaximumMajorCircumferentialAngle( ) * 180/M_PI << " degrees" << endl;
+           << torus.getMinimumMajorCircumferentialAngle( ) * 180.0 / PI << " degrees to "
+           << torus.getMaximumMajorCircumferentialAngle( ) * 180/PI << " degrees" << endl;
     stream << "The major radius is: " << torus.getMajorRadius( ) << endl;
     stream << "The minor ( tube ) radius is: " << torus.getMinorRadius( ) << endl;
 

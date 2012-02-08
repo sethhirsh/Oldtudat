@@ -47,6 +47,7 @@
 
 // Include statements.
 #include <TudatCore/Mathematics/coordinateConversions.h>
+#include <TudatCore/Mathematics/mathematicalConstants.h>
 #include "Tudat/Mathematics/GeometricShapes/conicalFrustum.h"
 
 //! Tudat library namespace.
@@ -54,6 +55,7 @@ namespace tudat
 {
 
 // Using declarations.
+using tudat::mathematics::PI;
 using std::cerr;
 using std::endl;
 using std::sin;
@@ -258,11 +260,11 @@ std::ostream &operator<<( std::ostream &stream, ConicalFrustum& conicalFrustum )
 {
     stream << "This is a conical frustum geometry." << endl;
     stream << "The circumferential angle runs from: "
-           << conicalFrustum.getMinimumAzimuthAngle( ) * 180/M_PI << " degrees to "
-           << conicalFrustum.getMaximumAzimuthAngle( ) * 180/M_PI << " degrees" << endl;
+           << conicalFrustum.getMinimumAzimuthAngle( ) * 180/PI << " degrees to "
+           << conicalFrustum.getMaximumAzimuthAngle( ) * 180/PI << " degrees" << endl;
     stream << "The start radius is: " << conicalFrustum.getStartRadius( ) << endl;
     stream << "The length is: " << conicalFrustum.getLength( ) << endl;
-    stream << "The cone half angle is: "  << conicalFrustum.getConeHalfAngle( ) * 180 / M_PI
+    stream << "The cone half angle is: "  << conicalFrustum.getConeHalfAngle( ) * 180 / PI
            <<  " degrees" << endl;
 
     // Return stream.

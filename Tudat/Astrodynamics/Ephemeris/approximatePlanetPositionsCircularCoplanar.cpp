@@ -47,6 +47,8 @@
 #include <cmath>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include <TudatCore/Mathematics/coordinateConversions.h>
+#include <TudatCore/Mathematics/mathematicalConstants.h>
+
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Ephemeris/approximatePlanetPositionsCircularCoplanar.h"
 
@@ -87,7 +89,7 @@ CartesianElements* ApproximatePlanetPositionsCircularCoplanar::getStateFromEphem
     Eigen::VectorXd planetCartesianPositionAtGivenJulianDateX_( 3 );
     planetCartesianPositionAtGivenJulianDateX_ = mathematics::coordinate_conversions::
             convertSphericalToCartesian( Eigen::Vector3d( constantOrbitalRadius_,
-                                              0.5 * M_PI, meanLongitudeAtGivenJulianDate_ ) );
+                                      0.5 * mathematics::PI, meanLongitudeAtGivenJulianDate_ ) );
     Eigen::Vector3d planetCartesianPositionAtGivenJulianDate_ =
             planetCartesianPositionAtGivenJulianDateX_;
 

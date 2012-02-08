@@ -50,9 +50,11 @@
  */
 
 // Include statements.
+#include <TudatCore/Mathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamics.h"
 
 // Using declarations.
+using tudat::mathematics::PI;
 using std::atan;
 using std::exp;
 using std::log;
@@ -163,7 +165,7 @@ double computeModifiedDahlemBuckPressureCoefficient(
     double inclinationAngle, double machNumber )
 {
     // Declare local variables.
-    double checkAngle_ = 22.5 * M_PI / 180.0;
+    double checkAngle_ = 22.5 * PI / 180.0;
     double factor1_;
     double factor2_;
     double exponent_;
@@ -195,11 +197,11 @@ double computeModifiedDahlemBuckPressureCoefficient(
     else
     {
         // Determine correction term.
-        factor1_ = ( 6.0 - 0.3 * machNumber ) + sin( M_PI * ( log( machNumber ) - 0.588 ) / 1.20 );
+        factor1_ = ( 6.0 - 0.3 * machNumber ) + sin( PI * ( log( machNumber ) - 0.588 ) / 1.20 );
 
-        exponent_ = 1.15 + 0.5 * sin( M_PI * ( log( machNumber ) - 0.916 ) / 3.29 );
+        exponent_ = 1.15 + 0.5 * sin( PI * ( log( machNumber ) - 0.916 ) / 3.29 );
 
-        factor2_ = 1.0 + factor1_ * pow( inclinationAngle * 180.0 / M_PI, -1.0 * exponent_ );
+        factor2_ = 1.0 + factor1_ * pow( inclinationAngle * 180.0 / PI, -1.0 * exponent_ );
     }
 
     // Return pressure coefficient.
@@ -215,10 +217,10 @@ double computeHankeyFlatSurfacePressureCoefficient(
 
     // Calculate 'effective' stagnation pressure coefficient for low
     // inclination angle.
-    if( inclinationAngle < M_PI / 18.0 )
+    if( inclinationAngle < PI / 18.0 )
     {
         stagnationPressureCoefficient_ = ( 0.195 + 0.222594 / pow( machNumber, 0.3 ) - 0.4 )
-                * inclinationAngle * 180.0 / M_PI + 4.0;
+                * inclinationAngle * 180.0 / PI + 4.0;
     }
     // Calculate 'effective' stagnation pressure coefficient for other
     // inclination angle.
@@ -244,9 +246,9 @@ double computeSmythDeltaWingPressureCoefficient(
 
     // Calculate inclination angle for use in calculations ( angles lower than
     // 1 degree not allowed ).
-    if ( inclinationAngle < M_PI / 180.0 )
+    if ( inclinationAngle < PI / 180.0 )
     {
-        correctedInclinationAngle_ = M_PI / 180.0;
+        correctedInclinationAngle_ = PI / 180.0;
     }
 
     else
@@ -387,7 +389,7 @@ double computeAcmEmpiricalPressureCoefficient(
     minimumPressureCoefficient_ = -1.0 / pow( machNumber, 2.0 );
 
     // Calculate preliminary pressure coefficient.
-    preliminaryPressureCoefficient_ = 180.0 / M_PI * inclinationAngle
+    preliminaryPressureCoefficient_ = 180.0 / PI * inclinationAngle
             / ( 16.0 * pow( machNumber, 2.0 ) );
 
     // If necessary, correct preliminary pressure coefficient.

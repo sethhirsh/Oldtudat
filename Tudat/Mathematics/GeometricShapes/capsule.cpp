@@ -51,6 +51,8 @@
 // Include statements.
 #include <cmath>
 #include <Eigen/Core>
+#include <TudatCore/Mathematics/mathematicalConstants.h>
+
 #include "Tudat/Mathematics/GeometricShapes/capsule.h"
 #include "Tudat/Mathematics/GeometricShapes/conicalFrustum.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
@@ -61,6 +63,7 @@ namespace tudat
 {
 
 // Using declarations.
+using tudat::mathematics::PI;
 using std::cerr;
 using std::endl;
 using std::sin;
@@ -90,7 +93,7 @@ void Capsule::setCapsule( )
 
     // Set predetermined bounds.
     noseSphere_->setMinimumAzimuthAngle( 0.0 );
-    noseSphere_->setMaximumAzimuthAngle( 2.0 * M_PI );
+    noseSphere_->setMaximumAzimuthAngle( 2.0 * PI );
     noseSphere_->setMinimumZenithAngle( 0.0 );
 
     // Determine and set extent of spherical nose part.
@@ -116,7 +119,7 @@ void Capsule::setCapsule( )
     // Create rear cone, fully revolved.
     ConicalFrustum* cone_ = new ConicalFrustum( );
     cone_->setMinimumAzimuthAngle( 0.0 );
-    cone_->setMaximumAzimuthAngle( 2.0 * M_PI );
+    cone_->setMaximumAzimuthAngle( 2.0 * PI );
 
     // Set cone start radius.
     cone_->setStartRadius( middleRadius_ - sideRadius_ * ( 1.0 - cos( rearAngle_ ) ) );
@@ -128,7 +131,7 @@ void Capsule::setCapsule( )
     cone_->setConeHalfAngle( rearAngle_ );
 
     // Set translation vector of cone.
-    translationVector_( 0 ) = -sideRadius_ * ( sin( M_PI / 2.0 - noseSphereAngle_ )
+    translationVector_( 0 ) = -sideRadius_ * ( sin( PI / 2.0 - noseSphereAngle_ )
                                                + sin ( -rearAngle_ ) );
     cone_->setOffset( translationVector_ );
 
@@ -138,7 +141,7 @@ void Capsule::setCapsule( )
     // Create rear sphere ( "end cap" ), fully revolved.
     SphereSegment* rearSphere_ = new SphereSegment( );
     rearSphere_->setMinimumAzimuthAngle( 0.0 );
-    rearSphere_->setMaximumAzimuthAngle( 2.0 * M_PI );
+    rearSphere_->setMaximumAzimuthAngle( 2.0 * PI );
 
     // Calculate end radius of cone.
     double endRadius_ = cone_->getStartRadius( ) + rearLength_ * tan( rearAngle_ );
@@ -147,23 +150,23 @@ void Capsule::setCapsule( )
     double rearNoseRadius_ = endRadius_ / cos( -rearAngle_ );
 
     // Set extent of rear sphere.
-    rearSphere_->setMinimumZenithAngle( M_PI / 2.0 - rearAngle_ );
-    rearSphere_->setMaximumZenithAngle( M_PI );
+    rearSphere_->setMinimumZenithAngle( PI / 2.0 - rearAngle_ );
+    rearSphere_->setMaximumZenithAngle( PI );
 
     // Set rear sphere radius.
     rearSphere_->setRadius( rearNoseRadius_ );
 
     // Set translation vector of rear sphere.
     translationVector_( 0 ) =  ( rearNoseRadius_ * sin( -rearAngle_ ) ) - rearLength_
-            - ( sideRadius_ * ( sin( M_PI / 2.0 - noseSphereAngle_ ) + sin ( -rearAngle_ ) ) );
+            - ( sideRadius_ * ( sin( PI / 2.0 - noseSphereAngle_ ) + sin ( -rearAngle_ ) ) );
     rearSphere_->setOffset( translationVector_ );
     setSingleSurfaceGeometry( rearSphere_, 2 );
 
     // Create torus section of capsule.
     Torus* torus_ = new Torus( );
     torus_->setMinimumIndependentVariable( 1, 0.0 );
-    torus_->setMaximumIndependentVariable( 1, 2.0 * M_PI );
-    torus_->setMinimumIndependentVariable( 2, M_PI / 2.0 - noseSphereAngle_ );
+    torus_->setMaximumIndependentVariable( 1, 2.0 * PI );
+    torus_->setMinimumIndependentVariable( 2, PI / 2.0 - noseSphereAngle_ );
     torus_->setMaximumIndependentVariable( 2, rearAngle_ );
 
     // Calculate and set major torus radius.
@@ -179,7 +182,7 @@ void Capsule::setCapsule( )
     // Set rotation matrix fo each part to be compatible with flow direction in
     // aerodynamic analysis.
     Eigen::MatrixXd rotationMatrix = Eigen::MatrixXd( 3, 3 );
-    double angle_ = M_PI / 2.0;
+    double angle_ = PI / 2.0;
     rotationMatrix( 0, 0 ) = cos( angle_ );
     rotationMatrix( 0, 1 ) = 0.0;
     rotationMatrix( 0, 2 ) = sin( angle_ );

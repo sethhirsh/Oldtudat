@@ -82,6 +82,7 @@
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/physicalConstants.h>
 #include <TudatCore/InputOutput/basicInputOutput.h>
+#include <TudatCore/Mathematics/mathematicalConstants.h>
 
 #include <Tudat/InputOutput/basicInputOutput.h>
 #include "Tudat/InputOutput/twoLineElementsTextFileReader.h"
@@ -95,6 +96,7 @@ namespace input_output
 {
 
 // Using declarations.
+using tudat::mathematics::PI;
 using std::string;
 using std::stringstream;
 using std::endl;
@@ -568,7 +570,7 @@ void TwoLineElementsTextFileReader::storeTwoLineElementData( )
 
         // Semi-major axis of the object is calculated from the other TLE variables.
         meanMotion_ = twoLineElementData_[ objectNumberCounter_ ].meanMotionInRevolutionsPerDay
-                * 2.0 * M_PI / tudat::physical_constants::JULIAN_DAY;
+                * 2.0 * PI / tudat::physical_constants::JULIAN_DAY;
         twoLineElementData_[ objectNumberCounter_ ].TLEKeplerianElements.setSemiMajorAxis(
                     orbital_element_conversions::convertEllipticalMeanMotionToSemiMajorAxis(
                         meanMotion_, earthWithWorldGeodeticSystem72GravitationalParameter ) );
