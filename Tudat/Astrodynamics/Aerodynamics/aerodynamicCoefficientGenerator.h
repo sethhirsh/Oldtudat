@@ -51,6 +51,10 @@
 // Include statements.
 #include <Eigen/Core>
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamicCoefficientInterface.h"
+#include "boost/multi_array.hpp"
+#include "boost/shared_ptr.hpp"
+
+using std::vector;
 
 //! Tudat library namespace.
 /*!
@@ -84,9 +88,8 @@ public:
      * Default constructor, initializes arrays to NULL ans sets number of
      * independent variables to 0.
      */
-    AerodynamicCoefficientGenerator( ) : vehicleCoefficients_( NULL ),
-        numberOfIndependentVariables_( 0 ), numberOfPointsPerIndependentVariables_( NULL ),
-        dataPointsOfIndependentVariables_( NULL ), machIndex_( -0 ), angleOfAttackIndex_( -0 ),
+    AerodynamicCoefficientGenerator( ) :
+        numberOfIndependentVariables_( 0 ), machIndex_( -0 ), angleOfAttackIndex_( -0 ),
         angleOfSideslipIndex_( -0 ), reynoldsNumberIndex_( -0 ), numberOfCases_( 0 ) { }
 
     //! Custom destructor.
@@ -94,7 +97,7 @@ public:
      * Custom destructor, deletes arrays of data points and values of
      * independent variables and resets them to NULL.
      */
-    virtual ~AerodynamicCoefficientGenerator( );
+    virtual ~AerodynamicCoefficientGenerator( ) { }
 
     //! Set the number of independent variables
     /*!
@@ -270,13 +273,13 @@ public:
      * \param independentVariables Array of values of independent variable
      * indices in dataPointsOfIndependentVariables_.
      */
-    virtual Eigen::VectorXd getAerodynamicCoefficients( int* independentVariables ) = 0;
+    virtual Eigen::VectorXd getAerodynamicCoefficients( vector< int > independentVariables ) = 0;
 
     //! List of pointers to VectorXds containing coefficients.
     /*!
      * List of pointers to VectorXds containing coefficients.
      */
-    Eigen::VectorXd** vehicleCoefficients_;
+    vector< boost::shared_ptr< Eigen::VectorXd > > vehicleCoefficients_;
 
 protected:
 
@@ -286,7 +289,7 @@ protected:
      * \param independentVariableIndices Array of indices of independent variables.
      * \return Resulting index in vehicleCoefficients_.
      */
-    int variableIndicesToListIndex( int* independentVariableIndices );
+    int variableIndicesToListIndex( vector<int> independentVariableIndices );
 
     //! Number of independent variables in analysis.
     /*!
@@ -300,14 +303,14 @@ protected:
      * Array of number of points per independent variable. Physical meaning
      * of indices are determined by the machIndex, angleOfAttackIndex, etc.
      */
-    int* numberOfPointsPerIndependentVariables_;
+    boost::multi_array< int, 1 > numberOfPointsPerIndependentVariables_;
 
     //! Array of arrays of data points for independent variables.
     /*!
      * Array of arrays of data points for independent variables. Physical
      * meaning of indices are determined by the machIndex, angleOfAttackIndex, etc.
      */
-    double** dataPointsOfIndependentVariables_;
+    vector< boost::multi_array< int, 1 > > dataPointsOfIndependentVariables_;
 
     //! Index in independent variables arrays representing Mach number.
     /*!

@@ -56,6 +56,8 @@
 #include "Tudat/Mathematics/GeometricShapes/lawgsPartGeometry.h"
 #include <vector>
 
+using std::vector;
+
 //! Tudat library namespace.
 /*!
  * The Tudat library namespace.
@@ -86,10 +88,8 @@ public:
     /*!
      * Default constructor.
      */
-    HypersonicLocalInclinationAnalysis( ) : vehicleParts_( NULL ), numberOfVehicleParts_( -0 ),
-        inclination_( NULL ), pressureCoefficient_( NULL ), stagnationPressureCoefficient( -0.0 ),
-        ratioOfSpecificHeats( 1.4 ),  vehicleName_( " " ), machRegime_( "Full" ),
-        selectedMethods_( NULL )
+    HypersonicLocalInclinationAnalysis( ) : numberOfVehicleParts_( -0 ), stagnationPressureCoefficient( -0.0 ),
+        ratioOfSpecificHeats( 1.4 ),  vehicleName_( " " ), machRegime_( "Full" )
     {
         machIndex_ = 0; angleOfAttackIndex_ = 1; angleOfSideslipIndex_ = 2;
         setNumberOfIndependentVariables( 3 );
@@ -99,7 +99,7 @@ public:
     /*!
      * Default destructor.
      */
-    virtual ~HypersonicLocalInclinationAnalysis( );
+    virtual ~HypersonicLocalInclinationAnalysis( ) { }
 
     //! Constructor from a Vehicle.
     /*!
@@ -115,8 +115,8 @@ public:
      * \param invertOrders Array of size equal to number of SingleSurfaceGeometries to set whether
      *          to invert the panel orientation of the resulting LaWGS parts.
      */
-    void setVehicle( Vehicle& vehicle, int* numberOfLines, int* numberOfPoints,
-                     bool* invertOrders );
+    void setVehicle( Vehicle& vehicle, vector< int > numberOfLines, vector< int > numberOfPoints,
+                     vector< bool > invertOrders );
 
     //! Get aerodynamic coefficients.
     /*!
@@ -124,7 +124,7 @@ public:
      * \param independentVariables Array of values of independent variable
      *          indices in dataPointsOfIndependentVariables_.
      */
-    Eigen::VectorXd getAerodynamicCoefficients( int* independentVariables );
+    Eigen::VectorXd getAerodynamicCoefficients( vector < int > independentVariables );
 
     //! Set local inclination methods for all parts (expansion and compression).
     /*!
@@ -155,7 +155,7 @@ public:
      * 5 = Van Dyke Unified
      * 6 = ACM empirical
      */
-    void setSelectedMethods( int** selectedMethods );
+    void setSelectedMethods( vector< vector< int > > selectedMethods );
 
     //! Set an analysis method on a single vehicle part.
     /*!
@@ -265,7 +265,7 @@ private:
      * \param independentVariableIndices Array of indices from lists of Mach number,
      *          angle of attack and angle of sideslip points at which to perform analysis.
      */
-    void determineVehicleCoefficients( int* independentVariableIndices );
+    void determineVehicleCoefficients( vector<int> independentVariableIndices );
 
     //! Determine aerodynamic coefficients for a single LaWGS part.
     /*!
@@ -274,7 +274,7 @@ private:
      * \param partNumber Index from vehicleParts_ array for which to determine coefficients.
      * \param independentVariableIndices Array of indices of independent variables.
      */
-    Eigen::VectorXd determinePartCoefficients( int partNumber, int* independentVariableIndices );
+    Eigen::VectorXd determinePartCoefficients( int partNumber, vector< int > independentVariableIndices );
 
     //! Determine pressure coefficients on a given part.
     /*!
@@ -283,7 +283,7 @@ private:
      * \param partNumber Index from vehicleParts_ array for which to determine coefficients.
      * \param independentVariableIndices Array of indices of independent variables.
      */
-    void determinePressureCoefficients( int partNumber, int* independentVariableIndices );
+    void determinePressureCoefficients( int partNumber, vector<int> independentVariableIndices );
 
     //! Determine force coefficients of a part.
     /*!
@@ -343,7 +343,7 @@ private:
     /*!
      * Array of vehicle parts.
      */
-    std::vector< LawgsPartGeometry > vehicleParts_;
+    vector< LawgsPartGeometry > vehicleParts_;
 
     //! Number of entries in vehicleParts_ member variable.
     /*!
@@ -356,14 +356,14 @@ private:
      * Three-dimensional array of panel inclination angles at current values of
      * independent variables. Indices indicate part-line-point.
      */
-    double*** inclination_;
+    vector< vector< vector< double > > > inclination_;
 
     //! Three-dimensional array of panel pressure coefficients.
     /*!
      * Three-dimensional array of panel pressure coefficients at current values
      * of independent variables. Indices indicate part-line-point.
      */
-    double*** pressureCoefficient_;
+    vector< vector< vector< double > > > pressureCoefficient_;
 
     //! Stagnation pressure coefficient.
     /*!
@@ -395,7 +395,7 @@ private:
      * Array of selected methods, first index represents compression/expansion,
      * second index represents vehicle part.
      */
-    int** selectedMethods_;
+    boost::multi_array< double, 2 > selectedMethods_;
 };
 
 }

@@ -60,34 +60,9 @@ using std::endl;
 namespace tudat
 {
 
-//! Default destructor.
-HypersonicLocalInclinationAnalysis::~HypersonicLocalInclinationAnalysis( )
-{
-    // Deallocate selected methods.
-    delete [ ] selectedMethods_[ 0 ];
-    delete [ ] selectedMethods_[ 1 ];
-    delete [ ] selectedMethods_[ 2 ];
-    delete [ ] selectedMethods_[ 3 ];
-    delete [ ] selectedMethods_;
-
-    // Delete pressure coefficients and inclinations
-    for ( int i = 0 ; i < numberOfVehicleParts_; i++)
-    {
-        for ( int j = 0 ; j < vehicleParts_[ i ].getNumberOfLines( ) - 1; j++)
-        {
-            delete [ ] inclination_[ i ][ j ];
-            delete [ ] pressureCoefficient_[ i ][ j ];
-        }
-        delete [ ] inclination_[ i ];
-        delete [ ] pressureCoefficient_[ i ];
-    }
-    delete [ ] inclination_;
-    delete [ ] pressureCoefficient_;
-}
-
 //! Constructor to set geometry and reference quantities.
-void HypersonicLocalInclinationAnalysis::setVehicle( Vehicle& vehicle, int* numberOfLines,
-                                                     int* numberOfPoints, bool* invertOrders )
+void HypersonicLocalInclinationAnalysis::setVehicle( Vehicle& vehicle, vector<int> numberOfLines,
+                                                     vector<int> numberOfPoints, vector<bool> invertOrders )
 {
     // Retrieve external surface geometry from vehicle.
     VehicleExternalModel* externalModel_ = vehicle.getPointerToExternalModel( );
@@ -100,7 +75,7 @@ void HypersonicLocalInclinationAnalysis::setVehicle( Vehicle& vehicle, int* numb
         numberOfVehicleParts_ = 1;
         vehicleParts_.resize(1);
 
-        vehicleParts_[0].setReversalOperator( invertOrders[ 0 ] );
+        vehicleParts_[ 0 ].setReversalOperator( invertOrders[ 0 ] );
 
         // Convert geometry to LaWGS surface mesh and set in vehicleParts_ list.
         vehicleParts_[ 0 ].setMesh(
@@ -153,33 +128,28 @@ void HypersonicLocalInclinationAnalysis::setVehicle( Vehicle& vehicle, int* numb
 void HypersonicLocalInclinationAnalysis::allocateArrays( )
 {
     // Allocate memory for panel inclinations and pressureCoefficient_.
-    inclination_ = new double**[ numberOfVehicleParts_ ];
-    pressureCoefficient_ = new double**[ numberOfVehicleParts_ ];
+    inclination_.resize( numberOfVehicleParts_ );
+    pressureCoefficient_.resize( numberOfVehicleParts_ );
     for ( int i = 0 ; i < numberOfVehicleParts_; i++ )
     {
-        inclination_[ i ] = new double*[ vehicleParts_[ i ].getNumberOfLines( ) ];
-        pressureCoefficient_[ i ] =
-                new double*[ vehicleParts_[ i ].getNumberOfLines( ) ];
+        inclination_[ i ].resize( vehicleParts_[ i ].getNumberOfLines( ) );
+        pressureCoefficient_[ i ].resize( vehicleParts_[ i ].getNumberOfLines( ) );
         for ( int j = 0 ; j<vehicleParts_[ i ].getNumberOfLines( ) ; j++ )
         {
-            inclination_[ i ][ j ] = new double[ vehicleParts_[ i ].getNumberOfPoints( ) ];
-            pressureCoefficient_[ i ][ j ] = new double[ vehicleParts_[ i ].getNumberOfPoints( ) ];
+            inclination_[ i ][ j ].resize( vehicleParts_[ i ].getNumberOfPoints( ) );
+            pressureCoefficient_[ i ][ j ].resize( vehicleParts_[ i ].getNumberOfPoints( ) );
         }
     }
 
     // If methods have not yet been set by user, allocate memory and set
     // defaults.
-    if ( selectedMethods_ == NULL )
+    if ( selectedMethods_.num_elements( ) == 0 )
     {
         // Set memory for expansion and compression methods.
-        selectedMethods_ = new int* [ 4 ];
+        selectedMethods_.resize( boost::extents[ 4 ][ 2 * numberOfVehicleParts_ ] );
         for ( int i = 0; i < 4 ; i++  )
         {
-            // Set memory for Low and High hypersonic analysis methods for
-            // each vehicle part.
-            selectedMethods_[ i ] = new int[ 2 * numberOfVehicleParts_ ];
-
-            for ( int j = 0; j < numberOfVehicleParts_ ; j++ )
+            for ( int j = 0; j < 2 * numberOfVehicleParts_ ; j++ )
             {
                 // Sets all local inclination methods to a default of ( Modified
                 // Newtonian for compression and Newtonian for expansion ).
@@ -191,11 +161,11 @@ void HypersonicLocalInclinationAnalysis::allocateArrays( )
 
 //! Get aerodynamic coefficients.
 Eigen::VectorXd HypersonicLocalInclinationAnalysis::getAerodynamicCoefficients(
-    int* independentVariables )
+    vector< int > independentVariables )
 {
     // If coefficients have not been allocated (and independent variables
     // have not been initialized), do so.
-    if ( vehicleCoefficients_ == NULL )
+    if ( vehicleCoefficients_.size( ) == 0 )
     {
         allocateVehicleCoefficients( );
     }
@@ -215,7 +185,7 @@ Eigen::VectorXd HypersonicLocalInclinationAnalysis::getAerodynamicCoefficients(
 }
 
 //! Set local inclination methods for all parts (expansion and compression).
-void HypersonicLocalInclinationAnalysis::setSelectedMethods( int** selectedMethods )
+void HypersonicLocalInclinationAnalysis::setSelectedMethods( vector< vector < int > > selectedMethods )
 {
     //For loops loop through input methods and set the analysis methods.
     for ( int i = 0; i < 4; i++ )
@@ -231,7 +201,7 @@ void HypersonicLocalInclinationAnalysis::setSelectedMethods( int** selectedMetho
 void HypersonicLocalInclinationAnalysis::generateDatabase( )
 {
     // If coefficients have not been allocated, do so.
-    if ( vehicleCoefficients_ == NULL )
+    if ( vehicleCoefficients_.size( ) == 0 )
     {
         allocateVehicleCoefficients( );
     }
@@ -241,7 +211,8 @@ void HypersonicLocalInclinationAnalysis::generateDatabase( )
 
     // Allocate variable to pass to coefficient determination for independent
     // variable indices.
-    int* independentVariableIndices = new int[ numberOfIndependentVariables_ ];
+    vector< int > independentVariableIndices;
+    independentVariableIndices.resize( numberOfIndependentVariables_ );
 
     // Iterate over all combinations of independent variables.
     for ( i = 0 ; i < numberOfPointsPerIndependentVariables_[ machIndex_ ] ; i++ )
@@ -264,29 +235,27 @@ void HypersonicLocalInclinationAnalysis::generateDatabase( )
 
                 l++;
             }
-
         }
     }
-    delete [ ] independentVariableIndices;
 }
 
 //! Allocate aerodynamic coefficient array and NULL independent variables.
 void HypersonicLocalInclinationAnalysis::allocateVehicleCoefficients( )
 {
     // If angle of attack points have not yet been set, use defaults.
-    if ( dataPointsOfIndependentVariables_[ angleOfAttackIndex_ ] == NULL )
+    if ( dataPointsOfIndependentVariables_[ angleOfAttackIndex_ ].num_elements() == 0 )
     {
         setDefaultAngleOfAttackPoints( );
     }
 
     // If angle of sideslip points have not yet been set, use defaults.
-    if ( dataPointsOfIndependentVariables_[ angleOfSideslipIndex_ ] == NULL)
+    if ( dataPointsOfIndependentVariables_[ angleOfSideslipIndex_ ].num_elements() == 0 )
     {
         setDefaultAngleOfSideslipPoints( );
     }
 
     // If Mach number points have not yet been set, use defaults.
-    if ( dataPointsOfIndependentVariables_[ machIndex_ ] == NULL)
+    if ( dataPointsOfIndependentVariables_[ machIndex_ ].num_elements() == 0 )
     {
         setDefaultMachPoints( );
     }
@@ -297,17 +266,17 @@ void HypersonicLocalInclinationAnalysis::allocateVehicleCoefficients( )
                         numberOfPointsPerIndependentVariables_[ angleOfAttackIndex_ ];
 
     // Allocate memory for pointers to coefficients and initialize to NULL.
-    vehicleCoefficients_ = new Eigen::VectorXd*[ numberOfCases_ ];
+    vehicleCoefficients_.resize( numberOfCases_ );
     int i;
     for ( i = 0; i < numberOfCases_ ; i++ )
     {
-        vehicleCoefficients_[ i ] = NULL;
+        vehicleCoefficients_[ i ] = boost::shared_ptr< Eigen::VectorXd >( );
     }
 }
 
 //! Generate aerodynamic coefficients at a single set of independent variables.
 void HypersonicLocalInclinationAnalysis::determineVehicleCoefficients(
-        int* independentVariableIndices )
+        vector< int > independentVariableIndices )
 {
     int i;
 
@@ -336,12 +305,12 @@ void HypersonicLocalInclinationAnalysis::determineVehicleCoefficients(
     }
 
     // Allocate and set vehicle coefficients at given independent variables.
-    vehicleCoefficients_[ coefficientsIndex ] = new Eigen::VectorXd( coefficients );
+    vehicleCoefficients_[ coefficientsIndex ] = boost::shared_ptr< Eigen::VectorXd>( new Eigen::VectorXd( coefficients ) );
 }
 
 //! Determine aerodynamic coefficients of a single vehicle part.
 Eigen::VectorXd HypersonicLocalInclinationAnalysis::determinePartCoefficients(
-        int partNumber, int* independentVariableIndices )
+        int partNumber, vector<int> independentVariableIndices )
 {
     // Declare and determine angles of attack and sideslip for analysis.
     double angleOfAttack = dataPointsOfIndependentVariables_[
@@ -372,7 +341,7 @@ Eigen::VectorXd HypersonicLocalInclinationAnalysis::determinePartCoefficients(
 
 //! Determine the pressure coefficients on a single vehicle part.
 void HypersonicLocalInclinationAnalysis::determinePressureCoefficients(
-        int partNumber, int* independentVariableIndices )
+        int partNumber, vector< int > independentVariableIndices )
 {
     // Retrieve Mach number.
     double machNumber = dataPointsOfIndependentVariables_[ machIndex_ ]
@@ -859,8 +828,8 @@ void HypersonicLocalInclinationAnalysis::setDefaultMachPoints( )
     if ( machRegime_ == "Full" )
     {
         numberOfPointsPerIndependentVariables_[ machIndex_ ] = 6;
-        dataPointsOfIndependentVariables_[ machIndex_ ] =
-                new double[ numberOfPointsPerIndependentVariables_[ machIndex_ ] ];
+        dataPointsOfIndependentVariables_[ machIndex_ ].resize(
+                    boost::extents[ numberOfPointsPerIndependentVariables_[ machIndex_ ] ] );
         dataPointsOfIndependentVariables_[ machIndex_ ][ 0 ] = 3.0;
         dataPointsOfIndependentVariables_[ machIndex_ ][ 1 ] = 4.0;
         dataPointsOfIndependentVariables_[ machIndex_ ][ 2 ] = 5.0;
@@ -873,8 +842,8 @@ void HypersonicLocalInclinationAnalysis::setDefaultMachPoints( )
     else if ( machRegime_ == "Low" )
     {
         numberOfPointsPerIndependentVariables_[ machIndex_ ] = 5;
-        dataPointsOfIndependentVariables_[ machIndex_ ] =
-                new double[ numberOfPointsPerIndependentVariables_[ machIndex_ ] ];
+        dataPointsOfIndependentVariables_[ machIndex_ ].resize(
+                    boost::extents[ numberOfPointsPerIndependentVariables_[ machIndex_ ] ] );
         dataPointsOfIndependentVariables_[ machIndex_ ][ 0 ] = 3.0;
         dataPointsOfIndependentVariables_[ machIndex_ ][ 1 ] = 4.0;
         dataPointsOfIndependentVariables_[ machIndex_ ][ 2 ] = 5.0;
@@ -886,8 +855,8 @@ void HypersonicLocalInclinationAnalysis::setDefaultMachPoints( )
     else if ( machRegime_ == "High" )
     {
         numberOfPointsPerIndependentVariables_[ machIndex_ ] = 4;
-        dataPointsOfIndependentVariables_[ machIndex_ ] =
-                new double[ numberOfPointsPerIndependentVariables_[ machIndex_ ] ];
+        dataPointsOfIndependentVariables_[ machIndex_ ].resize(
+                    boost::extents[ numberOfPointsPerIndependentVariables_[ machIndex_ ] ] );
         dataPointsOfIndependentVariables_[ machIndex_ ][ 0 ] = 5.0;
         dataPointsOfIndependentVariables_[ machIndex_ ][ 1 ] = 8.0;
         dataPointsOfIndependentVariables_[ machIndex_ ][ 2 ] = 10.0;
@@ -900,8 +869,8 @@ void HypersonicLocalInclinationAnalysis::setDefaultAngleOfAttackPoints( )
 {
     // Set number of data points and allocate memory.
     numberOfPointsPerIndependentVariables_[ angleOfAttackIndex_ ] = 11;
-    dataPointsOfIndependentVariables_[ angleOfAttackIndex_ ] =
-            new double[ numberOfPointsPerIndependentVariables_[ angleOfAttackIndex_ ] ];
+    dataPointsOfIndependentVariables_[ angleOfAttackIndex_ ].resize(
+                boost::extents[ numberOfPointsPerIndependentVariables_[ angleOfAttackIndex_ ] ] );
 
     // Set default values, 0 to 40 degrees, with steps of 5 degrees.
     int i;
@@ -918,8 +887,8 @@ void HypersonicLocalInclinationAnalysis::setDefaultAngleOfSideslipPoints( )
 {
     // Set number of data points and allocate memory.
     numberOfPointsPerIndependentVariables_[ angleOfSideslipIndex_ ] = 2;
-    dataPointsOfIndependentVariables_[ angleOfSideslipIndex_ ] =
-            new double[ numberOfPointsPerIndependentVariables_[ angleOfSideslipIndex_ ] ];
+    dataPointsOfIndependentVariables_[ angleOfSideslipIndex_ ].resize(
+                boost::extents[ numberOfPointsPerIndependentVariables_[ angleOfSideslipIndex_ ] ] );
 
     // Set default values, 0 and 1 degrees.
     dataPointsOfIndependentVariables_[ angleOfSideslipIndex_ ][ 0 ] = 0.0;

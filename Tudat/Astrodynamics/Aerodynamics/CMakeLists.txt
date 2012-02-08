@@ -55,6 +55,7 @@ set(AERODYNAMICS_SOURCES
 # Set the header files.
 set(AERODYNAMICS_HEADERS 
   "${SRCROOT}${AERODYNAMICSDIR}/aerodynamicCoefficientGenerator.h"
+  "${SRCROOT}${AERODYNAMICSDIR}/aerodynamicCoefficientInterface.h"
   "${SRCROOT}${AERODYNAMICSDIR}/aerodynamicMoment.h"
   "${SRCROOT}${AERODYNAMICSDIR}/aerodynamicForce.h"
   "${SRCROOT}${AERODYNAMICSDIR}/aerodynamics.h"

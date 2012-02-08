@@ -45,12 +45,14 @@
 #include "Tudat/Astrodynamics/Aerodynamics/hypersonicLocalInclinationAnalysis.h"
 #include "Tudat/Mathematics/GeometricShapes/capsule.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
+#include "boost/shared_ptr.hpp"
 
 //! Test coefficient generator.
 int main( )
 {
     // Using declarations.
     using namespace tudat;
+    using std::fabs;
 
     // Declare test variable.
     bool isCoefficientGeneratorErroneous = 0;
@@ -71,9 +73,12 @@ int main( )
     HypersonicLocalInclinationAnalysis analysis = HypersonicLocalInclinationAnalysis( );
 
     // Set vehicle in analysis with 10,000 panels.
-    int* numberOfLines = new int[ 1 ];
-    int* numberOfPoints = new int[ 1 ];
-    bool* invertOrder = new bool[ 1 ];
+    vector< int > numberOfLines;
+    vector< int > numberOfPoints;
+    vector< bool > invertOrder;
+    numberOfLines.resize( 1 );
+    numberOfPoints.resize( 1 );
+    invertOrder.resize( 1 );
     numberOfLines[ 0 ] = 31;
     numberOfPoints[ 0 ] = 31;
     invertOrder[ 0 ] = 0;
@@ -91,7 +96,8 @@ int main( )
     analysis.generateDatabase( );
 
     // Allocate memory for independent variables to pass to analysis for retrieval.
-    int* independentVariables = new int[ 3 ];
+    vector< int > independentVariables;
+    independentVariables.resize( 3 );
     independentVariables[ 0 ] = 0;
     independentVariables[ 1 ] = 0;
     independentVariables[ 2 ] = 0;
@@ -158,7 +164,7 @@ int main( )
     }
 
 
-    /*
+
     // Set Apollo capsule for validation.
     Capsule capsule = Capsule( );
     capsule.setNoseRadius( 4.694 );
@@ -173,9 +179,12 @@ int main( )
     // Declare new analysis object
     HypersonicLocalInclinationAnalysis analysis2 = HypersonicLocalInclinationAnalysis( );
 
-    int * numberOfLines2 = new int[ 4 ];
-    int * numberOfPoints2 = new int[ 4 ];
-    bool * invertOrders2 = new bool[ 4 ];
+    vector< int > numberOfLines2;
+    vector< int > numberOfPoints2;
+    vector< bool > invertOrders2;
+    numberOfLines2.resize( 4 );
+    numberOfPoints2.resize( 4 );
+    invertOrders2.resize( 4 );
 
     // Set number of analysis points
     numberOfLines2[ 0 ] = 31;
@@ -217,7 +226,7 @@ int main( )
 
     // Retrieve coefficients at zero angle of attack for comparison.
     independentVariables[ 0 ] = analysis2.getNumberOfMachPoints( ) - 1;
-    independentVariables[ 1 ] = analysis2.getNumberOfMachPoints( ) - 1;
+    independentVariables[ 1 ] = 0;
     independentVariables[ 2 ] = 0;
     aerodynamicCoefficients_ = analysis2.getAerodynamicCoefficients( independentVariables );
 
@@ -228,19 +237,19 @@ int main( )
         isCoefficientGeneratorErroneous = true;
     }
 
-    if ( aerodynamicCoefficients_[ 1 ] > 1.0E-15 )
+    if ( fabs( aerodynamicCoefficients_[ 1 ] )> std::numeric_limits< double >::epsilon( ) )
     {
         std::cerr << " Error in Apollo side force coefficient." << std::endl;
         isCoefficientGeneratorErroneous = true;
     }
 
-    if ( aerodynamicCoefficients_[ 2 ] > 1.0E-15 )
+    if ( fabs( aerodynamicCoefficients_[ 2 ] ) > std::numeric_limits< double >::epsilon( ) )
     {
         std::cerr << " Error in Apollo normal force coefficient." << std::endl;
         isCoefficientGeneratorErroneous = true;
     }
 
-    if ( aerodynamicCoefficients_[ 3 ] > 1.0E-15 )
+    if ( fabs( aerodynamicCoefficients_[ 3 ] )> std::numeric_limits< double >::epsilon( ) )
     {
         std::cerr<<" Error in Apollo roll moment coefficient."<<std::endl;
         isCoefficientGeneratorErroneous = true;
@@ -252,7 +261,7 @@ int main( )
         isCoefficientGeneratorErroneous = true;
     }
 
-    if ( aerodynamicCoefficients_[ 5 ] > 1.0E-15 )
+    if ( fabs( aerodynamicCoefficients_[ 5 ] )> std::numeric_limits< double >::epsilon( ) )
     {
         std::cerr << " Error in Apollo yaw moment coefficient." << std::endl;
         isCoefficientGeneratorErroneous = true;
@@ -262,7 +271,7 @@ int main( )
     {
         std::cerr << "testCoefficientGenerator failed!" << std::endl;
     }
-    */
+
 
     return isCoefficientGeneratorErroneous;
 }

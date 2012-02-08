@@ -141,12 +141,6 @@ public:
      */
     virtual void setParameter( int parameterIndex, double value );
 
-    //! De-allocate arrays in object.
-    /*!
-     * De-allocates arrays in object.
-     */
-    void deAllocateArrays( );
-
     //! Get part name.
     /*!
      * Returns part name.

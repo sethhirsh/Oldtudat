@@ -53,31 +53,6 @@
 namespace tudat
 {
 
-//! Custom destructor.
-AerodynamicCoefficientGenerator::~AerodynamicCoefficientGenerator( )
-{
-    // Delete array of independent variables.
-    for ( int i = 0; i < numberOfCases_ ; i++ )
-    {
-        delete vehicleCoefficients_[ i ];
-    }
-
-    delete [ ] vehicleCoefficients_;
-
-    // Delete data points of each independent variable and reset to NULL.
-    for ( int i = 0; i < numberOfIndependentVariables_; i++ )
-    {
-        delete [ ] dataPointsOfIndependentVariables_[ i ];
-        dataPointsOfIndependentVariables_[ i ] = NULL;
-    }
-
-    // Deletes arrays of data points and values of independent variables.
-    delete [ ] dataPointsOfIndependentVariables_;
-    delete [ ] numberOfPointsPerIndependentVariables_;
-    dataPointsOfIndependentVariables_ = NULL;
-    numberOfPointsPerIndependentVariables_ = NULL;
-}
-
 //! Set the number of independent variables.
 void AerodynamicCoefficientGenerator::setNumberOfIndependentVariables(
     int numberOfVariables )
@@ -86,14 +61,8 @@ void AerodynamicCoefficientGenerator::setNumberOfIndependentVariables(
     numberOfIndependentVariables_ = numberOfVariables;
 
     // Allocate memory for data points.
-    numberOfPointsPerIndependentVariables_ = new int[ numberOfVariables ];
-    dataPointsOfIndependentVariables_ = new double*[ numberOfVariables ];
-
-    // Initialize arrays of data points to NULL.
-    for ( int i = 0; i < numberOfVariables; i++ )
-    {
-        dataPointsOfIndependentVariables_[ i ] = NULL;
-    }
+    numberOfPointsPerIndependentVariables_.resize( boost::extents[ numberOfVariables ] );
+    dataPointsOfIndependentVariables_.resize( numberOfVariables );
 }
 
 //! Set the number of points for Mach number.
@@ -103,7 +72,7 @@ void AerodynamicCoefficientGenerator::setNumberOfMachPoints( int numberOfMachPoi
     numberOfPointsPerIndependentVariables_ [ machIndex_ ] = numberOfMachPoints;
 
     // Allocate memory for data points.
-    dataPointsOfIndependentVariables_[ machIndex_ ] = new double[ numberOfMachPoints ];
+    dataPointsOfIndependentVariables_[ machIndex_ ].resize( boost::extents[ numberOfMachPoints ] );
 }
 
 //! Set the number of points for angle of attack.
@@ -114,8 +83,7 @@ void AerodynamicCoefficientGenerator::setNumberOfAngleOfAttackPoints(
     numberOfPointsPerIndependentVariables_ [ angleOfAttackIndex_ ] = numberOfAngleOfAttackPoints;
 
     // Allocate memory for data points.
-    dataPointsOfIndependentVariables_[ angleOfAttackIndex_ ]
-            = new double[ numberOfAngleOfAttackPoints ];
+    dataPointsOfIndependentVariables_[ angleOfAttackIndex_ ].resize( boost::extents[ numberOfAngleOfAttackPoints ] );
 }
 
 //! Set the number of points for angle of sideslip.
@@ -127,8 +95,7 @@ void AerodynamicCoefficientGenerator::setNumberOfAngleOfSideslipPoints(
             = numberOfAngleOfSideslipPoints;
 
     // Allocate memory for data points.
-    dataPointsOfIndependentVariables_[ angleOfSideslipIndex_ ]
-            = new double[ numberOfAngleOfSideslipPoints ];
+    dataPointsOfIndependentVariables_[ angleOfSideslipIndex_ ].resize( boost::extents[ numberOfAngleOfSideslipPoints ]);
 }
 
 //! Set the number of points for the Reynolds Number.
@@ -139,12 +106,11 @@ void AerodynamicCoefficientGenerator::setNumberOfReynoldsNumberPoints(
     numberOfPointsPerIndependentVariables_ [ reynoldsNumberIndex_ ] = numberOfReynoldsNumberPoints;
 
     // Allocate memory for data points.
-    dataPointsOfIndependentVariables_[ reynoldsNumberIndex_ ]
-            = new double[ numberOfReynoldsNumberPoints ];
+    dataPointsOfIndependentVariables_[ reynoldsNumberIndex_ ].resize( boost::extents [ numberOfReynoldsNumberPoints ] );
 }
 
 //! Convert independent variable indices to list index in vehicleCoefficients_.
-int AerodynamicCoefficientGenerator::variableIndicesToListIndex( int* independentVariableIndices )
+int AerodynamicCoefficientGenerator::variableIndicesToListIndex( vector< int > independentVariableIndices )
 {
     int i ,j;
 
