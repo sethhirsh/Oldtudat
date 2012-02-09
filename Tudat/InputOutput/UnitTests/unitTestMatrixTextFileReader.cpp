@@ -42,6 +42,7 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
+#include "Tudat/InputOutput/basicInputOutput.h"
 #include "Tudat/InputOutput/matrixTextFileReader.h"
 
 //! Test matrix text file reader.
@@ -74,8 +75,9 @@ int main( )
     expectedMatrix( 3,2 ) = 12.0;
 
     // Test 1: Test for semi-colon-separated files.
-    readMatrix = tudat::input_output::readMatrixFromFile(
-                "InputOutput/UnitTests/testMatrix.txt", ";"  );
+    readMatrix = tudat::input_output::readMatrixFromFile( tudat::input_output::getPackageRootPath()
+                                                          + "InputOutput/UnitTests/testMatrix.txt",
+                                                          ";"  );
 
     for ( int i = 0; i < 3; i++ )
     {
@@ -98,6 +100,7 @@ int main( )
 
     // Test 2: Test for space-seperated files.
     readMatrix = tudat::input_output::readMatrixFromFile(
+                tudat::input_output::getPackageRootPath() +
                 "InputOutput/UnitTests/testMatrix2.txt", " \t", "#" );
 
     for ( int i = 0; i < 3; i++ )

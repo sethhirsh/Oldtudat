@@ -45,6 +45,7 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
+#include "Tudat/InputOutput/basicInputOutput.h"
 #include "Tudat/Astrodynamics/Aerodynamics/tabulatedAtmosphere.h"
 
 //! Test implementation of the tabulated atmosphere.
@@ -73,7 +74,9 @@ int main( )
     TabulatedAtmosphere tabulatedAtmosphere;
 
     // Initialize it with the desired file.
-    tabulatedAtmosphere.initialize( "Astrodynamics/Aerodynamics/AtmosphereTables/USSA1976Until100kmPer100mUntil1000kmPer1000m.dat" );
+    tabulatedAtmosphere.initialize( tudat::input_output::getPackageRootPath() +
+                                    "Astrodynamics/Aerodynamics/AtmosphereTables/" +
+                                    "USSA1976Until100kmPer100mUntil1000kmPer1000m.dat" );
 
     // Test 1: Check if the atmosphere is calculated correctly at sea level.
     // Values from "US Standard Atmosphere 1976,
@@ -181,7 +184,9 @@ int main( )
     // Test 6: Test if the atmosphere file can be read multiple times.
     try
     {
-        tabulatedAtmosphere.initialize( "Astrodynamics/Aerodynamics/AtmosphereTables/USSA1976Until100kmPer100mUntil1000kmPer1000m.dat" );
+        tabulatedAtmosphere.initialize( tudat::input_output::getPackageRootPath() +
+                                        "Astrodynamics/Aerodynamics/AtmosphereTables/" +
+                                        "USSA1976Until100kmPer100mUntil1000kmPer1000m.dat" );
     }
 
     catch ( std::runtime_error multipleFileReadError )

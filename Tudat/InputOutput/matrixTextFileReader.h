@@ -60,17 +60,16 @@ namespace input_output
  * Read a textfile whith seperated (space, tab, comma etc...) numbers.
  * The class returns these numbers as a matrixXd. The first line with numbers is used
  * to define the number of columns.
- * \param filename The filename of the to be read file.
+ * \param path The path of the to be read file.
  * \param seperators Separators used, every character in the string will be used
  *         as seperator. (multiple seperators possible).
  * \param skipLinesCharacter Skip lines starting with this character.
  * \param relativePath set the relative path (can also be done via the filename).
  * \return The datamatrix.
  */
-Eigen::MatrixXd readMatrixFromFile( const std::string& filename,
+Eigen::MatrixXd readMatrixFromFile( const std::string& path,
                                     const std::string& separators = "\t ;,",
-                                    const std::string& skipLinesCharacter = "%",
-                                    const std::string& relativePath = "" );
+                                    const std::string& skipLinesCharacter = "%" );
 
 
 } // namespace input_output.

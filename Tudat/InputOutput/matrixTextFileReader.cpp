@@ -52,7 +52,6 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include <TudatCore/InputOutput/basicInputOutput.h>
 #include <TudatCore/InputOutput/streamFilters.h>
 #include "Tudat/InputOutput/basicInputOutput.h"
 #include "Tudat/InputOutput/matrixTextFileReader.h"
@@ -67,18 +66,15 @@ namespace input_output
 {
 
 //! Read the file and return the data matrix.
-Eigen::MatrixXd readMatrixFromFile( const std::string& filename, const std::string& separators,
-                                    const std::string& skipLinesCharacter, const std::string& relativePath )
+Eigen::MatrixXd readMatrixFromFile( const std::string& path, const std::string& separators,
+                                    const std::string& skipLinesCharacter )
 {
-    // Construct path
-    std::string path_ = relativePath.empty( ) ? getPackageRootPath( ) + filename :
-                                               relativePath + filename;
     // Open input and output
-    std::fstream file( path_.c_str( ), std::ios::in );
+    std::fstream file( path.c_str( ), std::ios::in );
     if ( file.fail( ) )
     {
         boost::throw_exception( std::runtime_error( boost::str(
-                boost::format( "Data file '%s' could not be opened." ) % path_.c_str( ) ) ) );
+                boost::format( "Data file '%s' could not be opened." ) % path.c_str( ) ) ) );
     }
 
     std::stringstream filteredStream( std::ios::in | std::ios::out );
