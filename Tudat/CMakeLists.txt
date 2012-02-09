@@ -174,11 +174,11 @@ else( )
 endif( )
 
 # Find Tudat Core library on local system.
-find_package(TudatCore 0.1 REQUIRED)
 # If TudatCore is not found, use the following to manually set the path to the TudatCore include and
 # library directories.
-#SET(TUDAT_CORE_INCLUDE_DIR "C:\My\Custom\Path\To\TudatCore\Include\Directory")
-#SET(TUDAT_CORE_LIBRARIES_DIR "C:\My\Custom\Path\To\TudatCore\Library\Directory")
+#SET(TUDAT_CORE_BASE_PATH "C:\My\Custom\Path\To\TudatCore")
+find_package(TudatCore 0.1 REQUIRED)
+
 
 # Include TudatCore directories.
 # Set CMake flag to suppress TudatCore warnings (platform-dependent solution).
