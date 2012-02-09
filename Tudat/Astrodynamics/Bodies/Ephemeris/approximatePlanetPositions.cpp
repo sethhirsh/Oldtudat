@@ -47,7 +47,7 @@
 #include <cmath>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
-#include "Tudat/Astrodynamics/Ephemeris/approximatePlanetPositions.h"
+#include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositions.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 
 // Using declarations.

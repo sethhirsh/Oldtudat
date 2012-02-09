@@ -49,7 +49,7 @@
 
 // Include statements.
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToEccentricAnomaly.h"
-#include "Tudat/Astrodynamics/Ephemeris/approximatePlanetPositionsBase.h"
+#include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositionsBase.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 
 //! Tudat library namespace.

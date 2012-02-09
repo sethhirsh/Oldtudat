@@ -40,11 +40,18 @@
  #      110820    S.M. Persson      File created.
  #      111025    K. Kumar          Adapted file to work with Revision 194.
  #      111026    K. Kumar          Adapted file so all headers show in project tree in Qt Creator.
+ #      120209    B. Tong Minh      Merge Ephemeris package
  #/
+
+# Set Ephemeris path
+set(EPHEMERISDIR "${BODIESDIR}/Ephemeris")
 
 # Set the source files.
 set(BODIES_SOURCES
   "${SRCROOT}${BODIESDIR}/planet.cpp"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositions.cpp"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositionsBase.cpp"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositionsCircularCoplanar.cpp"
 )
 
 # Set the header files.
@@ -54,11 +61,21 @@ set(BODIES_HEADERS
   "${SRCROOT}${BODIESDIR}/planet.h"
   "${SRCROOT}${BODIESDIR}/vehicle.h"
   "${SRCROOT}${BODIESDIR}/vehicleExternalModel.h"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositions.h"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositionsBase.h"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositionsCircularCoplanar.h"
+  "${SRCROOT}${EPHEMERISDIR}/approximatePlanetPositionsDataContainer.h"
+  "${SRCROOT}${EPHEMERISDIR}/ephemeris.h"
 )
 
 # Add static libraries.
 add_library(tudat_bodies STATIC ${BODIES_SOURCES} ${BODIES_HEADERS})
 setup_tudat_library_target(tudat_bodies "${SRCROOT}${BODIESDIR}")
 setup_headers("${BODIES_HEADERS}" "${BODIESDIR}")
+
+# Add unit tests.
+add_executable(test_ApproximatePlanetPositions "${SRCROOT}${EPHEMERISDIR}/UnitTests/unitTestApproximatePlanetPositions.cpp")
+setup_custom_test_program(test_ApproximatePlanetPositions "${SRCROOT}${EPHEMERISDIR}")
+target_link_libraries(test_ApproximatePlanetPositions tudat_states tudat_bodies tudat_gravitation tudat_root_finding_methods tudat_basic_astrodynamics ${TUDAT_CORE_LIBRARIES})
 
 # End of file.

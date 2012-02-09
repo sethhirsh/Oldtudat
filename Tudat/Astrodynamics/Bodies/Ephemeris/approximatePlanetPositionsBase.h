@@ -63,9 +63,9 @@
 #include <fstream>
 #include <map>
 #include <string>
-#include "Tudat/Astrodynamics/Ephemeris/approximatePlanetPositionsDataContainer.h"
+#include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositionsDataContainer.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
-#include "Tudat/Astrodynamics/Ephemeris/ephemeris.h"
+#include "Tudat/Astrodynamics/Bodies/Ephemeris/ephemeris.h"
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
 #include <TudatCore/Mathematics/basicMathematicsFunctions.h>
 
