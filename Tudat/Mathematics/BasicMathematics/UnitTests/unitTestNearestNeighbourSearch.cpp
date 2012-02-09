@@ -42,8 +42,7 @@
 #include <map>
 #include <sstream>
 #include <vector>
-#include "Tudat/Astrodynamics/States/state.h"
-#include "Tudat/Basics/basicFunctions.h"
+#include "Tudat/Mathematics/BasicMathematics/nearestNeighbourSearch.h"
 #include "Tudat/InputOutput/basicInputOutput.h"
 
 // Define Boost test suite.
@@ -67,11 +66,11 @@ BOOST_AUTO_TEST_CASE( testNearestLeftNeighborUsingBinarySearch )
         vectorOfExpectedIndices << 0, 1, 1, 3, 8;
 
         // Compute nearest left neighbors and check if they match expectations.
-        for ( unsigned int i = 0; i < vectorOfTargetValues.rows( ); i++ )
+        for ( int i = 0; i < vectorOfTargetValues.rows( ); i++ )
         {
             BOOST_CHECK_EQUAL(
                         vectorOfExpectedIndices[ i ],
-                        tudat::basic_functions::computeNearestLeftNeighborUsingBinarySearch(
+                        tudat::mathematics::computeNearestLeftNeighborUsingBinarySearch(
                             vectorOfSortedData, vectorOfTargetValues[ i ] ) );
         }
     }
@@ -104,101 +103,15 @@ BOOST_AUTO_TEST_CASE( testNearestLeftNeighborUsingBinarySearch )
         vectorOfExpectedIndices << 1, 6, 0, 8, 3;
 
         // Compute nearest left neighbors and check if they match expectations.
-        for ( unsigned int i = 0; i < vectorOfTargetValues.rows( ); i++ )
+        for ( int i = 0; i < vectorOfTargetValues.rows( ); i++ )
         {
             BOOST_CHECK_EQUAL(
                         vectorOfExpectedIndices[ i ],
-                        tudat::basic_functions::computeNearestLeftNeighborUsingBinarySearch(
+                        tudat::mathematics::computeNearestLeftNeighborUsingBinarySearch(
                             mapOfSortedData, vectorOfTargetValues[ i ] ) );
         }
     }
 
-    // Case 2: test map-interface with State.
-    {
-        // Declare map of 10 sorted elements.
-        std::map< double, tudat::State* > mapOfSortedData;
-
-        Eigen::VectorXd vectorOfData( 1 );
-        vectorOfData << 1.0;
-
-        tudat::State testState;
-        testState.state = vectorOfData;
-
-        mapOfSortedData[ 0.3 ] = &testState;
-        mapOfSortedData[ 3.65 ] = &testState;
-        mapOfSortedData[ 43.12 ] = &testState;
-        mapOfSortedData[ 2.23 ] = &testState;
-        mapOfSortedData[ 1.233 ] = &testState;
-        mapOfSortedData[ 6.78 ] = &testState;
-        mapOfSortedData[ 0.21 ] = &testState;
-        mapOfSortedData[ -1.23 ] = &testState;
-        mapOfSortedData[ -931.12 ] = &testState;
-        mapOfSortedData[ 124.52 ] = &testState;
-
-        // Declare vector of target values.
-        Eigen::VectorXd vectorOfTargetValues( 5 );
-        vectorOfTargetValues << -1.22, 3.66, -931.11, 43.12, 0.4;
-
-        // Declare vector of expected indices.
-        Eigen::VectorXi vectorOfExpectedIndices( 5 );
-        vectorOfExpectedIndices << 1, 6, 0, 8, 3;
-
-        // Compute nearest left neighbors and check if they match expectations.
-        for ( unsigned int i = 0; i < vectorOfTargetValues.rows( ); i++ )
-        {
-            BOOST_CHECK_EQUAL(
-                        vectorOfExpectedIndices[ i ],
-                        tudat::basic_functions::computeNearestLeftNeighborUsingBinarySearch(
-                            mapOfSortedData, vectorOfTargetValues[ i ] ) );
-        }
-    }
-}
-
-//! Test if listing all files in specified directory works correctly.
-BOOST_AUTO_TEST_CASE( testListAllFilesInDirectory )
-{
-    // Set path to new directory.
-    boost::filesystem::path pathToNewDirectory(
-                tudat::input_output::getPackageRootPath( ) + "Basics/TestDirectory"  );
-
-    // Set number of files in directory.
-    unsigned int numberOfFiles = 10;
-
-    // Create new directory.
-    boost::filesystem::create_directory( pathToNewDirectory );
-
-    // List all files in directory and check that there are none.
-    std::vector< boost::filesystem::path > emptyListOfFilenames =
-            tudat::basic_functions::listAllFilesInDirectory( pathToNewDirectory.string( ) );
-
-    BOOST_CHECK_EQUAL( emptyListOfFilenames.size( ), 0 );
-
-    // Create test files.
-    for ( unsigned int i = 0; i < numberOfFiles; i++ )
-    {
-        // Create stream new filename.
-        std::stringstream newFile;
-        newFile << pathToNewDirectory.string( ) << "/testFile" << i << ".txt" << std::endl;
-
-        // Create test file and fill with random contents.
-        std::ofstream testFile( newFile.str( ).c_str( ) );
-        testFile << "tastes good!\n";
-        testFile.close( );
-    }
-
-    // List all files in directory and check that they are as expected.
-    std::vector< boost::filesystem::path > listOfFilenames =
-            tudat::basic_functions::listAllFilesInDirectory( pathToNewDirectory.string( ) );
-
-    for ( unsigned int i = 0; i < listOfFilenames.size( ); i++ )
-    {
-        std::stringstream newFile;
-        newFile << "testFile" << i << ".txt" << std::endl;
-        BOOST_CHECK_EQUAL( newFile.str( ), listOfFilenames.at( i ).string( ) );
-    }
-
-    // Remove new directory.
-    boost::filesystem::remove_all( pathToNewDirectory );
 }
 
 // Close Boost test suite.

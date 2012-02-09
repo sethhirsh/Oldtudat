@@ -130,10 +130,8 @@ endmacro(setup_headers)
 
 # Set the main sub-directories
 set(ASTRODYNAMICSDIR "/Astrodynamics")
-set(BASICSDIR "/Basics")
 set(EXTERNALDIR "/External")
 set(INPUTOUTPUTDIR "/InputOutput")
-set(INPUTDIR "/Input")
 set(MATHEMATICSDIR "/Mathematics")
 
 # Include the top-level directories.
@@ -191,7 +189,7 @@ else( )
 endif( )
 
 # Set sub-directories.
-set(SUBDIRS ${APPLICATIONSDIR} ${ASTRODYNAMICSDIR} ${BASICSDIR} ${INPUTDIR} ${INPUTOUTPUTDIR} ${MATHEMATICSDIR})
+set(SUBDIRS ${APPLICATIONSDIR} ${ASTRODYNAMICSDIR} ${INPUTDIR} ${INPUTOUTPUTDIR} ${MATHEMATICSDIR})
 
 # Add sub-directories to CMake process.
 foreach(CURRENT_SUBDIR ${SUBDIRS})

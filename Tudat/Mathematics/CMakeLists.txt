@@ -44,6 +44,7 @@
  #/
 
 # Add sub-directories.
+add_subdirectory("${SRCROOT}${MATHEMATICSDIR}/BasicMathematics")
 add_subdirectory("${SRCROOT}${MATHEMATICSDIR}/GeometricShapes")
 add_subdirectory("${SRCROOT}${MATHEMATICSDIR}/Interpolators")
 add_subdirectory("${SRCROOT}${MATHEMATICSDIR}/NumericalIntegrators")
@@ -51,6 +52,7 @@ add_subdirectory("${SRCROOT}${MATHEMATICSDIR}/RootFindingMethods")
 add_subdirectory("${SRCROOT}${MATHEMATICSDIR}/Statistics")
 
 # Get target properties for static libraries.
+get_target_property(BASICMATHEMATICS tudat_basic_mathematics SOURCES)
 get_target_property(GEOMETRICSHAPESSOURCES tudat_geometric_shapes SOURCES)
 get_target_property(INTERPOLATORSSOURCES tudat_interpolators SOURCES)
 get_target_property(LINEARALGEBRASOURCES tudat_linear_algebra SOURCES)

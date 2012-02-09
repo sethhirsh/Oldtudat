@@ -45,7 +45,9 @@
 #include <cmath>
 #include <iostream>
 #include <limits>
+#include <stdexcept>
 #include "Tudat/InputOutput/basicInputOutput.h"
+
 #include "Tudat/Astrodynamics/Aerodynamics/tabulatedAtmosphere.h"
 
 //! Test implementation of the tabulated atmosphere.

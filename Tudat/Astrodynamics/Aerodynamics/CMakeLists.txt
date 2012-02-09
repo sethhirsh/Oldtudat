@@ -91,5 +91,5 @@ target_link_libraries(test_ExponentialAtmosphere tudat_aerodynamics ${TUDAT_CORE
 
 add_executable(test_TabulatedAtmosphere "${SRCROOT}${AERODYNAMICSDIR}/UnitTests/unitTestTabulatedAtmosphere.cpp")
 setup_custom_test_program(test_TabulatedAtmosphere "${SRCROOT}${AERODYNAMICSDIR}")
-target_link_libraries(test_TabulatedAtmosphere tudat_aerodynamics tudat_interpolators tudat_input_output tudat_basics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+target_link_libraries(test_TabulatedAtmosphere tudat_aerodynamics tudat_interpolators tudat_basic_mathematics tudat_input_output ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 # End of file.

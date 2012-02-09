@@ -64,7 +64,7 @@
  */
 
 // Include statements.
-#include "Tudat/Basics/basicFunctions.h"
+#include "Tudat/Mathematics/BasicMathematics/nearestNeighbourSearch.h"
 #include "Tudat/Mathematics/Interpolators/linearInterpolation.h"
 
 //! Tudat library namespace.
@@ -91,7 +91,7 @@ double computeLinearInterpolation( Eigen::VectorXd& sortedIndependentVariables,
 
     // Compute nearest neighbor in sorted vector of independent variables.
     // Result is always to the left of the target independent variable value.
-    nearestNeighbor = basic_functions
+    nearestNeighbor = mathematics
                       ::computeNearestLeftNeighborUsingBinarySearch(
             sortedIndependentVariables,
             targetIndependentVariableValue );
@@ -129,7 +129,7 @@ Eigen::VectorXd computeLinearInterpolation(
 
     // Compute nearest neighbor in map of data.
     // Result is always to the left of the target independent variable value.
-    nearestLeftNeighbor = basic_functions::
+    nearestLeftNeighbor = mathematics::
                           computeNearestLeftNeighborUsingBinarySearch(
                                   sortedIndepedentAndDependentVariables,
                                   targetIndependentVariableValue );
@@ -153,56 +153,6 @@ Eigen::VectorXd computeLinearInterpolation(
              * locationTargetIndependentVariableValueInInterval );
 }
 
-//! Compute linear interpolation.
-State* computeLinearInterpolation(
-        std::map < double, State* >& sortedIndepedentAndDependentVariables,
-        double targetIndependentVariableValue )
-{
-    // Declare local variables.
-    // Declare nearest neighbor.
-    int nearestLeftNeighbor;
-
-    // Pointer to state.
-    State* pointerToState_ = new State;
-
-    // Declare location of target independent variable value in interval.
-    double locationTargetIndependentVariableValueInInterval;
-
-    // Declare map iterators
-    std::map < double, State* >::iterator mapIteratorIntervalLeft;
-    std::map < double, State* >::iterator mapIteratorIntervalRight;
-
-    // Compute nearest neighbor in map of data.
-    // Result is always to the left of the target independent variable value.
-    nearestLeftNeighbor = basic_functions::
-                          computeNearestLeftNeighborUsingBinarySearch(
-                                  sortedIndepedentAndDependentVariables,
-                                  targetIndependentVariableValue );
-
-    // Compute location of target independent variable value in interval
-    // between nearest neighbors.
-    mapIteratorIntervalLeft = sortedIndepedentAndDependentVariables.begin( );
-    advance( mapIteratorIntervalLeft, nearestLeftNeighbor );
-    mapIteratorIntervalRight = sortedIndepedentAndDependentVariables.begin( );
-    advance( mapIteratorIntervalRight, nearestLeftNeighbor + 1 );
-    locationTargetIndependentVariableValueInInterval
-            = ( targetIndependentVariableValue
-              - mapIteratorIntervalLeft->first )
-             / ( mapIteratorIntervalRight->first
-                 - mapIteratorIntervalLeft->first );
-
-    // Set vector in pointer to State object to the computed value of the
-    // dependent variable.
-
-    pointerToState_->state
-            = mapIteratorIntervalLeft->second->state
-              * ( 1 - locationTargetIndependentVariableValueInInterval )
-              + mapIteratorIntervalRight->second->state
-              * locationTargetIndependentVariableValueInInterval;
-
-    // Return pointer to State object.
-    return pointerToState_;
-}
 
 } // Namespace interpolators.
 

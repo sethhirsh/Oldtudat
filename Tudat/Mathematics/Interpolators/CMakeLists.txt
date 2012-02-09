@@ -57,10 +57,10 @@ setup_headers("${INTERPOLATORS_HEADERS}" "${MATHEMATICSDIR}/Interpolators")
 # Add unit tests.
 add_executable(test_CubicSplineInterpolation "${SRCROOT}${MATHEMATICSDIR}/Interpolators/unitTestCubicSplineInterpolation.cpp")
 setup_custom_test_program(test_CubicSplineInterpolation "${SRCROOT}${MATHEMATICSDIR}")
-target_link_libraries(test_CubicSplineInterpolation tudat_interpolators tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_CubicSplineInterpolation tudat_interpolators tudat_basic_mathematics ${Boost_LIBRARIES})
 
 add_executable(test_LinearInterpolation "${SRCROOT}${MATHEMATICSDIR}/Interpolators/unitTestLinearInterpolation.cpp")
 setup_custom_test_program(test_LinearInterpolation "${SRCROOT}${MATHEMATICSDIR}")
-target_link_libraries(test_LinearInterpolation tudat_states tudat_interpolators tudat_basics ${Boost_LIBRARIES})
+target_link_libraries(test_LinearInterpolation tudat_interpolators tudat_basic_mathematics ${Boost_LIBRARIES})
 
 # End of file.

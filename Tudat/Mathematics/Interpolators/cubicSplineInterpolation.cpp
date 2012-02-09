@@ -49,6 +49,7 @@
 
 // Include statements.
 #include "Tudat/Mathematics/Interpolators/cubicSplineInterpolation.h"
+#include "Tudat/Mathematics/BasicMathematics/nearestNeighbourSearch.h"
 
 //! Tudat library namespace.
 namespace tudat
@@ -88,7 +89,7 @@ double CubicSplineInterpolation::interpolate( double targetIndependentVariableVa
 
     // Determine the lower entry in the table corresponding to the target independent variable
     // value.
-    lowerEntry_ = tudat::basic_functions::computeNearestLeftNeighborUsingBinarySearch(
+    lowerEntry_ = tudat::mathematics::computeNearestLeftNeighborUsingBinarySearch(
             independentVariables_, targetIndependentVariableValue_ );
 
     // Calculate coefficients A,B,C,D.

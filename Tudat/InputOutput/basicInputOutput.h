@@ -64,6 +64,7 @@
 
 // Include statements.
 #include <string>
+#include <boost/filesystem.hpp>
 
 //! Tudat library namespace.
 /*!
@@ -85,19 +86,19 @@ namespace input_output
  * trailing slash included.
  * \param Root-path.
  */
-static std::string getPackageRootPath( )
-{
-#ifdef TUDAT_CUSTOM_ROOT_PATH
-    return std::string( TUDAT_CUSTOM_ROOT_PATH );
-#else
-    // Declare file path string assigned to filePath.
-    std::string filePath_( __FILE__ );
+std::string getPackageRootPath( );
 
-    // Strip filename from temporary string and return root-path string.
-    return filePath_.substr( 0, filePath_.length( ) -
-                                std::string( "InputOutput/basicInputOutput.h" ).length( ) );
-#endif
-}
+//! List all files in directory.
+/*!
+ * Lists all files in a given directory. There is a recursion option to allow
+ * all files in subdirectories to be listed as well.
+ * \param directory Absolute directory path.
+ * \param isRecurseIntoSubdirectories Flag to set if algorithm should recurse through
+ *          subdirectories. Set to false by default.
+ * \return Container of filenames in directory, stored as Boost path variables.
+ */
+std::vector< boost::filesystem3::path > listAllFilesInDirectory(
+    const boost::filesystem3::path& directory, bool isRecurseIntoSubdirectories = false );
 
 } // namespace input_output
 

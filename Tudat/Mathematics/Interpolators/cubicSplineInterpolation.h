@@ -48,7 +48,6 @@
 // Include statements.
 #include <cmath>
 #include <Eigen/Core>
-#include "Tudat/Basics/basicFunctions.h"
 
 //! Tudat library namespace.
 /*!

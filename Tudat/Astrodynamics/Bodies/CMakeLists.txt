@@ -76,6 +76,6 @@ setup_headers("${BODIES_HEADERS}" "${BODIESDIR}")
 # Add unit tests.
 add_executable(test_ApproximatePlanetPositions "${SRCROOT}${EPHEMERISDIR}/UnitTests/unitTestApproximatePlanetPositions.cpp")
 setup_custom_test_program(test_ApproximatePlanetPositions "${SRCROOT}${EPHEMERISDIR}")
-target_link_libraries(test_ApproximatePlanetPositions tudat_states tudat_bodies tudat_gravitation tudat_root_finding_methods tudat_basic_astrodynamics ${TUDAT_CORE_LIBRARIES})
+target_link_libraries(test_ApproximatePlanetPositions tudat_states tudat_bodies tudat_gravitation tudat_root_finding_methods tudat_basic_astrodynamics tudat_input_output ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 # End of file.

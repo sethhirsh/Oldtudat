@@ -60,20 +60,12 @@
  *      111117    K. Kumar          Added listAllFilesInDirectory( ) function.
  */
 
-#ifndef BASICOPERATIONS_H
-#define BASICOPERATIONS_H
+#ifndef TUDAT_BASICMATHEMATICS_H
+#define TUDAT_BASICMATHEMATICS_H
 
 // Include statements.
-#include <boost/filesystem.hpp>
-#include <boost/filesystem/fstream.hpp>
-#include <ctime>
 #include <Eigen/Core>
-#include <iostream>
 #include <map>
-#include <string>
-#include <sstream>
-#include <vector>
-#include "Tudat/Astrodynamics/States/state.h"
 
 //! Tudat library namespace.
 /*!
@@ -82,25 +74,8 @@
 namespace tudat
 {
 
-//! Basic functions namespace.
-/*!
- * Basic functions namespace.
- */
-namespace basic_functions
+namespace mathematics
 {
-
-// Using declarations.
-using std::string;
-using std::vector;
-using std::map;
-
-//! Get root-path for Tudat library.
-/*!
- * Returns root-path corresponding with root-directory of Tudat library as
- * a string with trailing slash included.
- * \param Root-path.
- */
-string getRootPath( );
 
 //! Nearest left neighbor binary search.
 /*!
@@ -110,8 +85,8 @@ string getRootPath( );
  * \param targetValueInVectorOfSortedData Target value in vector of sorted data.
  * \return Index of nearest left neighbor to target value.
  */
-int computeNearestLeftNeighborUsingBinarySearch( Eigen::VectorXd& vectorOfSortedData,
-                                                 double& targetValueInVectorOfSortedData );
+int computeNearestLeftNeighborUsingBinarySearch( const Eigen::VectorXd& vectorOfSortedData,
+                                                 const double targetValueInVectorOfSortedData );
 
 //! Nearest left neighbor binary search.
 /*!
@@ -123,68 +98,13 @@ int computeNearestLeftNeighborUsingBinarySearch( Eigen::VectorXd& vectorOfSorted
  * \return Index of nearest left neighbor to target value.
  */
 int computeNearestLeftNeighborUsingBinarySearch(
-        map < double, Eigen::VectorXd >& sortedIndepedentAndDependentVariables,
-        double& targetValueInMapOfData );
-
-//! Nearest left neighbor binary search.
-/*!
- * Searches for the nearest left neighbor in a map of sorted data using a
- * binary algorithm (Press W.H., et al., 2002).
- * \param sortedIndepedentAndDependentVariables Map of independent and
- *           dependent data sorted in ascending/descending order.
- * \param targetValueInMapOfData Target value in map of sorted data.
- * \return Index of nearest left neighbor to target value.
- */
-int computeNearestLeftNeighborUsingBinarySearch(
-        map < double, State* >& sortedIndepedentAndDependentVariables,
-        double& targetValueInMapOfData );
-
-//! Convert string to variable type.
-/*!
- * Definition of a template function which converts a string to any variable
- * type which it can be converted to, and is used as input.
- * \param inputString String to be converted.
- * \param outputTemplate Template type to which the string will be converted.
- * \return Boolean stating the success or failure of the conversion.
- */
-template < class T >
-bool convertStringToTemplate( const string& inputString, T& outputTemplate )
-{
-    // Create stringstream containing input string.
-    std::istringstream inputStringStream( inputString );
-
-    // Return output template containing contents of stringstream.
-    return inputStringStream >> outputTemplate;
-}
-
-//! Write the current running time and status to vector.
-/*!
- * Definition of a function which determines the running time of a program with respect to a start
- * clock and outputs this time together with a string containing the current state of the program.
- * \param start_clock Input starting clock.
- * \param status Current status of executed application.
- * \return Container of current status of executed application and current running time statement.
- *          The first element contains the current status and the second contains the current
- *          running time statement.
- */
-vector< string > outputCurrentRunningTime( clock_t start_clock, const string& status );
-
-//! List all files in directory.
-/*!
- * Lists all files in a given directory. There is a recursion option to allow
- * all files in subdirectories to be listed as well.
- * \param directory Absolute directory path.
- * \param isRecurseIntoSubdirectories Flag to set if algorithm should recurse through
- *          subdirectories. Set to false by default.
- * \return Container of filenames in directory, stored as Boost path variables.
- */
-std::vector< boost::filesystem3::path > listAllFilesInDirectory(
-    const boost::filesystem3::path& directory, bool isRecurseIntoSubdirectories = false );
+        const std::map < double, Eigen::VectorXd >& sortedIndepedentAndDependentVariables,
+        const double targetValueInMapOfData );
 
 }
 
 }
 
-#endif // BASICOPERATIONS_H
+#endif // TUDAT_BASICMATHEMATICS_H
 
 // End of file.

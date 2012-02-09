@@ -60,8 +60,8 @@
 #include "Tudat/Astrodynamics/BasicAstrodynamics/seriesPropagator.h"
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
 #include "Tudat/Astrodynamics/States/state.h"
-#include "Tudat/Basics/basicFunctions.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
+#include "Tudat/InputOutput/basicInputOutput.h"
 
 //! Test implementation of Kepler propagator class.
 int main( )
@@ -82,7 +82,7 @@ int main( )
     // Load file with benchmark data.
     std::string relativePathToBenchmarkData = "Astrodynamics/BasicAstrodynamics/twoBodyKeplerData.dat";
 
-    std::string absolutePathToBenchmarkData = basic_functions::getRootPath( )
+    std::string absolutePathToBenchmarkData = tudat::input_output::getPackageRootPath( )
             + relativePathToBenchmarkData;
 
     std::ifstream twoBodyKeplerBenchmarkFile( absolutePathToBenchmarkData.c_str( ) );

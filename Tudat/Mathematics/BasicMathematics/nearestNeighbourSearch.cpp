@@ -66,36 +66,22 @@
  */
 
 // Include statements.
+#include <map>
 #include <iterator>
-#include "Tudat/Basics/basicFunctions.h"
+#include <Eigen/Core>
 
 //! Tudat library namespace.
 namespace tudat
 {
 
-//! Basic functions namespace.
-namespace basic_functions
+namespace mathematics
 {
 
-//! Get root-path for Tudat library.
-string getRootPath( )
-{
-#ifdef TUDAT_CUSTOM_ROOT_PATH
-    return string( TUDAT_CUSTOM_ROOT_PATH );
-#else
-    // Declare file path string assigned to filePath.
-    string filePath_( __FILE__ );
-
-    // Strip filename from temporary string and return root-path string.
-    return filePath_.substr( 0, filePath_.length( )
-                             - string( "/Basics/basicFunctions.cpp" ).length( ) ) + "/";
-#endif
-}
 
 //! Nearest left neighbor binary search.
 int computeNearestLeftNeighborUsingBinarySearch(
-        Eigen::VectorXd& vectorOfSortedData,
-        double& targetValueInVectorOfSortedData )
+        const Eigen::VectorXd& vectorOfSortedData,
+        const double targetValueInVectorOfSortedData )
 {
     // Declare local variables.
     // Declare bounds of vector of sorted data and current position.
@@ -145,8 +131,8 @@ int computeNearestLeftNeighborUsingBinarySearch(
 
 //! Nearest left neighbor binary search.
 int computeNearestLeftNeighborUsingBinarySearch(
-        std::map < double, Eigen::VectorXd >& sortedIndepedentAndDependentVariables,
-        double& targetValueInMapOfData )
+        const std::map < double, Eigen::VectorXd >& sortedIndepedentAndDependentVariables,
+        const double targetValueInMapOfData )
 {
     // Declare local variables.
     // Declare bounds of key of map of data and current position.
@@ -156,7 +142,7 @@ int computeNearestLeftNeighborUsingBinarySearch(
     int currentPositionInKeyOfMapOfData;
 
     // Declare map iterator
-    std::map < double, Eigen::VectorXd >::iterator mapIterator;
+    std::map < double, Eigen::VectorXd >::const_iterator mapIterator;
 
     // Loop through vector of sorted data until left and right limits
     // are neighbours
@@ -197,124 +183,10 @@ int computeNearestLeftNeighborUsingBinarySearch(
     return currentPositionInKeyOfMapOfData;
 }
 
-//! Nearest left neighbor binary search.
-int computeNearestLeftNeighborUsingBinarySearch(
-        std::map < double, State* >& sortedIndepedentAndDependentVariables,
-        double& targetValueInMapOfData )
-{
-    // Declare local variables.
-    // Declare bounds of key of map of data and current position.
-    int leftLimitOfKeyOfMapOfData = 0;
-    int rightLimitOfKeyOfMapOfData = sortedIndepedentAndDependentVariables
-                                     .size( ) - 1;
-    int currentPositionInKeyOfMapOfData;
 
-    // Declare map iterator
-    std::map < double, State* >::iterator mapIterator;
 
-    // Loop through State objects of sorted data until left and right limits
-    // are neighbours.
-    while ( rightLimitOfKeyOfMapOfData - leftLimitOfKeyOfMapOfData > 1 )
-    {
-        // Compute midpoint ( bitshift is same as division by 2.0 ).
-        currentPositionInKeyOfMapOfData
-                = ( rightLimitOfKeyOfMapOfData
-                   + leftLimitOfKeyOfMapOfData ) >> 1;
+} // namespace mathematics
 
-        // Set map iterator to begin begin of map of sorted independent and
-        // dependent variables.
-        mapIterator = sortedIndepedentAndDependentVariables.begin( );
-
-        // Advance iterator to location of current position in key of map of
-        // data.
-        advance( mapIterator, currentPositionInKeyOfMapOfData );
-
-        // Check that target value lies to the right of lower bound.
-        if ( targetValueInMapOfData
-             >= mapIterator->first )
-        {
-            // Set left limit to current position in map of data.
-            leftLimitOfKeyOfMapOfData = currentPositionInKeyOfMapOfData;
-        }
-
-        else
-        {
-            // Set right limit to current position in map of data.
-            rightLimitOfKeyOfMapOfData = currentPositionInKeyOfMapOfData;
-        }
-    }
-
-    // Set current position to left limit.
-    currentPositionInKeyOfMapOfData = leftLimitOfKeyOfMapOfData;
-
-    // Return current position in map of data.
-    return currentPositionInKeyOfMapOfData;
-}
-
-//! Write the current running time and status to vector.
-vector< string > outputCurrentRunningTime( clock_t start_clock, const string& status )
-{
-    // Declare local variables.
-    // Declare vector of strings to store current running time and status of executed application.
-    vector< string > runningTimeAndStatusContainer_;
-
-    // Declare stringstream.
-    std::stringstream currentRunningTimeStatement_;
-
-    // Set current and running clock times.
-    clock_t current_clock_ = clock( );
-    clock_t running_clocks_ = current_clock_ - start_clock;
-
-    // Compute current running time.
-    double runningTime_ = running_clocks_;
-
-    // Create output string.
-    currentRunningTimeStatement_ << "Current running time in seconds is: "
-                                 << runningTime_ / 1000;
-
-    // Store data in vector of strings.
-    runningTimeAndStatusContainer_.push_back( status );
-    runningTimeAndStatusContainer_.push_back( currentRunningTimeStatement_.str( ) );
-
-    // Return string container.
-    return runningTimeAndStatusContainer_;
-}
-
-//! Lists all files in directory.
-std::vector< boost::filesystem3::path > listAllFilesInDirectory(
-    const boost::filesystem3::path& directory, bool isRecurseIntoSubdirectories )
-{
-    // Declare local variables.
-    std::vector < boost::filesystem3::path > listOfFileNamesWithPath_;
-
-    if ( boost::filesystem3::exists( directory ) )
-    {
-        boost::filesystem3::directory_iterator iteratorPastEndOfDirectory_;
-
-        for ( boost::filesystem3::directory_iterator directoryIterator_( directory );
-              directoryIterator_ != iteratorPastEndOfDirectory_ ; ++directoryIterator_ )
-        {
-            if ( boost::filesystem3::is_directory( *directoryIterator_ ) )
-            {
-                if ( isRecurseIntoSubdirectories )
-                {
-                    listAllFilesInDirectory( *directoryIterator_ );
-                }
-            }
-
-            else
-            {
-                listOfFileNamesWithPath_.push_back( directoryIterator_->path( ).filename( ) );
-            }
-        }
-    }
-
-    // Return container of filenames.
-    return listOfFileNamesWithPath_;
-}
-
-}
-
-}
+} // namespace tudat
 
 // End of file.
