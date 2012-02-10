@@ -139,6 +139,12 @@ include_directories(AFTER
   "${CODEROOT}"
 )
 
+# Load the environment file from the core distribution if specified
+if(TUDAT_CORE_ENVIRONMENT_PATH)
+    message(STATUS "Loading Tudat Core distribution from ${TUDAT_CORE_ENVIRONMENT_PATH}/TudatCoreEnvironment.cmake")
+    include("${TUDAT_CORE_ENVIRONMENT_PATH}/TudatCoreEnvironment.cmake")
+endif(TUDAT_CORE_ENVIRONMENT_PATH)
+
 # Find Eigen3 library on local system.
 find_package(Eigen3 REQUIRED)
 # If Eigen3 is not found, use the following to manually set the path to the Eigen3 directory.
