@@ -1,33 +1,4 @@
-/*! \file centralGravityField.cpp
- *    Source file that defines the central gravity field class in Tudat.
- *
- *    Path              : /Astrodynamics/EnvironmentModels/
- *    Version           : 1
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J.C.P Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 27 June, 2011
- *    Last modified     : 1 July, 2011
- *
- *    References
- *      Solar System Dynamics, Jet Propulsion Laboratory. Astrodynamic
- *          Constants, http://ssd.jpl.nasa.gov/?constants#ref, last accessed: 1 July, 2011.
- *      de Pater, I., Lissauer, J.J. Planetary Sciences, 2nd Edition, Cambridge
- *      University Press, Cambridge, UK, 2010.
- *      Wikipedia. Standard gravitational parameter,
- *          http://en.wikipedia.org/wiki/Standard_gravitational_parameter, last
- *          accessed: 1 July, 2011.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -44,6 +15,16 @@
  *                                  predefined_gravity_field_models namespace.
  *      110701    K. Kumar          Updated references; added central gravity fields for Mercury,
  *                                  Saturn, Neptune.
+ *
+ *    References
+ *      Solar System Dynamics, Jet Propulsion Laboratory. Astrodynamic
+ *          Constants, http://ssd.jpl.nasa.gov/?constants#ref, last accessed: 1 July, 2011.
+ *      de Pater, I., Lissauer, J.J. Planetary Sciences, 2nd Edition, Cambridge
+ *      University Press, Cambridge, UK, 2010.
+ *      Wikipedia. Standard gravitational parameter,
+ *          http://en.wikipedia.org/wiki/Standard_gravitational_parameter, last
+ *          accessed: 1 July, 2011.
+ *
  */
 
 // Include statements.

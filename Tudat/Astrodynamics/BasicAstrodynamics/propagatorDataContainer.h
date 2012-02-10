@@ -1,33 +1,4 @@
-/*! \file propagatorDataContainer.h
- *    Header file that defines the class that contains all the data required by the Tudat
- *    propagators.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 9
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J.C.P. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 20 September, 2010
- *    Last modified     : 20 September, 2011
- *
- *    References
- *
- *    Notes
- *      This data is not directly stored in the propagator so as to maximize
- *      the use of object-oriented programming methods. An object of this
- *      container encapsulates all the data relating to the propagation of one
- *      specific body. Creating multiple objects is simple and the container
- *      can be modified in future to append properties without changing any of
- *      the code in the Propagator class.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -51,7 +22,19 @@
  *      110205    K. Kumar          Added note about use of container.
  *      110223    K. Kumar          Added missing Doxygen comment.
  *      110920    K. Kumar          Corrected simple errors outlined by M. Persson.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// This data is not directly stored in the propagator so as to maximize
+// the use of object-oriented programming methods. An object of this
+// container encapsulates all the data relating to the propagation of one
+// specific body. Creating multiple objects is simple and the container
+// can be modified in future to append properties without changing any of
+// the code in the Propagator class.
+// 
 
 #ifndef TUDAT_PROPAGATOR_DATA_CONTAINER_H
 #define TUDAT_PROPAGATOR_DATA_CONTAINER_H

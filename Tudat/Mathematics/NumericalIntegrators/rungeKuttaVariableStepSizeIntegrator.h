@@ -1,45 +1,4 @@
-/*! \file rungeKuttaVariableStepsizeIntegrator.h
- *    Header file that defines the general, variable stepsize, Runge-Kutta
- *    integrator.
- *
- *    Path              : /Mathematics/NumericalIntegrators/
- *    Version           : 5
- *    Check status      : Unchecked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Author            : E.A.G. Heeren
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : E.A.G.Heeren@student.tudelft.nl
- *
- *    Author            : F.M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Author            : B. Tong Minh
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : B.TongMinh@student.tudelft.nl
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : E.A.G. Heeren
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : E.A.G.Heeren@student.tudelft.nl
- *
- *    Date created      : 26 August, 2011
- *    Last modified     : 10 November, 2011
- *
- *    References
- *      Eagle, C.D. Celestial Computing with MATLAB, Science Software,
- *          http://www.cdeagle.com/ccmatlab/ccmatlab.pdf, last accessed: 28 August, 2011.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -59,6 +18,11 @@
  *      111021    F.M. Engelen      Added interface for RKF45 and RKF56.
  *      111110    E.A.G Heeren      Minor changes.
  *      120204    B. Tong Minh      Adapted for new core integrators interface
+ *
+ *    References
+ *      Eagle, C.D. Celestial Computing with MATLAB, Science Software,
+ *          http://www.cdeagle.com/ccmatlab/ccmatlab.pdf, last accessed: 28 August, 2011.
+ *
  */
 
 #ifndef TUDAT_RUNGEKUTTAVARIABLESTEPSIZEINTEGRATOR_H

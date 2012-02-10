@@ -1,41 +1,4 @@
-/*! \file unitTestLambertTargeter.cpp
- *    Source file of unit test file of Lambert targeting algorithm code. This unit test file will
- *    test the Lambert targeting algorithm code for both the hyperbolic case and the elliptical
- *    case.
- *
- *    Path              : /Astrodynamics/MissionSegments/
- *    Version           : 8
- *    Check status      : Checked
- *
- *    Author            : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 13 January, 2011
- *    Last modified     : 27 June, 2011
- *
- *    References        :
- *      Mengali, G., and A.A. Quarta, Fondamenti di Meccanica del volo Spaziale.
- *      Noomen, R., Lambert targeter Excel file.
- *
- *    Notes
- *      DISCLAIMER: At the moment, the Lambert targeter only converges for
- *      about half of the cases. This is not evident from the tests below, but
- *      it was observed during simulations carried out by the author. The
- *      reason might very well be an erroneous definition of the starters.
- *
- *      Test runs code and verifies result against expected value.
- *      If the tested code is erroneous, the test function returns a boolean
- *      true; if the code is correct, the function returns a boolean false.
- *
- *      The elliptical case was taken from Example 6.1, page 159-162 of
- *      ( Mengali, Quarta ). The hyperbolic case was taken from ( Noomen, R. ).
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -62,7 +25,26 @@
  *                                  CartesianVelocityElements objects as output.
  *      110512    K. Kumar          Updated code not to use dynamic memory allocation.
  *      110627    K. Kumar          Updated to use new predefined planets code.
+ *
+ *    References        :
+ *      Mengali, G., and A.A. Quarta, Fondamenti di Meccanica del volo Spaziale.
+ *      Noomen, R., Lambert targeter Excel file.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// DISCLAIMER: At the moment, the Lambert targeter only converges for
+// about half of the cases. This is not evident from the tests below, but
+// it was observed during simulations carried out by the author. The
+// reason might very well be an erroneous definition of the starters.
+// 
+// Test runs code and verifies result against expected value.
+// If the tested code is erroneous, the test function returns a boolean
+// true; if the code is correct, the function returns a boolean false.
+// 
+// The elliptical case was taken from Example 6.1, page 159-162 of
+// ( Mengali, Quarta ). The hyperbolic case was taken from ( Noomen, R. ).
+// 
 
 // Include statements.
 #include <cmath>

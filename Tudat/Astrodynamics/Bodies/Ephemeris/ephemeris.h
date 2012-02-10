@@ -1,26 +1,4 @@
-/*! \file ephemeris.h
- *    This header file contains the definition of a base class for all ephemeris classes in Tudat.
- *
- *    Path              : /Astrodynamics/States/
- *    Version           : 2
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Date created      : 28 January, 2011
- *    Last modified     : 21 February, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -36,6 +14,9 @@
  *      110128    K. Kumar          First creation of code.
  *      110221    K. Kumar          Updated code to work as base class for derived ephemeris
  *                                  classes.
+ *
+ *    References
+ *
  */
 
 #ifndef EPHEMERIS_H

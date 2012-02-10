@@ -1,31 +1,4 @@
-/*! \file lawgsPartGeometry.h
- *    This file contains the definition of the LawgsPartGeometry class,
- *    Lawgs is short for Langley Wireframe Geometry Standard and is a geometry
- *    format developed by NASA (see reference) using quadrilateral surface
- *    panels.
- *
- *    Path              : /Mathematics/GeometricShapes/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Author            : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 25 November, 2010
- *    Last modified     : 5 September, 2011
- *
- *    References
- *      Craidon, C.B. A Desription of the Langley Wireframe Geometry Standard
- *          (LaWGS) format, NASA TECHNICAL MEMORANDUM 85767.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -43,6 +16,11 @@
  *      110206    J. Melman         Minor formatting issues.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *
+ *    References
+ *      Craidon, C.B. A Desription of the Langley Wireframe Geometry Standard
+ *          (LaWGS) format, NASA TECHNICAL MEMORANDUM 85767.
+ *
  */
 
 #ifndef LAWGSPARTGEOMETRY_H

@@ -1,30 +1,4 @@
-/*! \file sphericalHarmonicsGravityField.cpp
- *    Source file that defines the spherical harmonics gravity field model
- *    included in Tudat.
- *
- *    Path              : /Astrodynamics/EnvironmentModels/
- *    Version           : 9
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J.C.P Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 17 November, 2010
- *    Last modified     : 5 August, 2011
- *
- *    References
- *      Vallado, D. A., Crawford, P., Hujsak, R., & Kelso, T. Revisiting
- *          Spacetrack Report #3: Rev 1, Proceedings of the AIAA/AAS Astro-
- *          dynamics Specialist Conference. Keystone, CO, 2006.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -50,6 +24,12 @@
  *      110310    K. Kumar          Changed naming from Laplacian to gradient tensor.
  *      110805    K. Kumar          Added predefined functionality with WGS-72 and WGS-84 predefined
  *                                  predefined Earth gravity fields.
+ *
+ *    References
+ *      Vallado, D. A., Crawford, P., Hujsak, R., & Kelso, T. Revisiting
+ *          Spacetrack Report #3: Rev 1, Proceedings of the AIAA/AAS Astro-
+ *          dynamics Specialist Conference. Keystone, CO, 2006.
+ *
  */
 
 // Include statements.

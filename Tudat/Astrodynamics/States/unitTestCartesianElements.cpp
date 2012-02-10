@@ -1,30 +1,4 @@
-/*! \file unitTestCartesianElements.cpp
- *    Source file for a unit test that tests the implementation of the Cartesian elements state
- *    class in Tudat.
- *
- *    Path              : /Astrodynamics/States/
- *    Version           : 2
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Date created      : 10 January, 2010
- *    Last modified     : 21 January, 2010
- *
- *    References
- *
- *    Notes
- *      Test runs code and verifies result against expected value.
- *      If the tested code is erroneous, the test function returns a boolean
- *      true; if the code is correct, the function returns a boolean false.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -39,7 +13,16 @@
  *      YYMMDD    Author            Comment
  *      110110    K. Kumar          File created.
  *      110121    K. Kumar          Updated to comply with new protocol.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Test runs code and verifies result against expected value.
+// If the tested code is erroneous, the test function returns a boolean
+// true; if the code is correct, the function returns a boolean false.
+// 
 
 // Include statements.
 #include <iostream>

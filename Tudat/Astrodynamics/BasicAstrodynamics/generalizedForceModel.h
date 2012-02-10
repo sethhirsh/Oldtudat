@@ -1,26 +1,4 @@
-/*! \file generalizedForceModel.h
- *    Header file that defines the generlaized force model base class included in Tudat.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 1
- *    Check status      : Unhecked
- *
- *    Author            : D.Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : D.Dirkx@tudelft.nl
- *
- *    Checker           :
- *    Affiliation       :
- *    E-mail address    :
- *
- *    Date created      : 3 February, 2011
- *    Last modified     : 20 September, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -34,6 +12,9 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      120204    D. Dirkx        File created.
+ *
+ *    References
+ *
  */
 
 #ifndef GENERALIZEDFORCEMODEL_H

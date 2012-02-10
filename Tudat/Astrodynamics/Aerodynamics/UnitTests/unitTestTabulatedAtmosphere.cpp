@@ -1,27 +1,4 @@
-/*! \file unitTestTabulatedAtmosphere.cpp
- *    Source file that defines the Tabulated atmosphere unit test included in Tudat.
- *
- *    Path              : /Astrodynamics/EnvironmentModels/
- *    Version           : 5
- *    Check status      : Checked
- *
- *    Author            : F.M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 13 July, 2011
- *    Last modified     : 11 December, 2011
- *
- *    References
- *      Introduction to Flight, Fifth edition, Appendix A, John D. Anderson Jr., McGraw Hill, 2005.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -39,6 +16,10 @@
  *      110722    F.M. Engelen      Replaced values in to book values.
  *      111128    B. Tong Minh      Added location-independent function test.
  *      111211    K. Kumar          Minor corrections to location-independent function test.
+ *
+ *    References
+ *      Introduction to Flight, Fifth edition, Appendix A, John D. Anderson Jr., McGraw Hill, 2005.
+ *
  */
 
 // Include statements.

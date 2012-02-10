@@ -1,32 +1,4 @@
-/*! \file unitTestEscapeAndCapture.cpp
- *    Source file of unit test for escapePhase method. The unit test is based on
- *    Example 11.4 page 334, "Fondamenti di Meccanica del volo Spaziale", G. Mengali, A. A. Quarta.
- *
- *    Path              : /Astrodynamics/MissionSegments/
- *    Version           : 5
- *    Check status      : Checked
- *
- *    Author            : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 31 January, 2011
- *    Last modified     : 27 June, 2011
- *
- *    References        :
- *      Mengali, G., Quarta, A.A. Fondamenti di Meccanica del volo Spaziale,
- *          Edizioni PLUS.
- *
- *    Notes
- *      Test runs code and verifies result against expected value.
- *      If the tested code is erroneous, the test function returns a boolean
- *      true; if the code is correct, the function returns a boolean false.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -47,7 +19,18 @@
  *      110214    E. Iorfida        Code updated with the modification made in .h/.cpp files
  *                                  about radius of central body.
  *      110627    K. Kumar          Updated to use new predefined planets code.
+ *
+ *    References        :
+ *      Mengali, G., Quarta, A.A. Fondamenti di Meccanica del volo Spaziale,
+ *          Edizioni PLUS.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Test runs code and verifies result against expected value.
+// If the tested code is erroneous, the test function returns a boolean
+// true; if the code is correct, the function returns a boolean false.
+// 
 
 // Include statements.
 #include <cmath>

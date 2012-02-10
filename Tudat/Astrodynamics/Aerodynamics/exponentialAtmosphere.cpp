@@ -1,29 +1,4 @@
-/*! \file exponentialAtmosphere.cpp
- *    Source file that defines the exponential atmosphere model included in Tudat.
- *
-*    Path              : /Astrodynamics/Aerodynamics/
- *    Version           : 5
- *    Check status      : Checked
- *
- *    Author            : F.M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : J.C.P Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 24 February, 2011
- *    Last modified     : 29 June, 2011
- *
- *    References
- *
- *    Notes
- *      The accuracy of this model could be increased by implementing different
- *      values for the scale height and temperature for different altitudes
- *      (e.g., lower, middle and upper atmosphere).
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -41,7 +16,16 @@
  *      110427    F.M. Engelen      Changed input parameter to altitude, longitude and latitude.
  *      110629    F.M. Engelen      Added predefined feature.
  *      110705    F.M. Engelen      Changed to passing by reference. Changed reference values.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// The accuracy of this model could be increased by implementing different
+// values for the scale height and temperature for different altitudes
+// (e.g., lower, middle and upper atmosphere).
+// 
 
 // Include statements.
 #include <iostream>

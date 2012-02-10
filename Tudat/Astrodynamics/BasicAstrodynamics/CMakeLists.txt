@@ -44,7 +44,6 @@ set(BASICASTRODYNAMICS_SOURCES
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/convertMeanAnomalyToHyperbolicEccentricAnomaly.cpp"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/seriesPropagator.cpp"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/momentDueToForceModel.cpp"
-  "${SRCROOT}${BASICASTRODYNAMICSDIR}/generalizedForceModel.cpp"
 )
 
 # Set the header files.

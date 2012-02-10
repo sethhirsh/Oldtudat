@@ -1,35 +1,4 @@
-/*! \file forceModel.h
- *    Header file that defines the base class for all force models included in
- *    Tudat.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 8
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Author            : F.M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : D. Dirkx
- *    Affiliation       : Delft University of technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 14 September, 2010
- *    Last modified     : 9 August, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -52,6 +21,9 @@
  *      110707    F.M. Engelen      Replaced code with new code.
  *      110809    K. Kumar          Split code into base class and derived class
  *                                  (SixDegreeOfFreedomForceModel).
+ *
+ *    References
+ *
  */
 
 #ifndef FORCEMODEL_H

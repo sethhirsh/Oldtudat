@@ -1,26 +1,4 @@
-/*! \file pureMomentModel.h
- *    This header file contains the moment model base class included in Tudat.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Checker           : F. M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 10 May, 2011
- *    Last modified     : 24 August, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -38,6 +16,9 @@
  *                                  functions.
  *      110824    J. Leloux         Corrected doxygen documentation.
  *      120204    D. Dirkx          Split MomentModel class into this class and MomentDueToForceModel.
+ *
+ *    References
+ *
  */
 
 #ifndef MOMENTMODEL_H

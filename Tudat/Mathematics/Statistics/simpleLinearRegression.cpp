@@ -1,28 +1,4 @@
-/*! \file simpleLinearRegression.cpp
- *    Source file that defines the simple linear regression method in Tudat.
- *
- *    Path              : /Mathematics/Statistics/
- *    Version           : 6
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J.C.P Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 1 July, 2011
- *    Last modified     : 3 November, 2011
- *
- *    References
- *      Press W.H., et al. Numerical Recipes in C++: The Art of
- *          Scientific Computing. Cambridge University Press, February 2002.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -44,6 +20,11 @@
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
  *      111103    K. Kumar          Updated size_t to std::size_t.
+ *
+ *    References
+ *      Press W.H., et al. Numerical Recipes in C++: The Art of
+ *          Scientific Computing. Cambridge University Press, February 2002.
+ *
  */
 
 // Include statements.

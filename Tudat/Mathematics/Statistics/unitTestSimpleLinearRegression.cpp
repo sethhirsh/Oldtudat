@@ -1,34 +1,4 @@
-/*! \file unitTestSimpleLinearRegression.cpp
- *    Source file that defines the unitTestSimpleLinearRegression unit test,
- *    which tests the simple linear regression method implemented in Tudat.
- *
- *    Path              : /Mathematics/Statistics/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J.C.P Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 2 July, 2011
- *    Last modified     : 5 September, 2011
- *
- *    References
- *      Press W.H., et al. Numerical Recipes in C++: The Art of
- *          Scientific Computing. Cambridge University Press, February 2002.
- *
- *    Notes
- *      The chi-squared value and standard deviations of the coefficients
- *      of the linear fit are not tested against benchmark data at present;
- *      they are tested against the output of the SimpleLinearRegression class.
- *      Once benchmark data that includes these values is available, this test
- *      must, be modified.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -47,7 +17,20 @@
  *                                  test; added note; renamed filename.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *
+ *    References
+ *      Press W.H., et al. Numerical Recipes in C++: The Art of
+ *          Scientific Computing. Cambridge University Press, February 2002.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// The chi-squared value and standard deviations of the coefficients
+// of the linear fit are not tested against benchmark data at present;
+// they are tested against the output of the SimpleLinearRegression class.
+// Once benchmark data that includes these values is available, this test
+// must, be modified.
+// 
 
 // Include statements.
 #include <cmath>

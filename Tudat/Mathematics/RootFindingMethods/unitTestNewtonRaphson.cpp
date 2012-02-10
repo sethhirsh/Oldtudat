@@ -1,33 +1,4 @@
-/*! \file unitTestNewtonRaphson.cpp
- *    Source file of unit test file of Newton-Raphson method code.
- *    This unit test file will test the Newton-Raphson method code.
- *
- *    Path              : /Mathematics/RootFindingMethods/
- *    Version           : 6
- *    Check status      : Checked
- *
- *    Author            : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 11 January, 2011
- *    Last modified     : 5 September, 2011
- *
- *    References
- *
- *    Notes
- *      Test runs code and verifies result against expected value.
- *      If the tested code is erroneous, the test function returns a boolean
- *      true; if the code is correct, the function returns a boolean false.
- *
- *      Need to update test to also test class containing the mathematical
- *      functions.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -53,7 +24,19 @@
  *      110120    K. Kumar          Added global functions test; updated comments; modified layout.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Test runs code and verifies result against expected value.
+// If the tested code is erroneous, the test function returns a boolean
+// true; if the code is correct, the function returns a boolean false.
+// 
+// Need to update test to also test class containing the mathematical
+// functions.
+// 
 
 // Include statements.
 #include <cmath>

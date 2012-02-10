@@ -1,37 +1,4 @@
-/*! \file basicFunctions.h
- *    Header file that defines the basicFunctions namespace, containing all
- *    basic functions contained in Tudat.
- *
- *    Path              : /Basics/
- *    Version           : 10
- *    Check status      : Checked
- *
- *    Author/Checker    : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Author            : J. Leloux
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.Leloux@tudelft.nl
- *
- *    Checker           : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : S. Billemont
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : simon@angelcorp.be
- *
- *    Date created      : 10 August, 2010
- *    Last modified     : 17 November, 2011
- *
- *    References
- *      Press W.H., et al. Numerical Recipes in C++: The Art of
- *          Scientific Computing. Cambridge University Press, February 2002.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -58,6 +25,11 @@
  *      110913    K. Kumar          Implemented automatic root-path functions based on
  *                                  suggestions by M. Persson.
  *      111117    K. Kumar          Added listAllFilesInDirectory( ) function.
+ *
+ *    References
+ *      Press W.H., et al. Numerical Recipes in C++: The Art of
+ *          Scientific Computing. Cambridge University Press, February 2002.
+ *
  */
 
 #ifndef TUDAT_BASICMATHEMATICS_H

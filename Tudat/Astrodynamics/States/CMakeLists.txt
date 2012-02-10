@@ -45,7 +45,6 @@
 
 # Add source files.
 set(STATES_SOURCES
-  "${SRCROOT}${STATESDIR}/state.cpp"
   "${SRCROOT}${STATESDIR}/writeStateHistoryToFile.cpp"
 )
 

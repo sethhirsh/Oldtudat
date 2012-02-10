@@ -1,26 +1,4 @@
-/*! \file seriesPropagator.h
- *    Header file that defines a class that executes a series of propagation steps.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 2
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J.C.P. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 6 May, 2011
- *    Last modified     : 20 September, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -35,6 +13,9 @@
  *      YYMMDD    Author            Comment
  *      110506    K. Kumar          File created.
  *      110920    K. Kumar          Corrected simple errors outlined by M. Persson.
+ *
+ *    References
+ *
  */
 
 #ifndef SERIESPROPAGATOR_H

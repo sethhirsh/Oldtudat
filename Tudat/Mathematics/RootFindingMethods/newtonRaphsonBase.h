@@ -1,27 +1,4 @@
-/*! \file newtonRaphsonBase.h
- *    This header file contains an abstract base class for the NewtonRaphson
- *    class included in Tudat.
- *
- *    Path              : /Mathematics/RootFindingMethods/
- *    Version           : 1
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Date created      : 19 January, 2011
- *    Last modified     : 19 January, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -35,6 +12,9 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      110119    K. Kumar          First creation of code.
+ *
+ *    References
+ *
  */
 
 #ifndef NEWTONRAPHSONBASE_H

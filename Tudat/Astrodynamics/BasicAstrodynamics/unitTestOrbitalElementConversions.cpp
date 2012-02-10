@@ -1,42 +1,4 @@
-/*! \file unitTestOrbitalElementConversions.cpp
- *    Source file of unit test for the orbitalElementConversion, from Cartesian to Keplerian and
- *    viceversa. The first part of the code tests the code for elliptical, parabolic, hyperbolic
- *    and circular orbits. SI units are used. The second part of the code tests the code from
- *    Cartesian to Keplerian with the example 3.4 pag. 63 of the book "Fondamenti di Meccanica del
- *    Volo Spaziale" (G. Mengali, A.A. Quarta). In this part of the code, canonical units are used.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 13
- *    Check status      : Checked
- *
- *    Author            : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 3 December, 2010
- *    Last modified     : 10 May, 2011
- *
- *    References
- *      http://www.astro.uu.nl/~strous/AA/en/reken/kepler.html, last accessed: 16th February, 2011.
- *      Vallado, D. A., McClain, W. D. Fundamentals of astrodynamics and applications, 2nd Edition,
- *          Kluwer Academic Publishers, The Netherlands, 2004.
- *      Fortescue, P. W., et al. Spacecraft systems engineering, Third Edition,
- *          Wiley, England, 2003.
- *
- *    Notes
- *      Test runs code and verifies result against expected value.
- *      If the tested code is erroneous, the test function returns a boolean
- *      true; if the code is correct, the function returns a boolean false.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -73,7 +35,21 @@
  *                                  ascending node.
  *      110510    K. Kumar          Updated to use new orbital element conversion functions and
  *                                  removed dynamic memory allocation.
+ *
+ *    References
+ *      http://www.astro.uu.nl/~strous/AA/en/reken/kepler.html, last accessed: 16th February, 2011.
+ *      Vallado, D. A., McClain, W. D. Fundamentals of astrodynamics and applications, 2nd Edition,
+ *          Kluwer Academic Publishers, The Netherlands, 2004.
+ *      Fortescue, P. W., et al. Spacecraft systems engineering, Third Edition,
+ *          Wiley, England, 2003.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Test runs code and verifies result against expected value.
+// If the tested code is erroneous, the test function returns a boolean
+// true; if the code is correct, the function returns a boolean false.
+// 
 
 // Include statements.
 #include <cmath>

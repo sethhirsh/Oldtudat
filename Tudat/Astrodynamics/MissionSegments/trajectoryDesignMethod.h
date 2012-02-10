@@ -1,26 +1,4 @@
-/*! \file trajectoryDesignMethod.h
- *    This header file contains a base class for all trajectory design methods classes in Tudat.
- *
- *    Path              : /Astrodynamics/MissionSegments/
- *    Version           : 1
- *    Check status      : Checked
- *
- *    Author            : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 11 November, 2010
- *    Last modified     : 11 November, 2010
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -34,6 +12,9 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      101111    E. Iorfida        First creation of code.
+ *
+ *    References
+ *
  */
 
 #ifndef TUDAT_TRAJECTORYDESIGNMETHOD_H

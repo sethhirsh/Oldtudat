@@ -1,33 +1,4 @@
-/*! \file simpleLinearRegression.h
- *    Header file that defines the simple linear regression method in Tudat.
- *
- *    Path              : /Mathematics/Statistics/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J.C.P Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 1 July, 2011
- *    Last modified     : 5 September, 2011
- *
- *    References
- *      Press W.H., et al. Numerical Recipes in C++: The Art of
- *          Scientific Computing. Cambridge University Press, February 2002.
- *
- *    Notes
- *      The independent variable input data must be distinct for this method to
- *      work. This method does not include individual weights for the
- *      observations. This must be added in future. In addition, a full Linear
- *      Least Squares method must be added in future that uses the general
- *      formulation of the normal equations.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -47,7 +18,20 @@
  *                                  filename and class name.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *
+ *    References
+ *      Press W.H., et al. Numerical Recipes in C++: The Art of
+ *          Scientific Computing. Cambridge University Press, February 2002.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// The independent variable input data must be distinct for this method to
+// work. This method does not include individual weights for the
+// observations. This must be added in future. In addition, a full Linear
+// Least Squares method must be added in future that uses the general
+// formulation of the normal equations.
+// 
 
 #ifndef SIMPLELINEARREGRESSION_H
 #define SIMPLELINEARREGRESSION_H

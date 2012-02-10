@@ -1,20 +1,4 @@
-/*! \file basicFunctions.cpp
- *    Source file that defines the basicFunctions namespace, containing all
- *    basic functions contained in Tudat.
- *
- *    Path              : /Basics/
- *    Version           : 1
- *    Check status      : Unchecked
- *    Date created      : 7 February, 2012
- *    Last modified     : 7 February, 2012
- *
- *    References
- *      Press W.H., et al. Numerical Recipes in C++: The Art of
- *          Scientific Computing. Cambridge University Press, February 2002.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -28,6 +12,11 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      120207    K. Kumar          File created.
+ *
+ *    References
+ *      Press W.H., et al. Numerical Recipes in C++: The Art of
+ *          Scientific Computing. Cambridge University Press, February 2002.
+ *
  */
 
 // Required Boost unit test framework define.

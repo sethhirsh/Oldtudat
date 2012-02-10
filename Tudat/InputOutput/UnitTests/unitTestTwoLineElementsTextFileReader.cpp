@@ -1,47 +1,4 @@
-/*! \file unitTestTwoLineElementsTextFileReader.cpp
- *    Source file that implements the unit test for the Two-Line Elements (TLE)
- *    text file reader. A seperate test input TLE catalog file has been made,
- *    which contains 7 corrupt objects (objects 2 and 4-9), with the other 3
- *    objects being valid.
- *
- *    Path              : /Input/
- *    Version           : 6
- *    Check status      : Checked
- *
- *    Author            : J. Leloux
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : j.leloux@tudelft.nl, j.leloux@student.tudelft.nl,
- *                        j.leloux@gmail.com
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 4 March, 2011
- *    Last modified     : 27 October, 2011
- *
- *    References
- *      Leloux, J. Filtering Techniques for Orbital Debris Conjunction Analysis
- *          - applied to SSN TLE catalog data and including astrodynamics and
- *          collision probability theory, MSc Literature Research, Delft
- *          University of Technology, 2010.
- *      Celestrak (a). Space Track TLE Retriever Help,
- *          http://celestrak.com/SpaceTrack/TLERetrieverHelp.asp, 2011. Last
- *          accessed: 5 August, 2011.
- *      Space Track. TLE Format, http://www.space-track.org/tle_format.html,
- *          2004. Last accessed: 5 August, 2011.
- *      Celestrak (b). FAQs: Two-Line Element Set Format,
- *          http://celestrak.com/columns/v04n03/, 2006. Last accessed: 5 August, 2011.
- *      Celestrak (c). NORAD Two-Line Element Set Format,
- *          http://celestrak.com/NORAD/documentation/tle-fmt.asp, 2004. Last
- *          accessed: 5 August, 2011.
- *
- *    Notes
- *      Raw TLE data can be obtained from (Celestrak (a), 2011). Explanations of the TLE data
- *      format can be viewed in (Space Track, 2004), (Celestrak (b), 2006), and
- *      (Celestrak (c), 2004).
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -60,7 +17,30 @@
  *      110810    J. Leloux         Minor comment corrections.
  *      110826    J. Leloux         Updated test for 2-line and 3-line cases.
  *      111027    K. Kumar          Removed dynamic memory allocation.
+ *
+ *    References
+ *      Leloux, J. Filtering Techniques for Orbital Debris Conjunction Analysis
+ *          - applied to SSN TLE catalog data and including astrodynamics and
+ *          collision probability theory, MSc Literature Research, Delft
+ *          University of Technology, 2010.
+ *      Celestrak (a). Space Track TLE Retriever Help,
+ *          http://celestrak.com/SpaceTrack/TLERetrieverHelp.asp, 2011. Last
+ *          accessed: 5 August, 2011.
+ *      Space Track. TLE Format, http://www.space-track.org/tle_format.html,
+ *          2004. Last accessed: 5 August, 2011.
+ *      Celestrak (b). FAQs: Two-Line Element Set Format,
+ *          http://celestrak.com/columns/v04n03/, 2006. Last accessed: 5 August, 2011.
+ *      Celestrak (c). NORAD Two-Line Element Set Format,
+ *          http://celestrak.com/NORAD/documentation/tle-fmt.asp, 2004. Last
+ *          accessed: 5 August, 2011.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Raw TLE data can be obtained from (Celestrak (a), 2011). Explanations of the TLE data
+// format can be viewed in (Space Track, 2004), (Celestrak (b), 2006), and
+// (Celestrak (c), 2004).
+// 
 
 // Include statements.
 #include <ctime>

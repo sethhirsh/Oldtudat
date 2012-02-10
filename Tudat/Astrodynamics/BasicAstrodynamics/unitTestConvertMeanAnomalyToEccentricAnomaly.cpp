@@ -1,33 +1,4 @@
-/*! \file unitTestConvertMeanAnomalyToEccentricAnomaly.cpp
- *    Source file of the unit test for the conversion from mean anomaly to eccentric anomaly,
- *    including large values for the eccentricity (up to 0.97). The reference values were obtained
- *    with independent code, namely the Mean2Eccentric function found in ESA's Advanced Concepts
- *    Team GTOP toolbox.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 2
- *    Check status      : Checked
- *
- *    Author            : T. Secretin
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : T.A.LeitePintoSecretin@student.tudelft.nl
- *
- *    Checker           : S. Billemont
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : simon@angelcorp.be
- *
- *    Date created      : 15 December, 2011
- *    Last modified     : 26 January, 2011
- *
- *    References
- *      http://www.esa.int/gsp/ACT/doc/INF/Code/globopt/GTOPtoolbox.rar
- *
- *    Notes
- *      Test runs code and verifies result against expected value.
- *      If the tested code is erroneous, the test function returns a boolean
- *      true; if the code is correct, the function returns a boolean false.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -43,7 +14,17 @@
  *      111215    T. Secretin       First creation of the code.
  *      111221    T. Secretin       Removed memory leaks. Added test for circular and
  *                                  near-parabolic orbits, as well as for negative eccentricities.
+ *
+ *    References
+ *      http://www.esa.int/gsp/ACT/doc/INF/Code/globopt/GTOPtoolbox.rar
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Test runs code and verifies result against expected value.
+// If the tested code is erroneous, the test function returns a boolean
+// true; if the code is correct, the function returns a boolean false.
+// 
 
 // Required Boost unit test framework define.
 #define BOOST_TEST_MAIN

@@ -1,26 +1,4 @@
-/*! \file unitTestExponentialAtmosphere.cpp
- *    Source file that defines the exponential atmosphere unit test included in Tudat.
- *
- *    Path              : /Astrodynamics/EnvironmentModels/
- *    Version           : 7
- *    Check status      : Checked
- *
- *    Author            : F.M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 16 March, 2011
- *    Last modified     : 11 December, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -40,6 +18,9 @@
  *      110705    F.M. Engelen      Update to relative numerical errors.
  *      111128    B. Tong Minh      Added location-independent function test.
  *      111211    K. Kumar          Minor corrections to location-independent function test.
+ *
+ *    References
+ *
  */
 
 // Include statements.

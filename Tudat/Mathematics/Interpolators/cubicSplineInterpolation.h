@@ -1,28 +1,4 @@
-/*! \file cubicSplineInterpolation.h
- *    Header file that defines the cubic spline interplation
- *    included in Tudat.
- *
- *    Path              : /Mathematics/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Author            : F.M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : E.A.G. Heeren
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : e.a.g.heeren@student.tudelft.nl
- *
- *    Date created      : 20 June, 2011
- *    Last modified     : 5 September, 2011
- *
- *    References
- *    Numerical Recipes Third Edition - W.H. Press - page 118
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -40,6 +16,10 @@
  *      110714    E.A.G. Heeren     Minor spelling/lay-out corrections.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *
+ *    References
+ *    Numerical Recipes Third Edition - W.H. Press - page 118
+ *
  */
 
 #ifndef CUBICSPLINEINTERPOLATION_H

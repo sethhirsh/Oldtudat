@@ -1,31 +1,4 @@
-/*! \file atmosphereModel.h
- *    Header file that defines the baseclass atmosphere model included in Tudat.
- *
-*    Path              : /Astrodynamics/Aerodynamics/
- *    Version           : 5
- *    Check status      : Checked
- *
- *    Author            : F.M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 10 March, 2011
- *    Last modified     : 5 July, 2011
- *
- *    References
- *
- *    Notes
- *      Baseclass for standard and reference Atmospheres.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -43,7 +16,14 @@
  *      110412    F.M. Engelen      Included flag boolean isAltitudeModelDefault_.
  *      110427    F.M. Engelen      Changed input arguments to altitude, longitude, latitude.
  *      110705    F.M. Engelen      Changed to passing by reference.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Baseclass for standard and reference Atmospheres.
+// 
 
 #ifndef ATMOSPHEREMODEL_H
 #define ATMOSPHEREMODEL_H

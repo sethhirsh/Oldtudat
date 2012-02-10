@@ -1,30 +1,4 @@
-/*! \file librationPoint.h
- *    Header file that defines the computation of the location of a Lagrange libration point in
- *    the Circular Restricted Three-Body Problem (CRTBP).
- *
- *    Path              : /Astrodynamics/MissionSegments/
- *    Version           : 8
- *    Check status      : Checked
- *
- *    Author            : L. van der Ham
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : L.vanderHam@student.tudelft.nl
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 27 May, 2011
- *    Last modified     : 27 October, 2011
- *
- *    References:
- *      van der Ham, L., TBD
- *      Mireles James, J.D., "Celestial Mechanics Notes Set 4: The Circular Restricted Three Body
- *          Problem", http://www.math.utexas.edu/users/jjames/celestMech, 2006.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -48,7 +22,15 @@
  *      110927    L. van der Ham    Reverted to full equations of motion for determination location
  *                                  of colinear libration points.
  *      111027    K. Kumar          Moved 1-line functions from source file.
+ *
+ *    References:
+ *      van der Ham, L., TBD
  */
+
+// Temporary notes (move to class/function doxygen):
+// Problem", http://www.math.utexas.edu/users/jjames/celestMech, 2006.
+// 
+// 
 
 #ifndef TUDAT_LIBRATIONPOINT_H
 #define TUDAT_LIBRATIONPOINT_H

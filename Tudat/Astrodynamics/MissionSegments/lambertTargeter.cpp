@@ -1,40 +1,4 @@
-/*! \file lambertTargeter.cpp
- *    Source file of the Lambert targeting solver implemented in Tudat.
- *
- *    Path              : /Astrodynamics/MissionSegments/
- *    Version           : 16
- *    Check status      : Checked
- *
- *    Author            : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 11 November, 2010
- *    Last modified     : 18 April, 2011
- *
- *    References        :
- *      Gooding, R.H. A procedure for the solution of Lambert's orbital
- *          boundary-value problem, Celestial Mechanics and Dynamical
- *          Astronomy, 48:145-165, 1990.
- *      Melman, J. Trajectory optimization for a mission to Neptune and Triton,
- *          MSc thesis report, Delft University of Technology, 2007.
- *      Iorfida, E. MSc thesis report, Unpublished.
- *
- *    Notes
- *      The number of revolutions from departure to arrival body is zero
- *      by definition in this routine. This can be made user-defined later on.
- *      The resulting trajectories are in anti-clockwise direction.
- *      At the moment Newton-Raphson is used for finding the root. In the future
- *      this could be replaced by a polymorphic pointer to any root finder.
- *      At the moment there is a patch applied when Newton-Raphson does not
- *      converge for negative initial guesses. This has not been stated in the
- *      paper by Gooding, but this patch has been found by trial and error.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -80,7 +44,27 @@
  *                                  parallel position vector (with a relative angle of 180
  *                                  degrees). Better defined the pointers to the output
  *                                  CartesianVelocityElements.
+ *
+ *    References        :
+ *      Gooding, R.H. A procedure for the solution of Lambert's orbital
+ *          boundary-value problem, Celestial Mechanics and Dynamical
+ *          Astronomy, 48:145-165, 1990.
+ *      Melman, J. Trajectory optimization for a mission to Neptune and Triton,
+ *          MSc thesis report, Delft University of Technology, 2007.
+ *      Iorfida, E. MSc thesis report, Unpublished.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// The number of revolutions from departure to arrival body is zero
+// by definition in this routine. This can be made user-defined later on.
+// The resulting trajectories are in anti-clockwise direction.
+// At the moment Newton-Raphson is used for finding the root. In the future
+// this could be replaced by a polymorphic pointer to any root finder.
+// At the moment there is a patch applied when Newton-Raphson does not
+// converge for negative initial guesses. This has not been stated in the
+// paper by Gooding, but this patch has been found by trial and error.
+// 
 
 // Include statementes.
 #include <cmath>

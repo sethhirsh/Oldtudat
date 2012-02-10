@@ -1,37 +1,4 @@
-/*! \file aerodynamics.h
- *    This file contains the definition of the aerodynamics namespace.
- *
-*    Path              : /Astrodynamics/Aerodynamics/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Author            : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : L. Abdulkadir
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : L.Abdulkadir@student.tudelft.nl
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 25 November, 2010
- *    Last modified     : 11 February, 2011
- *
- *    References
- *      Anderson Jr., J.D. , Fundamentals of Aerodynamics, 3rd edition,
- *          McGraw Hill, 2001.
- *      Gentry, A., Smyth, D., and Oliver, W. . The Mark IV Supersonic-
- *          Hypersonic Arbitrary Body Program, Volume II - Program Formulation,
- *          Douglas Aircraft Company, 1973.
- *      Anderson Jr. , J.D, Hypersonic and High-Temperature Gas Dynamics, 2nd
- *          edition, AIAA Education Series, 2006.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -49,6 +16,16 @@
  *      110203    L. Abdulkadir     Code check.
  *      110211    K. Kumar          Corrected Doxygen errors; corrected layout errors; corrected
  *                                  function-naming.
+ *
+ *    References
+ *      Anderson Jr., J.D. , Fundamentals of Aerodynamics, 3rd edition,
+ *          McGraw Hill, 2001.
+ *      Gentry, A., Smyth, D., and Oliver, W. . The Mark IV Supersonic-
+ *          Hypersonic Arbitrary Body Program, Volume II - Program Formulation,
+ *          Douglas Aircraft Company, 1973.
+ *      Anderson Jr. , J.D, Hypersonic and High-Temperature Gas Dynamics, 2nd
+ *          edition, AIAA Education Series, 2006.
+ *
  */
 
 #ifndef AERODYNAMICS_H

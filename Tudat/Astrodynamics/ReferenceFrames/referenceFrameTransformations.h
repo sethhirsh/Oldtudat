@@ -1,29 +1,4 @@
-/*! \file referenceFrameTransformations.h
- *    This file contains the definition of the reference frame transformations namespace included
- *    in Tudat.
- *
- *    Path              : /Astrodynamics/ReferenceFrames/
- *    Version           : 7
- *    Check status      : Checked
- *
- *    Checker           : F. M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 19 May, 2011
- *    Last modified     : 24 August, 2011
- *
- *    References
- *      Muller, J.A., et al. Flight Dynamics Lecture Notes, TU Delft, February 2007.
- *      Mooij, E. The Motion of a vehicle in a Planetary Atmosphere, TU Delft, 1997.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -45,7 +20,14 @@
  *      110726    K. Kumar          Minor modifications.
  *      110809    F.M. Engelen      Replaced the normal planet fixed, with local vertical frame.
  *      110824    J. Leloux         Corrected doxygen documentation.
+ *
+ *    References
  */
+
+// Temporary notes (move to class/function doxygen):
+// Mooij, E. The Motion of a vehicle in a Planetary Atmosphere, TU Delft, 1997.
+// 
+// 
 
 #ifndef FRAMETRANSFORMATION_H
 #define FRAMETRANSFORMATION_H

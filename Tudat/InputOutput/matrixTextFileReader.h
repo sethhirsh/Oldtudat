@@ -1,27 +1,4 @@
-/*! \file matrixTextFileReader.h
- *    This file contains the header file of the matrix text file reader included in Tudat.
- *
- *    Path              : /Input/
- *    Version           : 1
- *    Check status      : Checked
- *
- *    Author            : F. M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : S. Billemont
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : simon@angelcorp.be
- *
- *    Date created      : 30 May, 2011
- *    Last modified     : 20 December, 2011
- *
- *    References
- *
- *    Notes
- *      If tabs are used as spaces, it doesn't work. The seperator should also be tabs then.
- *
- *    Copyright (c) 2010 Delft University of Technology.
+/*!   Copyright (c) 2010 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -35,7 +12,14 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      110530    F.M. Engelen      First creation of code.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// If tabs are used as spaces, it doesn't work. The seperator should also be tabs then.
+// 
 
 #ifndef TUDAT_MATRIX_TEXT_FILEREADER_H
 #define TUDAT_MATRIX_TEXT_FILEREADER_H

@@ -1,28 +1,4 @@
-/*! \file newtonRaphsonAdaptor.h
- *    This header file contains an adaptor template class for the NewtonRaphson
- *    class included in Tudat. This class is used to avoid the need for
- *    pointers-to-member-functions.
- *
- *    Path              : /Mathematics/RootFindingMethods/
- *    Version           : 2
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Date created      : 19 January, 2011
- *    Last modified     : 10 August, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -37,6 +13,9 @@
  *      YYMMDD    Author            Comment
  *      110119    K. Kumar          First creation of code.
  *      110810    J. Leloux         Corrected doxygen documentation.
+ *
+ *    References
+ *
  */
 
 #ifndef NEWTONRAPHSONADAPTOR_H

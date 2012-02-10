@@ -1,30 +1,4 @@
-/*! \file tabulatedAtmosphere.h
- *    Header file that defines the tabulatedAtmosphere class included in Tudat.
- *
-*    Path              : /Astrodynamics/Aerodynamics/
- *    Version           : 2
- *    Check status      : Checked
- *
- *    Author            : F.M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 20 June, 2011
- *    Last modified     : 21 July, 2011
- *
- *    References
- *
- *    Notes
- *    The provided USSA1976 table file, generated with the pascal file, has a small error
- *    which can be observed at the pressure at sea level. This in 101320 in the file
- *    but should be 101325. If this error is not acceptable, an other table file should be
- *    used.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -39,7 +13,17 @@
  *      YYMMDD    Author            Comment
  *      110620    F.M. Engelen      File created.
  *      110721    J. Melman         Comments, file names, and consistency modified.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// The provided USSA1976 table file, generated with the pascal file, has a small error
+// which can be observed at the pressure at sea level. This in 101320 in the file
+// but should be 101325. If this error is not acceptable, an other table file should be
+// used.
+// 
 
 #ifndef TABULATEDATMOSPHERE_H
 #define TABULATEDATMOSPHERE_H

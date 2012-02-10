@@ -1,34 +1,4 @@
-/*! \file unitTestGravityAssist.cpp
- *    Source file of unit test file of gravity assist code. This unit test file will test the
- *    gravity assist code.
- *
- *    Path              : /Astrodynamics/MissionSegments/
- *    Version           : 7
- *    Check status      : Checked
- *
- *    Author            : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 17 January, 2011
- *    Last modified     : 27 June, 2011
- *
- *    References
- *
- *    Notes
- *      Test runs code and verifies result against expected value.
- *      If the tested code is erroneous, the test function returns a boolean
- *      true; if the code is correct, the function returns a boolean false.
- *      A test should be added together with results from the Lambert targeter
- *      and the Ephemeris class.
- *      The expected result for the current test should be calculated inside
- *      this code, not outside by a calculator.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -53,15 +23,31 @@
  *                                  allocation and new
  *                                  createPredefinedCelestialBody( ) function.
  *      110627    K. Kumar          Updated to use new predefined planets code.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Test runs code and verifies result against expected value.
+// If the tested code is erroneous, the test function returns a boolean
+// true; if the code is correct, the function returns a boolean false.
+// A test should be added together with results from the Lambert targeter
+// and the Ephemeris class.
+// The expected result for the current test should be calculated inside
+// this code, not outside by a calculator.
+// 
 
 // Include statements.
 #include <cmath>
 #include <Eigen/Core>
 #include <iostream>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
+#include <TudatCore/Mathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/MissionSegments/gravityAssist.h"
+
+using tudat::mathematics::PI;
 
 //! Test of gravity assist code.
 int main( )
@@ -111,8 +97,8 @@ int main( )
 
     // Define pointer to satellite incoming vector.
     CartesianVelocityElements incomingVelocityTest;
-    incomingVelocityTest.setCartesianElementXDot( -25.0e3 * sin( M_PI / 6.0 ) );
-    incomingVelocityTest.setCartesianElementYDot( 25.0e3 * cos( M_PI / 6.0 ) );
+    incomingVelocityTest.setCartesianElementXDot( -25.0e3 * sin( PI / 6.0 ) );
+    incomingVelocityTest.setCartesianElementYDot( 25.0e3 * cos( PI / 6.0 ) );
     incomingVelocityTest.setCartesianElementZDot( 0.0 );
 
     // Define pointer to satellite outgoing vector.

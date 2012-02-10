@@ -1,38 +1,4 @@
-/*! \file quadrilateralMeshedSurfaceGeometry.cpp
- *    This file contains the implemtation of the Quadrilateral Meshed Surface
- *    Geometry class.
- *
- *    Path              : /Mathematics/GeometricShapes/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Author            : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 25 November, 2010
- *    Last modified     : 5 September, 2011
- *
- *    References
- *      An example of a heritage code which uses such a mesh is found in:
- *          The Mark IV Supersonic-Hypersonic Arbitrary Body Program, Volume
- *          II-Program Formulation, Douglas Aircraft Company, AFFDL-TR-73-159,
- *          Volume II.
- *
- *    Notes
- *      This class uses pointers to pointers to denote two-dimensional arrays
- *      for heritage reasons, instead of the more modern C++ vector or map
- *      types.
- *
- *      The numberOfLines_ and numberOfPoints_ member variables denote the
- *      number of mesh points. The number of panels in the mesh will be
- *      numberOfLines_ - 1 by numberOfPoints_ - 1.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -50,7 +16,24 @@
  *      110206    J. Melman         Minor formatting issues.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *
+ *    References
+ *      An example of a heritage code which uses such a mesh is found in:
+ *          The Mark IV Supersonic-Hypersonic Arbitrary Body Program, Volume
+ *          II-Program Formulation, Douglas Aircraft Company, AFFDL-TR-73-159,
+ *          Volume II.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// This class uses pointers to pointers to denote two-dimensional arrays
+// for heritage reasons, instead of the more modern C++ vector or map
+// types.
+// 
+// The numberOfLines_ and numberOfPoints_ member variables denote the
+// number of mesh points. The number of panels in the mesh will be
+// numberOfLines_ - 1 by numberOfPoints_ - 1.
+// 
 
 // Include statements.
 #include <Eigen/Geometry>

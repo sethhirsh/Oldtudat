@@ -1,32 +1,4 @@
-/*! \file unitTestKeplerPropagator.cpp
- *    Source file that defines a unit test that tests the Kepler propagator included in Tudat.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Date created      : 16 February, 2011
- *    Last modified     : 20 September, 2011
- *
- *    References
- *      Melman, J. Propagate software, J.C.P.Melman@tudelft.nl, 2010.
- *
- *    Notes
- *      Test runs code and verifies result against expected value.
- *      If the tested code is erroneous, the test function returns a boolean
- *      true; if the code is correct, the function returns a boolean false.
- *
- *      Currently, this file makes use of benchmark data provided by J. Melman.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -43,7 +15,19 @@
  *      110217    E. Iorfida        Minor changes made.
  *      110221    K. Kumar          Updated variable-naming to comply with protocol.
  *      110920    K. Kumar          Corrected simple errors outlined by M. Persson.
+ *
+ *    References
+ *      Melman, J. Propagate software, J.C.P.Melman@tudelft.nl, 2010.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Test runs code and verifies result against expected value.
+// If the tested code is erroneous, the test function returns a boolean
+// true; if the code is correct, the function returns a boolean false.
+// 
+// Currently, this file makes use of benchmark data provided by J. Melman.
+// 
 
 // Include statements.
 #include <cmath>

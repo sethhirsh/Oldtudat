@@ -1,26 +1,4 @@
-/*! \file newtonRaphson.cpp
- *    Source file of the Newton-Raphson method implemented in Tudat.
- *
- *    Path              : /Mathematics/RootFindingMethods/
- *    Version           : 9
- *    Check status      : Checked
- *
- *    Author            : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 11 November, 2010
- *    Last modified     : 5 September, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -46,6 +24,9 @@
  *      110124    K. Kumar          Added cerr statement for when loop does not converge.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *
+ *    References
+ *
  */
 
 // Include statements.

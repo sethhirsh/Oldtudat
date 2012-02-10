@@ -1,29 +1,4 @@
-/*! \file unitTestCoefficientGenerator.cpp
- *    This file contains the unit test of the aerodynamic coefficient generator in Tudat.
- *
- *    Path              : /Astrodynamics/ForceModels/
- *    Version           : 2
- *    Check status      : Checked
- *
- *    Author            : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : B. Romgens
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : B.Romgens@student.tudelft.nl
- *
- *    Date created      : 25 November, 2010
- *    Last modified     : 10 August, 2011
- *
- *    References
- *      Gentry, A., Smyth, D., and Oliver, W. . The Mark IV Supersonic-Hypersonic
- *        Arbitrary Body Program, Volume II - Program Formulation, Douglas Aircraft
- *        Aircraft Company, 1973.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -38,14 +13,23 @@
  *      YYMMDD    Author            Comment
  *      102511    D. Dirkx          First version of file.
  *      110810    J. Leloux         Corrected doxygen documentation.
+ *
+ *    References
+ *      Gentry, A., Smyth, D., and Oliver, W. . The Mark IV Supersonic-Hypersonic
+ *        Arbitrary Body Program, Volume II - Program Formulation, Douglas Aircraft
+ *        Aircraft Company, 1973.
+ *
  */
 
 // Include statements.
 #include <Eigen/Core>
+#include <TudatCore/Mathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Aerodynamics/hypersonicLocalInclinationAnalysis.h"
 #include "Tudat/Mathematics/GeometricShapes/capsule.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 #include "boost/shared_ptr.hpp"
+
+using tudat::mathematics::PI;
 
 //! Test coefficient generator.
 int main( )
@@ -61,9 +45,9 @@ int main( )
     SphereSegment sphere = SphereSegment( );
     sphere.setRadius( 1.0 );
     sphere.setMinimumAzimuthAngle(  0.0 );
-    sphere.setMaximumAzimuthAngle( 2.0 * M_PI );
+    sphere.setMaximumAzimuthAngle( 2.0 * PI );
     sphere.setMinimumZenithAngle( 0.0 );
-    sphere.setMaximumZenithAngle( M_PI );
+    sphere.setMaximumZenithAngle( PI );
     VehicleExternalModel externalModel = VehicleExternalModel( );
     externalModel.setVehicleGeometry( sphere );
     Vehicle vehicle = Vehicle( );
@@ -85,7 +69,7 @@ int main( )
     analysis.setVehicle( vehicle, numberOfLines, numberOfPoints, invertOrder );
 
     // Set reference quantities.
-    analysis.setReferenceArea( M_PI );
+    analysis.setReferenceArea( PI );
     analysis.setReferenceLength( 1.0 );
     analysis.setMomentReferencePoint( Eigen::Vector3d::Zero( ) );
 
@@ -169,7 +153,7 @@ int main( )
     Capsule capsule = Capsule( );
     capsule.setNoseRadius( 4.694 );
     capsule.setMiddleRadius( 1.956 );
-    capsule.setRearAngle( -1.0 * 33.0 * M_PI / 180.0 );
+    capsule.setRearAngle( -1.0 * 33.0 * PI / 180.0 );
     capsule.setRearLength( 2.662 );
     capsule.setSideRadius( 0.196 );
     capsule.setCapsule( );
@@ -204,7 +188,7 @@ int main( )
     analysis2.setVehicle( vehicle, numberOfLines2, numberOfPoints2, invertOrders2 );
 
     // Set reference quantities.
-    analysis2.setReferenceArea( M_PI * pow( capsule.getMiddleRadius( ), 2.0 ) );
+    analysis2.setReferenceArea( PI * pow( capsule.getMiddleRadius( ), 2.0 ) );
     analysis2.setReferenceLength( 3.9116 );
     Eigen::VectorXd momentReference = Eigen::VectorXd( 3 );
     momentReference( 0 ) = 0.6624;
@@ -218,7 +202,7 @@ int main( )
     for ( i = 0; i < 7; i++ )
     {
         analysis2.setAngleOfAttackPoint( i, static_cast< double >( i - 6 )
-                                         * 5.0 * M_PI / 180.0 );
+                                         * 5.0 * PI / 180.0 );
     }
 
     // Generate database.

@@ -1,31 +1,4 @@
-/*! \file keplerPropagator.h
- *    Header file that defines the kepler propagator class included in Tudat.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Date created      : 3 February, 2011
- *    Last modified     : 20 September, 2011
- *
- *    References
- *
- *    Notes
- *      The code at present does not work for near-parabolic orbits
- *      ( 0.8 < eccentricity < 1.2 ). In future, this neeeds to be included
- *      and perhaps a universal method to solve Kepler's equation needs to be
- *      employed. Presently, the code will output an error if the eccentricity
- *      of the orbit to be propagated lies within this range.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -42,7 +15,18 @@
  *      110207    E. Iorfida        Minor changes.
  *      110214    K. Kumar          Updated code to use orbital element conversion functions.
  *      110920    K. Kumar          Corrected simple errors outlined by M. Persson.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// The code at present does not work for near-parabolic orbits
+// ( 0.8 < eccentricity < 1.2 ). In future, this neeeds to be included
+// and perhaps a universal method to solve Kepler's equation needs to be
+// employed. Presently, the code will output an error if the eccentricity
+// of the orbit to be propagated lies within this range.
+// 
 
 #ifndef KEPLERPROPAGATOR_H
 #define KEPLERPROPAGATOR_H

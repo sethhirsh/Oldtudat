@@ -18,6 +18,7 @@
 # Redistribution and use is allowed according to the terms of the 2-clause BSD license.
 
 macro(_tudat_core_check_version)
+	MESSAGE( STATUS "Checking for TudatCore in:         " ${TUDAT_CORE_BASE_PATH} )
   file(READ "${TUDAT_CORE_BASE_PATH}/tudatCoreVersion.h" _tudat_core_header)
 
   string(REGEX MATCH "define[ \t]+TUDAT_CORE_VERSION_MAJOR[ \t]+([0-9]+)" _tudat_core_major_version_match "${_tudat_core_header}")

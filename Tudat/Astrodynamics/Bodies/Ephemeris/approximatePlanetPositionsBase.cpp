@@ -1,40 +1,4 @@
-/*! \file approximatePlanetPositionsBase.cpp
- *    This source file contains the definition of an ephemeris class that makes use of the JPL
- *    "Approximate Positions of Major Planets" ( http://ssd.jpl.nasa.gov/?planet_pos ) to retrieve
- *    ephemeris data for a specific planet. The ephemeris file used is for the period 3000 BC to
- *    3000 AD.
- *
- *    Path              : /Astrodynamics/States/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Author            : L. van der Ham
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : L.vanderHam@student.tudelft.nl
- *
- *    Checker           : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 24 February, 2011
- *    Last modified     : 3 August, 2011
- *
- *    References
- *      Standish, E.M. Keplerian Elements for Approximate Positions of the
- *          Major Planets, http://ssd.jpl.nasa.gov/txt/aprx_pos_planets.pdf,
- *          last accessed: 24 February, 2011.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -52,6 +16,12 @@
  *      110629    L. van der Ham    Added circular coplanar case.
  *      110803    L. van der Ham    Created base class and seperated approximatePlanetPositions
  *                                  from approximatePlanetPositionsCircularCoplanar.
+ *
+ *    References
+ *      Standish, E.M. Keplerian Elements for Approximate Positions of the
+ *          Major Planets, http://ssd.jpl.nasa.gov/txt/aprx_pos_planets.pdf,
+ *          last accessed: 24 February, 2011.
+ *
  */
 
 // Include statements.

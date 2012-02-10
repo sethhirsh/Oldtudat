@@ -1,32 +1,4 @@
-/*! \file convertMeanAnomalyToEccentricAnomaly.h
- *    This header file contains a class to convert mean anomly to eccentric anomaly for elliptical
- *    orbits.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 3
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : S. Billemont
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : simon@angelcorp.be
- *
- *    Date created      : 10 February, 2011
- *    Last modified     : 26 January, 2011
- *
- *    References
- *      Chobotov, V.A. Orbital Mechanics, Third Edition, AIAA Education Series, VA, 2002.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -42,6 +14,10 @@
  *      110210    K. Kumar          First creation of code.
  *      110215    E. Iorfida        Minor changes made.
  *      110810    J. Leloux         Corrected doxygen documentation.
+ *
+ *    References
+ *      Chobotov, V.A. Orbital Mechanics, Third Edition, AIAA Education Series, VA, 2002.
+ *
  */
 
 #ifndef TUDAT_CONVERTMEANANOMALYTOECCENTRICANOMALY_H

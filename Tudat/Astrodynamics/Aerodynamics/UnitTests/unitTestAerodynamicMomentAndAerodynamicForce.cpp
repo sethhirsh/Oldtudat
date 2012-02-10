@@ -1,42 +1,23 @@
-/*! \file unitTestAerodynamicMomentAndAerodynamicForce.cpp
-*    This source file contains the unit test for aerodynamic forces model included in Tudat.
-*
-*    Path              : /Astrodynamics/ForceModels/
-*    Version           : 3
-*    Check status      : Checked
-*
-*    Checker           : F. M. Engelen
-*    Affiliation       : Delft University of Technology
-*    E-mail address    : F.M.Engelen@student.tudelft.nl
-*
-*    Checker           : D. Dirkx
-*    Affiliation       : Delft University of Technology
-*    E-mail address    : D.Dirkx@tudelft.nl
-*
-*    Date created      : 22 June, 2011
-*    Last modified     : 24 August, 2011
-*
-*    References
-*
-*    Notes
-*
-*    Copyright (c) 2010-2011 Delft University of Technology.
-*
-*    This software is protected by national and international copyright.
-*    Any unauthorized use, reproduction or modification is unlawful and
-*    will be prosecuted. Commercial and non-private application of the
-*    software in any form is strictly prohibited unless otherwise granted
-*    by the authors.
-*
-*    The code is provided without any warranty; without even the implied
-*    warranty of merchantibility or fitness for a particular purpose.
-*
-*    Changelog
-*      YYMMDD    Author            Comment
-*      110622    F.M. Engelen      First creation of code.
-*      110822    D. Dirkx          Removed no longer necessary unit tests.
-*      110824    J. Leloux         Corrected doxygen documentation.
-*/
+/*!    Copyright (c) 2010-2012 Delft University of Technology.
+ *
+ *    This software is protected by national and international copyright.
+ *    Any unauthorized use, reproduction or modification is unlawful and
+ *    will be prosecuted. Commercial and non-private application of the
+ *    software in any form is strictly prohibited unless otherwise granted
+ *    by the authors.
+ *
+ *    The code is provided without any warranty; without even the implied
+ *    warranty of merchantibility or fitness for a particular purpose.
+ *
+ *    Changelog
+ *      YYMMDD    Author            Comment
+ *      110622    F.M. Engelen      First creation of code.
+ *      110822    D. Dirkx          Removed no longer necessary unit tests.
+ *      110824    J. Leloux         Corrected doxygen documentation.
+ *
+ *    References
+ *
+ */
 
 // Include statements.
 #include <cmath>

@@ -1,30 +1,4 @@
-/*! \file unitTestSphericalHarmonicsGravityField.cpp
- *   Source file for a unit test that tests the implementation of the spherical
- *   harmonics gravity field class in Tudat.
- *
- *    Path              : /Astrodynamics/EnvironmentModels/
- *    Version           : 12
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J.C.P. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 15 December, 2010
- *    Last modified     : 10 March, 2011
-
- *    References
- *
- *    Notes
- *      Test runs code and verifies result against expected value.
- *      If the tested code is erroneous, the test function returns a boolean
- *      true; if the code is correct, the function returns a boolean false.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -51,7 +25,16 @@
  *      110202    K. Kumar          Updated code to work with State.
  *      110204    K. Kumar          Removed "vector" from naming.
  *      110310    K. Kumar          Changed naming from Laplacian to gradient tensor.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Test runs code and verifies result against expected value.
+// If the tested code is erroneous, the test function returns a boolean
+// true; if the code is correct, the function returns a boolean false.
+// 
 
 // Include statements.
 #include <cmath>

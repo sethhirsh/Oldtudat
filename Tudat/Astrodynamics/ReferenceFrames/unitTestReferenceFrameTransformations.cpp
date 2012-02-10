@@ -1,29 +1,4 @@
-/*! \file unitTestReferenceFrameTransformations.cpp
- *    This file contains the implementation of the reference frame transformation
- *    unit test included in Tudat.
- *
- *    Path              : /Astrodynamics/ReferenceFrames/
- *    Version           : 6
- *    Check status      : Checked
- *
- *    Checker           : F. M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 19 May, 2011
- *    Last modified     : 08 August, 2011
- *
- *    References
- *
- *    Notes
- *      The reference frame definitions/abbreviations can be found in the file
- *      referenceFrameTransformations.h.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -45,7 +20,15 @@
  *      110726    K. Kumar          Minor modifications; updated relative error
  *                                  wrt to norm.
  *      110808    F.M. Engelen      Updated with better tests, changed test for vertical frame.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// The reference frame definitions/abbreviations can be found in the file
+// referenceFrameTransformations.h.
+// 
 
 // Include statements.
 #include <cmath>

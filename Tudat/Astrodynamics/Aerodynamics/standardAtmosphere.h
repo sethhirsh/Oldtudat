@@ -1,23 +1,4 @@
-/*! \file standardAtmosphere.h
- *    Header file that defines the a base class for standard atmospheres in Tudat.
- *
-*    Path              : /Astrodynamics/Aerodynamics/
- *    Version           : 2
- *    Check status      : Checked
- *
- *    Author            : B. Tong Minh
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : B.TongMinh@student.tudelft.nl
- *
- *    Date created      : 28 November, 2011
- *    Last modified     : 11 December, 2011
- *
- *    References
- *
- *    Notes
- *      Baseclass for standard Atmospheres.
- *
- *    Copyright (c) 2011 Delft University of Technology.
+/*!   Copyright (c) 2011 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -32,7 +13,14 @@
  *      YYMMDD    Author            Comment
  *      110224    B. Tong Minh      File created.
  *      111211    K. Kumar          Minor corrections; corrected const-reference to by-value.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Baseclass for standard Atmospheres.
+// 
 
 #ifndef STANDARDATMOSPHERE_H
 #define STANDARDATMOSPHERE_H

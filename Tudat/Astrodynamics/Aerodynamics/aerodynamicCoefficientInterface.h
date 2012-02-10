@@ -1,30 +1,4 @@
-/*! \file aerodynamicCoefficientInterface.h
- *   This file contains the definition of the AerodynamicCoefficientInterface base class included
- *   in Tudat.
- *
- *   Path              : /Astrodynamics/ForceModels/
- *   Version           : 4
- *   Check status      : Checked
- *
- *   Author           :  F. M. Engelen
- *   Affiliation       : Delft University of Technology
- *   E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *   Checker           : D. Dirkx
- *   Affiliation       : Delft University of Technology
- *   E-mail address    : D.Dirkx@tudelft.nl
- *
- *   Date created      : 8 June 2011
- *   Last modified     : 10 August 2011
- *
- *   References
- *
- *   Notes
- *
- *   The computeCoefficients() function is not yet implented in any derived classes and is
- *   therefor not pure virtual in this base class.
- *
- *   Copyright (c) 2010-2011 Delft University of Technology.
+/*!  Copyright (c) 2010-2012 Delft University of Technology.
  *
  *   This software is protected by national and international copyright.
  *   Any unauthorized use, reproduction or modification is unlawful and
@@ -41,7 +15,16 @@
  *     110714    D. Dirkx          Class name change and other minor changes during code check.
  *     110715    F.M. Engelen      Added the virtual compute function.
  *     110810    J. Leloux         Corrected doxygen documentation (function variable name).
+ *
+ *   References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// 
+// The computeCoefficients() function is not yet implented in any derived classes and is
+// therefor not pure virtual in this base class.
+// 
 
 #ifndef AERODYNAMICCOEFFICIENTINTERFACE_H
 #define AERODYNAMICCOEFFICIENTINTERFACE_H

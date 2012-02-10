@@ -1,26 +1,4 @@
-/*! \file vehicleExternalModel.cpp
- *    This file contains the definition of the VehicleExternalModel class.
- *
- *    Path              : /Astrodynamics/Bodies/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Author            : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 10 September, 2010
- *    Last modified     : 12 January, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -37,6 +15,9 @@
  *      100915    D. Dirkx          Modified comments, 80 lines rule, etc.
  *      100928    D. Dirkx          Modifications following first checking iteration.
  *      110112    K. Kumar          Minor comment changes.
+ *
+ *    References
+ *
  */
 
 #ifndef TUDAT_VEHICLEEXTERNALMODELS_H

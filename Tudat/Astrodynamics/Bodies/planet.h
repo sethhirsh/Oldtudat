@@ -1,26 +1,4 @@
-/*! \file planet.h
- *    Header file that contains the planet class in Tudat.
- *
- *    Path              : /Astrodynamics/Bodies/
- *    Version           : 1
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 23 July, 2011
- *    Last modified     : 23 July, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -34,6 +12,9 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      110623    K. Kumar          First creation of code.
+ *
+ *    References
+ *
  */
 
 #ifndef TUDAT_PLANET_H

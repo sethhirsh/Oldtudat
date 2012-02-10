@@ -1,28 +1,4 @@
-/*! \file lawgsPartGeometry.cpp
- *    This file contains the implementation of the LawgsPartGeometry class.
- *
- *    Path              : /Mathematics/GeometricShapes/
- *    Version           : 5
- *    Check status      : Checked
- *
- *    Author            : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 25 November, 2010
- *    Last modified     : 5 September, 2011
- *
- *    References
- *      Craidon, C.B. A Desription of the Langley Wireframe Geometry Standard
- *          (LaWGS) format, NASA TECHNICAL MEMORANDUM 85767.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -41,6 +17,11 @@
  *      110207    D. Dirkx          Fixed warning problems by extending cerr comments.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *
+ *    References
+ *      Craidon, C.B. A Desription of the Langley Wireframe Geometry Standard
+ *          (LaWGS) format, NASA TECHNICAL MEMORANDUM 85767.
+ *
  */
 
 // Include statements.

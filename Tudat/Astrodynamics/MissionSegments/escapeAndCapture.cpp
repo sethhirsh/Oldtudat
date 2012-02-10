@@ -1,29 +1,4 @@
-/*! \file escapeAndCapture.cpp
- *    This source file contains a base class for the implementation of required delta-V to escape
- *    from a parking orbit around the initial body into the interplanetary trajectory, and of the
- *    required delta-V needed to be  captured in a parking orbit around the final body at the end
- *    of the interplanetary transfer trajectory.
- *
- *    Path              : /Astrodynamics/MissionSegments/
- *    Version           : 5
- *    Check status      : Checked
- *
- *    Author            : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 29 January, 2011
- *    Last modified     : 14 February, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -44,6 +19,9 @@
  *                                  function too. Modified getDeltaV into computeDeltaV.
  *      110214    E. Iorfida        Deleted temporary centralBodyRadius, replaced by an element of
  *                                  GeometricShapes.
+ *
+ *    References
+ *
  */
 
 // Include statements.

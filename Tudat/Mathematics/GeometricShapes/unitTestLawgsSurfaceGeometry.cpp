@@ -1,28 +1,4 @@
-/*! \file unitTestLawgsSurfaceGeometry.cpp
- *    This file contains the implemtation of the LawgsPartGeometry unit test.
- *
- *    Path              : /Mathematics/GeometricShapes/
- *    Version           : 4
- *    Check status      : Checked
- *
- *    Author            : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 6 February, 2011
- *    Last modified     : 5 September, 2011
- *
- *    References
- *      Craidon, C.B. A Desription of the Langley Wireframe Geometry Standard
- *          (LaWGS) format, NASA TECHNICAL MEMORANDUM 85767.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -40,14 +16,22 @@
  *      110212    J. Melman         Fixed many minor formatting issues.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *
+ *    References
+ *      Craidon, C.B. A Desription of the Langley Wireframe Geometry Standard
+ *          (LaWGS) format, NASA TECHNICAL MEMORANDUM 85767.
+ *
  */
 
 // Include statements.
 #include <cmath>
-#include <Eigen/Core>
 #include <iostream>
+#include <Eigen/Core>
+#include <TudatCore/Mathematics/mathematicalConstants.h>
 #include "Tudat/Mathematics/GeometricShapes/lawgsPartGeometry.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
+
+using tudat::mathematics::PI;
 
 //! Test implementation of Lawgs surface geometry.
 int main( )
@@ -62,9 +46,9 @@ int main( )
     SphereSegment sphere;
     double sphereRadius = 2.0;
     sphere.setRadius( sphereRadius );
-    sphere.setMaximumAzimuthAngle( 2.0 * M_PI );
+    sphere.setMaximumAzimuthAngle( 2.0 * PI );
     sphere.setMinimumAzimuthAngle( 0.0 );
-    sphere.setMaximumZenithAngle( M_PI );
+    sphere.setMaximumZenithAngle( PI );
     sphere.setMinimumZenithAngle( 0.0 );
 
     // Create a Lawgs mesh of the sphere.
@@ -77,7 +61,7 @@ int main( )
     // to the expected value.
     double totalArea_ = lawgsSurface.getTotalArea( );
 
-    if ( std::fabs( totalArea_ - 4.0 * M_PI * ( std::pow( sphereRadius, 2.0 ) ) ) > 0.6 )
+    if ( std::fabs( totalArea_ - 4.0 * PI * ( std::pow( sphereRadius, 2.0 ) ) ) > 0.6 )
     {
         std::cerr << "Total mesh area does not match sphere area sufficiently well." << std::endl;
         isLawgsSurfaceGeometryBad = true;
@@ -120,7 +104,7 @@ int main( )
     }
 
     // Test if the position of the x- and y-coordinate of panel 0, 0 is correct.
-    if ( std::fabs( std::atan( testCentroid_.y( ) / testCentroid_.x( ) ) - M_PI / 20.0 ) >
+    if ( std::fabs( std::atan( testCentroid_.y( ) / testCentroid_.x( ) ) - PI / 20.0 ) >
          std::numeric_limits< double >::epsilon( ) )
     {
         std::cerr << "x- and y-coordinate of centroid of panel 0, 0 of "

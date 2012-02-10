@@ -1,39 +1,4 @@
-/*! \file unitTestApproximatePlanetPositions.cpp
- *    Source file for a unit test that tests the implementation of the ApproximatePlanetPositions
- *    class in Tudat.
- *
- *    Path              : /Astrodynamics/States/
- *    Version           : 5
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Author            : L. van der Ham
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : L.vanderHam@student.tudelft.nl
- *
- *    Checker           : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 5 April, 2011
- *    Last modified     : 10 August, 2011
- *
- *    References
- *      HORIZONS Web-Interface, http://ssd.jpl.nasa.gov/horizons.cgi, last accessed: 5 April, 2011.
- *
- *    Notes
- *      Test runs code and verifies result against expected value.
- *      If the tested code is erroneous, the test function returns a boolean
- *      true; if the code is correct, the function returns a boolean false.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -55,7 +20,17 @@
  *      110714    L. van der Ham    Added circular coplanar case.
  *      111024    K. Kumar          Spotted error in circular coplanar test after changing abs( )
  *                                  to fabs( ). Needs to be fixed.
+ *
+ *    References
+ *      HORIZONS Web-Interface, http://ssd.jpl.nasa.gov/horizons.cgi, last accessed: 5 April, 2011.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Test runs code and verifies result against expected value.
+// If the tested code is erroneous, the test function returns a boolean
+// true; if the code is correct, the function returns a boolean false.
+// 
 
 // Include statements.
 #include <iostream>
@@ -63,10 +38,13 @@
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
 #include <TudatCore/Mathematics/coordinateConversions.h>
+#include <TudatCore/Mathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositionsCircularCoplanar.h"
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
+
+using tudat::mathematics::PI;
 
 //! Test ApproximatePlanetPositions class.
 int main( )
@@ -317,7 +295,7 @@ int main( )
 
     // Check if the computed inclination equals zero.
     double relativeErrorInclination_ = fabs( keplerianElementsTest.getInclination( ) - 0.0 )
-            / ( 2.0 * M_PI );
+            / ( 2.0 * PI );
     if ( relativeErrorInclination_ > errorTolerance_ )
     {
         isApproximatePlanetPositionsErroneous = true;

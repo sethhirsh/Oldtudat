@@ -1,35 +1,4 @@
-/*! \file basicInputOutput.h
- *    Header file that defines the input_output namespace, containing all
- *    some basic input output functions contained in Tudat.
- *
- *    Path              : /InputOutput/
- *    Version           : 10
- *    Check status      : Checked
- *
- *    Author/Checker    : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Author            : J. Leloux
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.Leloux@tudelft.nl
- *
- *    Checker           : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : S. Billemont
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : simon@angelcorp.be
- *
- *    Date created      : 10 August, 2010
- *    Last modified     : 27 January, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -57,6 +26,9 @@
  *                                  suggestions by M. Persson.
  *      111117    K. Kumar          Added listAllFilesInDirectory( ) function.
  *      120127    K. Kumar          Adapted for Tudat Core.
+ *
+ *    References
+ *
  */
 
 #ifndef TUDAT_BASICINPUTOUTPUT_H

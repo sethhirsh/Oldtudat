@@ -1,26 +1,4 @@
-/*! \file cartesianVelocityElements.h
- *    This header file contains the Cartesian velocity elements class included in Tudat.
- *
- *    Path              : /Astrodynamics/States/
- *    Version           : 1
- *    Check status      : Checked
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : D.Dirkx@tudelft.nl
- *
- *    Date created      : 7 Feburary, 2011
- *    Last modified     : 7 February, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -34,6 +12,9 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      110207    K. Kumar          First creation of code.
+ *
+ *    References
+ *
  */
 
 #ifndef CARTESIANVELOCITYELEMENTS_H

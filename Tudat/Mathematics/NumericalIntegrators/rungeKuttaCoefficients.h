@@ -1,24 +1,4 @@
-/*! \file rungeKuttaCoefficients.h
- *    Header file that defines coefficients for the Runge-Kutta-Fehlberg-45, -56 and -78
- *    integrators.
- *
- *    Path              : /Mathematics/NumericalIntegrators/
- *    Version           : 1
- *    Check status      : Unchecked
- *
- *    Author            : B. Tong Minh
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : b.tongminh@student.tudelft.nl
- *
- *    Date created      : 3 February, 2012
- *    Last modified     : 7 February, 2012
- *
- *    References
- *      Burden, R.L., Faires, J.D. Numerical Analysis, 7th Edition, Books/Cole, 2001.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2012 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -32,6 +12,10 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      120203    B. Tong Minh      File created
+ *
+ *    References
+ *      Burden, R.L., Faires, J.D. Numerical Analysis, 7th Edition, Books/Cole, 2001.
+ *
  */
 
 #ifndef TUDAT_RUNGEKUTTACOEFFICIENTS_H

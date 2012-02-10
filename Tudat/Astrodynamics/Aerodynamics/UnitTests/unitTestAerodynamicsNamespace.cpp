@@ -1,30 +1,4 @@
-/*! \file unitTestAerodynamicsNamespace.cpp
- *    This file contains the definition of the aerodynamics namespace unit test.
- *
- *    Path              : /Astrodynamics/ForceModels/
- *    Version           : 3
- *    Check status      : Checked
- *
- *    Author            : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : L. Abdulkadir
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : L.Abdulkadir@student.tudelft.nl
- *
- *    Date created      : 8 November, 2010
- *    Last modified     : 11 February, 2011
- *
- *    References
- *      Anderson Jr., J.D. , Fundamentals of Aerodynamics, 3rd edition,
- *          McGraw Hill, 2001.
- *      Anderson Jr. , J.D, Hypersonic and High-Temperature Gas Dynamics, 2nd
- *          edition, AIAA Education Series, 2006.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -41,12 +15,22 @@
  *      110210    L. Adulkadir      Code check.
  *      110211    K. Kumar          Corrected Doxygen errors; corrected layout errors; corrected
  *                                  double precision; updated function-naming.
+ *
+ *    References
+ *      Anderson Jr., J.D. , Fundamentals of Aerodynamics, 3rd edition,
+ *          McGraw Hill, 2001.
+ *      Anderson Jr. , J.D, Hypersonic and High-Temperature Gas Dynamics, 2nd
+ *          edition, AIAA Education Series, 2006.
+ *
  */
 
 // Include statements.
 #include <cmath>
 #include <iostream>
+#include <TudatCore/Mathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamics.h"
+
+using tudat::mathematics::PI;
 
 //! Test aerodynamics namespace.
 int main( )
@@ -87,7 +71,7 @@ int main( )
 
     // Test modified Newtonian pressure coefficient.
     if ( fabs( aerodynamics::computeModifiedNewtonianPressureCoefficient(
-                   M_PI / 2.0, stagnationPressureCoefficient_ ) -
+                   PI / 2.0, stagnationPressureCoefficient_ ) -
                stagnationPressureCoefficient_ ) > 1.0e-15 )
     {
         cerr << "Error in modified Newtonian pressure coefficient." << endl;
@@ -96,7 +80,7 @@ int main( )
 
     // Test empirical Tangent Cone pressure coefficient.
     if ( fabs( aerodynamics::computeEmpiricalTangentConePressureCoefficient(
-                   M_PI / 2.0, machNumber_) - 2.08961 ) > 1.0e-5 )
+                   PI / 2.0, machNumber_) - 2.08961 ) > 1.0e-5 )
     {
         cerr << "Error in empirical Tangent Cone pressure coefficient." << endl;
         isAerodynamicsNamespaceBad = true;
@@ -111,7 +95,7 @@ int main( )
 
     // Test empirical Tangent Wedge pressure coefficient.
     if ( fabs( aerodynamics::computeEmpiricalTangentWedgePressureCoefficient(
-                   M_PI / 2.0, machNumber_ ) - 2.38867 ) > 1.0e-5 )
+                   PI / 2.0, machNumber_ ) - 2.38867 ) > 1.0e-5 )
     {
         cerr << "Error in empirical Tangent Wedge pressure coefficient." << endl;
         isAerodynamicsNamespaceBad = true;
@@ -121,7 +105,7 @@ int main( )
     double freestreamPrandtlMeyerFunction_ = aerodynamics::computePrandtlMeyerFunction(
                 machNumber_, ratioOfSpecificHeats_ );
 
-    if  ( fabs( freestreamPrandtlMeyerFunction_ - 106.9 * M_PI / 180.0 ) > 1.0e-3 )
+    if  ( fabs( freestreamPrandtlMeyerFunction_ - 106.9 * PI / 180.0 ) > 1.0e-3 )
     {
         cerr << "Error in freestream Prandtl-Meyer function." << endl;
         isAerodynamicsNamespaceBad = true;
@@ -146,7 +130,7 @@ int main( )
     for ( int i = 0; i < 10; i++ )
     {
         // Set angle.
-        angle_ = static_cast< double > ( i ) * M_PI / 10.0;
+        angle_ = static_cast< double > ( i ) * PI / 10.0;
 
         // Compute and compare Newtonian pressure coefficient.
         newtonianPressureCoefficient_

@@ -1,26 +1,4 @@
-/*! \file deepSpaceManeuver.h
- *    This header file contains a base class for deep space maneuver elements.
- *
- *    Path              : /Astrodynamics/MissionSegments/
- *    Version           : 2
- *    Check status      : Checked
- *
- *    Author            : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 24 February, 2011
- *    Last modified     : 6 April, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -35,6 +13,9 @@
  *      YYMMDD    Author            Comment
  *      110224    E. Iorfida        First creation of code.
  *      110406    K. Kumar          Minor modifications.
+ *
+ *    References
+ *
  */
 
 #ifndef TUDAT_DEEPSPACEMANEUVER_H

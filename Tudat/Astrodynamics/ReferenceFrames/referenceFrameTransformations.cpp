@@ -1,33 +1,4 @@
-/*! \file referenceFrameTransformations.cpp
- *    This file contains the implementation of the reference frame transformations namespace
- *    included in Tudat.
- *
- *    Path              : /Astrodynamics/ReferenceFrames/
- *    Version           : 6
- *    Check status      : Checked
- *
- *    Checker           : F. M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 19 May, 2011
- *    Last modified     : 9 August, 2011
- *
- *    References
- *      Muller, J.A., et al. Flight Dynamics Lecture Notes, TU Delft, February 2007.
- *      Mooij, E. The Motion of a vehicle in a Planetary Atmosphere, TU Delft, 1997.
- *
- *    Notes
- *    Because potential speed improvement it was chosen to use AngleAxisd and quaternions
- *    but to get things working, the rotation angle inputted in angleAxisd need to be inverted.
- *    In the future it might be better to change it to write out the complete transformation for
- *    clearity, or work with directional cosine matrices.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -49,7 +20,18 @@
  *      110726    K. Kumar          Minor modifications.
  *      110809    F.M. Engelen      Applied the minus one correction for angleAxisD,
  *                                  changed to local vertical frame.
+ *
+ *    References
  */
+
+// Temporary notes (move to class/function doxygen):
+// Mooij, E. The Motion of a vehicle in a Planetary Atmosphere, TU Delft, 1997.
+// 
+// Because potential speed improvement it was chosen to use AngleAxisd and quaternions
+// but to get things working, the rotation angle inputted in angleAxisd need to be inverted.
+// In the future it might be better to change it to write out the complete transformation for
+// clearity, or work with directional cosine matrices.
+// 
 
 // Include statements.
 #include "Tudat/Astrodynamics/ReferenceFrames/referenceFrameTransformations.h"

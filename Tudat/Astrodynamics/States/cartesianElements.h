@@ -1,26 +1,4 @@
-/*! \file cartesianElements.h
- *    This header file contains the Cartesian elements class included in Tudat.
- *
- *    Path              : /Astrodynamics/States/
- *    Version           : 7
- *    Check status      : Checked
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 20 October, 2010
- *    Last modified     : 4 February, 2011
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -44,6 +22,9 @@
  *      110131    K. Kumar          Moved code to CartesianPositionElements  class; added
  *                                  inheritance.
  *      110204    K. Kumar          Removed "vector" from naming.
+ *
+ *    References
+ *
  */
 
 #ifndef CARTESIANELEMENTS_H

@@ -1,26 +1,4 @@
-/*! \file keplerianElements.h
- *    This header file contains the Keplerian elements class included in Tudat.
- *
- *    Path              : /Astrodynamics/States/
- *    Version           : 5
- *    Check status      : Checked
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 20 October, 2010
- *    Last modified     : 10 March, 2011`
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -39,6 +17,9 @@
  *      101130    E. Iorfida        Added set function for semi-latus rectum.
  *      110310    K. Kumar          Changed right ascension of ascending node to longitude of
  *                                  ascending node.
+ *
+ *    References
+ *
  */
 
 #ifndef KEPLERIANELEMENTS_H

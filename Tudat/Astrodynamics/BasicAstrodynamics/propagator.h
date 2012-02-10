@@ -1,29 +1,4 @@
-/*! \file propagator.h
- *    Header file that defines the base class for all propagators included in Tudat.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 8
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Checker           : J.C.P. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 14 September, 2010
- *    Last modified     : 20 September, 2011
- *
- *    References
- *
- *    Notes
- *      It may be possible that there memory leaks in the library due to the
- *      Propagator class. This must be tested in future using a tool such as
- *      Valgrind ( www.valgrind.org ).
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -48,7 +23,16 @@
  *      110207    K. Kumar          Added ostream overload.
  *      110216    K. Kumar          Added get function for fixedOutputInterval_.
  *      110920    K. Kumar          Corrected simple errors outlined by M. Persson.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// It may be possible that there memory leaks in the library due to the
+// Propagator class. This must be tested in future using a tool such as
+// Valgrind ( www.valgrind.org ).
+// 
 
 #ifndef PROPAGATOR_H
 #define PROPAGATOR_H

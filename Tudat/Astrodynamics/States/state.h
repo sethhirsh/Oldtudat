@@ -1,35 +1,4 @@
-/*! \file state.h
- *    This header file contains a base class for all state classes in Tudat. This base class
- *    provides an interface for the rest of the Tudat library to ensure consistent implementation
- *    of state vectors, matrices etc. All state classes in Tudat are derived from this base class.
- *
- *    Path              : /Astrodynamics/States/
- *    Version           : 8
- *    Check status      : Checked
- *
- *    Author/Checker    : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Author            : B. Tong Minh
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : b.tongminh@student.tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 26 October, 2010
- *    Last modified     : 23 November, 2011
- *
- *    References
- *
- *    Notes
- *      The variable state is public as opposed to being protected and accessed
- *      by set and get functions to simplify the use of Eigen functions for
- *      vectors in the rest of the code, e.g. setZero( ), segment( ).
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -51,7 +20,16 @@
  *      110204    K. Kumar          Note added about public state variable.
  *      110207    K. Kumar          Added ostream overload.
  *      111123    B. Tong Minh      Added custom constructors.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// The variable state is public as opposed to being protected and accessed
+// by set and get functions to simplify the use of Eigen functions for
+// vectors in the rest of the code, e.g. setZero( ), segment( ).
+// 
 
 #ifndef STATE_H
 #define STATE_H

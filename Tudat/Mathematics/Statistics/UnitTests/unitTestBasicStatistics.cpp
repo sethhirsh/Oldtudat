@@ -1,26 +1,4 @@
-/*! \file unitTestBasicMathematicsFunctions.cpp
- *    Source file that tests the basic statistics functions available in Tudat.
- *
- *    Path              : /Mathematics/Statistics/UnitTests/
- *    Version           : 8
- *    Check status      : Checked
- *
- *    Author            : B. Romgens
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : bart.romgens@gmail.com
- *
- *    Author/Checker    : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 7 February, 2011
- *    Last modified     : 2 February, 2012
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -48,6 +26,9 @@
  *                                  fixed by using slightly larger precision tolerance.
  *      120202    K. Kumar          Moved unit tests from unitTestBasicMathematicsFunctions.h/.cpp;
  *                                  rewrote unit tests using Boost unit test framework.
+ *
+ *    References
+ *
  */
 
 // Required Boost unit test framework define.

@@ -1,39 +1,4 @@
-/*! \file twoLineElementData.cpp
- *    This source file defines a class which stores (Two-Line Element) TLE data
- *    read by the TwoLineElementsTextFileReader.
- *
- *    Path              : /Input/
- *    Version           : 6
- *    Check status      : Checked
- *
- *    Author            : J. Leloux
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : j.leloux@tudelft.nl, j.leloux@student.tudelft.nl,
- *                        j.leloux@gmail.com
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 4 March, 2011
- *    Last modified     : 10 August, 2011
- *
- *    References
- *      Literature research including information on TLE's:
- *      J. Leloux (2010), Filtering Techniques for Orbital Debris Conjunction
- *                        Analysis - applied to SSN TLE catalog data and
- *                        including astrodynamics and collision probability
- *                        theory.
- *      Program to download clean TLE's:
- *                        http://celestrak.com/SpaceTrack/TLERetrieverHelp.asp.
- *      TLE format explanation:
- *                        http://www.space-track.org/tle_format.html
- *                        http://celestrak.com/columns/v04n03/
- *                        http://celestrak.com/NORAD/documentation/tle-fmt.asp.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -54,6 +19,20 @@
  *      110802    J. Leloux         Minor correction and checked for compliance
  *                                  with TLEreader in rev 138.
  *      110810    J. Leloux         Corrected doxygen documentation.
+ *
+ *    References
+ *      Literature research including information on TLE's:
+ *      J. Leloux (2010), Filtering Techniques for Orbital Debris Conjunction
+ *                        Analysis - applied to SSN TLE catalog data and
+ *                        including astrodynamics and collision probability
+ *                        theory.
+ *      Program to download clean TLE's:
+ *                        http://celestrak.com/SpaceTrack/TLERetrieverHelp.asp.
+ *      TLE format explanation:
+ *                        http://www.space-track.org/tle_format.html
+ *                        http://celestrak.com/columns/v04n03/
+ *                        http://celestrak.com/NORAD/documentation/tle-fmt.asp.
+ *
  */
 
 // Include statements.

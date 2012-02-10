@@ -1,33 +1,4 @@
-/*! \file sphereSegment.cpp
- *    This file contains the implementation of the Sphere Segment class.
- *
- *    Path              : /Mathematics/GeometricShapes/
- *    Version           : 8
- *    Check status      : Checked
- *
- *    Author            : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Checker           : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 29 September, 2010
- *    Last modified     : 9 February, 2011
- *
- *    References
- *
- *    Notes
- *      The getSurfacePoint currently uses a Eigen::VectorXd as a return type,
- *      this could be changed to a CartesianPositionElements type in the
- *      future for consistency with the rest of the code.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -54,7 +25,16 @@
  *      110209    K. Kumar          Minor changes.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// The getSurfacePoint currently uses a Eigen::VectorXd as a return type,
+// this could be changed to a CartesianPositionElements type in the
+// future for consistency with the rest of the code.
+// 
 
 // Include statements.
 #include <cmath>

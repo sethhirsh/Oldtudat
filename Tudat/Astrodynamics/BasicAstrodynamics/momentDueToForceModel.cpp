@@ -1,26 +1,4 @@
-/*! \file momentDueToForceModel.cpp
- *    This header file contains the moment model base class included in Tudat.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 1
- *    Check status      : Checked
- *
- *    Author            : D.Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : D.Dirkx@tudelft.nl
- *
- *    Checker           :
- *    Affiliation       :
- *    E-mail address    :
- *
- *    Date created      : 04 February, 2012
- *    Last modified     : 04 February, 2012
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -35,6 +13,9 @@
  *      YYMMDD    Author            Comment
  *      120204    D. Dirkx          First version of file; Split MomentModel class into
  *                                  PureMomentModel and  this class.
+ *
+ *    References
+ *
  */
 
 #include "Tudat/Astrodynamics/BasicAstrodynamics/momentDueToForceModel.h"

@@ -1,27 +1,4 @@
-/*! \file matrixTextFileReader.cpp
- *    This file contains the source file of the matrix text file reader included in Tudat.
- *
- *    Path              : /InputOutput/
- *    Version           : 3
- *    Check status      : Unchecked
- *
- *    Author            : F. M. Engelen
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : F.M.Engelen@student.tudelft.nl
- *
- *    Checker           : S. Billemont
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : simon@angelcorp.be
- *
- *    Date created      : 30 May, 2011
- *    Last modified     : 6 February, 2012
- *
- *    References
- *
- *    Notes
- *      If tabs are used as spaces, it doesn't work. The seperator should also be tabs then.
- *
- *    Copyright (c) 2010 Delft University of Technology.
+/*!   Copyright (c) 2010 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -38,7 +15,14 @@
  *      120111    F.M. Engelen      Replaced part of the code with boost alternatives.
  *      120206    K. Kumar          Added Boost::trim( ) function to trim output of filter
  *                                  before casting it to doubles.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// If tabs are used as spaces, it doesn't work. The seperator should also be tabs then.
+// 
 
 // Include statements.
 #include <boost/format.hpp>

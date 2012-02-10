@@ -1,26 +1,4 @@
-/*! \file unitTestLinearInterpolation.cpp
- *    Source file that defined the unit test for the linear interpolation functions in Tudat.
- *
- *    Path              : /Mathematics/Interpolators/
- *    Version           : 8
- *    Check status      : Checked
- *
- *    Author            : B. Romgens
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : bart.romgens@gmail.com
- *
- *    Author/Checker    : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Date created      : 7 February, 2011
- *    Last modified     : 2 February, 2012
- *
- *    References
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -48,6 +26,9 @@
  *                                  fixed by using slightly larger precision tolerance.
  *      120202    K. Kumar          Separated from unitTestBasicMathematics.cpp into new
  *                                  Interpolators sub-directory.
+ *
+ *    References
+ *
  */
 
 // Include statements.

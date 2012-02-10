@@ -1,38 +1,4 @@
-/*! \file linearInterpolation.h
- *    Header file that defines the linear interpolation functions included in Tudat.
- *
- *    Path              : /Mathematics/Interpolators/
- *    Version           : 14
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Author/Checker    : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Author            : J.C.P Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Checker           : L. Abdulkadir
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : L.Abdulkadir@student.tudelft.nl
-
- *    Date created      : 3 September, 2010
- *    Last modified     : 2 February, 2012
- *
- *    References
- *      Press W.H., et al. Numerical Recipes in C++: The Art of
- *          Scientific Computing. Cambridge University Press, February 2002.
- *      Spiegel, M.R., Stephens, L.J. Statistics, Fourth Edition, Schaum's
- *          Outlines, McGraw-Hill, 2008.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -63,6 +29,13 @@
  *                                  Moved (con/de)structors and getter/setters to header.
  *      120202    K. Kumar          Moved linear interpolation functions into new Interpolators
  *                                  sub-directory.
+ *
+ *    References
+ *      Press W.H., et al. Numerical Recipes in C++: The Art of
+ *          Scientific Computing. Cambridge University Press, February 2002.
+ *      Spiegel, M.R., Stephens, L.J. Statistics, Fourth Edition, Schaum's
+ *          Outlines, McGraw-Hill, 2008.
+ *
  */
 
 #ifndef TUDAT_LINEARINTERPOLATION_H

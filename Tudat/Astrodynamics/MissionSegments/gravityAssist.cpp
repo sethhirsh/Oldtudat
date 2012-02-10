@@ -1,46 +1,4 @@
-/*! \file gravityAssist.cpp
- *    This source file contains the code of the gravity assist method.
- *
- *    Path              : /Astrodynamics/MissionSegments/
- *    Version           : 7
- *    Check status      : Checked
- *
- *    Author            : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : J. Melman
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : J.C.P.Melman@tudelft.nl
- *
- *    Date created      : 17 January, 2011
- *    Last modified     : 14 February, 2011
- *
- *    References
- *      Melman J. Trajectory optimization for a mission to Neptune and
- *          Triton, MSc thesis report, Delft University of Technology, 2007.
- *
- *    Notes
- *      Gravity assist and swing-by are different words for the same thing.
- *      The delta-V that is computed for a powered swing-by has not been
- *      proven to be the optimum (lowest) to achieve the desired geometry
- *      of incoming and outgoing hyperbolic legs. Some literature research
- *      will have to be done to look at the alternatives.
- *      For the moment in this code the smallestPeriapsisDistanceFactor
- *      is given as external input by the user, but in the future it should
- *      be part of the CelestialBody object.
- *      Also, the velocity of the central body will need to be computed by
- *      the ephemeris code.
- *      At the moment the shape of the central body is a sphere segment,
- *      and the radius of the planet is set externally by the user.
- *      In the future it should be possible to get the radius of each planet
- *      directly from the CelestialBody class, by a link to GeometricShape
- *      class.
- *      At the moment, this code uses a Newton-Raphson root finder by default.
- *      In the future it should be possible to apply for example the Halley
- *      method by using polymorphism.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -64,7 +22,33 @@
  *      110212    J. Melman         Added a reference to my own thesis.
  *      110214    E. Iorfida        Deleted temporary centralBodyRadius,  replaced by an element of
  *                                  GeometricShapes.
+ *
+ *    References
+ *      Melman J. Trajectory optimization for a mission to Neptune and
+ *          Triton, MSc thesis report, Delft University of Technology, 2007.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Gravity assist and swing-by are different words for the same thing.
+// The delta-V that is computed for a powered swing-by has not been
+// proven to be the optimum (lowest) to achieve the desired geometry
+// of incoming and outgoing hyperbolic legs. Some literature research
+// will have to be done to look at the alternatives.
+// For the moment in this code the smallestPeriapsisDistanceFactor
+// is given as external input by the user, but in the future it should
+// be part of the CelestialBody object.
+// Also, the velocity of the central body will need to be computed by
+// the ephemeris code.
+// At the moment the shape of the central body is a sphere segment,
+// and the radius of the planet is set externally by the user.
+// In the future it should be possible to get the radius of each planet
+// directly from the CelestialBody class, by a link to GeometricShape
+// class.
+// At the moment, this code uses a Newton-Raphson root finder by default.
+// In the future it should be possible to apply for example the Halley
+// method by using polymorphism.
+// 
 
 // Include statements.
 #include <cmath>

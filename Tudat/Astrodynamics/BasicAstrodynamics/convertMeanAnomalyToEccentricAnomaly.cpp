@@ -1,38 +1,4 @@
-/*! \file convertMeanAnomalyToEccentricAnomaly.cpp
- *    This source file contains a class to convert mean anomly to eccentric anomaly for elliptical
- *    orbits. It makes use of the simple iterative method to solve Kepler's equation.
- *
- *    Path              : /Astrodynamics/BasicAstrodynamics/
- *    Version           : 3
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : K.Kumar@tudelft.nl
- *
- *    Author            : T. Secretin
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : T.A.LeitePintoSecretin@student.tudelft.nl
- *
- *    Checker           : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : Simon Billemont
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : simon@angelcorp.be
- *
- *    Date created      : 10 February, 2011
- *    Last modified     : 21 December, 2011
- *
- *    References
- *      Chobotov, V.A. Orbital Mechanics, Third Edition, AIAA Education Series, VA, 2002.
- *
- *    Notes
- *      Currently, this conversion is only valid for eccentricities up to 0.97 due to the
- *      difficulties of the iterative method to converge for eccentricities close to 1.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -49,7 +15,16 @@
  *      111209    T. Secretin       Relaxed constraints on near-parabolic check.
  *      111221    T. Secretin       Added zero eccentricity case and check for negative
  *                                  eccentricities.
+ *
+ *    References
+ *      Chobotov, V.A. Orbital Mechanics, Third Edition, AIAA Education Series, VA, 2002.
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Currently, this conversion is only valid for eccentricities up to 0.97 due to the
+// difficulties of the iterative method to converge for eccentricities close to 1.
+// 
 
 // Include statements.
 #include <iostream>

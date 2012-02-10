@@ -1,29 +1,4 @@
-/*!   \file hypersonicLocalInclinationAnalysis.cpp
- *    This file contains the definition of the hypersonic local inclination analysis class.
- *
-*    Path              : /Astrodynamics/Aerodynamics/
- *    Version           : 5
- *    Check status      : Checked
- *
- *    Author            : D. Dirkx
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : d.dirkx@tudelft.nl
- *
- *    Checker           : B. Romgens
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : B.Romgens@student.tudelft.nl
- *
- *    Date created      : 25 November, 2010
- *    Last modified     : 4 February, 2011
- *
- *    References
- *      Gentry, A., Smyth, D., and Oliver, W. . The Mark IV Supersonic-Hypersonic
- *        Arbitrary Body Program, Volume II - Program Formulation, Douglas Aircraft
- *        Aircraft Company, 1973.
- *
- *    Notes
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -41,6 +16,12 @@
  *      112701    D. Dirkx          Finalized for code check.
  *      110131    B. Romgens        Minor modifications during code check.
  *      110204    D. Dirkx          Finalized code.
+ *
+ *    References
+ *      Gentry, A., Smyth, D., and Oliver, W. . The Mark IV Supersonic-Hypersonic
+ *        Arbitrary Body Program, Volume II - Program Formulation, Douglas Aircraft
+ *        Aircraft Company, 1973.
+ *
  */
 
 // Include statements.

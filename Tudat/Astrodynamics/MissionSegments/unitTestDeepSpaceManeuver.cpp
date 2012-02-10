@@ -1,30 +1,4 @@
-/*! \file unitTestDeepSpaceManeuver.cpp
- *    Source file for unit test that tests the Deep Space Maneuver (DSM) class implemented in
- *    Tudat.
- *
- *    Path              : /Astrodynamics/MissionSegments/
- *    Version           : 1
- *    Check status      : Checked
- *
- *    Author            : K. Kumar
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Checker           : E. Iorfida
- *    Affiliation       : Delft University of Technology
- *    E-mail address    : elisabetta_iorfida@yahoo.it
- *
- *    Date created      : 27 May, 2011
- *    Last modified     : 27 May, 2011
- *
- *    References
- *
- *    Notes
- *      Test runs code and verifies result against expected value.
- *      If the tested code is erroneous, the test function returns a boolean
- *      true; if the code is correct, the function returns a boolean false.
- *
- *    Copyright (c) 2010-2011 Delft University of Technology.
+/*!   Copyright (c) 2010-2012 Delft University of Technology.
  *
  *    This software is protected by national and international copyright.
  *    Any unauthorized use, reproduction or modification is unlawful and
@@ -38,7 +12,16 @@
  *    Changelog
  *      YYMMDD    Author            Comment
  *      110527    K. Kumar        First creation of the code.
+ *
+ *    References
+ *
  */
+
+// Temporary notes (move to class/function doxygen):
+// Test runs code and verifies result against expected value.
+// If the tested code is erroneous, the test function returns a boolean
+// true; if the code is correct, the function returns a boolean false.
+// 
 
 // Include statements.
 #include <cmath>
