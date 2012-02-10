@@ -742,8 +742,8 @@ multimap< int, string > TwoLineElementsTextFileReader::checkTwoLineElementsFileI
 
     for ( unsigned int q = 0; q < corruptedTwoLineElementDataPositions_.size( ); q++ )
     {
-        twoLineElementData_.erase( twoLineElementData_.begin( ) +
-                                   corruptedTwoLineElementDataPositions_.at( q ) - q );
+        twoLineElementData_.erase( twoLineElementData_.begin( ) + (
+                                   corruptedTwoLineElementDataPositions_.at( q ) - q ) );
         numberOfObjects_--;
     }
 
