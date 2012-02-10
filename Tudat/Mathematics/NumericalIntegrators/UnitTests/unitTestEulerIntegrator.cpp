@@ -161,7 +161,7 @@ bool testEulerIntegrator( const EulerIntegratorXd::StateDerivativeFunction& stat
  */
 bool testDifferentStateAndStateDerivativeTypes( )
 {
-    using tudat::mathematics::numerical_integrators::computeZeroStateDerivative;
+    using tudat::unit_tests::computeZeroStateDerivative;
     tudat::mathematics::numerical_integrators::EulerIntegrator
             < double, Eigen::Vector3d, Eigen::VectorXd > integrator( &computeZeroStateDerivative,
                                                                      0.0, Eigen::Vector3d::Zero( ) );
@@ -179,7 +179,7 @@ int main( )
     // Test result initialised to false.
     bool testEulerIsOk = true;
 
-    using namespace tudat::mathematics::numerical_integrators;
+    using namespace tudat::unit_tests;
     std::map< BenchmarkFunctions, BenchmarkFunction >& benchmarkFunctions =
              getBenchmarkFunctions( );
 

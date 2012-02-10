@@ -175,7 +175,7 @@ bool testRungeKuttaVariableStepsizeIntegrator(
  */
 bool testDifferentStateAndStateDerivativeTypes( )
 {
-    using tudat::mathematics::numerical_integrators::computeZeroStateDerivative;
+    using tudat::unit_tests::computeZeroStateDerivative;
     tudat::mathematics::numerical_integrators::RungeKuttaVariableStepSizeIntegrator
             < double, Eigen::Vector3d, Eigen::VectorXd > integrator(
                 RungeKuttaCoefficients( ),  &computeZeroStateDerivative,
@@ -194,7 +194,7 @@ bool testRungeKuttaVariableStepsizeIntegrator( const RungeKuttaCoefficients& coe
     // Test result initialised to false.
     bool testRungeKuttaVariableStepsizeIsOk = true;
 
-    using namespace tudat::mathematics::numerical_integrators;
+    using namespace tudat::unit_tests;
     std::map< BenchmarkFunctions, BenchmarkFunction >& benchmarkFunctions =
              getBenchmarkFunctions( );
 
