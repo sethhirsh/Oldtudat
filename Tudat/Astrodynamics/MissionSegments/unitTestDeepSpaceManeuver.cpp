@@ -81,6 +81,7 @@ int main( )
     // Test if getState( ) function results in set state for DSM.
     if ( std::fabs( deepSpaceManeuverState_.state.norm( )
                     - deepSpaceManeuver_.getState( )->state.norm( ) )
+         / deepSpaceManeuverState_.state.norm( )
          > std::numeric_limits< double >::epsilon( ) )
     {
         cerr << "The setState( )/getState( ) functions do not work properly." << endl;
