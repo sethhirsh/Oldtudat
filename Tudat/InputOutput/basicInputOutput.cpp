@@ -48,21 +48,6 @@ namespace tudat
 namespace input_output
 {
 
-//! Get root-path for Tudat Package library.
-std::string getPackageRootPath( )
-{
-#ifdef TUDAT_CUSTOM_ROOT_PATH
-    return std::string( TUDAT_CUSTOM_ROOT_PATH );
-#else
-    // Declare file path string assigned to filePath.
-    std::string filePath_( __FILE__ );
-
-    // Strip filename from temporary string and return root-path string.
-    return filePath_.substr( 0, filePath_.length( ) -
-                                std::string( "InputOutput/basicInputOutput.cpp" ).length( ) );
-#endif
-}
-
 //! Lists all files in directory.
 std::vector< boost::filesystem3::path > listAllFilesInDirectory(
     const boost::filesystem3::path& directory, bool isRecurseIntoSubdirectories )

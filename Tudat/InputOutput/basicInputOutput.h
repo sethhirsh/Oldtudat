@@ -58,7 +58,20 @@ namespace input_output
  * trailing slash included.
  * \param Root-path.
  */
-std::string getPackageRootPath( );
+std::string getPackageRootPath( )
+{
+#ifdef TUDAT_CUSTOM_ROOT_PATH
+    return std::string( TUDAT_CUSTOM_ROOT_PATH );
+#else
+    // Declare file path string assigned to filePath.
+	// __FILE__ only gives the absolute path in the header file!
+    std::string filePath_( __FILE__ );
+
+    // Strip filename from temporary string and return root-path string.
+    return filePath_.substr( 0, filePath_.length( ) -
+                                std::string( "InputOutput/basicInputOutput.cpp" ).length( ) );
+#endif
+}
 
 //! List all files in directory.
 /*!
