@@ -69,7 +69,7 @@ std::string getPackageRootPath( )
 
     // Strip filename from temporary string and return root-path string.
     return filePath_.substr( 0, filePath_.length( ) -
-                                std::string( "InputOutput/basicInputOutput.cpp" ).length( ) );
+                                std::string( "InputOutput/basicInputOutput.h" ).length( ) );
 #endif
 }
 
