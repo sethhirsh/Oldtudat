@@ -57,7 +57,7 @@ int main( )
     TabulatedAtmosphere tabulatedAtmosphere;
 
     // Initialize it with the desired file.
-    tabulatedAtmosphere.initialize( tudat::input_output::getPackageRootPath() +
+    tabulatedAtmosphere.initialize( tudat::input_output::getTudatRootPath( ) +
                                     "Astrodynamics/Aerodynamics/AtmosphereTables/" +
                                     "USSA1976Until100kmPer100mUntil1000kmPer1000m.dat" );
 
@@ -167,7 +167,7 @@ int main( )
     // Test 6: Test if the atmosphere file can be read multiple times.
     try
     {
-        tabulatedAtmosphere.initialize( tudat::input_output::getPackageRootPath() +
+        tabulatedAtmosphere.initialize( tudat::input_output::getTudatRootPath( ) +
                                         "Astrodynamics/Aerodynamics/AtmosphereTables/" +
                                         "USSA1976Until100kmPer100mUntil1000kmPer1000m.dat" );
     }

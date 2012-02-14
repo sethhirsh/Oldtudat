@@ -42,7 +42,7 @@ BOOST_AUTO_TEST_CASE( testListAllFilesInDirectory )
 {
     // Set path to new directory.
     boost::filesystem::path pathToNewDirectory(
-                tudat::input_output::getPackageRootPath( ) + "InputOutput/UnitTests/TestDirectory"  );
+                tudat::input_output::getTudatRootPath( ) + "InputOutput/UnitTests/TestDirectory" );
 
     // Set number of files in directory.
     unsigned int numberOfFiles = 10;

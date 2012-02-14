@@ -176,7 +176,7 @@ void ApproximatePlanetPositionsBase::reloadData( )
 {
 
     // Set  path to ephemeris file in file reader.
-    std::string filePath_ = input_output::getPackageRootPath( ) +
+    std::string filePath_ = input_output::getTudatRootPath( ) +
             "External/EphemerisData/p_elem_t2.txt";
 
     // Open ephemeris file.

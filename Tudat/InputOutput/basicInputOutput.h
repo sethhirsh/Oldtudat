@@ -52,19 +52,19 @@ namespace tudat
 namespace input_output
 {
 
-//! Get root-path for Tudat Package library.
+//! Get root-path for Tudat library.
 /*!
- * Returns root-path corresponding with root-directory of Tudat Core library as a string with
+ * Returns root-path corresponding with root-directory of Tudat library as a string with
  * trailing slash included.
- * \param Root-path.
+ * \param Tudat root-path.
  */
-std::string getPackageRootPath( )
+static std::string getTudatRootPath( )
 {
 #ifdef TUDAT_CUSTOM_ROOT_PATH
     return std::string( TUDAT_CUSTOM_ROOT_PATH );
 #else
     // Declare file path string assigned to filePath.
-	// __FILE__ only gives the absolute path in the header file!
+        // __FILE__ only gives the absolute path in the header file!
     std::string filePath_( __FILE__ );
 
     // Strip filename from temporary string and return root-path string.

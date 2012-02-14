@@ -77,6 +77,6 @@ target_link_libraries(test_MeanToEccenticAnomalyConversion tudat_basic_astrodyna
 
 add_executable(test_KeplerPropagator "${SRCROOT}${BASICASTRODYNAMICSDIR}/unitTestKeplerPropagator.cpp")
 setup_custom_test_program(test_KeplerPropagator "${SRCROOT}${BASICASTRODYNAMICSDIR}")
-target_link_libraries(test_KeplerPropagator tudat_bodies tudat_gravitation tudat_basic_astrodynamics tudat_states tudat_root_finding_methods tudat_input_output ${Boost_LIBRARIES} ${TUDAT_CORE_LIBRARIES})
+target_link_libraries(test_KeplerPropagator tudat_input_output tudat_bodies tudat_gravitation tudat_basic_astrodynamics tudat_states tudat_root_finding_methods ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 # End of file.

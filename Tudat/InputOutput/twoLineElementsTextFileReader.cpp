@@ -91,7 +91,7 @@ void TwoLineElementsTextFileReader::openFile( )
 {
     if ( absoluteDirectoryPath_.compare( "" ) == 0 )
     {
-        absoluteFilePath_ = getPackageRootPath( ) + relativeDirectoryPath_ + fileName_;
+        absoluteFilePath_ = getTudatRootPath( ) + relativeDirectoryPath_ + fileName_;
     }
 
     else

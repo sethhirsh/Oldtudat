@@ -66,7 +66,7 @@ int main( )
     // Load file with benchmark data.
     std::string relativePathToBenchmarkData = "Astrodynamics/BasicAstrodynamics/twoBodyKeplerData.dat";
 
-    std::string absolutePathToBenchmarkData = tudat::input_output::getPackageRootPath( )
+    std::string absolutePathToBenchmarkData = tudat::input_output::getTudatRootPath( )
             + relativePathToBenchmarkData;
 
     std::ifstream twoBodyKeplerBenchmarkFile( absolutePathToBenchmarkData.c_str( ) );

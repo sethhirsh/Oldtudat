@@ -59,7 +59,7 @@ int main( )
     expectedMatrix( 3,2 ) = 12.0;
 
     // Test 1: Test for semi-colon-separated files.
-    readMatrix = tudat::input_output::readMatrixFromFile( tudat::input_output::getPackageRootPath()
+    readMatrix = tudat::input_output::readMatrixFromFile( tudat::input_output::getTudatRootPath( )
                                                           + "InputOutput/UnitTests/testMatrix.txt",
                                                           ";"  );
 
@@ -82,9 +82,9 @@ int main( )
         cerr << "The unit test for the matrix file reader gives an incorrect size matrix.\n";
     }
 
-    // Test 2: Test for space-seperated files.
+    // Test 2: Test for space-separated files.
     readMatrix = tudat::input_output::readMatrixFromFile(
-                tudat::input_output::getPackageRootPath() +
+                tudat::input_output::getTudatRootPath( ) +
                 "InputOutput/UnitTests/testMatrix2.txt", " \t", "#" );
 
     for ( int i = 0; i < 3; i++ )
