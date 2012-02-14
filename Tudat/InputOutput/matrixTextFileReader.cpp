@@ -37,10 +37,7 @@
 #include <fstream>
 #include <sstream>
 #include <TudatCore/InputOutput/streamFilters.h>
-#include "Tudat/InputOutput/basicInputOutput.h"
 #include "Tudat/InputOutput/matrixTextFileReader.h"
-
-
 
 //! Tudat library namespace.
 namespace tudat

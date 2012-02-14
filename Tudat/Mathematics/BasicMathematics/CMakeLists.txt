@@ -21,11 +21,13 @@
 
 # Add source files.
 set(BASICMATHEMATICS_SOURCES
+  "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics/coordinateConversions.cpp"
   "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics/nearestNeighbourSearch.cpp"
 )
 
 # Add header files.
 set(BASICMATHEMATICS_HEADERS 
+  "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics/coordinateConversions.h"
   "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics/nearestNeighbourSearch.h"
 )
 
@@ -33,6 +35,10 @@ set(BASICMATHEMATICS_HEADERS
 add_library(tudat_basic_mathematics STATIC ${BASICMATHEMATICS_SOURCES} ${BASICMATHEMATICS_HEADERS})
 setup_tudat_library_target(tudat_basic_mathematics "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics")
 setup_headers("${BASICMATHEMATICS_HEADERS}" "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics")
+
+add_executable(test_CoordinateConversions "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics/UnitTests/unitTestCoordinateConversions.cpp")
+setup_custom_test_program(test_CoordinateConversions "${SRCROOT}${BASICSDIR}")
+target_link_libraries(test_CoordinateConversions tudat_basic_mathematics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
 
 add_executable(test_NearestNeighbourSearch "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics/UnitTests/unitTestNearestNeighbourSearch.cpp")
 setup_custom_test_program(test_NearestNeighbourSearch "${SRCROOT}${BASICSDIR}")

@@ -32,7 +32,6 @@
 #include <sstream>
 #include <vector>
 #include "Tudat/Mathematics/BasicMathematics/nearestNeighbourSearch.h"
-#include "Tudat/InputOutput/basicInputOutput.h"
 
 // Define Boost test suite.
 BOOST_AUTO_TEST_SUITE( test_basic_functions )
@@ -107,7 +106,3 @@ BOOST_AUTO_TEST_CASE( testNearestLeftNeighborUsingBinarySearch )
 BOOST_AUTO_TEST_SUITE_END( )
 
 // End of file.
-
-
-
-
