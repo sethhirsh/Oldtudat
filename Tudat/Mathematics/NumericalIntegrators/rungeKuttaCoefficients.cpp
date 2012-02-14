@@ -18,23 +18,17 @@
  *
  */
 
-
 #include <Eigen/Core>
 #include "Tudat/Mathematics/NumericalIntegrators/rungeKuttaCoefficients.h"
 
-//! Tudat library namespace.
 namespace tudat
 {
-
-//! Tudat mathematics namespace
 namespace mathematics
 {
-
-//! Integrators namespace
 namespace numerical_integrators
 {
 
-//! Initialize RKF45 coefficients
+//! Initialize RKF45 coefficients.
 void initializeRungeKuttaFehlberg45Coefficients( RungeKuttaCoefficients&
                                                  rungeKuttaFehlberg45Coefficients )
 {
@@ -89,11 +83,9 @@ void initializeRungeKuttaFehlberg45Coefficients( RungeKuttaCoefficients&
     rungeKuttaFehlberg45Coefficients.bCoefficients( 1, 3 ) = 28561.0 / 56430.0;
     rungeKuttaFehlberg45Coefficients.bCoefficients( 1, 4 ) = -9.0 / 50.0;
     rungeKuttaFehlberg45Coefficients.bCoefficients( 1, 5 ) = 2.0 / 55.0;
-
-
 }
 
-//! Initialize RKF56 coefficients
+//! Initialize RKF56 coefficients.
 void initializeRungeKuttaFehlberg56Coefficients( RungeKuttaCoefficients&
                                                  rungeKuttaFehlberg56Coefficients )
 {
@@ -163,10 +155,9 @@ void initializeRungeKuttaFehlberg56Coefficients( RungeKuttaCoefficients&
     rungeKuttaFehlberg56Coefficients.bCoefficients( 1, 4 ) = 125.0 / 768.0;
     rungeKuttaFehlberg56Coefficients.bCoefficients( 1, 6 ) = 5.0 / 66.0;
     rungeKuttaFehlberg56Coefficients.bCoefficients( 1, 7 ) = 5.0 / 66.0;
-
 }
 
-//! Initialize RKF78 coefficients
+//! Initialize RKF78 coefficients.
 void initializeRungeKuttaFehlberg78Coefficients( RungeKuttaCoefficients&
                                                  rungeKuttaFehlberg78Coefficients )
 {
@@ -306,7 +297,6 @@ void initializeRungeKuttaFehlberg78Coefficients( RungeKuttaCoefficients&
     rungeKuttaFehlberg78Coefficients.bCoefficients( 1, 11 ) = 41.0 / 840.0;
     rungeKuttaFehlberg78Coefficients.bCoefficients( 1, 12 ) =
             rungeKuttaFehlberg78Coefficients.bCoefficients( 1, 11 );
-
 }
 
 //! Get coefficients for a specified coefficient set
@@ -345,7 +335,5 @@ const RungeKuttaCoefficients& RungeKuttaCoefficients::get(
 }
 
 } // namespace integrators
-
 } // namespace mathematics
-
 } // namespace tudat

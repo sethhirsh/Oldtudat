@@ -21,7 +21,8 @@
  *      110810    J. Leloux         Corrected doxygen documentation.
  *      110905    S. Billemont      Reorganized includes.
  *                                  Moved (con/de)structors and getter/setters to header.
- *      120207    B. Tong Minh      Updated to TudatCore compatibility
+ *      120207    B. Tong Minh      Updated to TudatCore compatibility.
+ *      120213    K. Kumar          Modified getCurrentInterval() to getIndependentVariable().
  *
  *    References
  *
@@ -32,185 +33,173 @@
 
 #include <TudatCore/Mathematics/NumericalIntegrators/numericalIntegrator.h>
 
-//! Tudat library namespace.
 namespace tudat
 {
-
-//! Tudat mathematics namespace
 namespace mathematics
 {
-
-//! Integrators namespace
 namespace numerical_integrators
 {
 
-//! Class that implements the Euler integrator
+//! Class that implements the Euler integrator.
 /*!
- * Class that implements the Euler, fixed order, fixed step size integrator
+ * Class that implements the Euler, fixed order, fixed step size integrator.
  * \tparam StateType The type of the state. This type should support addition with
- * StateDerivativeType
+ *          StateDerivativeType
  * \tparam StateDerivativeType The type of the state derivative. This type should support
- * multiplication with IndependentVariableType and doubles.
- * \tparam IndependentVariableType The type of the independent variable
- * \sa NumericalIntegrator
+ *          multiplication with IndependentVariableType and doubles.
+ * \tparam IndependentVariableType The type of the independent variable.
+ * \sa NumericalIntegrator.
  */
 template < typename IndependentVariableType = double, typename StateType = Eigen::VectorXd,
            typename StateDerivativeType = Eigen::VectorXd >
 class EulerIntegrator :
-        public NumericalIntegrator<IndependentVariableType, StateType, StateDerivativeType>
+        public NumericalIntegrator< IndependentVariableType, StateType, StateDerivativeType >
 {
 public:
-    //! Typedef of the base class
-    /*!
-     * Typedef of the base class with all template parameters filled in
-     */
-    typedef NumericalIntegrator<IndependentVariableType, StateType, StateDerivativeType> Base;
 
-    //! Typedef to the state derivative function
+    //! Typedef of the base class.
+    /*!
+     * Typedef of the base class with all template parameters filled in.
+     */
+    typedef NumericalIntegrator< IndependentVariableType, StateType, StateDerivativeType > Base;
+
+    //! Typedef to the state derivative function.
     /*!
      * Typedef to the state derivative function inherited from the base class.
-     * \sa NumericalIntegrator::StateDerivativeFunction
+     * \sa NumericalIntegrator::StateDerivativeFunction.
      */
     typedef typename Base::StateDerivativeFunction StateDerivativeFunction;
 
-    //! Default constructor
+    //! Default constructor.
     /*!
      * Default constructor, taking a state derivative function as argument.
      * \param stateDerivativeFunction State derivative function.
-     * \param intervalStart The start of the integration interval
-     * \param initialState The initial state
-     * \sa NumericalIntegrator::NumericalIntegrator
+     * \param intervalStart The start of the integration interval.
+     * \param initialState The initial state.
+     * \sa NumericalIntegrator::NumericalIntegrator.
      */
     EulerIntegrator( const StateDerivativeFunction& stateDerivativeFunction,
-                           const IndependentVariableType intervalStart,
-                           const StateType& initialState ) :
-        Base( stateDerivativeFunction ),
-        currentInterval_( intervalStart ),
-        currentState_( initialState ),
-        lastInterval_( intervalStart )
-    { }
+                     const IndependentVariableType intervalStart,
+                     const StateType& initialState ) :
+        Base( stateDerivativeFunction ), currentIndependentVariable_( intervalStart ),
+        currentState_( initialState ), lastIndependentVariable_( intervalStart ) { }
 
-    //! Returns the step size of the next step
+    //! Get step size of the next step.
     /*!
      * Returns the step size of the next step.
-     * \return Step size to be used for the next step
+     * \return Step size to be used for the next step.
      */
     virtual IndependentVariableType getNextStepSize( ) const { return stepSize_; }
 
-    //! Returns the current state
+    //! Get current state.
     /*!
-     * Returns the current state of the integrator. Child classes should override this and provide
-     * the computed state by performIntegrationStep( ).
-     * \return Current integrated state
+     * Returns the current state of the Euler integrator.
+     * \return Current integrated state.
      */
     virtual StateType getCurrentState( ) const { return currentState_; }
 
-    //! Returns the current interval
+    //! Returns the current independent variable.
     /*!
-     * Returns the current interval of the integrator. Child classes should override this and
-     * provide the computed interval by performIntegrationStep( ).
-     * \return Current interval
+     * Returns the current value of the independent variable of the integrator.
+     * \return Current independent variable.
      */
-    virtual IndependentVariableType getCurrentInterval( ) const { return currentInterval_; }
+    virtual IndependentVariableType getCurrentIndependentVariable( ) const
+    {
+        return currentIndependentVariable_;
+    }
 
-    //! Perform a single integration step
+    //! Perform a single Euler integration step.
     /*!
-     * Perform a single integration step from intervalStart with initialState and stepSize and
-     * sets the stepSize member variable.
-     * \param intervalStart The start of the interval of this step
-     * \param initialState The initial state
-     * \param initialStepSize The initial step size
-     * \return The state at the end of the interval
+     * Perform a single Euler integration step from intervalStart with initialState and stepSize
+     * and sets the stepSize member variable.
+     * \param intervalStart The start of the interval of this step.
+     * \param initialState The initial state.
+     * \param initialStepSize The initial step size.
+     * \return The state at the end of the interval.
      */
     virtual StateType performIntegrationStep( const IndependentVariableType stepSize )
     {
-        lastInterval_ = currentInterval_;
+        lastIndependentVariable_ = currentIndependentVariable_;
         lastState_ = currentState_;
 
         stepSize_ = stepSize;
-        currentInterval_ += this->stepSize_;
-        currentState_ += stepSize * stateDerivativeFunction_( currentInterval_, currentState_ );
+        currentIndependentVariable_ += stepSize_;
 
-        // Return the integration result
+        currentState_ += stepSize * stateDerivativeFunction_(
+                    currentIndependentVariable_, currentState_ );
+
+        // Return the integration result.
         return currentState_;
     }
 
-    //! Rollback the internal state to the last state;
+    //! Rollback the internal state to the last state.
     /*!
-     * Rollback the internal state to the last state. This function can only be called once after
-     * calling integrateTo( ) or performIntegrationStep( ) unless specified otherwise by
+     * Performs rollback of the internal state to the last state. This function can only be called
+     * once after calling integrateTo() or performIntegrationStep() unless specified otherwise by
      * implementations, and can not be called before any of these functions have been called. Will
-     * return true if the rollback was succesful, and false otherwise.
-     * \return True if the rollback was succesful.
+     * return true if the rollback was successful, and false otherwise.
+     * \return True if the rollback was successful.
      */
     virtual bool rollbackToPreviousState( )
     {
-        if ( currentInterval_ == lastInterval_ )
+        if ( currentIndependentVariable_ == lastIndependentVariable_ )
         {
             return false;
         }
 
-        currentInterval_ = lastInterval_;
+        currentIndependentVariable_ = lastIndependentVariable_;
         currentState_ = lastState_;
         return true;
     }
 
-
 protected:
-    //! Last used step size
+
+    //! Last used step size.
     /*!
-     * Last used step size, passed to either integrateTo( ) or performIntegrationStep( )
+     * Last used step size, passed to either integrateTo() or performIntegrationStep().
      */
     IndependentVariableType stepSize_;
 
-    //! Current interval
+    //! Current independent variable.
     /*!
-     * Current interval as computed by performIntegrationStep( )
+     * Current independent variable as computed by performIntegrationStep().
      */
-    IndependentVariableType currentInterval_;
-    //! Current state
+    IndependentVariableType currentIndependentVariable_;
+
+    //! Current state.
     /*!
-     * Current state as computed by performIntegrationStep( )
+     * Current state as computed by performIntegrationStep( ).
      */
     StateType currentState_;
 
-    //! Last interval
+    //! Last independent variable.
     /*!
-     * Last interval as computed by performIntegrationStep( )
+     * Last independent variable value as computed by performIntegrationStep().
      */
-    IndependentVariableType lastInterval_;
+    IndependentVariableType lastIndependentVariable_;
 
-    //! Last state
+    //! Last state.
     /*!
-     * Last state as computed by performIntegrationStep( )
+     * Last state as computed by performIntegrationStep( ).
      */
     StateType lastState_;
+};
 
-
-
-
-}; // class EulerIntegrator
-
-//! Typedef of an Euler integrator with VectorXds as state and state derivative and double as independent variable
+//! Typedef of Euler integrator (state/state derivative = VectorXd, independent variable = double).
 /*!
  * Typedef of an Euler integrator with VectorXds as state and state derivative and double as
  * independent variable.
  */
-typedef EulerIntegrator<> EulerIntegratorXd;
-
+typedef EulerIntegrator< > EulerIntegratorXd;
 
 //! Typedef of a scalar Euler integrator.
 /*!
- * Typedef of an Euler integrator with doubles as state and state derivative and independent variable.
+ * Typedef of a Euler integrator with doubles as state and state derivative and independent variable.
  */
-typedef EulerIntegrator<double, double, double> EulerIntegratord;
+typedef EulerIntegrator< double, double, double > EulerIntegratord;
 
 } // namespace integrators
-
 } // namespace mathematics
-
 } // namespace tudat
 
 #endif // TUDAT_EULER_H
-
-// End of file.

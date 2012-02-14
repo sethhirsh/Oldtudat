@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef TUDAT_RUNGEKUTTACOEFFICIENTS_H
-#define TUDAT_RUNGEKUTTACOEFFICIENTS_H
+#ifndef TUDAT_RUNGE_KUTTA_COEFFICIENTS_H
+#define TUDAT_RUNGE_KUTTA_COEFFICIENTS_H
 
 #include <Eigen/Core>
 
@@ -41,35 +41,37 @@ namespace numerical_integrators
  */
 struct RungeKuttaCoefficients
 {
-    //! Main table of the Butcher tableau
+    //! Main table of the Butcher tableau.
     Eigen::MatrixXd aCoefficients;
-    //! Bottom rows of the Butcher tableau
+
+    //! Bottom rows of the Butcher tableau.
     Eigen::MatrixXd bCoefficients;
-    //! First column of the Butcher tableau
+
+    //! First column of the Butcher tableau.
     Eigen::VectorXd cCoefficients;
-    //! Order of the integrator
+
+    //! Order of the integrator.
     unsigned int higherOrder;
-    //! Order of the embedded low-order integrator
+
+    //! Order of the embedded low-order integrator.
     unsigned int lowerOrder;
 
-
-    //! Default constructor
+    //! Default constructor.
     /*!
-     * Default constructor that initializes coefficients to 0
+     * Default constructor that initializes coefficients to 0.
      */
     RungeKuttaCoefficients( ) :
         aCoefficients( ), bCoefficients( ), cCoefficients( ),
-        higherOrder( 0 ), lowerOrder( 0 )
-    { }
+        higherOrder( 0 ), lowerOrder( 0 ) { }
 
-    //! Constructor
+    //! Constructor.
     /*!
      * Constructor that sets the coefficients.
-     * \param aCoefficients_ Main table of the Butcher tableau
-     * \param bCoefficients_ Bottom rows of the Butcher tableau
-     * \param cCoefficients_ First column of the Butcher tableau
-     * \param higherOrder_ Order of the integrator
-     * \param lowerOrder_ Order of the embedded low-order integrator
+     * \param aCoefficients_ Main table of the Butcher tableau.
+     * \param bCoefficients_ Bottom rows of the Butcher tableau.
+     * \param cCoefficients_ First column of the Butcher tableau.
+     * \param higherOrder_ Order of the integrator.
+     * \param lowerOrder_ Order of the embedded low-order integrator.
      */
     RungeKuttaCoefficients( const Eigen::MatrixXd& aCoefficients_,
                             const Eigen::MatrixXd& bCoefficients_,
@@ -78,10 +80,9 @@ struct RungeKuttaCoefficients
                             const unsigned int lowerOrder_ ) :
         aCoefficients( aCoefficients_ ), bCoefficients( bCoefficients_ ),
         cCoefficients( cCoefficients_ ),
-        higherOrder( higherOrder_ ), lowerOrder( lowerOrder_ )
-    { }
+        higherOrder( higherOrder_ ), lowerOrder( lowerOrder_ )  { }
 
-    //! Enum of predefined coefficient sets
+    //! Enum of predefined coefficient sets.
     enum CoefficientSets
     {
         rungeKuttaFehlberg45,
@@ -89,21 +90,19 @@ struct RungeKuttaCoefficients
         rungeKuttaFehlberg78
     };
 
-    //! Get coefficients for a specified coefficient set
+    //! Get coefficients for a specified coefficient set.
     /*!
-     * Get coefficients for a specified coefficient set
-     * \param coefficientSet The set to get the coefficients for
-     * \return The requested coefficient set
+     * Returns coefficients for a specified coefficient set.
+     * \param coefficientSet The set to get the coefficients for.
+     * \return The requested coefficient set.
      */
     static const RungeKuttaCoefficients& get( CoefficientSets coefficientSet );
 };
+
 typedef struct RungeKuttaCoefficients RungeKuttaCoefficients;
 
-
 } // namespace integrators
-
 } // namespace mathematics
-
 } // namespace tudat
 
-#endif // RUNGEKUTTACOEFFICIENTS_H
+#endif // TUDAT_RUNGE_KUTTA_COEFFICIENTS_H
