@@ -37,8 +37,8 @@
 #include <limits>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
-#include <TudatCore/Mathematics/coordinateConversions.h>
-#include <TudatCore/Mathematics/mathematicalConstants.h>
+#include <TudatCore/Mathematics/BasicMathematics/coordinateConversions.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositionsCircularCoplanar.h"

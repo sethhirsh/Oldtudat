@@ -54,7 +54,7 @@
 #include <cmath>
 #include <limits>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
-#include <TudatCore/Mathematics/linearAlgebra.h>
+#include <TudatCore/Mathematics/BasicMathematics/linearAlgebra.h>
 #include "Tudat/Astrodynamics/MissionSegments/gravityAssist.h"
 
 // Using directives.

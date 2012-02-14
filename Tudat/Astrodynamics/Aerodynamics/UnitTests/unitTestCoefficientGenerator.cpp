@@ -23,7 +23,7 @@
 
 // Include statements.
 #include <Eigen/Core>
-#include <TudatCore/Mathematics/mathematicalConstants.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Aerodynamics/hypersonicLocalInclinationAnalysis.h"
 #include "Tudat/Mathematics/GeometricShapes/capsule.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"

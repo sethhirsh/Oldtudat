@@ -33,7 +33,7 @@
 
 // Include statements.
 #include <cmath>
-#include <TudatCore/Mathematics/mathematicalConstants.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 
 //! Tudat library namespace.
 /*!

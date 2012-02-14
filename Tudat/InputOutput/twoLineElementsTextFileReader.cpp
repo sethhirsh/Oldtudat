@@ -62,7 +62,7 @@
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/physicalConstants.h>
 #include <TudatCore/InputOutput/basicInputOutput.h>
-#include <TudatCore/Mathematics/mathematicalConstants.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 
 #include <Tudat/InputOutput/basicInputOutput.h>
 #include "Tudat/InputOutput/twoLineElementsTextFileReader.h"

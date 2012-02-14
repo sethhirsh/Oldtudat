@@ -24,8 +24,8 @@
 // Include statements.
 #include <cmath>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
-#include <TudatCore/Mathematics/coordinateConversions.h>
-#include <TudatCore/Mathematics/mathematicalConstants.h>
+#include <TudatCore/Mathematics/BasicMathematics/coordinateConversions.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositionsCircularCoplanar.h"

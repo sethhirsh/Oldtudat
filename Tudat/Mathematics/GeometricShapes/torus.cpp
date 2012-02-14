@@ -30,7 +30,7 @@
 
 // Include statements.
 #include <iostream>
-#include <TudatCore/Mathematics/mathematicalConstants.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Mathematics/GeometricShapes/torus.h"
 
 //! Tudat library namespace.

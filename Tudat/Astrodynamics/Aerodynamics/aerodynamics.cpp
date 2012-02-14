@@ -31,7 +31,7 @@
  */
 
 // Include statements.
-#include <TudatCore/Mathematics/mathematicalConstants.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamics.h"
 
 // Using declarations.

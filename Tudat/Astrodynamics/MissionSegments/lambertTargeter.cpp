@@ -70,7 +70,7 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
-#include <TudatCore/Mathematics/linearAlgebra.h>
+#include <TudatCore/Mathematics/BasicMathematics/linearAlgebra.h>
 #include "Tudat/Astrodynamics/MissionSegments/lambertTargeter.h"
 
 //! Tudat library namespace.

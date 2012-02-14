@@ -27,7 +27,7 @@
 #include <cmath>
 #include <iostream>
 #include <Eigen/Core>
-#include <TudatCore/Mathematics/mathematicalConstants.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Mathematics/GeometricShapes/lawgsPartGeometry.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 

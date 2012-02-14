@@ -32,7 +32,7 @@
 // Include statements.
 #include <cmath>
 #include <Eigen/Core>
-#include <TudatCore/Mathematics/mathematicalConstants.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 
 #include "Tudat/Mathematics/GeometricShapes/capsule.h"
 #include "Tudat/Mathematics/GeometricShapes/conicalFrustum.h"

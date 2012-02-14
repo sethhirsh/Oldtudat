@@ -37,7 +37,7 @@
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
 #include "Tudat/Astrodynamics/Bodies/Ephemeris/ephemeris.h"
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
-#include <TudatCore/Mathematics/basicMathematicsFunctions.h>
+#include <TudatCore/Mathematics/BasicMathematics/basicMathematicsFunctions.h>
 
 //! Tudat library namespace.
 /*!

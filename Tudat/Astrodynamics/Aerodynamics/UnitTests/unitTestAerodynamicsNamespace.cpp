@@ -27,7 +27,7 @@
 // Include statements.
 #include <cmath>
 #include <iostream>
-#include <TudatCore/Mathematics/mathematicalConstants.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamics.h"
 
 using tudat::mathematics::PI;

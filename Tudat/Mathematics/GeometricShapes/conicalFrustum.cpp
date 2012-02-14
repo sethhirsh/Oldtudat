@@ -31,7 +31,7 @@
 // 
 
 // Include statements.
-#include <TudatCore/Mathematics/mathematicalConstants.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Mathematics/BasicMathematics/coordinateConversions.h"
 #include "Tudat/Mathematics/GeometricShapes/conicalFrustum.h"
 

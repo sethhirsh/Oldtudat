@@ -40,7 +40,7 @@
 #include <cmath>
 #include "TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
-#include <TudatCore/Mathematics/coordinateConversions.h>
+#include <TudatCore/Mathematics/BasicMathematics/coordinateConversions.h>
 
 //! Tudat library namespace.
 namespace tudat
