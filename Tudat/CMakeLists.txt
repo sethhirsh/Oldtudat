@@ -105,15 +105,10 @@ endif( )
 
 
 # Set the global macros for setting up targets.
-macro(setup_tudat_executable_target target_name CUSTOM_OUTPUT_PATH)
-  set_property(TARGET ${target_name} PROPERTY RUNTIME_OUTPUT_DIRECTORY "${BINROOT}/applications")
-  install(TARGETS ${target_name} RUNTIME DESTINATION "${BINROOT}/applications")
-endmacro(setup_tudat_executable_target)
-
 macro(setup_tudat_library_target target_name CUSTOM_OUTPUT_PATH)
   set_property(TARGET ${target_name} PROPERTY LIBRARY_OUTPUT_DIRECTORY "${LIBROOT}")
   set_property(TARGET ${target_name} PROPERTY ARCHIVE_OUTPUT_DIRECTORY "${LIBROOT}")
-  install(TARGETS ${target_name} LIBRARY DESTINATION "${BINROOT}" ARCHIVE DESTINATION "${LIBROOT}")
+  install(TARGETS ${target_name} LIBRARY DESTINATION "${BINROOT}" ARCHIVE DESTINATION "${TUDAT_DISTRIBUTION_PATH}/lib")
 endmacro(setup_tudat_library_target)
 
 macro(setup_custom_test_program target_name CUSTOM_OUTPUT_PATH)
@@ -124,7 +119,7 @@ endmacro(setup_custom_test_program)
 
 macro(setup_headers HEADER_FILES HEADER_PATH)
     foreach(CURRENT_HEADER_FILE ${HEADER_FILES})
-      install(FILES "${CURRENT_HEADER_FILE}" DESTINATION "${INCLUDEROOT}${HEADER_PATH}")
+      install(FILES "${CURRENT_HEADER_FILE}" DESTINATION "${HEADER_PATH}")
     endforeach(CURRENT_HEADER_FILE)
 endmacro(setup_headers)
 
@@ -201,5 +196,8 @@ set(SUBDIRS ${APPLICATIONSDIR} ${ASTRODYNAMICSDIR} ${INPUTDIR} ${INPUTOUTPUTDIR}
 foreach(CURRENT_SUBDIR ${SUBDIRS})
 add_subdirectory("${SRCROOT}${CURRENT_SUBDIR}")
 endforeach(CURRENT_SUBDIR)
+
+# Add the installer.
+include("${PROJECT_SOURCE_DIR}/External/CMake/MakeDistribution.cmake")
 
 # End of file.
