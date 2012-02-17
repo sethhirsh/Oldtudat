@@ -13,6 +13,8 @@
  *      YYMMDD    Author            Comment
  *      110221    K. Kumar          First creation of code.
  *      110224    K. Kumar          Renamed class and file.
+ *      120217    K. Kumar          Updated computeModuloForSignedValues() to computeModulo()
+ *                                  from Tudat Core.
  *
  *    References
  *      Standish, E.M. Keplerian Elements for Approximate Positions of the
@@ -103,7 +105,7 @@ CartesianElements* ApproximatePlanetPositions::
 
     // Compute modulo of mean anomaly for interval :
     // 0 <= meanAnomalyAtGivenJulianDate_ < 360.
-    meanAnomalyAtGivenJulianDate_ = mathematics::computeModuloForSignedValues(
+    meanAnomalyAtGivenJulianDate_ = mathematics::computeModulo(
                 meanAnomalyAtGivenJulianDate_, 360.0 );
 
     // Translate mean anomaly to:

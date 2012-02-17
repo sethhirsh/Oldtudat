@@ -30,6 +30,8 @@
  *      120127    K. Kumar          Minor comment edits.
  *      120118    D. Gondelach      Added new convertCylindricalToCartesian functions.
  *      120214    K. Kumar          Branched from old Tudat trunk for new coordinate conversions.
+ *      120217    K. Kumar          Updated computeModuloForSignedValues() to computeModulo()
+ *                                  from Tudat Core.
  *
  *    References
  *      Press W.H., et al. Numerical Recipes in C++: The Art of
@@ -153,14 +155,14 @@ Eigen::Vector3d convertCartesianToCylindrical( const Eigen::Vector3d& cartesianC
     */
     if ( std::fabs(cartesianCoordinates( 0 ) ) <= std::numeric_limits< double >::epsilon( ) )
     {
-        azimuthAngle = tudat::mathematics::computeModuloForSignedValues(
+        azimuthAngle = tudat::mathematics::computeModulo(
                     static_cast< double >( boost::math::sign( cartesianCoordinates( 1 ) ) )
                     * 0.5 * M_PI, 2.0 * M_PI );
     }
 
     else
     {
-        azimuthAngle = tudat::mathematics::computeModuloForSignedValues(
+        azimuthAngle = tudat::mathematics::computeModulo(
                     std::atan2( cartesianCoordinates( 1 ),
                                 cartesianCoordinates( 0 ) ), 2.0 * M_PI );
     }
