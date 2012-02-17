@@ -58,7 +58,7 @@ namespace input_output
  * trailing slash included.
  * \param Tudat root-path.
  */
-static std::string getTudatRootPath( )
+static inline std::string getTudatRootPath( )
 {
 #ifdef TUDAT_CUSTOM_ROOT_PATH
     return std::string( TUDAT_CUSTOM_ROOT_PATH );
