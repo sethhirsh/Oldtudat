@@ -45,6 +45,7 @@
  #      111028    K. Kumar          Corrected Boost variables and changed build-type to Debug.
  #      111103    K. Kumar          Updated CMake directory name in module path.
  #      111117    K. Kumar          Added system and filesystem Boost components.
+ #      170212    S. Billemont      Added support for UserSettings.txt file
  #/
 
 # Specify minimum CMake version required to compile Tudat.
@@ -56,20 +57,14 @@ project( Tudat )
 # Set module path to local CMake scripts.
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/External/CMake)
 
-# Set full-path to Tudat trunk directory.
-# This should be used in case the FILE token does not given the full-path in the getRootPath( )
-# function in basicFunctions.cpp.
-#add_definitions(-DTUDAT_CUSTOM_ROOT_PATH="C:\My\Custom\Path\To\Tudat\trunk")
-
 # Set root-directory for code to current source directory.
 set(CODEROOT "${CMAKE_CURRENT_SOURCE_DIR}/..")
 
 # Define the basic input (trunk) and output (lib & include) directories.
 set(SRCROOT "${CODEROOT}/Tudat")
 
-# Set CMake build-type.
+# Set default build-type.
 set(CMAKE_BUILD_TYPE Debug)
-#set(CMAKE_BUILD_TYPE Release)
 
 # Set testing options based on platform.
 enable_testing( )
@@ -107,6 +102,25 @@ endif( )
 if(NOT TUDAT_DISTRIBUTION_PATH)
     set(TUDAT_DISTRIBUTION_PATH "${CODEROOT}/dist/packages")
 endif(NOT TUDAT_DISTRIBUTION_PATH)
+
+
+# ------------------------------------------------------------------------------------
+# Don't define any new variables with SET that the user might change beyond this point
+#
+# Load user specific settings. These can overwrite all previus settings.
+if (NOT TUDAT_USER_SETTINGS AND NOT DEFINED ENV{TUDAT_USER_SETTINGS})
+  # Load from default paths, least important first
+  INCLUDE( "../UserSettings.txt" OPTIONAL)
+  INCLUDE( "UserSettings.txt" OPTIONAL)
+else()
+	MESSAGE(STATUS "Loading preset")
+  # Load the user specified file
+  if ( TUDAT_USER_SETTINGS )
+    INCLUDE( $TUDAT_USER_SETTINGS OPTIONAL)
+  else()  
+    INCLUDE( $ENV{TUDAT_USER_SETTINGS} OPTIONAL)
+  endif()
+endif()
 
 # Install the Tudat files
 install(DIRECTORY "${SRCROOT}/"
@@ -154,9 +168,6 @@ endif(TUDAT_CORE_ENVIRONMENT_PATH)
 
 # Find Eigen3 library on local system.
 find_package(Eigen3 REQUIRED)
-# If Eigen3 is not found, use the following to manually set the path to the Eigen3 directory.
-# A default location is given as an example.
-#set(EIGEN3_INCLUDE_DIR "${SRCROOT}/External/eigen3")
 
 # Include Eigen3 directories.
 # Set CMake flag to suppress Eigen warnings (platform-dependent solution).
@@ -173,10 +184,6 @@ set(Boost_USE_STATIC_RUNTIME ON)
 
 # Find Boost libraries on local system.
 find_package(Boost 1.45.0 COMPONENTS thread date_time system unit_test_framework filesystem regex iostreams REQUIRED)
-# If Boost is not found, use the following to manually set the path to the Boost include and
-# library directories.
-#SET(Boost_INCLUDE_DIRS "C:\My\Custom\Path\To\Boost\Include\Directory")
-#SET(Boost_LIBRARY_DIRS "C:\My\Custom\Path\To\Boost\Library\Directory")
 
 # Include Boost directories.
 # Set CMake flag to suppress Boost warnings (platform-dependent solution).
@@ -187,11 +194,7 @@ else( )
 endif( )
 
 # Find Tudat Core library on local system.
-# If TudatCore is not found, use the following to manually set the path to the TudatCore include and
-# library directories.
-#SET(TUDAT_CORE_BASE_PATH "C:\My\Custom\Path\To\TudatCore")
 find_package(TudatCore 0.1 REQUIRED)
-
 
 # Include TudatCore directories.
 # Set CMake flag to suppress TudatCore warnings (platform-dependent solution).
@@ -208,5 +211,3 @@ set(SUBDIRS ${APPLICATIONSDIR} ${ASTRODYNAMICSDIR} ${INPUTDIR} ${INPUTOUTPUTDIR}
 foreach(CURRENT_SUBDIR ${SUBDIRS})
 add_subdirectory("${SRCROOT}${CURRENT_SUBDIR}")
 endforeach(CURRENT_SUBDIR)
-
-# End of file.
