@@ -103,6 +103,18 @@ else( )
     set(BINROOT "${CODEROOT}/bin")
 endif( )
 
+# Defines the install target to create a distribution of Tudat
+if(NOT TUDAT_DISTRIBUTION_PATH)
+    set(TUDAT_DISTRIBUTION_PATH "${CODEROOT}/dist/packages")
+endif(NOT TUDAT_DISTRIBUTION_PATH)
+
+# Install the Tudat files
+install(DIRECTORY "${SRCROOT}/"
+        DESTINATION "${TUDAT_DISTRIBUTION_PATH}/Tudat"
+        FILES_MATCHING
+            PATTERN "*.*"
+            PATTERN "CMakeLists.txt.user" EXCLUDE
+)
 
 # Set the global macros for setting up targets.
 macro(setup_tudat_library_target target_name CUSTOM_OUTPUT_PATH)
@@ -196,8 +208,5 @@ set(SUBDIRS ${APPLICATIONSDIR} ${ASTRODYNAMICSDIR} ${INPUTDIR} ${INPUTOUTPUTDIR}
 foreach(CURRENT_SUBDIR ${SUBDIRS})
 add_subdirectory("${SRCROOT}${CURRENT_SUBDIR}")
 endforeach(CURRENT_SUBDIR)
-
-# Add the installer.
-include("${PROJECT_SOURCE_DIR}/External/CMake/MakeDistribution.cmake")
 
 # End of file.
