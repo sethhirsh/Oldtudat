@@ -70,6 +70,7 @@
 #include <cmath>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include <TudatCore/Mathematics/BasicMathematics/linearAlgebra.h>
 #include "Tudat/Astrodynamics/MissionSegments/lambertTargeter.h"
 
@@ -268,7 +269,7 @@ void LambertTargeter::execute( )
 
     if ( planeNormalPosition_.z( ) < 0.0 )
     {
-        reducedLambertAngle_ = 2.0 * M_PI - reducedLambertAngle_;
+        reducedLambertAngle_ = 2.0 * mathematics::PI - reducedLambertAngle_;
     }
 
     // Compute chord.
@@ -348,7 +349,7 @@ void LambertTargeter::execute( )
         double phi = 2.0 * atan2( ( 1.0 - pow( qParameter_, 2.0 ) ), 2.0 * qParameter_ );
 
         // Formula (16) [1].
-        double W = x01 + 1.7 * sqrt( 2.0 - phi / M_PI );
+        double W = x01 + 1.7 * sqrt( 2.0 - phi / mathematics::PI );
 
         // Formula (17) [1].
         double x03;

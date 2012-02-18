@@ -40,11 +40,13 @@
  */
 
 #include <boost/math/special_functions/sign.hpp>
+#include <iostream>
 #include <cmath>
 #include <limits>
 #include <numeric>
 #include <TudatCore/Mathematics/BasicMathematics/coordinateConversions.h>
 #include <TudatCore/Mathematics/BasicMathematics/basicMathematicsFunctions.h>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 
 namespace tudat
 {
@@ -157,14 +159,14 @@ Eigen::Vector3d convertCartesianToCylindrical( const Eigen::Vector3d& cartesianC
     {
         azimuthAngle = tudat::mathematics::computeModulo(
                     static_cast< double >( boost::math::sign( cartesianCoordinates( 1 ) ) )
-                    * 0.5 * M_PI, 2.0 * M_PI );
+                    * 0.5 * PI, 2.0 * PI );
     }
 
     else
     {
         azimuthAngle = tudat::mathematics::computeModulo(
                     std::atan2( cartesianCoordinates( 1 ),
-                                cartesianCoordinates( 0 ) ), 2.0 * M_PI );
+                                cartesianCoordinates( 0 ) ), 2.0 * PI );
     }
 
     // Compute and set cylindrical coordinates.

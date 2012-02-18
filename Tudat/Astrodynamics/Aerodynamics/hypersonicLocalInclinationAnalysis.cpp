@@ -27,6 +27,7 @@
 // Include statements.
 #include <Eigen/Geometry>
 #include <string>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Bodies/vehicleExternalModel.h"
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamics.h"
 #include "Tudat/Astrodynamics/Aerodynamics/hypersonicLocalInclinationAnalysis.h"
@@ -36,6 +37,7 @@
 // Using declarations.
 using std::string;
 using std::endl;
+using tudat::mathematics::PI;
 
 //! Tudat library namespace.
 namespace tudat
@@ -439,7 +441,7 @@ void HypersonicLocalInclinationAnalysis::determineInclination( int partNumber,
                                   dot( freestreamVelocityDirection );
 
             // Set inclination angle.
-            inclination_[ partNumber ][ i ][ j ] = M_PI / 2.0 - acos( cosineOfInclination );
+            inclination_[ partNumber ][ i ][ j ] = PI / 2.0 - acos( cosineOfInclination );
         }
     }
 }
@@ -858,7 +860,7 @@ void HypersonicLocalInclinationAnalysis::setDefaultAngleOfAttackPoints( )
     for ( i = 0; i < numberOfPointsPerIndependentVariables_[ angleOfAttackIndex_ ]; i++ )
     {
         dataPointsOfIndependentVariables_[ angleOfAttackIndex_ ][ i ] =
-                ( static_cast< double >( i ) * 5.0 * M_PI / 180.0 );
+                ( static_cast< double >( i ) * 5.0 * PI / 180.0 );
     }
 
 }
@@ -874,7 +876,7 @@ void HypersonicLocalInclinationAnalysis::setDefaultAngleOfSideslipPoints( )
     // Set default values, 0 and 1 degrees.
     dataPointsOfIndependentVariables_[ angleOfSideslipIndex_ ][ 0 ] = 0.0;
     dataPointsOfIndependentVariables_[ angleOfSideslipIndex_ ][ 1 ] =
-            1.0 * M_PI / 180.0;
+            1.0 * PI / 180.0;
 }
 
 //! Overload ostream to print class information.

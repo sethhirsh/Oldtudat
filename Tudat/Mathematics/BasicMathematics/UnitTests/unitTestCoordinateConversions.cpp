@@ -42,12 +42,14 @@
 #include <iostream>
 #include <Eigen/Core>
 #include <limits>
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Mathematics/BasicMathematics/coordinateConversions.h"
 
 int main( )
 {
     using std::cerr;
     using std::endl;
+    using tudat::mathematics::PI;
 
     // Declare and initialize test result to false.
     bool isBasicMathematicsFunctionsErroneous = false;
@@ -58,13 +60,13 @@ int main( )
 
     // Cylindrical coordinates (r,theta,z).
     Eigen::Vector3d cylindricalCoordinatesTest33, cylindricalCoordinatesTest34;
-    cylindricalCoordinatesTest33 << 0.0, M_PI, 1.2;
-    cylindricalCoordinatesTest34 << 2.3, -M_PI / 2.0, -3.5;
+    cylindricalCoordinatesTest33 << 0.0, PI, 1.2;
+    cylindricalCoordinatesTest34 << 2.3, -PI / 2.0, -3.5;
 
     // Expected Cartesian coordinates (x, y, z).
     Eigen::Vector3d expectedCartesianCoordinatesTest33, expectedCartesianCoordinatesTest34;
     expectedCartesianCoordinatesTest33 << 0.0, 0.0, 1.2;
-    expectedCartesianCoordinatesTest34 << 2.3 * cos( -M_PI / 2.0 ), 2.3*sin( -M_PI / 2.0 ), -3.5;
+    expectedCartesianCoordinatesTest34 << 2.3 * cos( -PI / 2.0 ), 2.3*sin( -PI / 2.0 ), -3.5;
 
     // Test Cartesian coordinates (x, y, z).
     Eigen::Vector3d cartesianCoordinatesTest33 = tudat::mathematics::coordinate_conversions::
@@ -117,22 +119,22 @@ int main( )
 
     // Cylindrical states (r, theta, z, Vr, Vtheta, Vz).
     Eigen::VectorXd cylindricalStateTest35( 6 ), cylindricalStateTest36( 6 );
-    cylindricalStateTest35 << 2.1, M_PI / 2.0, 1.2, 5.4, 4.5, -3.9;
-    cylindricalStateTest36 << 0.0, 8.2 * M_PI / 3.0, -2.5, -5.8, 0.0, 1.7;
+    cylindricalStateTest35 << 2.1, PI / 2.0, 1.2, 5.4, 4.5, -3.9;
+    cylindricalStateTest36 << 0.0, 8.2 * PI / 3.0, -2.5, -5.8, 0.0, 1.7;
 
     // Expected Cartesian states (x, y, z, xdot, ydot, zdot).
     Eigen::VectorXd expectedCartesianStateTest35( 6 ), expectedCartesianStateTest36( 6 );
-    expectedCartesianStateTest35 << 2.1 * cos( M_PI / 2.0 ),
-                                    2.1 * sin( M_PI / 2.0 ),
+    expectedCartesianStateTest35 << 2.1 * cos( PI / 2.0 ),
+                                    2.1 * sin( PI / 2.0 ),
                                     1.2,
-                                    5.4 * cos( M_PI / 2.0 ) - 4.5 * sin( M_PI / 2.0 ),
-                                    5.4 * sin( M_PI / 2.0 ) + 4.5 * cos( M_PI / 2.0 ),
+                                    5.4 * cos( PI / 2.0 ) - 4.5 * sin( PI / 2.0 ),
+                                    5.4 * sin( PI / 2.0 ) + 4.5 * cos( PI / 2.0 ),
                                     -3.9;
     expectedCartesianStateTest36 << 0.0,
                                     0.0,
                                     -2.5,
-                                    -5.8 * cos( 8.2 * M_PI / 3.0 ),
-                                    -5.8 * sin( 8.2 * M_PI / 3.0 ),
+                                    -5.8 * cos( 8.2 * PI / 3.0 ),
+                                    -5.8 * sin( 8.2 * PI / 3.0 ),
                                     1.7;
 
     // Test Cartesian states (x, y, z, xdot, ydot, zdot).
@@ -213,9 +215,9 @@ int main( )
     Eigen::Vector3d expectedCylindricalCoordinatesTest37, expectedCylindricalCoordinatesTest38,
                     expectedCylindricalCoordinatesTest39, expectedCylindricalCoordinatesTest40;
     expectedCylindricalCoordinatesTest37 << 0.0, 0.0, 0.0;
-    expectedCylindricalCoordinatesTest38 << 2.0, M_PI / 2.0, 1.0;
-    expectedCylindricalCoordinatesTest39 << 2.0, 3.0 * M_PI / 2.0, -1.0;
-    expectedCylindricalCoordinatesTest40 << sqrt( 25.0 + 64.0 ), atan2(-8.0,-5.0) + 2.0 * M_PI, 5.0;
+    expectedCylindricalCoordinatesTest38 << 2.0, PI / 2.0, 1.0;
+    expectedCylindricalCoordinatesTest39 << 2.0, 3.0 * PI / 2.0, -1.0;
+    expectedCylindricalCoordinatesTest40 << sqrt( 25.0 + 64.0 ), atan2(-8.0,-5.0) + 2.0 * PI, 5.0;
 
     // Test cylindrical coordinates (r, theta, z).
     Eigen::Vector3d cylindricalCoordinatesTest37 = tudat::mathematics::coordinate_conversions::
@@ -321,7 +323,7 @@ int main( )
                     expectedCylindricalStateTest43( 6 );
     expectedCylindricalStateTest41 << 0.0, 0.0, 1.0, sqrt( 25.0 + 36.0 ), 0.0, -9.0;
     expectedCylindricalStateTest42 << 2.0, 0.0, -5.0, -4.0, 6.0, -6.0;
-    expectedCylindricalStateTest43 << sqrt(49.0+16.0), atan2( -4.0, -7.0 ) + 2.0 * M_PI, 3.0,
+    expectedCylindricalStateTest43 << sqrt(49.0+16.0), atan2( -4.0, -7.0 ) + 2.0 * PI, 3.0,
             ( -7.0 * 5.0 + ( -4.0 ) * -3.0 ) / sqrt( 49.0 + 16.0),
             ( -7.0 * -3.0 - ( -4.0 ) * 5.0 ) / sqrt( 49.0 + 16.0), 7.0;
 

@@ -34,6 +34,7 @@
 // 
 
 // Include statements.
+#include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/ReferenceFrames/referenceFrameTransformations.h"
 
 //! Tudat library namespace.
@@ -138,7 +139,7 @@ getRotatingPlanetocentricToLocalVerticalFrameTransformationQuaternion(
     // Note the sign change, because how angleAxisd is defined.
     AngleAxisd RotationAroundZaxis = AngleAxisd( -1.0 * longitude, Eigen::Vector3d::UnitZ( ) );
     AngleAxisd RotationAroundYaxis = AngleAxisd(
-                -1.0 * ( -latitude - M_PI / 2.0 ), Eigen::Vector3d::UnitY( ) );
+                -1.0 * ( -latitude - mathematics::PI / 2.0 ), Eigen::Vector3d::UnitY( ) );
     Quaterniond frameTransformationQuaternion = Quaterniond(
                 ( RotationAroundYaxis * RotationAroundZaxis ) );
 
@@ -155,7 +156,7 @@ getLocalVerticalToRotatingPlanetocentricFrameTransformationQuaternion(
     // Note the sign change (-1.0), because how angleAxisd is defined.
     AngleAxisd RotationAroundZaxis = AngleAxisd( -1.0 * -longitude, Eigen::Vector3d::UnitZ( ) );
     AngleAxisd RotationAroundYaxis =
-            AngleAxisd( -1.0 * ( latitude + M_PI / 2.0 ), Eigen::Vector3d::UnitY( ) );
+            AngleAxisd( -1.0 * ( latitude + mathematics::PI / 2.0 ), Eigen::Vector3d::UnitY( ) );
     Quaterniond  frameTransformationQuaternion = Quaterniond(
                 ( RotationAroundZaxis * RotationAroundYaxis ) );
 
