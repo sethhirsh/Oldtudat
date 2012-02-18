@@ -273,7 +273,7 @@ private:
     /*!
      * Defines first derivative of root-finder function for the velocity-effect
      * delta-V.
-     * \param incomingEccentricity_ Incoming eccentricity.
+     * \param incomingEccentricity Incoming eccentricity.
      * \return Value of first derivative of root-finder function at defined
      *          eccentricity.
      */

@@ -50,7 +50,7 @@ namespace input_output
 Eigen::MatrixXd readMatrixFromFile( const std::string& relativePath, const std::string& separators,
                                     const std::string& skipLinesCharacter )
 {
-    // Open input and output
+    // Open input and output.
     std::fstream file( relativePath.c_str( ), std::ios::in );
     if ( file.fail( ) )
     {

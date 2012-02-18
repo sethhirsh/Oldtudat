@@ -32,17 +32,15 @@
 // instead.
 // 
 
-#ifndef COMPOSITESURFACEGEOMETRY_H
-#define COMPOSITESURFACEGEOMETRY_H
+#ifndef TUDAT_COMPOSITE_SURFACE_GEOMETRY_H
+#define TUDAT_COMPOSITE_SURFACE_GEOMETRY_H
 
-// Include statements.
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 #include "Tudat/Mathematics/GeometricShapes/surfaceGeometry.h"
 #include <vector>
 
 using std::vector;
 
-//! Tudat library namespace.
 namespace tudat
 {
 
@@ -62,8 +60,7 @@ public:
 
     //! Default constructor.
     /*!
-     * Default constructor, sets number of single and composite geometries to
-     * zero.
+     * Default constructor, sets number of single and composite geometries to zero.
      */
     CompositeSurfaceGeometry( ) : numberOfSingleSurfaceGeometries_( 0 ),
         numberOfCompositeSurfaceGeometries_( 0 ), singleSurfaceGeometryList_( NULL ),
@@ -77,12 +74,10 @@ public:
 
     //! Set pointer to SingleSurfaceGeometry object.
     /*!
-     * Sets a pointer to a SingleSurfaceGeometry object in
-     * singleSurfaceGeometryList_.
+     * Sets a pointer to a SingleSurfaceGeometry object in singleSurfaceGeometryList_.
      * \param pointerToSingleSurfaceGeometry Pointer to SingleSurfaceGeometry
      *           object which is to be stored in singleSurfaceGeometryList_.
-     * \param index Index of singleSurfaceGeometryList_ at which the surface is
-     *          to be set.
+     * \param index Index of singleSurfaceGeometryList_ at which the surface is to be set.
      */
     void setSingleSurfaceGeometry( SingleSurfaceGeometry* pointerToSingleSurfaceGeometry,
                                    const unsigned int& index )
@@ -95,8 +90,7 @@ public:
      * \param pointerToCompositeSurfaceGeometry Pointer to
      *          CompositeSurfaceGeometry object which is to be stored in
      *          compositeSurfaceGeometryList_.
-     * \param index Index of compositeSurfaceGeometryList_ at which the surface
-     *          is to be set.
+     * \param index Index of compositeSurfaceGeometryList_ at which the surface is to be set.
      */
     void setCompositeSurfaceGeometry( CompositeSurfaceGeometry* pointerToCompositeSurfaceGeometry,
                                       const unsigned int& index )
@@ -105,8 +99,7 @@ public:
     //! Set number of single surface geometries.
     /*!
      * Sets and allocates number of SingleSurfaceGeometry objects.
-     * \param numberOfSingleSurfaceGeometries Number of SingleSurfaceGeometry
-     *          objects stored.
+     * \param numberOfSingleSurfaceGeometries Number of SingleSurfaceGeometry objects stored.
      */
     void setNumberOfSingleSurfaceGeometries( const unsigned int& numberOfSingleSurfaceGeometries )
     {
@@ -210,8 +203,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // COMPOSITESURFACEGEOMETRY_H
-
-// End of file.
+#endif // TUDAT_COMPOSITE_SURFACE_GEOMETRY_H

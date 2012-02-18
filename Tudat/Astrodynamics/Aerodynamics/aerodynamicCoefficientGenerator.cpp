@@ -26,11 +26,9 @@
  *
  */
 
-// Include statements.
 #include <string>
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamicCoefficientGenerator.h"
 
-//! Tudat library namespace.
 namespace tudat
 {
 
@@ -64,7 +62,8 @@ void AerodynamicCoefficientGenerator::setNumberOfAngleOfAttackPoints(
     numberOfPointsPerIndependentVariables_ [ angleOfAttackIndex_ ] = numberOfAngleOfAttackPoints;
 
     // Allocate memory for data points.
-    dataPointsOfIndependentVariables_[ angleOfAttackIndex_ ].resize( boost::extents[ numberOfAngleOfAttackPoints ] );
+    dataPointsOfIndependentVariables_[ angleOfAttackIndex_ ].resize(
+                boost::extents[ numberOfAngleOfAttackPoints ] );
 }
 
 //! Set the number of points for angle of sideslip.
@@ -76,7 +75,8 @@ void AerodynamicCoefficientGenerator::setNumberOfAngleOfSideslipPoints(
             = numberOfAngleOfSideslipPoints;
 
     // Allocate memory for data points.
-    dataPointsOfIndependentVariables_[ angleOfSideslipIndex_ ].resize( boost::extents[ numberOfAngleOfSideslipPoints ]);
+    dataPointsOfIndependentVariables_[ angleOfSideslipIndex_ ].resize(
+                boost::extents[ numberOfAngleOfSideslipPoints ]);
 }
 
 //! Set the number of points for the Reynolds Number.
@@ -87,11 +87,13 @@ void AerodynamicCoefficientGenerator::setNumberOfReynoldsNumberPoints(
     numberOfPointsPerIndependentVariables_ [ reynoldsNumberIndex_ ] = numberOfReynoldsNumberPoints;
 
     // Allocate memory for data points.
-    dataPointsOfIndependentVariables_[ reynoldsNumberIndex_ ].resize( boost::extents [ numberOfReynoldsNumberPoints ] );
+    dataPointsOfIndependentVariables_[ reynoldsNumberIndex_ ].resize(
+                boost::extents [ numberOfReynoldsNumberPoints ] );
 }
 
 //! Convert independent variable indices to list index in vehicleCoefficients_.
-int AerodynamicCoefficientGenerator::variableIndicesToListIndex( vector< int > independentVariableIndices )
+int AerodynamicCoefficientGenerator::variableIndicesToListIndex(
+        vector< int > independentVariableIndices )
 {
     int i, j;
 
@@ -119,6 +121,4 @@ int AerodynamicCoefficientGenerator::variableIndicesToListIndex( vector< int > i
     return coefficientsIndex_;
 }
 
-}
-
-// End of file.
+} // namespace tudat

@@ -57,8 +57,8 @@ namespace coordinate_conversions
  * The transformation equations are the following, with \f$ r \f$ the radius and
  * \f$ \theta \f$ the azimuth angle [rad]:
  * \f{eqnarray*}{
- *      x &=& r\cos\theta \\
- *      y &=& r\sin\theta \\
+ *      x &=& r\cos \theta \\
+ *      y &=& r\sin \theta \\
  *      z &=& z \\
  * \f}
  * \param radius Cylindrical radial coordinate r.
@@ -76,8 +76,8 @@ Eigen::Vector3d convertCylindricalToCartesian( const double radius,
  * The transformation equations are the following, with \f$ r \f$ the radius and
  * \f$ \theta \f$ the azimuth angle [rad]:
  * \f{eqnarray*}{
- *      x &=& r\cos\theta \\
- *      y &=& r\sin\theta \\
+ *      x &=& r\cos \theta \\
+ *      y &=& r\sin \theta \\
  *      z &=& z \\
  * \f}
  * \param cylindricalCoordinates Vector of cylindrical coordinates [r,theta,z].
@@ -93,8 +93,8 @@ Eigen::Vector3d convertCylindricalToCartesian( const Eigen::Vector3d& cylindrica
  * The transformation equations are the following, with \f$ r \f$ the radius and
  * \f$ \theta \f$ the azimuth angle [rad]:
  * \f{eqnarray*}{
- *      x &=& r\cos\theta \\
- *      y &=& r\sin\theta \\
+ *      x &=& r\cos \theta \\
+ *      y &=& r\sin \theta \\
  *      z &=& z \\
  *      \dot{x} &=& V_r\cos{\theta} - V_{\theta}\sin{theta} \\
  *      \dot{y} &=& V_r\sin{\theta} + V_{\theta}\cos{theta} \\
