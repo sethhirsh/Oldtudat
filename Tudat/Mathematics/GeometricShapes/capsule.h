@@ -87,7 +87,7 @@ public:
     //! Set rear length.
     /*!
      * Sets the rear length of the capsule.
-     * \param rearRadius Rear radius.
+     * \param rearLength Rear length.
      */
     void setRearLength( double rearLength ) { rearLength_ = rearLength; }
 

@@ -94,9 +94,8 @@ public:
     /*!
      * Sets the smallest allowable periapsis distance of the swing-by.
      * For maximum swing-by energy this is the central body radius.
-     *
-     * \param smallestPeriapsisDistanceFactor Smallest periapsis distance.
-     * \see   GravityAssist::smallestPeriapsisDistance
+     * \param smallestPeriapsisDistance Smallest periapsis distance.
+     * \sa GravityAssist::smallestPeriapsisDistance.
      */
     void setSmallestPeriapsisDistance( double smallestPeriapsisDistance )
     { smallestPeriapsisDistance_ = smallestPeriapsisDistance; }
@@ -276,7 +275,7 @@ private:
      * delta-V.
      * \param incomingEccentricity_ Incoming eccentricity.
      * \return Value of first derivative of root-finder function at defined
-     * eccentricity.
+     *          eccentricity.
      */
     double firstDerivativeVelocityEffectFunction( double& incomingEccentricity );
 };

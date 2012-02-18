@@ -111,7 +111,7 @@ public:
     /*!
      * Sets the point w.r.t. which the arm of the aerodynamic moment on a vehicle panel is
      * determined.
-     * \param referencePoint Aerodynamic reference point.
+     * \param momentReferencePoint Aerodynamic moment reference point.
      */
     void setMomentReferencePoint( const Eigen::Vector3d& momentReferencePoint )
     { momentReferencePoint_ = momentReferencePoint; }

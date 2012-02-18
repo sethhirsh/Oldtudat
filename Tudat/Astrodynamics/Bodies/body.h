@@ -43,9 +43,9 @@ public:
 
     //! Create a body with a given mass.
     /*!
-     * \param Mass of the body, default=0.
+     * \param mass Mass of the body, default = 0.0.
      */
-    Body( double mass = 0) : mass_( mass ) { }
+    Body( double mass = 0.0 ) : mass_( mass ) { }
 
     //! Default destructor.
     /*!

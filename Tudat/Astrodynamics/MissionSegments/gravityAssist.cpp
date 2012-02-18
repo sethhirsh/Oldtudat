@@ -94,21 +94,21 @@ GravityAssist::GravityAssist( ) :
 }
 
 //! Define root-finder function for the velocity-effect delta-V.
-double GravityAssist::velocityEffectFunction( double &incomingEccentricity_ )
+double GravityAssist::velocityEffectFunction( double& incomingEccentricity )
 {
-    return asin( 1.0 /incomingEccentricity_ )
+    return asin( 1.0 /incomingEccentricity )
             + asin( 1.0 / ( 1.0 - incomingSemiMajorAxis_ / outgoingSemiMajorAxis_ *
-                            ( 1.0 -incomingEccentricity_ ) ) ) - bendingAngle_;
+                            ( 1.0 -incomingEccentricity ) ) ) - bendingAngle_;
 }
 
 //! Define root-finder first-derivative function for the velocity-effect delta-V.
-double GravityAssist::firstDerivativeVelocityEffectFunction( double &incomingEccentricity_ )
+double GravityAssist::firstDerivativeVelocityEffectFunction( double& incomingEccentricity )
 {
-    double eccentricitySquareMinusOne_ = pow( incomingEccentricity_, 2.0 ) - 1.0;
+    double eccentricitySquareMinusOne_ = pow( incomingEccentricity, 2.0 ) - 1.0;
     double semiMajorAxisRatio_ = incomingSemiMajorAxis_ / outgoingSemiMajorAxis_ ;
-    double bParameter_ = 1.0 - semiMajorAxisRatio_ * ( 1.0 - incomingEccentricity_ );
+    double bParameter_ = 1.0 - semiMajorAxisRatio_ * ( 1.0 - incomingEccentricity );
 
-    return -1.0 / ( incomingEccentricity_ * sqrt( eccentricitySquareMinusOne_ ) ) -
+    return -1.0 / ( incomingEccentricity * sqrt( eccentricitySquareMinusOne_ ) ) -
             semiMajorAxisRatio_ / ( bParameter_ * sqrt( pow( bParameter_, 2.0 ) - 1.0 ) );
 }
 

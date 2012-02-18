@@ -33,16 +33,11 @@
 // formulation of the normal equations.
 // 
 
-#ifndef SIMPLELINEARREGRESSION_H
-#define SIMPLELINEARREGRESSION_H
+#ifndef TUDAT_SIMPLE_LINEAR_REGRESSION_H
+#define TUDAT_SIMPLE_LINEAR_REGRESSION_H
 
-// Include statements.
 #include <map>
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -76,28 +71,28 @@ public:
      * Returns coefficient of constant term of fit.
      * \return Coefficient of constant term.
      */
-    double& getCoefficientOfConstantTerm( ) { return coefficientOfConstantTerm_; }
+    double getCoefficientOfConstantTerm( ) const { return coefficientOfConstantTerm_; }
 
     //! Get coefficient of linear term of fit.
     /*!
      * Returns coefficient of linear term of fit.
      * \return Coefficient of linear term.
      */
-    double& getCoefficientOfLinearTerm( ) { return coefficientOfLinearTerm_; }
+    double getCoefficientOfLinearTerm( ) const { return coefficientOfLinearTerm_; }
 
     //! Get chi-squared value.
     /*!
      * Returns chi-squared value of fit.
      * \return Chi-squared value.
      */
-    double& getChiSquared( ) { return chiSquared_; }
+    double getChiSquared( ) const { return chiSquared_; }
 
     //! Get standard deviation of coefficient of constant term of fit.
     /*!
      * Returns standard deviation of coefficient of constant term of fit.
      * \return Standard deviation of coefficient of constant term.
      */
-    double& getStandardDeviationOfCoefficientOfConstantTerm( )
+    double getStandardDeviationOfCoefficientOfConstantTerm( ) const
     { return standardDeviationOfCoefficientOfConstantTerm_; }
 
     //! Get standard deviation of coefficient of linear term of fit.
@@ -105,7 +100,7 @@ public:
      * Returns standard deviation of coefficient of linear term of fit.
      * \return Standard deviation of coefficient of linear term.
      */
-    double& getStandardDeviationOfCoefficientOfLinearTerm( )
+    double getStandardDeviationOfCoefficientOfLinearTerm( ) const
     { return standardDeviationOfCoefficientOfLinearTerm_; }
 
     //! Compute fit.

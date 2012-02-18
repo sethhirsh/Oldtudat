@@ -114,7 +114,7 @@ public:
     //! Set bodies to propagate.
     /*!
      * Set map of bodies to propagate.
-     * \param bodiesToProgate Map of bodies to propagate.
+     * \param bodiesToPropagate Map of bodies to propagate.
      */
     void setBodiesToPropagate( std::map< Body*, PropagatorDataContainer > bodiesToPropagate )
     { bodiesToPropagate_ = bodiesToPropagate; }

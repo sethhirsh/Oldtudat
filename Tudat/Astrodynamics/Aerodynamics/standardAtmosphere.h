@@ -61,6 +61,9 @@ public:
     /*!
     * Returns the local pressure of the atmosphere parameter in Newton-per-meter^2.
     * \param altitude Altitude.
+    * \param longitude Longitude.
+    * \param latitude Latitude.
+    * \param time Time.
     * \return Atmospheric pressure.
     */
     virtual double getPressure( double altitude, double longitude = 0.0,

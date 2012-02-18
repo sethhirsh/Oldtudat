@@ -79,6 +79,7 @@ public:
     /*!
      * Compute the force.
      * \param pointerToState Pointer to an object of the State class.
+     * \param time Time (or other independent variable).
      */
     virtual void computeForce( State* pointerToState, double time ) = 0;
 

@@ -70,22 +70,25 @@ public:
             pointerToBodySubjectToForce_( pointerToBodySubjectToForce ),
             pointerToGravityFieldModel_(  pointerToGravityFieldModel ) { }
 
-    //! Retrieves the pointer to the body that on which the force is acting.
+    //! Get pointer to the body that on which the force is acting.
     /*!
-     * Retrieves the pointer to the body that on which the force is acting.
-     * \param Pointer to the body that on which the force is acting.
+     * Returns the pointer to the body that on which the force is acting.
+     * \return Pointer to the body that on which the force is acting.
      */
-    Body* getPointerToBodySubjectToForce( )
-        { return  pointerToBodySubjectToForce_; }
+    Body* getPointerToBodySubjectToForce( ) { return  pointerToBodySubjectToForce_; }
 
-    GravityFieldModel* getPointerToGravityFieldModel( )
-        { return pointerToGravityFieldModel_; }
-
+    //! Get pointer to the gravitational field model.
+    /*!
+     * Returns the pointer to the gravitational field model.
+     * \return Pointer to the gravitational field model.
+     */
+    GravityFieldModel* getPointerToGravityFieldModel( )  { return pointerToGravityFieldModel_; }
 
     //! Compute force due to gravity field.
     /*!
      * Computes the force due to the gravity field in Newtons.
      * \param pointerToState Pointer to an object of the State class.
+     * \param time Time (or other independent variable).
      */
     void computeForce( State* pointerToState, double time );
 

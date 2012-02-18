@@ -27,23 +27,19 @@
 // (e.g., lower, middle and upper atmosphere).
 // 
 
-// Include statements.
 #include <iostream>
 #include "TudatCore/Astrodynamics/BasicAstrodynamics/physicalConstants.h"
 #include "Tudat/Astrodynamics/Aerodynamics/exponentialAtmosphere.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
 //! Set predefined exponential atmosphere settings.
 void ExponentialAtmosphere::setPredefinedExponentialAtmosphere(
-        BodiesWithPredefinedExponentialAtmospheres bodyWithPredefindExponentialAtmosphere )
+        ExponentialAtmosphere::BodiesWithPredefinedExponentialAtmospheres
+        bodyWithPredefinedExponentialAtmosphere )
 {
-    switch( bodyWithPredefindExponentialAtmosphere )
+    switch( bodyWithPredefinedExponentialAtmosphere )
     {
     case earth:
         // Set local variables for Earth exponential atmosphere. Based on  lecture notes
@@ -69,6 +65,4 @@ void ExponentialAtmosphere::setPredefinedExponentialAtmosphere(
     }
 }
 
-}
-
-// End of file.
+} // namespace tudat

@@ -22,24 +22,14 @@
  *
  */
 
-// Temporary notes (move to class/function doxygen):
-// Baseclass for standard and reference Atmospheres.
-// 
+#ifndef TUDAT_EXPONENTIAL_ATMOSPHERE_H
+#define TUDAT_EXPONENTIAL_ATMOSPHERE_H
 
-#ifndef EXPONENTIALATMOSPHERE_H
-#define EXPONENTIALATMOSPHERE_H
-
-// Macros.
 #define TUDAT_UNUSED_PARAMETER( unusedParameter ) { ( void ) unusedParameter; }
 
-// Include statements.
 #include <cmath>
 #include "Tudat/Astrodynamics/Aerodynamics/atmosphereModel.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -50,7 +40,7 @@ namespace tudat
  * temperature. The density is determined by \f$ \rho = \rho_0 e^{-h/H} \f$, with \f$ \rho_0 \f$
  * the density at zero altitude, \f$ h \f$ the altitude, and \f$ H \f$ the scaling
  * altitude. The temperature is taken as constant and the pressure follows from the universal
- * gas law \f$ p = \rho RT$
+ * gas law \f$ p = \rho RT \f$.
  */
 class ExponentialAtmosphere : public AtmosphereModel
 {
@@ -71,9 +61,9 @@ public:
 
     //! Set predefined exponential atmosphere settings.
     /*!
-     * Set predefined exponential atmosphere settings
+     * Sets predefined exponential atmosphere settings.
      * \param bodyWithPredefinedExponentialAtmosphere Body with a predefined exponential
-     * atmosphere.
+     *          atmosphere.
      */
     void setPredefinedExponentialAtmosphere( BodiesWithPredefinedExponentialAtmospheres
                                              bodyWithPredefinedExponentialAtmosphere );
@@ -217,8 +207,6 @@ private:
     double specificGasConstant_;
 };
 
-}
+} // namespace tudat
 
-#endif // EXPONENTIALATMOSPHERE_H
-
-// End of file.
+#endif // TUDAT_EXPONENTIAL_ATMOSPHERE_H

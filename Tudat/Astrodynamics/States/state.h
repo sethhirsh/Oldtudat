@@ -63,14 +63,14 @@ public:
     //! Constructor with state vector.
     /*!
      * Custom constructor ,which sets the internal state vector to the specified vector.
-     * \param state_ State vector
+     * \param stateToSet State vector to set.
      */
     State( const Eigen::VectorXd& stateToSet ) : state( stateToSet ) { }
 
     //! Constructor with initial length.
     /*!
      * Custom constructor, which sets the internal state vector to the specified length.
-     * \param stateLength_ Length of the state vector
+     * \param stateLength Length of the state vector.
      */
     State( int stateLength ) : state( stateLength ) { }
 

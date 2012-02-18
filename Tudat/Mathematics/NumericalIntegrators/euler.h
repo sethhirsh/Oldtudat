@@ -110,11 +110,11 @@ public:
 
     //! Perform a single Euler integration step.
     /*!
-     * Perform a single Euler integration step from intervalStart with initialState and stepSize
-     * and sets the stepSize member variable.
-     * \param intervalStart The start of the interval of this step.
-     * \param initialState The initial state.
-     * \param initialStepSize The initial step size.
+     * Performs a single Euler integration step using a step of size specified by stepSize. The
+     * initial state for the step is internally set to the final state of the previous step. In
+     * case this is the first step, the initial state is set to the initial state provided by the
+     * user.
+     * \param stepSize The size of the step to take.
      * \return The state at the end of the interval.
      */
     virtual StateType performIntegrationStep( const IndependentVariableType stepSize )

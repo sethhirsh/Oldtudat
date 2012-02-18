@@ -42,6 +42,7 @@ using tudat::mathematics::numerical_integrators::RungeKuttaCoefficients;
 //! Test the validity of the RungeKuttaVariableStepsize integrator.
 /*!
  * Tests the validity of the RungeKuttaVariableStepsize integrator.
+ * \param coefficients The coefficient set used for the Runge-Kutta integrator being tested.
  * \param stateDerivativeFunction Function pointer to the state derivative function.
  * \param intervalStart The start of the integration interval.
  * \param intervalEnd The end of the integration interval.
@@ -57,13 +58,13 @@ bool testValidityOfRungeKuttaVariableStepsizeIntegrator(
         const RungeKuttaVariableStepSizeIntegratorXd::StateDerivativeFunction&
         stateDerivativeFunction,
         const double intervalStart, const double intervalEnd, const double stepSize,
-        const Eigen::VectorXd& initialState_, const Eigen::VectorXd expectedState,
+        const Eigen::VectorXd& initialState, const Eigen::VectorXd expectedState,
         const double tolerance )
 {
     // Create forward RungeKuttaVariableStepsize, fixed stepsize integrator.
     {
         RungeKuttaVariableStepSizeIntegratorXd integrator( coefficients, stateDerivativeFunction,
-                                                           intervalStart, initialState_,
+                                                           intervalStart, initialState,
                                                            1.0e-15, tolerance / 10.0 );
 
         Eigen::VectorXd finalState = integrator.integrateTo( intervalEnd, stepSize );
@@ -87,7 +88,7 @@ bool testValidityOfRungeKuttaVariableStepsizeIntegrator(
     // Try the same again, but in two steps.
     {
         RungeKuttaVariableStepSizeIntegratorXd integrator( coefficients, stateDerivativeFunction,
-                                                           intervalStart, initialState_,
+                                                           intervalStart, initialState,
                                                            1.0e-15, tolerance / 10.0 );
 
         const double intermediateIndependentVariable

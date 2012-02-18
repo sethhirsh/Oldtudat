@@ -128,7 +128,7 @@ Eigen::Vector3d convertCartesianToCylindrical( const Eigen::Vector3d& cartesianC
 * http://mathworld.wolfram.com/CylindricalCoordinates.html and
 * http://staffweb.cms.gre.ac.uk/~ct02/research/thesis/node26.html.
 * The transformation equations are the following, with \f$ r \f$  the radius,
-* \f$ \theta \f$ the azimuth angle [rad] [0,2\pi] and \f$ V_r \f$, \f$ V_{\theta} \f$ and
+* \f$ \theta \f$ the azimuth angle [rad] [0,2\f$\pi\f$] and \f$ V_r \f$, \f$ V_{\theta} \f$ and
 * \f$ V_z \f$ the linear cylindrical velocities:
 * \f{eqnarray*}{
 *      r &=& \sqrt{x^2+y^2} \\
@@ -138,7 +138,7 @@ Eigen::Vector3d convertCartesianToCylindrical( const Eigen::Vector3d& cartesianC
 *      V_{\theta} = r\dot{\theta} &=& \frac{x\dot{y}-y\dot{x}}{\sqrt{x^2+y^2}} \\
 *      V_z = \dot{z}
 * \f}
-* \param cylindricalState Vector of Cartesian state [x,y,z,xdot,ydot,zdot].
+* \param cartesianState Vector of Cartesian state [x,y,z,xdot,ydot,zdot].
 * \return Vector of cylindrical state [r,theta,z,Vr,Vtheta,Vz], where Vtheta = r*thetadot.
 */
 Eigen::VectorXd convertCartesianToCylindrical( const Eigen::VectorXd& cartesianState );
