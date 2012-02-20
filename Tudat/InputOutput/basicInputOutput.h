@@ -64,7 +64,7 @@ static inline std::string getTudatRootPath( )
     return std::string( TUDAT_CUSTOM_ROOT_PATH );
 #else
     // Declare file path string assigned to filePath.
-        // __FILE__ only gives the absolute path in the header file!
+    // __FILE__ only gives the absolute path in the header file!
     std::string filePath_( __FILE__ );
 
     // Strip filename from temporary string and return root-path string.

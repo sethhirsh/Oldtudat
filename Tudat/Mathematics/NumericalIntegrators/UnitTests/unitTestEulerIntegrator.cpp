@@ -160,7 +160,6 @@ bool testDifferentStateAndStateDerivativeTypes( )
     return true;
 }
 
-
 //! Test if the Euler integrator is working correctly.
 BOOST_AUTO_TEST_CASE( testEulerIntegrator )
 {

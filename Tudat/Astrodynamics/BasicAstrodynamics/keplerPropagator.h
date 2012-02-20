@@ -15,167 +15,62 @@
  *      110207    E. Iorfida        Minor changes.
  *      110214    K. Kumar          Updated code to use orbital element conversion functions.
  *      110920    K. Kumar          Corrected simple errors outlined by M. Persson.
+ *      120215    K. Kumar          Rewrote Kepler propagator as free function.
  *
  *    References
  *
  */
 
-// Temporary notes (move to class/function doxygen):
-// The code at present does not work for near-parabolic orbits
-// ( 0.8 < eccentricity < 1.2 ). In future, this neeeds to be included
-// and perhaps a universal method to solve Kepler's equation needs to be
-// employed. Presently, the code will output an error if the eccentricity
-// of the orbit to be propagated lies within this range.
-// 
+#ifndef TUDAT_KEPLER_PROPAGATOR_H
+#define TUDAT_KEPLER_PROPAGATOR_H
 
-#ifndef KEPLERPROPAGATOR_H
-#define KEPLERPROPAGATOR_H
+#include <Eigen/Core>
 
-// Include statements.
-#include <iostream>
-#include <cmath>
-#include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToEccentricAnomaly.h"
-#include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
-#include "Tudat/Astrodynamics/BasicAstrodynamics/propagator.h"
-#include "Tudat/Astrodynamics/Bodies/body.h"
-#include "Tudat/Astrodynamics/States/cartesianElements.h"
-#include "Tudat/Astrodynamics/States/keplerianElements.h"
-#include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
-
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
-// Using declarations.
-using tudat::orbital_element_conversions::ConvertMeanAnomalyToEccentricAnomaly;
-using tudat::orbital_element_conversions::ConvertMeanAnomalyToHyperbolicEccentricAnomaly;
-
-//! Kepler propagator class.
-/*!
- * Definition of Kepler propagator class that propagates Kepler orbits
- * analytically.
- */
-class KeplerPropagator : public Propagator
+namespace orbital_element_conversions
 {
-public:
 
-    //! Default constructor.
-    /*!
-     * Default constructor.
-     */
-    KeplerPropagator( ) : eccentricAnomaly_( -0.0 ), eccentricAnomalyChange_( -0.0 ),
-        hyperbolicEccentricAnomaly_( -0.0 ), meanAnomaly_( -0.0 ), meanAnomalyChange_( -0.0 ),
-        trueAnomaly_( -1.0 ), pointerToNewtonRaphson_( NULL ) { }
+//! Propagate Kepler orbit.
+/*!
+ * Propagates Kepler orbit. This function essentially takes a state in classical Keplerian elements
+ * at an initial epoch and propagates it to a final state at a given final epoch. Currently,
+ * this implementation only supports elliptical orbits ( 0 < e < 0.98 ). An error is thrown for all
+ * other eccentricities.
+ * \param initialStateInKeplerianElements Initial state vector in classical Keplerian elements.
+ *          Order is important!
+ *          initialStateInKeplerianElements( 0 ) = semiMajorAxis,                               [m]
+ *          initialStateInKeplerianElements( 1 ) = eccentricity,                                [-]
+ *          initialStateInKeplerianElements( 2 ) = inclination,                               [rad]
+ *          initialStateInKeplerianElements( 3 ) = argument of periapsis,                     [rad]
+ *          initialStateInKeplerianElements( 4 ) = longitude of ascending node,               [rad]
+ *          initialStateInKeplerianElements( 5 ) = true anomaly.                              [rad]
+ * \param epochOfInitialState Epoch of initial state.                                           [s]
+ * \param epochOfFinalState Epoch of final state.                                               [s]
+ * \param centralBodyGravitationalParameter Gravitational parameter of central body      [m^3 s^-2]
+ * \param newtonRaphsonConvergenceTolerance Convergence tolerance for Newton-Raphson
+ *          root-finder.                                                                        [-]
+ * \param useModuloOption Option to propagate remainder time computed from
+ *          mod( propagationTime, orbitalPeriod ). This has computational advantages when the
+ *          angles in Kepler's equation become very large. The default is set to true.
+ * \return finalStateInKeplerianElements Final state vector in classical Keplerian elements.
+ *          Order is important!
+ *          finalStateInKeplerianElements( 0 ) = semiMajorAxis,                                 [m]
+ *          finalStateInKeplerianElements( 1 ) = eccentricity,                                  [-]
+ *          finalStateInKeplerianElements( 2 ) = inclination,                                 [rad]
+ *          finalStateInKeplerianElements( 3 ) = argument of periapsis,                       [rad]
+ *          finalStateInKeplerianElements( 4 ) = longitude of ascending node,                 [rad]
+ *          finalStateInKeplerianElements( 5 ) = true anomaly.                                [rad]
+ */
+Eigen::VectorXd propagateKeplerOrbit( const Eigen::VectorXd& initialStateInKeplerianElements,
+                                      const double epochOfInitialState,
+                                      const double epochOfFinalState,
+                                      const double centralBodyGravitationalParameter,
+                                      const double newtonRaphsonConvergenceTolerance,
+                                      bool useModuloOption = true );
 
-    //! Set central body.
-    /*!
-     * Sets the central body for given body to propagate.
-     * \param pointerToBody Pointer to Body object.
-     * \param pointerToCentralBody Central body given as pointer to
-     *          CelestialBody object.
-     */
-    void setCentralBody( Body* pointerToBody, CelestialBody* pointerToCentralBody )
-    { bodiesToPropagate_[ pointerToBody ].pointerToCentralBody = pointerToCentralBody; }
+} // namespace orbital_element_conversions
+} // namespace tudat
 
-    //! Set Newton-Raphson method.
-    /*!
-     * Sets the Newton-Raphson method used.
-     * \param pointerToNewtonRaphson Pointer to NewtonRaphson object.
-     */
-    void setNewtonRaphson( NewtonRaphson* pointerToNewtonRaphson )
-    { pointerToNewtonRaphson_ = pointerToNewtonRaphson; }
-
-    //! Propagate.
-    /*!
-     * This function executes propagation.
-     */
-    void propagate( );
-
-    //! Overload ostream to print class information.
-    /*!
-     * Overloads ostream to print class information.
-     * \param stream Stream object.
-     * \param keplerPropagator Kepler propagator.
-     * \return Stream object.
-     */
-    friend std::ostream& operator<<( std::ostream& stream, KeplerPropagator& keplerPropagator );
-
-protected:
-
-private:
-
-    //! Eccentric anomaly.
-    /*!
-     * Eccentric anomaly.
-     */
-    double eccentricAnomaly_;
-
-    //! Change of eccentric anomaly.
-    /*!
-     * Change of eccentric anomaly.
-     */
-    double eccentricAnomalyChange_;
-
-    //! Hyperbolic eccentric anomaly.
-    /*!
-     * Hyperbolic eccentric anomaly.
-     */
-    double hyperbolicEccentricAnomaly_;
-
-    //! Mean anomaly.
-    /*!
-     * Mean anomaly.
-     */
-    double meanAnomaly_;
-
-    //! Mean anomaly change.
-    /*!
-     * Change of mean anomaly between start time and end time.
-     */
-    double meanAnomalyChange_;
-
-    //! True anomaly.
-    /*!
-     * True anomaly.
-     */
-    double trueAnomaly_;
-
-    //! Pointer to Newton-Raphson.
-    /*!
-     * Pointer to Newton-Raphson method.
-     */
-    NewtonRaphson* pointerToNewtonRaphson_;
-
-    //! Mean anomaly to eccentric anomaly conversion.
-    /*!
-     * Mean anomaly to eccentric anomaly conversion
-     */
-    ConvertMeanAnomalyToEccentricAnomaly convertMeanAnomalyToEccentricAnomaly_;
-
-    //! Mean anomaly to hyperbolic eccentric anomaly conversion.
-    /*!
-     * Mean anomaly to hyperbolic eccentric anomaly conversion.
-     */
-    ConvertMeanAnomalyToHyperbolicEccentricAnomaly convertMeanAnomalyToHyperbolicEccentricAnomaly_;
-
-    //! Cartesian elements object.
-    /*!
-     * Cartesian elements object.
-     */
-    CartesianElements cartesianElements_;
-
-    //! Keplerian elements object.
-    /*!
-     * Keplerian elements object.
-     */
-    KeplerianElements keplerianElements_;
-};
-
-}
-
-#endif // KEPLERPROPAGATOR_H
-
-// End of file.
+#endif // TUDAT_KEPLER_PROPAGATOR_H
