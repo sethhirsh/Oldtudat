@@ -1,29 +1,3 @@
-# \file CMakeLists.txt
- #    This is the main CMake file for the Tudat project.
- #
- #    Path              : /
- #    Version           : 6
- #    Check status      : Checked
- #
- #    Author            : S.M. Persson
- #    Affiliation       : McGill University, Department of Mechanical Engineering
- #    E-mail address    : mikael.s.persson@gmail.com
- #
- #    Author            : K. Kumar
- #    Affiliation       : Delft University of Technology
- #    E-mail address    : K.Kumar@tudelft.nl
- #
- #    Checker           : S.M. Persson
- #    Affiliation       : McGill University, Department of Mechanical Engineering
- #    E-mail address    : mikael.s.persson@gmail.com
- #
- #    Date created      : 20 August, 2011
- #    Last modified     : 17 November, 2011
- #
- #    References
- #
- #    Notes
- #
  #    Copyright (c) 2010-2011 Delft University of Technology.
  #
  #    This software is protected by national and international copyright.
@@ -45,7 +19,9 @@
  #      111028    K. Kumar          Corrected Boost variables and changed build-type to Debug.
  #      111103    K. Kumar          Updated CMake directory name in module path.
  #      111117    K. Kumar          Added system and filesystem Boost components.
- #      170212    S. Billemont      Added support for UserSettings.txt file
+ #      170212    S. Billemont      Added support for UserSettings.txt file.
+ #
+ #    References
  #/
 
 # Specify minimum CMake version required to compile Tudat.
@@ -98,18 +74,17 @@ else( )
     set(BINROOT "${CODEROOT}/bin")
 endif( )
 
-# Defines the install target to create a distribution of Tudat
+# Defines the install target to create a distribution of Tudat.
 if(NOT TUDAT_DISTRIBUTION_PATH)
     set(TUDAT_DISTRIBUTION_PATH "${CODEROOT}/dist/packages")
 endif(NOT TUDAT_DISTRIBUTION_PATH)
 
-
 # ------------------------------------------------------------------------------------
-# Don't define any new variables with SET that the user might change beyond this point
+# Don't define any new variables with SET that the user might change beyond this point.
 #
-# Load user specific settings. These can overwrite all previus settings.
+# Load user specific settings. These can overwrite all previous settings.
 if (NOT TUDAT_USER_SETTINGS AND NOT DEFINED ENV{TUDAT_USER_SETTINGS})
-  # Load from default paths, least important first
+  # Load from default paths, least important first.
   INCLUDE( "../UserSettings.txt" OPTIONAL)
   INCLUDE( "UserSettings.txt" OPTIONAL)
 else()
@@ -122,7 +97,7 @@ else()
   endif()
 endif()
 
-# Install the Tudat files
+# Install the Tudat files.
 install(DIRECTORY "${SRCROOT}/"
         DESTINATION "${TUDAT_DISTRIBUTION_PATH}/Tudat"
         FILES_MATCHING
@@ -149,7 +124,7 @@ macro(setup_headers HEADER_FILES HEADER_PATH)
     endforeach(CURRENT_HEADER_FILE)
 endmacro(setup_headers)
 
-# Set the main sub-directories
+# Set the main sub-directories.
 set(ASTRODYNAMICSDIR "/Astrodynamics")
 set(EXTERNALDIR "/External")
 set(INPUTOUTPUTDIR "/InputOutput")
@@ -160,7 +135,7 @@ include_directories(AFTER
   "${CODEROOT}"
 )
 
-# Load the environment file from the core distribution if specified
+# Load the environment file from the core distribution if specified.
 if(TUDAT_CORE_ENVIRONMENT_PATH)
     message(STATUS "Loading Tudat Core distribution from ${TUDAT_CORE_ENVIRONMENT_PATH}/TudatCoreEnvironment.cmake")
     include("${TUDAT_CORE_ENVIRONMENT_PATH}/TudatCoreEnvironment.cmake")
@@ -194,7 +169,7 @@ else( )
 endif( )
 
 # Find Tudat Core library on local system.
-find_package(TudatCore 0.1 REQUIRED)
+find_package(TudatCore 1.0 REQUIRED)
 
 # Include TudatCore directories.
 # Set CMake flag to suppress TudatCore warnings (platform-dependent solution).

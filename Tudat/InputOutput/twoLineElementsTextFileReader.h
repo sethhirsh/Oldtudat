@@ -51,6 +51,7 @@
 
 // Include statements.
 #include <fstream>
+#include <map>
 
 #include "Tudat/InputOutput/twoLineElementData.h"
 
