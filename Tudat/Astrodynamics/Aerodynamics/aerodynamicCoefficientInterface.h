@@ -1,22 +1,22 @@
-/*!  Copyright (c) 2010-2012 Delft University of Technology.
+/*    Copyright (c) 2010-2012 Delft University of Technology.
  *
- *   This software is protected by national and international copyright.
- *   Any unauthorized use, reproduction or modification is unlawful and
- *   will be prosecuted. Commercial and non-private application of the
- *   software in any form is strictly prohibited unless otherwise granted
- *   by the authors.
+ *    This software is protected by national and international copyright.
+ *    Any unauthorized use, reproduction or modification is unlawful and
+ *    will be prosecuted. Commercial and non-private application of the
+ *    software in any form is strictly prohibited unless otherwise granted
+ *    by the authors.
  *
- *   The code is provided without any warranty; without even the implied
- *   warranty of merchantibility or fitness for a particular purpose.
+ *    The code is provided without any warranty; without even the implied
+ *    warranty of merchantibility or fitness for a particular purpose.
  *
- *   Changelog
- *     YYMMDD    Author            Comment
- *     110608    F.M. Engelen      First creation of code.
- *     110714    D. Dirkx          Class name change and other minor changes during code check.
- *     110715    F.M. Engelen      Added the virtual compute function.
- *     110810    J. Leloux         Corrected doxygen documentation (function variable name).
+ *    Changelog
+ *      YYMMDD    Author            Comment
+ *      110608    F.M. Engelen      First creation of code.
+ *      110714    D. Dirkx          Class name change and other minor changes during code check.
+ *      110715    F.M. Engelen      Added the virtual compute function.
+ *      110810    J. Leloux         Corrected doxygen documentation (function variable name).
  *
- *   References
+ *    References
  *
  */
 
