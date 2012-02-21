@@ -26,10 +26,9 @@
  *
  */
 
-#ifndef AERODYNAMICCOEFFICIENTGENERATOR_H
-#define AERODYNAMICCOEFFICIENTGENERATOR_H
+#ifndef TUDAT_AERODYNAMIC_COEFFICIENT_GENERATOR_H
+#define TUDAT_AERODYNAMIC_COEFFICIENT_GENERATOR_H
 
-// Include statements.
 #include <Eigen/Core>
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamicCoefficientInterface.h"
 #include "boost/multi_array.hpp"
@@ -37,10 +36,6 @@
 
 using std::vector;
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -325,8 +320,6 @@ protected:
     int numberOfCases_;
 };
 
-}
+} // namespace tudat
 
-#endif // AERODYNAMICCOEFFICIENTGENERATOR_H
-
-// End of file.
+#endif // TUDAT_AERODYNAMIC_COEFFICIENT_GENERATOR_H

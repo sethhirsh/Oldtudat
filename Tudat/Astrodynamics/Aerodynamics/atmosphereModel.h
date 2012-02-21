@@ -25,15 +25,9 @@
 // Baseclass for standard and reference Atmospheres.
 // 
 
-#ifndef ATMOSPHEREMODEL_H
-#define ATMOSPHEREMODEL_H
+#ifndef TUDAT_ATMOSPHERE_MODEL_H
+#define TUDAT_ATMOSPHERE_MODEL_H
 
-// Include statements.
-
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -94,8 +88,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // ATMOSPHEREMODEL_H
-
-// End of file.
+#endif // TUDAT_ATMOSPHERE_MODEL_H

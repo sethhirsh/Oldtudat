@@ -18,10 +18,9 @@
  *
  */
 
-#ifndef CONVERTMEANANOMALYBASE_H
-#define CONVERTMEANANOMALYBASE_H
+#ifndef TUDAT_CONVERT_MEANANOMALY_BASE_H
+#define TUDAT_CONVERT_MEANANOMALY_BASE_H
 
-// Include statements.
 #include <ctime>
 #include "Tudat/Astrodynamics/Bodies/body.h"
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
@@ -30,10 +29,6 @@
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -110,10 +105,8 @@ protected:
 private:
 };
 
-}
+} // namespace orbital_element_conversions
 
-}
+} // namespace tudat
 
-#endif // CONVERTMEANANOMALYBASE_H
-
-// End of file.
+#endif // TUDAT_CONVERT_MEANANOMALY_BASE_H

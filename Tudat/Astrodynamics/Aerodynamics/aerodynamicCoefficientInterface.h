@@ -26,16 +26,11 @@
 // therefor not pure virtual in this base class.
 // 
 
-#ifndef AERODYNAMICCOEFFICIENTINTERFACE_H
-#define AERODYNAMICCOEFFICIENTINTERFACE_H
+#ifndef TUDAT_AERODYNAMIC_COEFFICIENT_INTERFACE_H
+#define TUDAT_AERODYNAMIC_COEFFICIENT_INTERFACE_H
 
-// Include statements.
 #include <Eigen/Core>
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -208,8 +203,6 @@ private:
 
 };
 
-}
+} // namespace tudat
 
-#endif // AERODYNAMICCOEFFICIENTINTERFACE_H
-
-// End of file.
+#endif // TUDAT_AERODYNAMIC_COEFFICIENT_INTERFACE_H

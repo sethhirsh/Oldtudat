@@ -22,16 +22,11 @@
 // Baseclass for standard Atmospheres.
 // 
 
-#ifndef STANDARDATMOSPHERE_H
-#define STANDARDATMOSPHERE_H
+#ifndef TUDAT_STANDARD_ATMOSPHERE_H
+#define TUDAT_STANDARD_ATMOSPHERE_H
 
-// Include statements.
 #include "Tudat/Astrodynamics/Aerodynamics/atmosphereModel.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -82,8 +77,6 @@ public:
                                    double latitude = 0.0, double time = 0.0 ) = 0;
 };
 
-}
+} // namespace tudat
 
-#endif // STANDARDATMOSPHERE_H
-
-// End of file.
+#endif // TUDAT_STANDARD_ATMOSPHERE_H

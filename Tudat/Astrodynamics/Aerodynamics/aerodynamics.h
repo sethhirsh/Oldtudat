@@ -28,17 +28,12 @@
  *
  */
 
-#ifndef AERODYNAMICS_H
-#define AERODYNAMICS_H
+#ifndef TUDAT_AERODYNAMICS_H
+#define TUDAT_AERODYNAMICS_H
 
-// Include statements.
 #include <cmath>
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -338,10 +333,7 @@ double computeShockTotalPressureRatio( double normalMachNumber,
 double computeShockDeflectionAngle( double shockAngle, double machNumber,
                                     double ratioOfSpecificHeats );
 
-}
+} // namespace aerodynamics
+} // namespace tudat
 
-}
-
-#endif // AERODYNAMICS_H
-
-// End of file.
+#endif // TUDAT_AERODYNAMICS_H

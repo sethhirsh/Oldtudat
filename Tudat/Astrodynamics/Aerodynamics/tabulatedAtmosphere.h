@@ -25,13 +25,11 @@
 // used.
 // 
 
-#ifndef TABULATEDATMOSPHERE_H
-#define TABULATEDATMOSPHERE_H
+#ifndef TUDAT_TABULATED_ATMOSPHERE_H
+#define TUDAT_TABULATED_ATMOSPHERE_H
 
-// Macros.
 #define TUDAT_UNUSED_PARAMETER( unusedParameter ) { ( void ) unusedParameter; }
 
-// Include statements.
 #include <Eigen/Core>
 #include <iostream>
 #include <string>
@@ -40,10 +38,6 @@
 
 using tudat::mathematics::interpolators::CubicSplineInterpolation;
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -201,8 +195,6 @@ private:
     CubicSplineInterpolation cubicSplineInterpolationForTemperature_;
 };
 
-}
+} // namespace tudat
 
-#endif // TABULATEDATMOSPHERE_H
-
-// End of file.
+#endif // TUDAT_TABULATED_ATMOSPHERE_H

@@ -26,10 +26,9 @@
  *
  */
 
-#ifndef HYPERSONICLOCALINCLINATIONANALYSIS_H
-#define HYPERSONICLOCALINCLINATIONANALYSIS_H
+#ifndef TUDATHYPERSONIC_LOCAL_INCLINATION_ANALYSIS_H
+#define TUDATHYPERSONIC_LOCAL_INCLINATION_ANALYSIS_H
 
-// Include statements.
 #include <Eigen/Core>
 #include <iostream>
 #include "Tudat/Astrodynamics/Bodies/vehicle.h"
@@ -39,10 +38,6 @@
 
 using std::vector;
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -379,8 +374,6 @@ private:
     boost::multi_array< double, 2 > selectedMethods_;
 };
 
-}
+} // namespace tudat
 
-#endif // HYPERSONICLOCALINCLINATIONANALYSIS_H
-
-// End of file.
+#endif // TUDATHYPERSONIC_LOCAL_INCLINATION_ANALYSIS_H

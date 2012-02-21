@@ -19,18 +19,13 @@
  *
  */
 
-#ifndef AERODYNAMICMOMENT_H
-#define AERODYNAMICMOMENT_H
+#ifndef TUDAT_AERODYNAMIC_MOMENT_H
+#define TUDAT_AERODYNAMIC_MOMENT_H
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamicCoefficientInterface.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/pureMomentModel.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -94,8 +89,6 @@ private:
     double dynamicPressure_;
 };
 
-}
+} // namespace tudat
 
-#endif // AERODYNAMICMOMENT_H
-
-// End of file.
+#endif // TUDAT_AERODYNAMIC_MOMENT_H

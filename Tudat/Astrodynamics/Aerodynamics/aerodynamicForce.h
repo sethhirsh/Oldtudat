@@ -18,21 +18,15 @@
  *
  */
 
-#ifndef AERODYNAMICFORCE_H
-#define AERODYNAMICFORCE_H
+#ifndef TUDAT_AERODYNAMIC_FORCE_H
+#define TUDAT_AERODYNAMIC_FORCE_H
 
-// Macros.
 #define TUDAT_UNUSED_PARAMETER( unusedParameter ) { ( void ) unusedParameter; }
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/BasicAstrodynamics/forceModel.h"
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamicCoefficientInterface.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -104,8 +98,6 @@ private:
     double dynamicPressure_;
 };
 
-}
+} // namespace tudat
 
-#endif // AERODYNAMICFORCE_H
-
-// End of file.
+#endif // TUDAT_AERODYNAMIC_FORCE_H
