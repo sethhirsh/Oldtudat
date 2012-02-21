@@ -26,7 +26,7 @@
 #include <boost/test/unit_test.hpp>
 #include <limits>
 #include <TudatCore/Mathematics/NumericalIntegrators/UnitTests/benchmarkFunctions.h>
-#include "Tudat/Mathematics/NumericalIntegrators/rungeKuttaVariableStepsizeIntegrator.h"
+#include "Tudat/Mathematics/NumericalIntegrators/rungeKuttaVariableStepSizeIntegrator.h"
 #include "Tudat/Mathematics/NumericalIntegrators/rungeKuttaCoefficients.h"
 
 namespace tudat
