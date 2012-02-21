@@ -18,8 +18,8 @@
  *                                  iteration.
  *      100929    D. Dirkx          Creation of separate file for class.
  *      101125    D. Dirkx          Migration of contents to this file.
- *      110124    K. Kumar          Updated path; minor comment and layout
- *                                  changes; removed inherited variables.
+ *      110124    K. Kumar          Updated path; minor comment and layout changes; removed
+ *                                  inherited variables.
  *      110204    K. Kumar          Minor comment and layout modifications;
  *                                  corrected Doxygen comments.
  *      110207    D. Dirkx          Removed overloaded ostream operator.
@@ -38,17 +38,12 @@
 // the SingleSurfaceGeometry class.
 // 
 
-#ifndef SINGLESURFACEGEOMETRY_H
-#define SINGLESURFACEGEOMETRY_H
+#ifndef TUDAT_SINGLE_SURFACE_GEOMETRY_H
+#define TUDAT_SINGLE_SURFACE_GEOMETRY_H
 
-// Include statements.
 #include <Eigen/Core>
 #include "Tudat/Mathematics/GeometricShapes/surfaceGeometry.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -297,8 +292,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // SINGLESURFACEGEOMETRY_H
-
-// End of file.
+#endif // TUDAT_SINGLE_SURFACE_GEOMETRY_H

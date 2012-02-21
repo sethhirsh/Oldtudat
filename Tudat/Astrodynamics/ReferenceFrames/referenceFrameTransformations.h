@@ -29,18 +29,13 @@
 // 
 // 
 
-#ifndef FRAMETRANSFORMATION_H
-#define FRAMETRANSFORMATION_H
+#ifndef TUDAT_FRAME_TRANSFORMATION_H
+#define TUDAT_FRAME_TRANSFORMATION_H
 
-// Include statements.
 #include <cmath>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -170,8 +165,6 @@ Quaterniond getLocalVerticalToRotatingPlanetocentricFrameTransformationQuaternio
 
 }
 
-}
+} // namespace tudat
 
-#endif // FRAMETRANSFORMATION_H
-
-// End of file.
+#endif // TUDAT_FRAME_TRANSFORMATION_H

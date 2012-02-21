@@ -26,17 +26,12 @@
  *
  */
 
-#ifndef SPHERESEGMENT_H
-#define SPHERESEGMENT_H
+#ifndef TUDAT_SPHERE_SEGMENT_H
+#define TUDAT_SPHERE_SEGMENT_H
 
-// Include statements.
 #include <Eigen/Core>
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -208,8 +203,6 @@ private:
     double radius_;
 };
 
-}
+} // namespace tudat
 
-#endif // SPHERESEGMENT_H
-
-// End of file.
+#endif // TUDAT_SPHERE_SEGMENT_H
