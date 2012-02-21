@@ -1,5 +1,3 @@
- # \file CMakeLists.txt
- #
  #    Copyright (c) 2010-2012 Delft University of Technology.
  #
  #    This software is protected by national and international copyright.

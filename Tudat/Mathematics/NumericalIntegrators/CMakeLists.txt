@@ -1,21 +1,3 @@
-# \file CMakeLists.txt
- #    This is the CMake file for the NumericalIntegrators sub-directory.
- #
- #    Path              : /Mathematics/NumericalIntegrators/
- #    Version           : 1
- #    Check status      : Unchecked
- #
- #    Author            : B. Tong Minh
- #    Affiliation       : Delft University of Technology
- #    E-mail address    : b.tongminh@student.tudelft.nl
- #
- #    Date created      : 27 January, 2011
- #    Last modified     : 27 January, 2011
- #
- #    References
- #
- #    Notes
- #
  #    Copyright (c) 2012 Delft University of Technology.
  #
  #    This software is protected by national and international copyright.

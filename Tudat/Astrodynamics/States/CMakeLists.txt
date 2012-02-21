@@ -1,29 +1,3 @@
-# \file CMakeLists.txt
- #    This is the CMake file for the States sub-directory.
- #
- #    Path              : /Astrodynamics/States/
- #    Version           : 4
- #    Check status      : Checked
- #
- #    Author/Checker    : S.M. Persson
- #    Affiliation       : McGill University, Department of Mechanical Engineering
- #    E-mail address    : mikael.s.persson@gmail.com
- #
- #    Author/Checker    : K. Kumar
- #    Affiliation       : Delft University of Technology
- #    E-mail address    : K.Kumar@tudelft.nl
- #
- #    Author            : B. Tong Minh
- #    Affiliation       : Delft University of Technology
- #    E-mail address    : b.tongminh@student.tudelft.nl
- #
- #    Date created      : 20 August, 2011
- #    Last modified     : 23 November, 2011
- #
- #    References
- #
- #    Notes
- #
  #    Copyright (c) 2010-2012 Delft University of Technology.
  #
  #    This software is protected by national and international copyright.
