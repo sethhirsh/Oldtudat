@@ -26,18 +26,13 @@
  *
  */
 
-#ifndef FORCEMODEL_H
-#define FORCEMODEL_H
+#ifndef TUDAT_FORCE_MODEL_H
+#define TUDAT_FORCE_MODEL_H
 
-// Include statements.
 #include <Eigen/Core>
 #include "Tudat/Astrodynamics/States/state.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/generalizedForceModel.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -95,8 +90,6 @@ private:
 
 };
 
-}
+} // namespace tudat
 
-#endif // FORCEMODEL_H
-
-// End of file.
+#endif // TUDAT_FORCE_MODEL_H

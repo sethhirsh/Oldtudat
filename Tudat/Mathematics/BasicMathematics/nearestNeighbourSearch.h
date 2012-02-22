@@ -32,20 +32,14 @@
  *
  */
 
-#ifndef TUDAT_BASICMATHEMATICS_H
-#define TUDAT_BASICMATHEMATICS_H
+#ifndef TUDAT_BASIC_MATHEMATICS_H
+#define TUDAT_BASIC_MATHEMATICS_H
 
-// Include statements.
 #include <Eigen/Core>
 #include <map>
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
-
 namespace mathematics
 {
 
@@ -73,10 +67,7 @@ int computeNearestLeftNeighborUsingBinarySearch(
         const std::map < double, Eigen::VectorXd >& sortedIndepedentAndDependentVariables,
         const double targetValueInMapOfData );
 
-}
+} // namespace mathematics
+} // namespace tudat
 
-}
-
-#endif // TUDAT_BASICMATHEMATICS_H
-
-// End of file.
+#endif // TUDAT_BASIC_MATHEMATICS_H

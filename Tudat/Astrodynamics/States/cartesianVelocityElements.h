@@ -17,17 +17,12 @@
  *
  */
 
-#ifndef CARTESIANVELOCITYELEMENTS_H
-#define CARTESIANVELOCITYELEMENTS_H
+#ifndef TUDAT_CARTESIAN_VELOCITY_ELEMENTS_H
+#define TUDAT_CARTESIAN_VELOCITY_ELEMENTS_H
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/States/state.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -109,8 +104,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // CARTESIANVELOCITYELEMENTS_H
-
-// End of file.
+#endif // TUDAT_CARTESIAN_VELOCITY_ELEMENTS_H

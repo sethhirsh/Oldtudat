@@ -18,16 +18,11 @@
  *
  */
 
-#ifndef TUDAT_CAPTUREPHASE_H
-#define TUDAT_CAPTUREPHASE_H
+#ifndef TUDAT_CAPTURE_PHASE_H
+#define TUDAT_CAPTURE_PHASE_H
 
-// Include statements.
 #include "Tudat/Astrodynamics/MissionSegments/escapeAndCapture.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -59,6 +54,4 @@ private:
 
 }
 
-#endif // TUDAT_CAPTUREPHASE_H
-
-// End of file.
+#endif // TUDAT_CAPTURE_PHASE_H

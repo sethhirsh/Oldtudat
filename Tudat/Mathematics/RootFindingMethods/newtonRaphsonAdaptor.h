@@ -18,16 +18,11 @@
  *
  */
 
-#ifndef NEWTONRAPHSONADAPTOR_H
-#define NEWTONRAPHSONADAPTOR_H
+#ifndef TUDAT_NEWTON_RAPHSON_ADAPTOR_H
+#define TUDAT_NEWTON_RAPHSON_ADAPTOR_H
 
-// Include statements.
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonBase.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -168,8 +163,6 @@ void NewtonRaphsonAdaptor< TClass >::setPointerToFirstDerivativeFunction(
     pointerToFirstDerivativeFunction_ = firstDerivativeFunction;
 }
 
-}
+} // namespace tudat
 
-#endif // NEWTONRAPHSONADAPTOR_H
-
-// End of file.
+#endif // TUDAT_NEWTON_RAPHSON_ADAPTOR_H

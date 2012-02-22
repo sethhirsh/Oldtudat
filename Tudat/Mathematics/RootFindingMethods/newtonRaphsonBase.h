@@ -17,13 +17,9 @@
  *
  */
 
-#ifndef NEWTONRAPHSONBASE_H
-#define NEWTONRAPHSONBASE_H
+#ifndef TUDAT_NEWTON_RAPHSON_BASE_H
+#define TUDAT_NEWTON_RAPHSON_BASE_H
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -62,8 +58,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // NEWTONRAPHSONBASE_H
-
-// End of file.
+#endif // TUDAT_NEWTON_RAPHSON_BASE_H

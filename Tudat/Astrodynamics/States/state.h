@@ -31,17 +31,12 @@
 // vectors in the rest of the code, e.g. setZero( ), segment( ).
 // 
 
-#ifndef STATE_H
-#define STATE_H
+#ifndef TUDAT_STATE_H
+#define TUDAT_STATE_H
 
-// Include statements.
 #include <Eigen/Core>
 #include <iostream>
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -101,8 +96,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // STATE_H
-
-// End of file.
+#endif // TUDAT_STATE_H

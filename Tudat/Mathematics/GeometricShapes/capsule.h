@@ -28,17 +28,12 @@
  *
  */
 
-#ifndef CAPSULE_H
-#define CAPSULE_H
+#ifndef TUDAT_CAPSULE_H
+#define TUDAT_CAPSULE_H
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Mathematics/GeometricShapes/compositeSurfaceGeometry.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -188,8 +183,6 @@ private:
     double rearAngle_;
 };
 
-}
+} // namespace tudat
 
-#endif // CAPSULE_H
-
-// End of file.
+#endif // TUDAT_CAPSULE_H

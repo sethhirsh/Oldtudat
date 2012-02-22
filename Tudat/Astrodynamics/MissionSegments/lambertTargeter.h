@@ -44,10 +44,9 @@
 // CartesianVelocityElements class with their direct reference.
 // 
 
-#ifndef TUDAT_LAMBERTTARGETER_H
-#define TUDAT_LAMBERTTARGETER_H
+#ifndef TUDAT_LAMBERT_TARGETER_H
+#define TUDAT_LAMBERT_TARGETER_H
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/MissionSegments/trajectoryDesignMethod.h"
@@ -56,10 +55,6 @@
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -356,8 +351,6 @@ private:
     double lambertFirstDerivativeFunction( double& xParameter_ );
 };
 
-}
+} // namespace tudat
 
-#endif // TUDAT_LAMBERTTARGETER_H
-
-// End of file.
+#endif // TUDAT_LAMBERT_TARGETER_H

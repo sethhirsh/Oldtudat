@@ -20,16 +20,11 @@
  *
  */
 
-#ifndef CONVERTMEANANOMALYTOHYPERBOLICECCENTRICANOMALY_H
-#define CONVERTMEANANOMALYTOHYPERBOLICECCENTRICANOMALY_H
+#ifndef TUDAT_CONVERT_MEAN_ANOMALY_TO_HYPERBOLIC_ECCENTRIC_ANOMALY_H
+#define TUDAT_CONVERT_MEAN_ANOMALY_TO_HYPERBOLIC_ECCENTRIC_ANOMALY_H
 
-// Include statements.
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyBase.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -113,10 +108,7 @@ private:
     { return eccentricity_ * cosh( hyperbolicEccentricAnomaly ) - 1.0; }
 };
 
-}
+} // namespace orbital_element_conversions
+} // tudat
 
-}
-
-#endif // CONVERTMEANANOMALYTOHYPERBOLICECCENTRICANOMALY_H
-
-// End of file.
+#endif // TUDAT_CONVERT_MEAN_ANOMALY_TO_HYPERBOLIC_ECCENTRIC_ANOMALY_H

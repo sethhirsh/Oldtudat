@@ -27,17 +27,13 @@
  *
  */
 
-#ifndef CARTESIANELEMENTS_H
-#define CARTESIANELEMENTS_H
+#ifndef TUDAT_CARTESIAN_ELEMENTS_H
+#define TUDAT_CARTESIAN_ELEMENTS_H
 
 // Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/States/cartesianPositionElements.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -155,8 +151,6 @@ private:
     Eigen::Vector3d velocity_;
 };
 
-}
+} // namespace tudat
 
-#endif // CARTESIANELEMENTS_H
-
-// End of file.
+#endif // TUDAT_CARTESIAN_ELEMENTS_H

@@ -46,22 +46,16 @@
 // 
 // 
 
-#ifndef TWOLINEELEMENTSTEXTFILEREADER_H
-#define TWOLINEELEMENTSTEXTFILEREADER_H
+#ifndef TUDAT_TWO_LINE_ELEMENTS_TEXT_FILE_READER_H
+#define TUDAT_TWO_LINE_ELEMENTS_TEXT_FILE_READER_H
 
-// Include statements.
 #include <fstream>
 #include <map>
 
 #include "Tudat/InputOutput/twoLineElementData.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
-
 namespace input_output
 {
 
@@ -372,11 +366,7 @@ private:
     std::vector< TwoLineElementData > twoLineElementData_;
 };
 
-
 } // namespace input_output
-
 } // namespace tudat
 
-#endif // TWOLINEELEMENTSTEXTFILEREADER_H
-
-// End of file.
+#endif // TUDAT_TWO_LINE_ELEMENTS_TEXT_FILE_READER_H

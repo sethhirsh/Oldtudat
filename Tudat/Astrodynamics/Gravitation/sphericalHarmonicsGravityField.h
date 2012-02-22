@@ -36,18 +36,13 @@
 // in data files.
 // 
 
-#ifndef SPHERICALHARMONICSGRAVITYFIELD_H
-#define SPHERICALHARMONICSGRAVITYFIELD_H
+#ifndef TUDAT_SPHERICAL_HARMONICS_GRAVITY_FIELD_H
+#define TUDAT_SPHERICAL_HARMONICS_GRAVITY_FIELD_H
 
-// Include statements.
 #include <Eigen/Core>
 #include <iostream>
 #include "Tudat/Astrodynamics/Gravitation/gravityFieldModel.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -224,8 +219,6 @@ private:
     double j4SphericalHarmonicsGravityFieldCoefficient_;
 };
 
-}
+} // namespace tudat
 
-#endif // SPHERICALHARMONICSGRAVITYFIELD_H
-
-// End of file.
+#endif // TUDAT_SPHERICAL_HARMONICS_GRAVITY_FIELD_H

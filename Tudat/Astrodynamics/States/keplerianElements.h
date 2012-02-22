@@ -22,17 +22,12 @@
  *
  */
 
-#ifndef KEPLERIANELEMENTS_H
-#define KEPLERIANELEMENTS_H
+#ifndef TUDAT_KEPLERIAN_ELEMENTS_H
+#define TUDAT_KEPLERIAN_ELEMENTS_H
 
-// Include statements.
 #include "Tudat/Astrodynamics/States/state.h"
 #include <TudatCore/Mathematics/BasicMathematics/basicMathematicsFunctions.h>
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -189,8 +184,6 @@ private:
     double semiLatusRectum_;
 };
 
-}
+} // namespace tudat
 
-#endif // KEPLERIANELEMENTS_H
-
-// End of file.
+#endif // TUDAT_KEPLERIAN_ELEMENTS_H

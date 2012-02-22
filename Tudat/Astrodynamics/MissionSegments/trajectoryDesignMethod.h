@@ -17,13 +17,9 @@
  *
  */
 
-#ifndef TUDAT_TRAJECTORYDESIGNMETHOD_H
-#define TUDAT_TRAJECTORYDESIGNMETHOD_H
+#ifndef TUDAT_TRAJECTORY_DESIGN_METHOD_H
+#define TUDAT_TRAJECTORY_DESIGN_METHOD_H
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -52,8 +48,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // TUDAT_TRAJECTORYDESIGNMETHOD_H
-
-// End of file.
+#endif // TUDAT_TRAJECTORY_DESIGN_METHOD_H

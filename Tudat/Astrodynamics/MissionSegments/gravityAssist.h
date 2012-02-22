@@ -49,10 +49,9 @@
 // 
 // 
 
-#ifndef TUDAT_GRAVITYASSIST_H
-#define TUDAT_GRAVITYASSIST_H
+#ifndef TUDAT_GRAVITY_ASSIST_H
+#define TUDAT_GRAVITY_ASSIST_H
 
-// Include statements.
 #include <Eigen/Core>
 #include <iostream>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
@@ -61,10 +60,6 @@
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -280,8 +275,6 @@ private:
     double firstDerivativeVelocityEffectFunction( double& incomingEccentricity );
 };
 
-}
+} // namespace tudat
 
-#endif // TUDAT_GRAVITYASSIST_H
-
-// End of file.
+#endif // TUDAT_GRAVITY_ASSIST_H

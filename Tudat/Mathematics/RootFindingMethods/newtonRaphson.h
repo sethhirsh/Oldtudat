@@ -28,18 +28,13 @@
  *
  */
 
-#ifndef NEWTONRAPHSON_H
-#define NEWTONRAPHSON_H
+#ifndef TUDAT_NEWTON_RAPHSON_H
+#define TUDAT_NEWTON_RAPHSON_H
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonBase.h"
 #include "Tudat/Mathematics/RootFindingMethods/rootFinder.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -94,8 +89,6 @@ private:
     NewtonRaphsonBase* pointerToNewtonRaphsonBase_;
 };
 
-}
+} // namespace tudat
 
-#endif // NEWTONRAPHSON_H
-
-// End of file.
+#endif // TUDAT_NEWTON_RAPHSON_H

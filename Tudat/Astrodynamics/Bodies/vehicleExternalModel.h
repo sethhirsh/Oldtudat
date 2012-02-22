@@ -20,17 +20,12 @@
  *
  */
 
-#ifndef TUDAT_VEHICLEEXTERNALMODELS_H
-#define TUDAT_VEHICLEEXTERNALMODELS_H
+#ifndef TUDAT_VEHICLE_EXTERNAL_MODELS_H
+#define TUDAT_VEHICLE_EXTERNAL_MODELS_H
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Mathematics/GeometricShapes/surfaceGeometry.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat Library namespace.
- */
 namespace tudat
 {
 
@@ -99,8 +94,6 @@ private:
     bool isGeometrySet_;
 };
 
-}
+} // namespace tudat
 
-#endif // TUDAT_VEHICLEEXTERNALMODELS_H
-
-//End of file.
+#endif // TUDAT_VEHICLE_EXTERNAL_MODELS_H

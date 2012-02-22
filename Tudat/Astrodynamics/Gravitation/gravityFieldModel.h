@@ -25,17 +25,12 @@
  *
  */
 
-#ifndef GRAVITYFIELDMODEL_H
-#define GRAVITYFIELDMODEL_H
+#ifndef TUDATGRAVITY_FIELD_MODEL_H
+#define TUDATGRAVITY_FIELD_MODEL_H
 
-// Include statements.
 #include <Eigen/Core>
 #include "Tudat/Astrodynamics/States/cartesianPositionElements.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -144,8 +139,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // GRAVITYFIELDMODEL_H
-
-// End of file.
+#endif // TUDATGRAVITY_FIELD_MODEL_H

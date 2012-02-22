@@ -18,17 +18,12 @@
  *
  */
 
-#ifndef CARTESIANPOSITIONELEMENTS_H
-#define CARTESIANPOSITIONELEMENTS_H
+#ifndef TUDAT_CARTESIAN_POSITION_ELEMENTS_H
+#define TUDAT_CARTESIAN_POSITION_ELEMENTS_H
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/States/state.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -110,8 +105,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // CARTESIANPOSITIONELEMENTS_H
-
-// End of file.
+#endif // TUDAT_CARTESIAN_POSITION_ELEMENTS_H

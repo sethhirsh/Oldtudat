@@ -33,20 +33,14 @@
 // transferred to the Body class.
 // 
 
-#ifndef GRAVITATIONALFORCEMODEL_H
-#define GRAVITATIONALFORCEMODEL_H
+#ifndef TUDAT_GRAVITATIONAL_FORCE_MODEL_H
+#define TUDAT_GRAVITATIONAL_FORCE_MODEL_H
 
-// Include statements.
-#include <iostream>
 #include "Tudat/Astrodynamics/Bodies/body.h"
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Gravitation/gravityFieldModel.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/forceModel.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -109,8 +103,6 @@ private:
     GravityFieldModel* pointerToGravityFieldModel_;
 };
 
-}
+} // namespace tudat
 
-#endif // GRAVITATIONALFORCEMODEL_H
-
-// End of file.
+#endif // TUDAT_GRAVITATIONAL_FORCE_MODEL_H

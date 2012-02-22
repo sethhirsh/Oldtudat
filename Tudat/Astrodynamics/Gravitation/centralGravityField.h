@@ -18,16 +18,11 @@
  *
  */
 
-#ifndef CENTRALGRAVITYFIELD_H
-#define CENTRALGRAVITYFIELD_H
+#ifndef TUDAT_CENTRAL_GRAVITY_FIELD_H
+#define TUDAT_CENTRAL_GRAVITY_FIELD_H
 
-// Include statements.
 #include "Tudat/Astrodynamics/Gravitation/sphericalHarmonicsGravityField.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -60,8 +55,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // CENTRALGRAVITYFIELD_H
-
-// End of file.
+#endif // TUDAT_CENTRAL_GRAVITY_FIELD_H

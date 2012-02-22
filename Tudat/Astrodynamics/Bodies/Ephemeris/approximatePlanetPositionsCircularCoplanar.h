@@ -29,16 +29,11 @@
 // lie in the ecliptic plane.
 // 
 
-#ifndef APPROXIMATEPLANETPOSITIONSCIRCULARCOPLANAR_H
-#define APPROXIMATEPLANETPOSITIONSCIRCULARCOPLANAR_H
+#ifndef TUDAT_APPROXIMATE_PLANET_POSITIONS_CIRCULAR_COPLANAR_H
+#define TUDAT_APPROXIMATE_PLANET_POSITIONS_CIRCULAR_COPLANAR_H
 
-// Include statements.
 #include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositionsBase.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -75,8 +70,6 @@ private:
     double constantOrbitalRadius_;
 };
 
-}
+} // namespace tudat
 
-#endif // APPROXIMATEPLANETPOSITIONSCIRCULARCOPLANAR_H
-
-// End of file.
+#endif // TUDAT_APPROXIMATE_PLANET_POSITIONS_CIRCULAR_COPLANAR_H

@@ -24,18 +24,13 @@
  *
  */
 
-#ifndef CONICALFRUSTUM_H
-#define CONICALFRUSTUM_H
+#ifndef TUDAT_CONICAL_FRUSTUM_H
+#define TUDAT_CONICAL_FRUSTUM_H
 
-// Include statements.
 #include <iostream>
 #include <Eigen/Core>
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -215,8 +210,6 @@ private:
     double length_;
 };
 
-}
+} // namespace tudat
 
-#endif // CONICALFRUSTUM_H
-
-// End of file.
+#endif // TUDAT_CONICAL_FRUSTUM_H

@@ -35,10 +35,6 @@
 #include <vector>
 #include "Tudat/InputOutput/basicInputOutput.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat Library namespace.
- */
 namespace tudat
 {
 
@@ -82,7 +78,5 @@ std::vector< boost::filesystem3::path > listAllFilesInDirectory(
     return listOfFileNamesWithPath_;
 }
 
-
 } // namespace input_output
-
 } // namespace tudat

@@ -23,13 +23,8 @@
 #ifndef TUDAT_BODY_H
 #define TUDAT_BODY_H
 
-// Include statements.
 #include <iostream>
 
-//! Tudat library namespace.
-/*!
- * The Tudat Library namespace.
- */
 namespace tudat
 {
 
@@ -79,8 +74,6 @@ private:
 
 };
 
-}
+} // namespace tudat
 
 #endif // TUDAT_BODY_H
-
-// End of file.

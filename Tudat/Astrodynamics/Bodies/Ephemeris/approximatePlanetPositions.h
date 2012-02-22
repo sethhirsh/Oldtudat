@@ -22,18 +22,13 @@
  *
  */
 
-#ifndef APPROXIMATEPLANETPOSITIONS_H
-#define APPROXIMATEPLANETPOSITIONS_H
+#ifndef TUDAT_APPROXIMATE_PLANET_POSITIONS_H
+#define TUDAT_APPROXIMATE_PLANET_POSITIONS_H
 
-// Include statements.
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToEccentricAnomaly.h"
 #include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositionsBase.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -102,8 +97,6 @@ private:
     NewtonRaphson newtonRaphson_;
 };
 
-}
+} // namespace tudat
 
-#endif // APPROXIMATEPLANETPOSITIONS_H
-
-// End of file.
+#endif // TUDAT_APPROXIMATE_PLANET_POSITIONS_H

@@ -20,16 +20,11 @@
  *
  */
 
-#ifndef TUDAT_CONVERTMEANANOMALYTOECCENTRICANOMALY_H
-#define TUDAT_CONVERTMEANANOMALYTOECCENTRICANOMALY_H
+#ifndef TUDAT_CONVERT_MEAN_ANOMALY_TO_ECCENTRIC_ANOMALY_H
+#define TUDAT_CONVERT_MEAN_ANOMALY_TO_ECCENTRIC_ANOMALY_H
 
-// Include statements.
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyBase.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -118,10 +113,7 @@ private:
     { return 1.0 - eccentricity_ * cos( eccentricAnomaly ); }
 };
 
-} // Namespace orbital_element_conversions.
+} // namespace orbital_element_conversions
+} // namespace tudat
 
-} // Namespace tudat.
-
-#endif // TUDAT_CONVERTMEANANOMALYTOECCENTRICANOMALY_H
-
-// End of file.
+#endif // TUDAT_CONVERT_MEAN_ANOMALY_TO_ECCENTRIC_ANOMALY_H

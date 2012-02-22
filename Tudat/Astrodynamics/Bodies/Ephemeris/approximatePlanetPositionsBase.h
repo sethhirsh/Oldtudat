@@ -25,10 +25,9 @@
  *
  */
 
-#ifndef APPROXIMATEPLANETPOSITIONSBASE_H
-#define APPROXIMATEPLANETPOSITIONSBASE_H
+#ifndef TUDAT_APPROXIMATE_PLANET_POSITIONS_BASE_H
+#define TUDAT_APPROXIMATE_PLANET_POSITIONS_BASE_H
 
-// Include statements.
 #include <cmath>
 #include <fstream>
 #include <map>
@@ -39,15 +38,8 @@
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
 #include <TudatCore/Mathematics/BasicMathematics/basicMathematicsFunctions.h>
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
-
-// Using declarations.
-using std::map;
 
 //! Ephemeris class using JPL "Approximate Positions of Major Planets".
 /*!
@@ -127,7 +119,7 @@ protected:
     /*!
      * Map container of string data from ephemeris data file.
      */
-    map< unsigned int, std::string > containerOfDataFromEphemerisFile_;
+    std::map< unsigned int, std::string > containerOfDataFromEphemerisFile_;
 
     //! Approximate planet positions data container.
     /*!
@@ -151,8 +143,6 @@ private:
 
 };
 
-}
+} // namespace tudat
 
-#endif // APPROXIMATEPLANETPOSITIONSBASE_H
-
-// End of file.
+#endif // TUDAT_APPROXIMATE_PLANET_POSITIONS_BASE_H

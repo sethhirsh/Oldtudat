@@ -22,31 +22,16 @@
  *
  */
 
-#ifndef CUBICSPLINEINTERPOLATION_H
-#define CUBICSPLINEINTERPOLATION_H
+#ifndef TUDAT_CUBIC_SPLINE_INTERPOLATION_H
+#define TUDAT_CUBIC_SPLINE_INTERPOLATION_H
 
-// Include statements.
 #include <cmath>
 #include <Eigen/Core>
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
-
-//! Mathematics namespace.
-/*!
- * The mathematics namespace.
- */
 namespace mathematics
 {
-
-//! Interpolators namespace.
-/*!
- * The intepolators namespace.
- */
 namespace interpolators
 {
 
@@ -210,12 +195,8 @@ private:
     void computeSecondDerivativeOfCurvature_( );
 };
 
-} // Namespace interpolators.
+} // namespace interpolators
+} // namespace mathematics
+} // namespace tudat
 
-} // Namespace mathematics.
-
-} // Namespace tudat.
-
-#endif // CUBICSPLINEINTERPOLATION_H
-
-// End of file.
+#endif // TUDAT_CUBIC_SPLINE_INTERPOLATION_H

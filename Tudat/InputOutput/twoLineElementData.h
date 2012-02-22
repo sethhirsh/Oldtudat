@@ -36,23 +36,17 @@
  *
  */
 
-#ifndef TWOLINEELEMENTDATA_H
-#define TWOLINEELEMENTDATA_H
+#ifndef TUDAT_TWO_LINE_ELEMENT_DATA_H
+#define TUDAT_TWO_LINE_ELEMENT_DATA_H
 
-// Include statements.
 #include <cstdlib>
 #include <iostream>
 #include <string>
 #include <vector>
 #include "Tudat/Astrodynamics/States/keplerianElements.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
-
 namespace input_output
 {
 
@@ -311,11 +305,7 @@ protected:
 private:
 };
 
-
 } // namespace input_output
-
 } // namespace tudat
 
-#endif // TWOLINEELEMENTDATA_H
-
-// End of file.
+#endif // TUDAT_TWO_LINE_ELEMENT_DATA_H

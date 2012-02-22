@@ -19,14 +19,9 @@
  *
  */
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToHyperbolicEccentricAnomaly.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -84,8 +79,5 @@ double ConvertMeanAnomalyToHyperbolicEccentricAnomaly::convert( )
     return hyperbolicEccentricAnomaly_;
 }
 
-}
-
-}
-
-// End of file.
+} // namespace orbital_element_conversions
+} // tudat

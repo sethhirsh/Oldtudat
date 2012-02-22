@@ -17,13 +17,9 @@
  *
  */
 
-#ifndef ROOTFINDERBASE_H
-#define ROOTFINDERBASE_H
+#ifndef TUDAT_ROOT_FINDER_BASE_H
+#define TUDAT_ROOT_FINDER_BASE_H
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -54,8 +50,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // ROOTFINDERBASE_H
-
-// End of file.
+#endif // TUDAT_ROOT_FINDER_BASE_H

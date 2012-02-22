@@ -20,15 +20,10 @@
 #ifndef TUDAT_PLANET_H
 #define TUDAT_PLANET_H
 
-// Include statements.
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/Gravitation/centralGravityField.h"
 #include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositions.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -71,8 +66,6 @@ private:
     ApproximatePlanetPositions approximatePlanetPositions_;
 };
 
-}
+} // namespace tudat
 
 #endif // TUDAT_PLANET_H
-
-// End of file.

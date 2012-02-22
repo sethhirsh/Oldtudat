@@ -30,17 +30,12 @@
  *
  */
 
-#ifndef ROOTFINDER_H
-#define ROOTFINDER_H
+#ifndef TUDAT_ROOT_FINDER_H
+#define TUDAT_ROOT_FINDER_H
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Mathematics/RootFindingMethods/rootFinderBase.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -203,8 +198,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // ROOTFINDER_H
-
-// End of file.
+#endif // TUDAT_ROOT_FINDER_H

@@ -31,17 +31,12 @@
  *
  */
 
-#ifndef TUDAT_BASICINPUTOUTPUT_H
-#define TUDAT_BASICINPUTOUTPUT_H
+#ifndef TUDAT_BASIC_INPUT_OUTPUT_H
+#define TUDAT_BASIC_INPUT_OUTPUT_H
 
-// Include statements.
 #include <string>
 #include <boost/filesystem.hpp>
 
-//! Tudat library namespace.
-/*!
- * The Tudat Library namespace.
- */
 namespace tudat
 {
 
@@ -86,9 +81,6 @@ std::vector< boost::filesystem3::path > listAllFilesInDirectory(
     const boost::filesystem3::path& directory, bool isRecurseIntoSubdirectories = false );
 
 } // namespace input_output
-
 } // namespace tudat
 
-#endif // TUDAT_CORE_BASICINPUTOUTPUT_H
-
-// End of file.
+#endif // TUDAT_BASIC_INPUT_OUTPUT_H

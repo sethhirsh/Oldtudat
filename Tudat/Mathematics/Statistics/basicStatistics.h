@@ -20,31 +20,16 @@
  *
  */
 
-#ifndef TUDAT_BASICSTATISTICS_H
-#define TUDAT_BASICSTATISTICS_H
+#ifndef TUDAT_BASIC_STATISTICS_H
+#define TUDAT_BASIC_STATISTICS_H
 
-// Include statements.
 #include <Eigen/Core>
 #include <vector>
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
-
-//! Mathematics namespace.
-/*!
- * The mathematics namespace.
- */
 namespace mathematics
 {
-
-//! Statistics namespace.
-/*!
- * Statistics namespace.
- */
 namespace statistics
 {
 
@@ -94,12 +79,8 @@ double computeSampleMean( const std::vector< double >& sampleData );
  */
 double computeSampleVariance( const std::vector< double >& sampleData );
 
-} // Namespace statistics.
+} // namespace statistics
+} // namespace mathematics
+} // namespace tudat
 
-} // Namespace mathematics.
-
-} // Namespace tudat.
-
-#endif // TUDAT_BASICSTATISTICS_H
-
-// End of file.
+#endif // TUDAT_BASIC_STATISTICS_H

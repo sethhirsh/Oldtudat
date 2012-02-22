@@ -33,14 +33,9 @@
 // transferred to the Body class.
 // 
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/Gravitation/gravitationalForceModel.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -53,8 +48,4 @@ void GravitationalForceModel::computeForce( State* pointerToState, double time =
             * pointerToBodySubjectToForce_->getMass( );
 }
 
-
-}
-
-
-// End of file.
+} // namespace tudat

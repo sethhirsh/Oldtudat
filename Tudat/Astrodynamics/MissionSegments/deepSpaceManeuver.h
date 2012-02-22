@@ -18,17 +18,11 @@
  *
  */
 
-#ifndef TUDAT_DEEPSPACEMANEUVER_H
-#define TUDAT_DEEPSPACEMANEUVER_H
+#ifndef TUDAT_DEEP_SPACE_MANEUVER_H
+#define TUDAT_DEEP_SPACE_MANEUVER_H
 
-// Include statements.
-#include <iostream>
 #include "Tudat/Astrodynamics/States/state.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -74,7 +68,7 @@ public:
      * Returns the the time of deep space maneuver event.
      * \return Time of deep space maneuver event.
      */
-    double& getTime( ) { return timeOfDeepSpaceManeuver_; }
+    double getTime( ) { return timeOfDeepSpaceManeuver_; }
 
     //! Get state at deep space maneuver event.
     /*!
@@ -88,7 +82,7 @@ public:
      * Returns delta-V of deep space maneuver event.
      * \return Delta-V of deep space maneuver event.
      */
-    double& getDeltaV( ) { return deltaV_; }
+    double getDeltaV( ) { return deltaV_; }
 
 protected:
 
@@ -113,8 +107,6 @@ private:
     State* pointerToState_;
 };
 
-}
+} // namespace tudat
 
-#endif // TUDAT_DEEPSPACEMANEUVER_H
-
-// End of file.
+#endif // TUDAT_DEEP_SPACE_MANEUVER_H

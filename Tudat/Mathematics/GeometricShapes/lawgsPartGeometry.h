@@ -23,19 +23,14 @@
  *
  */
 
-#ifndef LAWGSPARTGEOMETRY_H
-#define LAWGSPARTGEOMETRY_H
+#ifndef TUDAT_LAWGS_PART_GEOMETRY_H
+#define TUDAT_LAWGS_PART_GEOMETRY_H
 
-// Include statements.
 #include <Eigen/Core>
 #include <iostream>
 #include "Tudat/Mathematics/GeometricShapes/quadrilateralMeshedSurfaceGeometry.h"
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -146,8 +141,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // LAWGSPARTGEOMETRY_H
-
-// End of file.
+#endif // TUDAT_LAWGS_PART_GEOMETRY_H

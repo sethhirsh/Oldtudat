@@ -20,18 +20,13 @@
  *
  */
 
-#ifndef TUDAT_VEHICLEMODELS_H
-#define TUDAT_VEHICLEMODELS_H
+#ifndef TUDAT_VEHICLE_MODELS_H
+#define TUDAT_VEHICLE_MODELS_H
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/Bodies/vehicleExternalModel.h"
 #include "Tudat/Astrodynamics/Bodies/body.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat Library namespace.
- */
 namespace tudat
 {
 
@@ -97,8 +92,6 @@ private:
     bool isExternalModelSet_;
 };
 
-}
+} // namespace tudat
 
-#endif // TUDAT_VEHICLEMODELS_H
-
-// End of file.
+#endif // TUDAT_VEHICLE_MODELS_H

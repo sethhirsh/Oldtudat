@@ -23,17 +23,12 @@
  *
  */
 
-#ifndef TORUS_H
-#define TORUS_H
+#ifndef TUDAT_TORUS_H
+#define TUDAT_TORUS_H
 
-// Include statements.
 #include <Eigen/Core>
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -228,8 +223,6 @@ private:
     double minorRadius_;
 };
 
-}
+} // namespace tudat
 
-#endif // TORUS_H
-
-// End of file.
+#endif // TUDAT_TORUS_H

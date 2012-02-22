@@ -19,17 +19,12 @@
  *
  */
 
-#ifndef EPHEMERIS_H
-#define EPHEMERIS_H
+#ifndef TUDAT_EPHEMERIS_H
+#define TUDAT_EPHEMERIS_H
 
-// Include statements.
 #include <sstream>
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -79,8 +74,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // EPHEMERIS_H
-
-// End of file.
+#endif // TUDAT_EPHEMERIS_H

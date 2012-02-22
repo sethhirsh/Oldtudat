@@ -35,18 +35,13 @@
 // numberOfLines_ - 1 by numberOfPoints_ -1.
 // 
 
-#ifndef QUADRILATERALMESHEDSURFACEGEOMETRY_H
-#define QUADRILATERALMESHEDSURFACEGEOMETRY_H
+#ifndef TUDAT_QUADRILATERAL_MESHED_SURFACE_GEOMETRY_H
+#define TUDAT_QUADRILATERAL_MESHED_SURFACE_GEOMETRY_H
 
-// Include statements.
 #include <Eigen/Core>
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 #include "boost/multi_array.hpp"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -218,8 +213,6 @@ protected:
     double totalArea_;
 };
 
-}
+} // namespace tudat
 
-#endif // QUADRILATERALMESHEDSURFACEGEOMETRY_H
-
-// End of file.
+#endif // TUDAT_QUADRILATERAL_MESHED_SURFACE_GEOMETRY_H

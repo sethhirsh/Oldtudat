@@ -25,7 +25,6 @@
 #ifndef TUDAT_CELESTIAL_BODY_H
 #define TUDAT_CELESTIAL_BODY_H
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/Bodies/body.h"
 #include "Tudat/Astrodynamics/Gravitation/gravityFieldModel.h"
@@ -33,10 +32,6 @@
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
 #include "Tudat/Astrodynamics/Bodies/Ephemeris/ephemeris.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat Library namespace.
- */
 namespace tudat
 {
 
@@ -158,8 +153,6 @@ protected:
     AtmosphereModel* pointerToAtmosphereModel_;
 };
 
-}
+} // namespace tudat
 
 #endif // TUDAT_CELESTIAL_BODY_H
-
-// End of file.

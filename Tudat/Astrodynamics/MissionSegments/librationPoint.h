@@ -32,20 +32,15 @@
 // 
 // 
 
-#ifndef TUDAT_LIBRATIONPOINT_H
-#define TUDAT_LIBRATIONPOINT_H
+#ifndef TUDAT_LIBRATION_POINT_H
+#define TUDAT_LIBRATION_POINT_H
 
-// Include statements.
 #include <iostream>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Astrodynamics/States/cartesianPositionElements.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -282,8 +277,6 @@ private:
     }
 };
 
-}
+} // namespace tudat
 
-#endif // TUDAT_LIBRATIONPOINT_H
-
-// End of file.
+#endif // TUDAT_LIBRATION_POINT_H

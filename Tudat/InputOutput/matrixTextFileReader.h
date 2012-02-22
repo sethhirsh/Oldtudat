@@ -24,20 +24,13 @@
 #ifndef TUDAT_MATRIX_TEXT_FILEREADER_H
 #define TUDAT_MATRIX_TEXT_FILEREADER_H
 
-// Include statements.
 #include <Eigen/Core>
 #include <string>
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
-
 namespace input_output
 {
-
 
 //! Read the file and return the data matrix.
 /*!
@@ -53,12 +46,7 @@ Eigen::MatrixXd readMatrixFromFile( const std::string& relativePath,
                                     const std::string& separators = "\t ;,",
                                     const std::string& skipLinesCharacter = "%" );
 
-
-} // namespace input_output.
-
-} // namespace tudat.
+} // namespace input_output
+} // namespace tudat
 
 #endif // TUDAT_MATRIX_TEXT_FILEREADER_H
-
-// End of file.
-

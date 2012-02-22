@@ -34,18 +34,12 @@
 // class.
 // 
 
-#ifndef TUDAT_ESCAPEANDCAPTURE_H
-#define TUDAT_ESCAPEANDCAPTURE_H
+#ifndef TUDAT_ESCAPE_AND_CAPTURE_H
+#define TUDAT_ESCAPE_AND_CAPTURE_H
 
-// Include statements.
-#include <iostream>
 #include "Tudat/Astrodynamics/Bodies/celestialBody.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 
-//! Tudat library namespace.
-/*!
- * The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -190,8 +184,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // TUDAT_ESCAPEANDCAPTURE_H
-
-// End of file.
+#endif // TUDAT_ESCAPE_AND_CAPTURE_H

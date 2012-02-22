@@ -15,25 +15,21 @@
  *      110810    K. Kumar          Minor corrections; changed function names and removed redundant
  *                                  functions.
  *      110824    J. Leloux         Corrected doxygen documentation.
- *      120204    D. Dirkx          Split MomentModel class into this class and MomentDueToForceModel.
+ *      120204    D. Dirkx          Split MomentModel class into this class and
+ *                                  MomentDueToForceModel.
  *
  *    References
  *
  */
 
-#ifndef MOMENTMODEL_H
-#define MOMENTMODEL_H
+#ifndef TUDAT_MOMENT_MODEL_H
+#define TUDAT_MOMENT_MODEL_H
 
-// Include statements.
 #include <Eigen/Core>
 #include <iostream>
 #include "Tudat/Astrodynamics/BasicAstrodynamics/forceModel.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/generalizedForceModel.h"
 
-//! Tudat library namespace.
-/*!
- *  The Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -84,8 +80,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // MOMENTMODEL_H
-
-// End of file.
+#endif // TUDAT_MOMENT_MODEL_H
