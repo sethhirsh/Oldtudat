@@ -77,11 +77,11 @@ int main( )
             convertCylindricalToCartesian( cylindricalCoordinatesTest34 );
 
     if ( fabs( cartesianCoordinatesTest33(0) - expectedCartesianCoordinatesTest33(0) )
-         > std::numeric_limits< double >::epsilon( ) ||
+         > epsilon ||
          fabs( cartesianCoordinatesTest33(1) - expectedCartesianCoordinatesTest33(1) )
-         > std::numeric_limits< double >::epsilon( ) ||
+         > epsilon ||
          fabs( cartesianCoordinatesTest33(2) - expectedCartesianCoordinatesTest33(2) )
-         / cartesianCoordinatesTest33(2) > std::numeric_limits< double >::epsilon( ) )
+         / cartesianCoordinatesTest33(2) > epsilon )
     {
         cerr << "The convertCylindricalToCartesian function does not "
              << "function correctly, as the computed coordinates: ( "
@@ -96,11 +96,11 @@ int main( )
     }
 
     if ( fabs( cartesianCoordinatesTest34(0) - expectedCartesianCoordinatesTest34(0) )
-          > std::numeric_limits< double >::epsilon( ) ||
+          > epsilon ||
          fabs( cartesianCoordinatesTest34(1) - expectedCartesianCoordinatesTest34(1) )
-          / expectedCartesianCoordinatesTest34(1) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCartesianCoordinatesTest34(1) > epsilon ||
          fabs( cartesianCoordinatesTest34(2) - expectedCartesianCoordinatesTest34(2) )
-          / expectedCartesianCoordinatesTest34(2) > std::numeric_limits< double >::epsilon( ) )
+          / expectedCartesianCoordinatesTest34(2) > epsilon )
     {
         cerr << "The convertCylindricalToCartesian function does not "
              << "function correctly, as the computed coordinates: ( "
@@ -146,17 +146,17 @@ int main( )
             convertCylindricalToCartesian( cylindricalStateTest36 );
 
     if ( fabs( cartesianStateTest35(0) - expectedCartesianStateTest35(0) )
-          > std::numeric_limits< double >::epsilon( ) ||
+          > epsilon ||
          fabs( cartesianStateTest35(1) - expectedCartesianStateTest35(1) )
-          / expectedCartesianStateTest35(1) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCartesianStateTest35(1) > epsilon ||
          fabs( cartesianStateTest35(2) - expectedCartesianStateTest35(2) )
-          / expectedCartesianStateTest35(2) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCartesianStateTest35(2) > epsilon ||
          fabs( cartesianStateTest35(3) - expectedCartesianStateTest35(3) )
-          / expectedCartesianStateTest35(3) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCartesianStateTest35(3) > epsilon ||
          fabs( cartesianStateTest35(4) - expectedCartesianStateTest35(4) )
-          / expectedCartesianStateTest35(4) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCartesianStateTest35(4) > epsilon ||
          fabs( cartesianStateTest35(5) - expectedCartesianStateTest35(5) )
-          / expectedCartesianStateTest35(5) > std::numeric_limits< double >::epsilon( ) )
+          / expectedCartesianStateTest35(5) > epsilon )
     {
         cerr << "The convertCylindricalToCartesianState function does not "
              << "function correctly, as the computed sate: ( "
@@ -173,17 +173,17 @@ int main( )
     }
 
     if ( fabs( cartesianStateTest36(0) - expectedCartesianStateTest36(0) )
-         > std::numeric_limits< double >::epsilon( ) ||
+         > epsilon ||
          fabs( cartesianStateTest36(1) - expectedCartesianStateTest36(1) )
-         > std::numeric_limits< double >::epsilon( ) ||
+         > epsilon ||
          fabs( cartesianStateTest36(2) - expectedCartesianStateTest36(2) )
-          / expectedCartesianStateTest36(2) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCartesianStateTest36(2) > epsilon ||
          fabs( cartesianStateTest36(3) - expectedCartesianStateTest36(3) )
-          / expectedCartesianStateTest36(3) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCartesianStateTest36(3) > epsilon ||
          fabs( cartesianStateTest36(4) - expectedCartesianStateTest36(4) )
-          / expectedCartesianStateTest36(4) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCartesianStateTest36(4) > epsilon ||
          fabs( cartesianStateTest36(5) - expectedCartesianStateTest36(5) )
-          / expectedCartesianStateTest36(5) > std::numeric_limits< double >::epsilon( ) )
+          / expectedCartesianStateTest36(5) > epsilon )
     {
         cerr << "The convertCylindricalToCartesianState function does not "
              << "function correctly, as the computed sate: ( "
@@ -232,11 +232,11 @@ int main( )
             convertCartesianToCylindrical( cartesianCoordinatesTest40 );
 
     if ( fabs( cylindricalCoordinatesTest37(0) - expectedCylindricalCoordinatesTest37(0) )
-         > std::numeric_limits< double >::epsilon( ) ||
+         > epsilon ||
          fabs( cylindricalCoordinatesTest37(1) - expectedCylindricalCoordinatesTest37(1) )
-         > std::numeric_limits< double >::epsilon( ) ||
+         > epsilon ||
          fabs( cylindricalCoordinatesTest37(2) - expectedCylindricalCoordinatesTest37(2) )
-         > std::numeric_limits< double >::epsilon( ) )
+         > epsilon )
     {
         cerr << "The tudat::mathematics::coordinate_conversions::convertCartesianToCylindrical function does not "
              << "function correctly, as the computed coordinates: ( "
@@ -251,11 +251,11 @@ int main( )
     }
 
     if ( fabs( cylindricalCoordinatesTest38(0) - expectedCylindricalCoordinatesTest38(0) )
-          / expectedCylindricalCoordinatesTest38(0) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalCoordinatesTest38(0) > epsilon ||
          fabs( cylindricalCoordinatesTest38(1) - expectedCylindricalCoordinatesTest38(1) )
-          / expectedCylindricalCoordinatesTest38(1) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalCoordinatesTest38(1) > epsilon ||
          fabs( cylindricalCoordinatesTest38(2) - expectedCylindricalCoordinatesTest38(2) )
-          / expectedCylindricalCoordinatesTest38(2) > std::numeric_limits< double >::epsilon( ) )
+          / expectedCylindricalCoordinatesTest38(2) > epsilon )
     {
         cerr << "The tudat::mathematics::coordinate_conversions::convertCartesianToCylindrical function does not "
              << "function correctly, as the computed coordinates: ( "
@@ -270,11 +270,11 @@ int main( )
     }
 
     if ( fabs( cylindricalCoordinatesTest39(0) - expectedCylindricalCoordinatesTest39(0) )
-          / expectedCylindricalCoordinatesTest39(0) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalCoordinatesTest39(0) > epsilon ||
          fabs( cylindricalCoordinatesTest39(1) - expectedCylindricalCoordinatesTest39(1) )
-          / expectedCylindricalCoordinatesTest39(1) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalCoordinatesTest39(1) > epsilon ||
          fabs( cylindricalCoordinatesTest39(2) - expectedCylindricalCoordinatesTest39(2) )
-          / expectedCylindricalCoordinatesTest39(2) > std::numeric_limits< double >::epsilon( ) )
+          / expectedCylindricalCoordinatesTest39(2) > epsilon )
     {
         cerr << "The tudat::mathematics::coordinate_conversions::convertCartesianToCylindrical function does not "
              << "function correctly, as the computed coordinates: ( "
@@ -289,11 +289,11 @@ int main( )
     }
 
     if ( fabs( cylindricalCoordinatesTest40(0) - expectedCylindricalCoordinatesTest40(0) )
-          / expectedCylindricalCoordinatesTest40(0) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalCoordinatesTest40(0) > epsilon ||
          fabs( cylindricalCoordinatesTest40(1) - expectedCylindricalCoordinatesTest40(1) )
-          / expectedCylindricalCoordinatesTest40(1) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalCoordinatesTest40(1) > epsilon ||
          fabs( cylindricalCoordinatesTest40(2) - expectedCylindricalCoordinatesTest40(2) )
-          / expectedCylindricalCoordinatesTest40(2) > std::numeric_limits< double >::epsilon( ) )
+          / expectedCylindricalCoordinatesTest40(2) > epsilon )
     {
         cerr << "The tudat::mathematics::coordinate_conversions::convertCartesianToCylindrical function does not "
              << "function correctly, as the computed coordinates: ( "
@@ -338,17 +338,17 @@ int main( )
             convertCartesianToCylindrical( cartesianStateTest43 );
 
     if ( fabs( cylindricalStateTest41(0) - expectedCylindricalStateTest41(0) )
-         > std::numeric_limits< double >::epsilon( ) ||
+         > epsilon ||
          fabs( cylindricalStateTest41(1) - expectedCylindricalStateTest41(1) )
-         > std::numeric_limits< double >::epsilon( ) ||
+         > epsilon ||
          fabs( cylindricalStateTest41(2) - expectedCylindricalStateTest41(2) )
-          / expectedCylindricalStateTest41(2) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalStateTest41(2) > epsilon ||
          fabs( cylindricalStateTest41(3) - expectedCylindricalStateTest41(3) )
-          / expectedCylindricalStateTest41(3) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalStateTest41(3) > epsilon ||
          fabs( cylindricalStateTest41(4) - expectedCylindricalStateTest41(4) )
-         > std::numeric_limits< double >::epsilon( ) ||
+         > epsilon ||
          fabs( cylindricalStateTest41(5) - expectedCylindricalStateTest41(5) )
-          / expectedCylindricalStateTest41(5) > std::numeric_limits< double >::epsilon( ) )
+          / expectedCylindricalStateTest41(5) > epsilon )
     {
         cerr << "The tudat::mathematics::coordinate_conversions::convertCartesianToCylindrical function does not "
              << "function correctly, as the computed sate: ( "
@@ -367,17 +367,17 @@ int main( )
     }
 
     if ( fabs( cylindricalStateTest42(0) - expectedCylindricalStateTest42(0) )
-          / expectedCylindricalStateTest42(0) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalStateTest42(0) > epsilon ||
          fabs( cylindricalStateTest42(1) - expectedCylindricalStateTest42(1) )
-          > std::numeric_limits< double >::epsilon( ) ||
+          > epsilon ||
          fabs( cylindricalStateTest42(2) - expectedCylindricalStateTest42(2) )
-          / expectedCylindricalStateTest42(2) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalStateTest42(2) > epsilon ||
          fabs( cylindricalStateTest42(3) - expectedCylindricalStateTest42(3) )
-          / expectedCylindricalStateTest42(3) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalStateTest42(3) > epsilon ||
          fabs( cylindricalStateTest42(4) - expectedCylindricalStateTest42(4) )
-          / expectedCylindricalStateTest42(4) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalStateTest42(4) > epsilon ||
          fabs( cylindricalStateTest42(5) - expectedCylindricalStateTest42(5) )
-          / expectedCylindricalStateTest42(5) > std::numeric_limits< double >::epsilon( ) )
+          / expectedCylindricalStateTest42(5) > epsilon )
     {
         cerr << "The tudat::mathematics::coordinate_conversions::convertCartesianToCylindrical function does not "
              << "function correctly, as the computed sate: ( "
@@ -396,17 +396,17 @@ int main( )
     }
 
     if ( fabs( cylindricalStateTest43(0) - expectedCylindricalStateTest43(0) )
-          / expectedCylindricalStateTest43(0) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalStateTest43(0) > epsilon ||
          fabs( cylindricalStateTest43(1) - expectedCylindricalStateTest43(1) )
-          / expectedCylindricalStateTest43(1) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalStateTest43(1) > epsilon ||
          fabs( cylindricalStateTest43(2) - expectedCylindricalStateTest43(2) )
-          / expectedCylindricalStateTest43(2) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalStateTest43(2) > epsilon ||
          fabs( cylindricalStateTest43(3) - expectedCylindricalStateTest43(3) )
-          / expectedCylindricalStateTest43(3) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalStateTest43(3) > epsilon ||
          fabs( cylindricalStateTest43(4) - expectedCylindricalStateTest43(4) )
-          / expectedCylindricalStateTest43(4) > std::numeric_limits< double >::epsilon( ) ||
+          / expectedCylindricalStateTest43(4) > epsilon ||
          fabs( cylindricalStateTest43(5) - expectedCylindricalStateTest43(5) )
-          / expectedCylindricalStateTest43(5) > std::numeric_limits< double >::epsilon( ) )
+          / expectedCylindricalStateTest43(5) > epsilon )
     {
         cerr << "The tudat::mathematics::coordinate_conversions::convertCartesianToCylindrical function does not "
              << "function correctly, as the computed sate: ( "
