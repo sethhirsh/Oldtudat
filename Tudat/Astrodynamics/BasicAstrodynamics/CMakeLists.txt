@@ -1,4 +1,4 @@
- #    Copyright (c) 2010-2012 Delft University of Technology.
+ #    Copyright (c) 2010-2011 Delft University of Technology.
  #
  #    This software is protected by national and international copyright.
  #    Any unauthorized use, reproduction or modification is unlawful and
@@ -13,10 +13,6 @@
  #      YYMMDD    Author            Comment
  #      110820    S.M. Persson      File created.
  #	120203    K. Kumar	    Adapted for new BasicAstrodynamics package.
- #      120216    K. Kumar          Removed propagator files.
- #
- #    References
- #
  #/
 
 # Set the source files.
@@ -24,7 +20,6 @@ set(BASICASTRODYNAMICS_SOURCES
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/keplerPropagator.cpp"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/convertMeanAnomalyToEccentricAnomaly.cpp"
   "${SRCROOT}${BASICASTRODYNAMICSDIR}/convertMeanAnomalyToHyperbolicEccentricAnomaly.cpp"
-  "${SRCROOT}${BASICASTRODYNAMICSDIR}/momentDueToForceModel.cpp"
 )
 
 # Set the header files.
@@ -56,3 +51,7 @@ target_link_libraries(test_MeanToEccenticAnomalyConversion tudat_basic_astrodyna
 add_executable(test_KeplerPropagator "${SRCROOT}${BASICASTRODYNAMICSDIR}/UnitTests/unitTestKeplerPropagator.cpp")
 setup_custom_test_program(test_KeplerPropagator "${SRCROOT}${BASICASTRODYNAMICSDIR}")
 target_link_libraries(test_KeplerPropagator tudat_input_output tudat_bodies tudat_gravitation tudat_basic_astrodynamics tudat_states tudat_root_finding_methods ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
+
+add_executable(test_MomentDueToForce "${SRCROOT}${BASICASTRODYNAMICSDIR}/unitTestMomentDueToForce.cpp")
+setup_custom_test_program(test_MomentDueToForce "${SRCROOT}${BASICASTRODYNAMICSDIR}")
+target_link_libraries(test_MomentDueToForce tudat_basic_astrodynamics)

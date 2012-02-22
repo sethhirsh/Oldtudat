@@ -21,8 +21,8 @@
  *
  */
 
-#ifndef MOMENTDUETOFORCEMODEL_H
-#define MOMENTDUETOFORCEMODEL_H
+#ifndef TUDAT_MOMENT_DUE_TO_FORCEMODEL_H
+#define TUDAT_MOMENT_DUE_TO_FORCEMODEL_H
 
 #include "Tudat/Astrodynamics/BasicAstrodynamics/generalizedForceModel.h"
 #include "Tudat/Astrodynamics/BasicAstrodynamics/forceModel.h"
@@ -44,7 +44,7 @@ public:
     /*!
      * Default constructor.
      */
-    MomentDueToForceModel( );
+    MomentDueToForceModel( ):momentDueToForce_( Eigen::Vector3d::Zero( ) ) {}
 
     //! Default destructor.
     /*!
@@ -70,7 +70,10 @@ public:
      /*!
       * Computes the moment.
       */
-    virtual void computeMoment( Eigen::Vector3d force, Eigen::Vector3d arm );
+    virtual void computeMoment( Eigen::Vector3d force, Eigen::Vector3d arm )
+    {
+            momentDueToForce_ = arm.cross( force );
+    }
 
 protected:
 
@@ -83,6 +86,6 @@ private:
     Eigen::Vector3d momentDueToForce_;
 };
 
-}
+} // namespace tudat
 
-#endif // MOMENTDUETOFORCEMODEL_H
+#endif // TUDAT_MOMENT_DUE_TO_FORCEMODEL_H

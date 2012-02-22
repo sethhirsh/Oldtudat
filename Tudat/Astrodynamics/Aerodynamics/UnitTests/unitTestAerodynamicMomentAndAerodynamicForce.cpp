@@ -57,6 +57,7 @@ int main( )
     double referenceArea = 2.2;
     double referenceLength = 3.2;
 
+
     AerodynamicCoefficientInterface aerodynamicCoefficientInterface;
     aerodynamicCoefficientInterface.setCurrentForceCoefficients( forceCoefficients );
     aerodynamicCoefficientInterface.setCurrentMomentCoefficients( momentCoefficients );
@@ -123,40 +124,6 @@ int main( )
         isAerodynamicMomentBroken = true;
         cerr << "Test 2 of unitTestAerodynamicMomentAndAerodynamicForce failed" << endl;
     }
-
-    /*
-    // Test 3: Check the moment model when the forcemodel is set and a constant arm is provided.
-    aerodynamicMoment.setForceModel( &aerodynamicForce );
-    aerodynamicMoment.setForceApplicationArm( momentArm );
-
-    Eigen::Vector3d intermediateExpectedForce
-            = forceCoefficients * dynamicPressure * referenceArea;
-
-    // Calculate moment.
-    aerodynamicMoment.computeMoment( &dummyState );
-    moment = aerodynamicMoment.getMoment( );
-
-    // Calculate expected moment.
-    Eigen::Vector3d expectedMomentDueToForce;
-    expectedMomentDueToForce( 0 ) = 0.0;
-    expectedMomentDueToForce( 1 ) = -1.0 * momentArm( 0 ) * intermediateExpectedForce( 2 );
-    expectedMomentDueToForce( 2 ) = momentArm( 0 ) * intermediateExpectedForce( 1 );
-
-    expectedMoment = dynamicPressure * referenceArea * referenceLength * momentCoefficients +
-            expectedMomentDueToForce;
-
-    // Error in calculation.
-    errorInMoment( 0 ) = fabs( expectedMoment( 0 ) - moment( 0 ) );
-    errorInMoment( 1 ) = fabs( expectedMoment( 1 ) - moment( 1 ) );
-    errorInMoment( 2 ) = fabs( expectedMoment( 2 ) - moment( 2 ) );
-
-    if ( std::numeric_limits< double >::epsilon( ) < errorInMoment.sum( ) / 3.0 /
-         ( dynamicPressure * referenceArea * referenceLength ) )
-    {
-        isAerodynamicMomentBroken = true;
-        cerr << "Test 3 of unitTestAerodynamicMomentAndAerodynamicForce failed.s" << endl;
-    }
-*/
 
     if ( isAerodynamicMomentBroken || isAerodynamicForceBroken )
     {
