@@ -21,17 +21,12 @@
  *
  */
 
-#ifndef APPROXIMATEPLANETPOSITIONSDATACONTAINER_H
-#define APPROXIMATEPLANETPOSITIONSDATACONTAINER_H
-
+#ifndef TUDAT_APPROXIMATE_PLANET_POSITIONS_DATA_CONTAINER_H
+#define TUDAT_APPROXIMATE_PLANET_POSITIONS_DATA_CONTAINER_H
 
 #include <iostream>
 #include <string>
 
-
-/*!
- * Tudat library namespace.
- */
 namespace tudat
 {
 
@@ -234,8 +229,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
-#endif // APPROXIMATEPLANETPOSITIONSDATACONTAINER_H
-
-
+#endif // TUDAT_APPROXIMATE_PLANET_POSITIONS_DATA_CONTAINER_H

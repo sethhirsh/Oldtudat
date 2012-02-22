@@ -32,18 +32,16 @@
  *
  */
 
-
 #include <cmath>
 #include "Tudat/Astrodynamics/Gravitation/sphericalHarmonicsGravityField.h"
+
+namespace tudat
+{
 
 // Using declarations.
 using std::endl;
 using std::cerr;
 using std::pow;
-
-
-namespace tudat
-{
 
 //! Set predefined spherical harmonics gravity field settings.
 void SphericalHarmonicsGravityField::setPredefinedSphericalHarmonicsGravityFieldSettings(
@@ -143,6 +141,4 @@ std::ostream& operator<<( std::ostream& stream,
     return stream;
 }
 
-}
-
-
+} // namespace tudat

@@ -69,21 +69,21 @@ public:
      * Returns the Cartesian element: xDot.
      * \return Cartesian element: xDot.
      */
-    double& getCartesianElementXDot( ) { return state( 0 ); }
+    double getCartesianElementXDot( ) { return state( 0 ); }
 
     //! Get Cartesian element: yDot.
     /*!
      * Returns the Cartesian element: yDot.
      * \return Cartesian element: yDot.
      */
-    double& getCartesianElementYDot( ) { return state( 1 ); }
+    double getCartesianElementYDot( ) { return state( 1 ); }
 
     //! Get Cartesian element: zDot.
     /*!
      * Returns the Cartesian element: zDot.
      * \return Cartesian element: zDot.
      */
-    double& getCartesianElementZDot( ) { return state( 2 ); }
+    double getCartesianElementZDot( ) { return state( 2 ); }
 
     //! Overload ostream to print class information.
     /*!

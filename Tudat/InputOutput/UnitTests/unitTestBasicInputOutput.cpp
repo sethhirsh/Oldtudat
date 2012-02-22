@@ -19,9 +19,7 @@
  *
  */
 
-// Required Boost unit test framework define.
 #define BOOST_TEST_MAIN
-
 
 #include <boost/filesystem.hpp>
 #include <boost/test/unit_test.hpp>
@@ -35,7 +33,6 @@
 
 // Define Boost test suite.
 BOOST_AUTO_TEST_SUITE( test_basic_inputoutput )
-
 
 //! Test if listing all files in specified directory works correctly.
 BOOST_AUTO_TEST_CASE( testListAllFilesInDirectory )
@@ -86,9 +83,3 @@ BOOST_AUTO_TEST_CASE( testListAllFilesInDirectory )
 
 // Close Boost test suite.
 BOOST_AUTO_TEST_SUITE_END( )
-
-
-
-
-
-

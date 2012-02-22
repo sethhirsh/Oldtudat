@@ -39,10 +39,11 @@
 #include "Tudat/Mathematics/GeometricShapes/surfaceGeometry.h"
 #include <vector>
 
-using std::vector;
-
 namespace tudat
 {
+
+using std::vector;
+
 
 //! Composite surface geometry class.
 /*!

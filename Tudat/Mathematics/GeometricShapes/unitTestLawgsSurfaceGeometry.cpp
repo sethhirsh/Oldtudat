@@ -23,7 +23,6 @@
  *
  */
 
-
 #include <cmath>
 #include <iostream>
 #include <Eigen/Core>
@@ -121,5 +120,3 @@ int main( )
 
     return  isLawgsSurfaceGeometryBad;
 }
-
-

@@ -38,7 +38,6 @@ setup_tudat_library_target(tudat_states "${SRCROOT}${STATESDIR}")
 setup_headers("${STATES_HEADERS}" "${STATESDIR}")
 
 # Add unit tests.
-
 add_executable(test_CartesianElements "${SRCROOT}${STATESDIR}/unitTestCartesianElements.cpp")
 setup_custom_test_program(test_CartesianElements "${SRCROOT}${STATESDIR}")
 target_link_libraries(test_CartesianElements tudat_states)
@@ -50,5 +49,3 @@ target_link_libraries(test_KeplerianElements tudat_states)
 add_executable(test_State "${SRCROOT}${STATESDIR}/unitTestState.cpp")
 setup_custom_test_program(test_State "${SRCROOT}${STATESDIR}")
 target_link_libraries(test_State tudat_states)
-
-# End of file.

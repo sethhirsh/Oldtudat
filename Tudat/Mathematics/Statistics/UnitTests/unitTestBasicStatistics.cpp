@@ -31,16 +31,14 @@
  *
  */
 
-// Required Boost unit test framework define.
 #define BOOST_TEST_MAIN
-
 
 #include <boost/test/floating_point_comparison.hpp>
 #include <boost/test/unit_test.hpp>
 #include <limits>
 #include "Tudat/Mathematics/Statistics/basicStatistics.h"
 
-// Define Boost test suite.
+//! Define Boost test suite.
 BOOST_AUTO_TEST_SUITE( test_basic_statistics )
 
 //! Test if sample mean is computed correctly.
@@ -100,7 +98,5 @@ BOOST_AUTO_TEST_CASE( testSampleVariance )
 
 }
 
-// Close Boost test suite.
+//! Close Boost test suite.
 BOOST_AUTO_TEST_SUITE_END( )
-
-

@@ -36,7 +36,6 @@
 // true; if the code is correct, the function returns a boolean false.
 // 
 
-
 #include <cmath>
 #include <Eigen/Core>
 #include <limits>
@@ -199,5 +198,3 @@ int main( )
 
     return isSphericalHarmonicsGravityFieldErroneous;
 }
-
-

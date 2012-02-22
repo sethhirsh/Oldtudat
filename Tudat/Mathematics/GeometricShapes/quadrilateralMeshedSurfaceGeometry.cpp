@@ -35,11 +35,9 @@
 // numberOfLines_ - 1 by numberOfPoints_ - 1.
 // 
 
-
 #include <Eigen/Geometry>
 #include <limits>
 #include "Tudat/Mathematics/GeometricShapes/quadrilateralMeshedSurfaceGeometry.h"
-
 
 namespace tudat
 {
@@ -144,6 +142,4 @@ std::ostream& operator<<( std::ostream& stream,
     return stream;
 }
 
-}
-
- 
+} // namespace tudat

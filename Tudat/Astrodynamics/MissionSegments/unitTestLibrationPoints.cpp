@@ -33,7 +33,6 @@
 // (James, 2006).
 // 
 
-
 #include <cmath>
 #include <iostream>
 #include <limits>
@@ -319,5 +318,3 @@ int main( )
 
     return isLibrationPointComputationErroneous;
 }
-
-

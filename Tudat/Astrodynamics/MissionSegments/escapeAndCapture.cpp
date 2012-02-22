@@ -24,9 +24,7 @@
  *
  */
 
-
 #include "Tudat/Astrodynamics/MissionSegments/escapeAndCapture.h"
-
 
 namespace tudat
 {
@@ -99,6 +97,4 @@ double& EscapeAndCapture::computeDeltaV( )
     return deltaV_;
 }
 
-}
-
-
+} // namespace tudat

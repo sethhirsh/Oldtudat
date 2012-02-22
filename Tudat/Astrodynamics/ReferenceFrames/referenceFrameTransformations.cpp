@@ -30,13 +30,11 @@
 // Because potential speed improvement it was chosen to use AngleAxisd and quaternions
 // but to get things working, the rotation angle inputted in angleAxisd need to be inverted.
 // In the future it might be better to change it to write out the complete transformation for
-// clearity, or work with directional cosine matrices.
+// clarity, or work with directional cosine matrices.
 // 
-
 
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/ReferenceFrames/referenceFrameTransformations.h"
-
 
 namespace tudat
 {
@@ -58,7 +56,7 @@ getRotatingPlanetocentricToInertialFrameTransformationMatrix( double angleFromXI
 }
 
 //! Get rotating planetocentric (R) to inertial (I) reference frame transformation quaternion.
-Quaterniond reference_frame_transformations::
+Eigen::Quaterniond reference_frame_transformations::
 getRotatingPlanetocentricToInertialFrameTransformationQuaternion( double angleFromXItoXR )
 {
     // Compute transformation quaternion
@@ -85,7 +83,7 @@ getInertialToPlanetocentricFrameTransformationMatrix( double angleFromXItoXR )
 }
 
 //! Get inertial (I) to rotating planetocentric (R) reference frame transformtion quaternion.
-Quaterniond reference_frame_transformations::
+Eigen::Quaterniond reference_frame_transformations::
 getInertialToPlanetocentricFrameTransformationQuaternion( double angleFromXItoXR )
 {
     // Compute transformation quaternion.
@@ -99,11 +97,11 @@ getInertialToPlanetocentricFrameTransformationQuaternion( double angleFromXItoXR
 }
 
 //! Create a Quaterniond rotation state object from four quaternion values in a Vector4d
-Quaterniond reference_frame_transformations::
+Eigen::Quaterniond reference_frame_transformations::
 getQuaternionObjectFromQuaternionValues( const Eigen::Vector4d& vectorWithQuaternion )
 {
     // Set transformation quaternion.
-    Quaterniond frameTransformationQuaternion = Quaterniond(
+    Eigen::Quaterniond frameTransformationQuaternion = Eigen::Quaterniond(
                 vectorWithQuaternion( 0 ), vectorWithQuaternion( 1 ),
                 vectorWithQuaternion( 2 ), vectorWithQuaternion( 3 ) );
 
@@ -131,7 +129,7 @@ getAirspeedBasedAerodynamicToBodyFrameTransformationMatrix( double angleOfAttack
 }
 
 //! Get transformation quaternion from Planetocentric (R) to the Local vertical (V) frame.
-Quaterniond reference_frame_transformations::
+Eigen::Quaterniond reference_frame_transformations::
 getRotatingPlanetocentricToLocalVerticalFrameTransformationQuaternion(
         double longitude, double latitude )
 {
@@ -140,7 +138,7 @@ getRotatingPlanetocentricToLocalVerticalFrameTransformationQuaternion(
     AngleAxisd RotationAroundZaxis = AngleAxisd( -1.0 * longitude, Eigen::Vector3d::UnitZ( ) );
     AngleAxisd RotationAroundYaxis = AngleAxisd(
                 -1.0 * ( -latitude - mathematics::PI / 2.0 ), Eigen::Vector3d::UnitY( ) );
-    Quaterniond frameTransformationQuaternion = Quaterniond(
+    Eigen::Quaterniond frameTransformationQuaternion = Quaterniond(
                 ( RotationAroundYaxis * RotationAroundZaxis ) );
 
     // Return transformation quaternion.
@@ -148,7 +146,7 @@ getRotatingPlanetocentricToLocalVerticalFrameTransformationQuaternion(
 }
 
 //! Get transformation quaternion from local vertical (V) to the Planetocentric frame (R).
-Quaterniond reference_frame_transformations::
+Eigen::Quaterniond reference_frame_transformations::
 getLocalVerticalToRotatingPlanetocentricFrameTransformationQuaternion(
     double longitude, double latitude )
 {
@@ -157,13 +155,11 @@ getLocalVerticalToRotatingPlanetocentricFrameTransformationQuaternion(
     AngleAxisd RotationAroundZaxis = AngleAxisd( -1.0 * -longitude, Eigen::Vector3d::UnitZ( ) );
     AngleAxisd RotationAroundYaxis =
             AngleAxisd( -1.0 * ( latitude + mathematics::PI / 2.0 ), Eigen::Vector3d::UnitY( ) );
-    Quaterniond  frameTransformationQuaternion = Quaterniond(
+    Eigen::Quaterniond  frameTransformationQuaternion = Eigen::Quaterniond(
                 ( RotationAroundZaxis * RotationAroundYaxis ) );
 
     // Return transformation quaternion.
     return frameTransformationQuaternion;
 }
 
-}
-
-
+} // namespace tudat

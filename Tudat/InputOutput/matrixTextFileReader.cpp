@@ -24,7 +24,6 @@
 // If tabs are used as spaces, it doesn't work. The seperator should also be tabs then.
 // 
 
-
 #include <boost/format.hpp>
 #include <boost/throw_exception.hpp>
 #include <boost/iostreams/device/file.hpp>
@@ -39,10 +38,8 @@
 #include <TudatCore/InputOutput/streamFilters.h>
 #include "Tudat/InputOutput/matrixTextFileReader.h"
 
-
 namespace tudat
 {
-
 namespace input_output
 {
 
@@ -125,7 +122,4 @@ Eigen::MatrixXd readMatrixFromFile( const std::string& relativePath, const std::
 }
 
 } // namespace input_output
-
-} // Namespace tudat.
-
-
+} // namespace tudat

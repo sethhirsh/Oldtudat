@@ -52,6 +52,6 @@ protected:
 private:
 };
 
-}
+} // namespace tudat
 
 #endif // TUDAT_CAPTURE_PHASE_H

@@ -36,12 +36,10 @@
 // future for consistency with the rest of the code.
 // 
 
-
 #include <cmath>
 #include "TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 #include <TudatCore/Mathematics/BasicMathematics/coordinateConversions.h>
-
 
 namespace tudat
 {
@@ -250,6 +248,4 @@ std::ostream& operator<<( std::ostream& stream, SphereSegment& sphereSegment )
     return stream;
 }
 
-}
-
-
+} // namespace tudat

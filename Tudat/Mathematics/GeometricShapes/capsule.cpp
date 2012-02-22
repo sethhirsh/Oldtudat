@@ -29,7 +29,6 @@
  *
  */
 
-
 #include <cmath>
 #include <Eigen/Core>
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
@@ -38,7 +37,6 @@
 #include "Tudat/Mathematics/GeometricShapes/conicalFrustum.h"
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 #include "Tudat/Mathematics/GeometricShapes/torus.h"
-
 
 namespace tudat
 {
@@ -196,6 +194,4 @@ std::ostream &operator<<( std::ostream &stream, Capsule& capsule )
     return stream;
 }
 
-}
-
-
+} // namespace tudat

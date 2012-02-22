@@ -29,9 +29,10 @@
 #include <fstream>
 #include "Tudat/Astrodynamics/States/writeStateHistoryToFile.h"
 
-namespace tudat{
-
-namespace output{
+namespace tudat
+{
+namespace output
+{
 
 //! Write propagation history to file.
 void writeStateHistoryToFile(
@@ -71,9 +72,5 @@ void writeStateHistoryToFile(
     outputFile_.close( );
 }
 
-}
-
-}
-
-
-
+} // namespace output
+} // namespace tudat

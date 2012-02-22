@@ -39,11 +39,6 @@
 
 namespace tudat
 {
-
-//! The input/output namespace.
-/*!
- * The input/output namespace.
- */
 namespace input_output
 {
 

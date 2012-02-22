@@ -24,7 +24,6 @@
 // true; if the code is correct, the function returns a boolean false.
 // 
 
-
 #include <Eigen/Core>
 #include "Tudat/Astrodynamics/States/state.h"
 
@@ -82,5 +81,3 @@ int main( )
 
     return isStateTestErroneous;
 }
-
-

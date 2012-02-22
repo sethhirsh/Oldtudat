@@ -23,7 +23,6 @@
 
 #include <Eigen/Core>
 
-
 namespace tudat
 {
 namespace mathematics

@@ -36,18 +36,14 @@
 // computeNearestLeftNeighborUsingBinarySearch( ).
 // 
 
-
 #include <map>
 #include <iterator>
 #include <Eigen/Core>
 
-
 namespace tudat
 {
-
 namespace mathematics
 {
-
 
 //! Nearest left neighbor binary search.
 int computeNearestLeftNeighborUsingBinarySearch(
@@ -154,10 +150,5 @@ int computeNearestLeftNeighborUsingBinarySearch(
     return currentPositionInKeyOfMapOfData;
 }
 
-
-
 } // namespace mathematics
-
 } // namespace tudat
-
-

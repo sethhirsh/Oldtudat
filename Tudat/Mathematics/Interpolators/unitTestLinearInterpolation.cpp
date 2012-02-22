@@ -31,7 +31,6 @@
  *
  */
 
-
 #include <cmath>
 #include <Eigen/Core>
 #include <iostream>
@@ -174,5 +173,3 @@ int main( )
 
     return isLinearInterpolationFunctionsErroneous;
 }
-
-

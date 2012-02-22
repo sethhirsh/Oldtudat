@@ -21,7 +21,6 @@
  *
  */
 
-
 #include <cmath>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include <TudatCore/Mathematics/BasicMathematics/coordinateConversions.h>
@@ -29,7 +28,6 @@
 
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 #include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositionsCircularCoplanar.h"
-
 
 namespace tudat
 {
@@ -97,7 +95,4 @@ CartesianElements* ApproximatePlanetPositionsCircularCoplanar::getStateFromEphem
     return &planetCartesianElementsAtGivenJulianDate_;
 }
 
-}
-
-
-
+} // namespace tudat

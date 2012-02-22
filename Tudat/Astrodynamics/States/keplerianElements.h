@@ -104,42 +104,42 @@ public:
      * Get semi-major axis.
      * \return Semi-major axis.
      */
-    double& getSemiMajorAxis( ) { return state( 0 ); }
+    double getSemiMajorAxis( ) { return state( 0 ); }
 
     //! Get eccentricity.
     /*!
      * Get eccentricity.
      * \return Eccentricity.
      */
-    double& getEccentricity( ) { return state( 1 ); }
+    double getEccentricity( ) { return state( 1 ); }
 
     //! Get inclination.
     /*!
      * Get inclination.
      * \return Inclination.
      */
-    double& getInclination( ) { return state( 2 ); }
+    double getInclination( ) { return state( 2 ); }
 
     //! Get argument of periapsis.
     /*!
      * Get argument of periapsis.
      * \return Argument of periapsis.
      */
-    double& getArgumentOfPeriapsis( ) { return state( 3 ); }
+    double getArgumentOfPeriapsis( ) { return state( 3 ); }
 
     //! Get longitude of ascending node.
     /*!
      * Get longitude of ascending node.
      * \return Longitude of ascending node.
      */
-    double& getLongitudeOfAscendingNode( ) { return state( 4 ); }
+    double getLongitudeOfAscendingNode( ) { return state( 4 ); }
 
     //! Get true anomaly.
     /*!
      * Get true anomaly.
      * \return True anomaly.
      */
-    double& getTrueAnomaly( ) { return state( 5 ); }
+    double getTrueAnomaly( ) { return state( 5 ); }
 
     //! Get longitude of periapsis.
     /*!

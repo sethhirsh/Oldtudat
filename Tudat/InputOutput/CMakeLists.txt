@@ -47,6 +47,3 @@ target_link_libraries(test_TwoLineElementsTextFileReader tudat_input_output ${TU
 add_executable(test_BasicInputOutput "${SRCROOT}${INPUTOUTPUTDIR}/UnitTests/unitTestBasicInputOutput.cpp")
 setup_custom_test_program(test_BasicInputOutput "${SRCROOT}${INPUTDIR}")
 target_link_libraries(test_BasicInputOutput tudat_input_output ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
-
-
-# End of file.

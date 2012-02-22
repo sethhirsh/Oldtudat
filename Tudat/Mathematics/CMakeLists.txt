@@ -33,7 +33,3 @@ get_target_property(LINEARALGEBRASOURCES tudat_linear_algebra SOURCES)
 get_target_property(NUMERICALINTEGRATORSSOURCES tudat_numerical_integrators SOURCES)
 get_target_property(ROOTFINDINGMETHODSSOURCES tudat_root_finding_methods SOURCES)
 get_target_property(STATISTICSSOURCES tudat_statistics SOURCES)
-
-
-
-# End of file.

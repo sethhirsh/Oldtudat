@@ -24,14 +24,12 @@
  *
  */
 
-
 #include <iostream>
 #include <boost/format.hpp>
 #include <boost/exception/all.hpp>
 #include <boost/throw_exception.hpp>
 #include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositionsBase.h"
 #include "Tudat/InputOutput/basicInputOutput.h"
-
 
 namespace tudat
 {
@@ -210,6 +208,4 @@ void ApproximatePlanetPositionsBase::reloadData( )
 
 }
 
-}
-
-
+} // namespace tudat.

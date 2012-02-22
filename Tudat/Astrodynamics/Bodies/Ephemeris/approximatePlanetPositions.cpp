@@ -23,7 +23,6 @@
  *
  */
 
-
 #include <cmath>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/orbitalElementConversions.h>
@@ -36,7 +35,6 @@ using std::endl;
 using std::pow;
 using std::sin;
 using std::cos;
-
 
 namespace tudat
 {
@@ -174,6 +172,4 @@ CartesianElements* ApproximatePlanetPositions::
     return &planetCartesianElementsAtGivenJulianDate_;
 }
 
-}
-
-
+} // namespace tudat

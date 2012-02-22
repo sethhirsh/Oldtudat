@@ -39,5 +39,3 @@ setup_headers("${ROOTFINDINGMETHODS_HEADERS}" "${MATHEMATICSDIR}/RootFindingMeth
 add_executable(test_NewtonRaphson "${SRCROOT}${MATHEMATICSDIR}/RootFindingMethods/unitTestNewtonRaphson.cpp")
 setup_custom_test_program(test_NewtonRaphson "${SRCROOT}${MATHEMATICSDIR}/RootFindingMethods")
 target_link_libraries(test_NewtonRaphson tudat_root_finding_methods)
-
-# End of file.

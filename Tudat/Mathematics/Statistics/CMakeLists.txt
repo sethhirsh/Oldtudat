@@ -41,5 +41,3 @@ target_link_libraries(test_SimpleLinearRegression tudat_statistics)
 add_executable(test_BasicStatistics "${SRCROOT}${MATHEMATICSDIR}/Statistics/UnitTests/unitTestBasicStatistics.cpp")
 setup_custom_test_program(test_BasicStatistics "${SRCROOT}${MATHEMATICSDIR}/Statistics")
 target_link_libraries(test_BasicStatistics tudat_statistics ${Boost_LIBRARIES})
-
-# End of file.

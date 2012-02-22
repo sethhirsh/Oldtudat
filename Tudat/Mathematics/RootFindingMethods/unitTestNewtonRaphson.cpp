@@ -38,7 +38,6 @@
 // functions.
 // 
 
-
 #include <cmath>
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphsonAdaptor.h"
@@ -182,5 +181,3 @@ int main( )
 
     return isNewtonRaphsonMethodErroneous;
 }
-
-

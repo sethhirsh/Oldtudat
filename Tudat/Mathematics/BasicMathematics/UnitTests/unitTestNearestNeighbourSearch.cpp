@@ -19,9 +19,7 @@
  *
  */
 
-// Required Boost unit test framework define.
 #define BOOST_TEST_MAIN
-
 
 #include <boost/filesystem.hpp>
 #include <boost/test/unit_test.hpp>
@@ -33,7 +31,7 @@
 #include <vector>
 #include "Tudat/Mathematics/BasicMathematics/nearestNeighbourSearch.h"
 
-// Define Boost test suite.
+//! Define Boost test suite.
 BOOST_AUTO_TEST_SUITE( test_basic_functions )
 
 //! Test if search for nearest left neighbor using binary search works correctly.
@@ -102,7 +100,5 @@ BOOST_AUTO_TEST_CASE( testNearestLeftNeighborUsingBinarySearch )
 
 }
 
-// Close Boost test suite.
+//! Close Boost test suite.
 BOOST_AUTO_TEST_SUITE_END( )
-
-

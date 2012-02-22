@@ -35,5 +35,3 @@ setup_headers("${REFERENCEFRAMES_HEADERS}" "${REFERENCEFRAMESDIR}")
 add_executable(test_ReferenceFrameTransformations "${SRCROOT}${REFERENCEFRAMESDIR}/unitTestReferenceFrameTransformations.cpp")
 setup_custom_test_program(test_ReferenceFrameTransformations "${SRCROOT}${REFERENCEFRAMESDIR}")
 target_link_libraries(test_ReferenceFrameTransformations tudat_reference_frames ${TUDAT_CORE_LIBRARIES})
-
-# End of file.

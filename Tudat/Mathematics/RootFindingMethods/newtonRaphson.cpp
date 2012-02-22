@@ -29,10 +29,8 @@
  *
  */
 
-
 #include "Tudat/Mathematics/RootFindingMethods/newtonRaphson.h"
 #include <cmath>
-
 
 namespace tudat
 {
@@ -120,6 +118,4 @@ std::ostream& operator<<( std::ostream& stream, NewtonRaphson& newtonRaphson )
     return stream;
 }
 
-}
-
-
+} // namespace tudat

@@ -40,5 +40,3 @@ target_link_libraries(test_CubicSplineInterpolation tudat_interpolators tudat_ba
 add_executable(test_LinearInterpolation "${SRCROOT}${MATHEMATICSDIR}/Interpolators/unitTestLinearInterpolation.cpp")
 setup_custom_test_program(test_LinearInterpolation "${SRCROOT}${MATHEMATICSDIR}")
 target_link_libraries(test_LinearInterpolation tudat_interpolators tudat_basic_mathematics ${Boost_LIBRARIES})
-
-# End of file.

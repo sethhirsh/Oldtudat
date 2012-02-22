@@ -211,8 +211,6 @@ private:
     void sumDependentVariableData_( );
 };
 
-}
+} // namespace tudat
 
-#endif // LINEARREGRESSION_H
-
-
+#endif // TUDAT_SIMPLE_LINEAR_REGRESSION_H

@@ -31,7 +31,6 @@
 
 namespace tudat
 {
-
 namespace output
 {
 
@@ -165,6 +164,5 @@ void writeCompositeSurfaceGeometryPointsToFile(
     }
 }
 
-}
-
-}
+} // namespace output
+} // namespace tudat

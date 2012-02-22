@@ -41,10 +41,8 @@
 // future for consistency with the rest of the code.
 // 
 
-
 #include <iostream>
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
-
 
 namespace tudat
 {
@@ -193,6 +191,4 @@ void SingleSurfaceGeometry::transformPoint( Eigen::VectorXd& point )
     point = point + offset_;
 }
 
-}
-
-
+} // namespace tudat

@@ -66,14 +66,13 @@
 // paper by Gooding, but this patch has been found by trial and error.
 // 
 
-// Include statementes.
+// Include statements.
 #include <cmath>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include <TudatCore/Mathematics/BasicMathematics/linearAlgebra.h>
 #include "Tudat/Astrodynamics/MissionSegments/lambertTargeter.h"
-
 
 namespace tudat
 {
@@ -524,6 +523,4 @@ void LambertTargeter::execute( )
     pointerToCartesianVelocityAtArrival_->state = velocityAtArrival_;
 }
 
-}
-
-
+} // namespace tudat

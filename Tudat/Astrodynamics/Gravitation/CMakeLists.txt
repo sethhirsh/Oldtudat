@@ -21,7 +21,6 @@ set(GRAVITATION_SOURCES
   "${SRCROOT}${GRAVITATIONDIR}/centralGravityField.cpp"
   "${SRCROOT}${GRAVITATIONDIR}/gravitationalForceModel.cpp"
   "${SRCROOT}${GRAVITATIONDIR}/sphericalHarmonicsGravityField.cpp"
-
 )
 
 # Set the header files.
@@ -30,8 +29,6 @@ set(GRAVITATION_HEADERS
   "${SRCROOT}${GRAVITATIONDIR}/centralGravityField.h"
   "${SRCROOT}${GRAVITATIONDIR}/gravitationalForceModel.h"
   "${SRCROOT}${GRAVITATIONDIR}/sphericalHarmonicsGravityField.h"
-
-
 )
 
 # Add static libraries.
@@ -39,10 +36,7 @@ add_library(tudat_gravitation STATIC ${GRAVITATION_SOURCES} ${GRAVITATION_HEADER
 setup_tudat_library_target(tudat_gravitation "${SRCROOT}{GRAVITATIONDIR}")
 setup_headers("${GRAVITATION_HEADERS}" "${GRAVITATIONDIR}")
 
+# Add unit tests.
 add_executable(test_SphericalHarmonicsGravityField "${SRCROOT}${GRAVITATIONDIR}/UnitTests/unitTestSphericalHarmonicsGravityField.cpp")
 setup_custom_test_program(test_SphericalHarmonicsGravityField "${SRCROOT}${GRAVITATIONDIR}")
 target_link_libraries(test_SphericalHarmonicsGravityField tudat_gravitation tudat_bodies ${Boost_LIBRARIES})
-
-
-
-# End of file.

@@ -32,11 +32,9 @@
 // 
 // 
 
-
 #include <cmath>
 #include "Tudat/Astrodynamics/Gravitation/gravitationalForceModel.h"
 #include "Tudat/Astrodynamics/MissionSegments/librationPoint.h"
-
 
 namespace tudat
 {
@@ -161,6 +159,4 @@ void LibrationPoint::computeLocationOfLibrationPoint(
     };
 }
 
-}
-
-
+} // namespace tudat

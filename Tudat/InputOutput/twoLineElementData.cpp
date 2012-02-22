@@ -35,13 +35,10 @@
  *
  */
 
-
 #include "Tudat/InputOutput/twoLineElementData.h"
-
 
 namespace tudat
 {
-
 namespace input_output
 {
 
@@ -121,9 +118,5 @@ std::ostream& operator<<( std::ostream& stream,
     return stream;
 }
 
-
 } // namespace input_output
-
 } // namespace tudat
-
-

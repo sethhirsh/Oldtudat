@@ -38,29 +38,17 @@
  *
  */
 
-#ifndef TUDAT_LINEARINTERPOLATION_H
-#define TUDAT_LINEARINTERPOLATION_H
-
+#ifndef TUDAT_LINEAR_INTERPOLATION_H
+#define TUDAT_LINEAR_INTERPOLATION_H
 
 #include <Eigen/Core>
 #include <map>
 #include "Tudat/Astrodynamics/States/state.h"
 
-
 namespace tudat
 {
-
-//! Mathematics namespace.
-/*!
- * The mathematics namespace.
- */
 namespace mathematics
 {
-
-//! Interpolators namespace.
-/*!
- * The interpolators namespace.
- */
 namespace interpolators
 {
 
@@ -130,12 +118,8 @@ State* computeLinearInterpolation(
         std::map < double, State* >& sortedIndepedentAndDependentVariables,
         double targetIndependentVariableValue );
 
-} // Namespace interpolators.
+} // namespace interpolators
+} // namespace mathematics
+} // namespace tudat
 
-} // Namespace mathematics.
-
-} // Namespace tudat.
-
-#endif // TUDAT_LINEARINTERPOLATION_H
-
-
+#endif // TUDAT_LINEAR_INTERPOLATION_H

@@ -61,5 +61,3 @@ target_link_libraries(test_LambertTargeter tudat_bodies tudat_gravitation tudat_
 add_executable(test_LibrationPoints "${SRCROOT}${MISSIONSEGMENTSDIR}/unitTestLibrationPoints.cpp")
 setup_custom_test_program(test_LibrationPoints "${SRCROOT}${MISSIONSEGMENTSDIR}")
 target_link_libraries(test_LibrationPoints tudat_bodies tudat_mission_segments tudat_root_finding_methods tudat_gravitation tudat_basic_astrodynamics tudat_input_output ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
-
-# End of file.

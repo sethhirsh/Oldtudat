@@ -38,13 +38,11 @@
 
 namespace tudat
 {
-
-// Using declarations.
-using Eigen::AngleAxisd;
-using Eigen::Quaterniond;
-
 namespace reference_frame_transformations
 {
+
+using Eigen::AngleAxisd;
+using Eigen::Quaterniond;
 
 //! Get rotating planetocentric (R) to inertial (I) reference frame transformation matrix.
 /*!
@@ -163,8 +161,7 @@ Quaterniond getRotatingPlanetocentricToLocalVerticalFrameTransformationQuaternio
 Quaterniond getLocalVerticalToRotatingPlanetocentricFrameTransformationQuaternion(
     double longitude, double latitude );
 
-}
-
+} // namespace reference_frame_transformations
 } // namespace tudat
 
 #endif // TUDAT_FRAME_TRANSFORMATION_H

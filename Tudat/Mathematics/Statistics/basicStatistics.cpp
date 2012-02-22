@@ -23,20 +23,14 @@
  *
  */
 
-
 #include <cmath>
 #include <numeric>
 #include "Tudat/Mathematics/Statistics/basicStatistics.h"
 
-
 namespace tudat
 {
-
-//! Namespace mathematics.
 namespace mathematics
 {
-
-//! Statistics namespace.
 namespace statistics
 {
 
@@ -94,10 +88,6 @@ double computeSampleVariance( const std::vector< double >& sampleData )
     return 1.0 / ( static_cast< double >( sampleData.size( ) ) - 1.0 ) * sumOfResidualsSquared_;
 }
 
-} // Namespace statistics.
-
-} // Namespace mathematics.
-
-} // Namespace tudat.
-
-
+} // namespace statistics
+} // namespace mathematics
+} // namespace tudat

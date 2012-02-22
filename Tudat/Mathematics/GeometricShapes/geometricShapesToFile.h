@@ -26,8 +26,8 @@
  *
  */
 
-#ifndef GEOMETRICSHAPESTOFILE_H
-#define GEOMETRICSHAPESTOFILE_H
+#ifndef TUDAT_GEOMETRIC_SHAPES_TO_FILE_H
+#define TUDAT_GEOMETRIC_SHAPES_TO_FILE_H
 
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 #include "Tudat/Mathematics/GeometricShapes/compositeSurfaceGeometry.h"
@@ -35,7 +35,6 @@
 
 namespace tudat
 {
-
 namespace output
 {
 
@@ -86,8 +85,7 @@ void writeCompositeSurfaceGeometryPointsToFile(
         const std::string& filename, int writeType,
         std::vector< bool > isIndependentVariableInvertedArray );
 
-}
+} // namespace output
+} // namespace tudat
 
-}
-
-#endif // GEOMETRICSHAPESTOFILE_H
+#endif // TUDAT_GEOMETRIC_SHAPES_TO_FILE_H

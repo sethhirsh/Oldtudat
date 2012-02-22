@@ -32,7 +32,6 @@
 // true; if the code is correct, the function returns a boolean false.
 // 
 
-
 #include <cmath>
 #include <iostream>
 #include "Tudat/Astrodynamics/Bodies/planet.h"
@@ -127,5 +126,3 @@ int main( )
 
     return isEscapeAndCaptureErroneous;
 }
-
-

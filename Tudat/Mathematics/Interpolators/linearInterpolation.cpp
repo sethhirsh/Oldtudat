@@ -35,19 +35,13 @@
  *
  */
 
-
 #include "Tudat/Mathematics/BasicMathematics/nearestNeighbourSearch.h"
 #include "Tudat/Mathematics/Interpolators/linearInterpolation.h"
 
-
 namespace tudat
 {
-
-//! Mathematics namespace.
 namespace mathematics
 {
-
-//! Interpolators namespace.
 namespace interpolators
 {
 
@@ -125,11 +119,6 @@ Eigen::VectorXd computeLinearInterpolation(
              * locationTargetIndependentVariableValueInInterval );
 }
 
-
-} // Namespace interpolators.
-
-} // Namespace mathematics.
-
-} // Namespace tudat.
-
-
+} // namespace interpolators
+} // namespace mathematics
+} // namespace tudat

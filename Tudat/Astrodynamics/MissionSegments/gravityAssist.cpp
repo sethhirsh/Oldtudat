@@ -50,14 +50,15 @@
 // method by using polymorphism.
 // 
 
-
 #include <cmath>
 #include <limits>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
 #include <TudatCore/Mathematics/BasicMathematics/linearAlgebra.h>
 #include "Tudat/Astrodynamics/MissionSegments/gravityAssist.h"
 
-// Using directives.
+namespace tudat
+{
+
 using std::pow;
 using std::asin;
 using std::sqrt;
@@ -65,13 +66,7 @@ using std::sin;
 using std::fabs;
 using tudat::mathematics::linear_algebra::computeAngleBetweenVectors;
 using tudat::unit_conversions::convertRadiansToDegrees;
-
-// Using declarations.
 using std::endl;
-
-
-namespace tudat
-{
 
 //! Default constructor.
 GravityAssist::GravityAssist( ) : 
@@ -256,6 +251,4 @@ std::ostream& operator<<( std::ostream& stream, GravityAssist& gravityAssist )
     return stream;
 }
 
-}
-
-
+} // namespace tudat

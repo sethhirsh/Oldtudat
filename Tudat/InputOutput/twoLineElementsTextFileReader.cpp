@@ -46,7 +46,6 @@
 // 
 // 
 
-
 #include <cmath>
 #include <iostream>
 #include <map>
@@ -67,11 +66,8 @@
 #include <Tudat/InputOutput/basicInputOutput.h>
 #include "Tudat/InputOutput/twoLineElementsTextFileReader.h"
 
-
-
 namespace tudat
 {
-
 namespace input_output
 {
 
@@ -752,8 +748,4 @@ multimap< int, string > TwoLineElementsTextFileReader::checkTwoLineElementsFileI
 }
 
 } // namespace input_output
-
 } // namespace tudat
-
-
-

@@ -28,11 +28,9 @@
 // future for consistency with the rest of the code.
 // 
 
-
 #include <iostream>
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Mathematics/GeometricShapes/torus.h"
-
 
 namespace tudat
 {
@@ -268,6 +266,4 @@ std::ostream &operator<<( std::ostream &stream, Torus& torus )
     return stream;
 }
 
-}
-
-
+} // namespace tudat

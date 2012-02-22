@@ -34,6 +34,7 @@ add_library(tudat_basic_mathematics STATIC ${BASICMATHEMATICS_SOURCES} ${BASICMA
 setup_tudat_library_target(tudat_basic_mathematics "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics")
 setup_headers("${BASICMATHEMATICS_HEADERS}" "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics")
 
+# Add unit tests.
 add_executable(test_CoordinateConversions "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics/UnitTests/unitTestCoordinateConversions.cpp")
 setup_custom_test_program(test_CoordinateConversions "${SRCROOT}${BASICSDIR}")
 target_link_libraries(test_CoordinateConversions tudat_basic_mathematics ${TUDAT_CORE_LIBRARIES} ${Boost_LIBRARIES})
@@ -41,5 +42,3 @@ target_link_libraries(test_CoordinateConversions tudat_basic_mathematics ${TUDAT
 add_executable(test_NearestNeighbourSearch "${SRCROOT}${MATHEMATICSDIR}/BasicMathematics/UnitTests/unitTestNearestNeighbourSearch.cpp")
 setup_custom_test_program(test_NearestNeighbourSearch "${SRCROOT}${BASICSDIR}")
 target_link_libraries(test_NearestNeighbourSearch tudat_input_output tudat_basic_mathematics ${Boost_LIBRARIES})
-
-# End of file.
