@@ -29,6 +29,7 @@
 #include <map>
 #include <sstream>
 #include <vector>
+#include <algorithm>
 #include "Tudat/InputOutput/basicInputOutput.h"
 
 // Define Boost test suite.
@@ -69,6 +70,7 @@ BOOST_AUTO_TEST_CASE( testListAllFilesInDirectory )
     // List all files in directory and check that they are as expected.
     std::vector< boost::filesystem::path > listOfFilenames =
             tudat::input_output::listAllFilesInDirectory( pathToNewDirectory.string( ) );
+    std::sort( listOfFilenames.begin(), listOfFilenames.end() );
 
     for ( unsigned int i = 0; i < listOfFilenames.size( ); i++ )
     {
