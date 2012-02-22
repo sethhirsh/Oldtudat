@@ -30,7 +30,7 @@
 #ifndef TUDAT_CARTESIAN_ELEMENTS_H
 #define TUDAT_CARTESIAN_ELEMENTS_H
 
-// Include statements.
+
 #include <iostream>
 #include "Tudat/Astrodynamics/States/cartesianPositionElements.h"
 

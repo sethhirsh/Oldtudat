@@ -32,7 +32,7 @@
 // true; if the code is correct, the function returns a boolean false.
 // 
 
-// Include statements.
+
 #include <cmath>
 #include <iostream>
 #include "Tudat/Astrodynamics/Bodies/planet.h"
@@ -128,4 +128,4 @@ int main( )
     return isEscapeAndCaptureErroneous;
 }
 
-// End of file.
+

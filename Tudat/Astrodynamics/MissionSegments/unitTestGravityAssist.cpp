@@ -38,7 +38,7 @@
 // this code, not outside by a calculator.
 // 
 
-// Include statements.
+
 #include <cmath>
 #include <Eigen/Core>
 #include <iostream>
@@ -147,4 +147,4 @@ int main( )
     return isGravityAssistErroneous;
 }
 
-// End of file.
+

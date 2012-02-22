@@ -24,7 +24,7 @@
 // true; if the code is correct, the function returns a boolean false.
 // 
 
-// Include statements.
+
 #include <iostream>
 #include <limits>
 #include "Tudat/Astrodynamics/States/cartesianElements.h"
@@ -133,4 +133,4 @@ int main( )
     return isCartesianElementsErroneous;
 }
 
-// End of file.
+

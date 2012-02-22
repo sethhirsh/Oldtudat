@@ -21,7 +21,6 @@
  *
  */
 
-// Include statements.
 #include <Eigen/Core>
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Aerodynamics/hypersonicLocalInclinationAnalysis.h"
@@ -259,5 +258,3 @@ int main( )
 
     return isCoefficientGeneratorErroneous;
 }
-
-// End of file.

@@ -36,11 +36,6 @@
 
 namespace tudat
 {
-
-//! Aerodynamics namespace.
-/*!
- * The aerodynamics namespace.
- */
 namespace aerodynamics
 {
 

@@ -26,11 +26,11 @@
 // difficulties of the iterative method to converge for eccentricities close to 1.
 // 
 
-// Include statements.
+
 #include <iostream>
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToEccentricAnomaly.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -94,4 +94,4 @@ double ConvertMeanAnomalyToEccentricAnomaly::convert( )
 
 } // Namespace tudat.
 
-// End of file.
+

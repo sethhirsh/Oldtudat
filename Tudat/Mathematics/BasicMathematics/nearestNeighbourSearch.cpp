@@ -36,12 +36,12 @@
 // computeNearestLeftNeighborUsingBinarySearch( ).
 // 
 
-// Include statements.
+
 #include <map>
 #include <iterator>
 #include <Eigen/Core>
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -160,4 +160,4 @@ int computeNearestLeftNeighborUsingBinarySearch(
 
 } // namespace tudat
 
-// End of file.
+

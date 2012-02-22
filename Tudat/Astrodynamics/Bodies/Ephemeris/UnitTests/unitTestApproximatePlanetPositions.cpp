@@ -32,7 +32,7 @@
 // true; if the code is correct, the function returns a boolean false.
 // 
 
-// Include statements.
+
 #include <iostream>
 #include <limits>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
@@ -330,4 +330,4 @@ int main( )
     return isApproximatePlanetPositionsErroneous;
 }
 
-// End of file.
+

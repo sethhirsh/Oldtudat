@@ -27,14 +27,14 @@
  *
  */
 
-// Include statements.
+
 #include "Tudat/Astrodynamics/Gravitation/centralGravityField.h"
 
 // Using declarations.
 using std::cerr;
 using std::endl;
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -161,4 +161,4 @@ void CentralGravityField::setPredefinedCentralGravityFieldSettings(
 }
 
 }
-// End of file.
+

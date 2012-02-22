@@ -23,7 +23,7 @@
 
 #include <Eigen/Core>
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 

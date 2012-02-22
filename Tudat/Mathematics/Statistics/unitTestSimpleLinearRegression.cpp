@@ -32,7 +32,7 @@
 // must, be modified.
 // 
 
-// Include statements.
+
 #include <cmath>
 #include <iostream>
 #include <limits>
@@ -157,4 +157,4 @@ int main( )
     return isSimpleLinearRegressionErroneous;
 }
 
-// End of file.
+

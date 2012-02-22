@@ -23,12 +23,12 @@
  *
  */
 
-// Include statements.
+
 #include <cmath>
 #include <numeric>
 #include "Tudat/Mathematics/Statistics/basicStatistics.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -100,4 +100,4 @@ double computeSampleVariance( const std::vector< double >& sampleData )
 
 } // Namespace tudat.
 
-// End of file.
+

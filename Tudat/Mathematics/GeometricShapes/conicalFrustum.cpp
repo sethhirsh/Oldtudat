@@ -30,12 +30,12 @@
 // future for consistency with the rest of the code.
 // 
 
-// Include statements.
+
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Mathematics/BasicMathematics/coordinateConversions.h"
 #include "Tudat/Mathematics/GeometricShapes/conicalFrustum.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -259,4 +259,4 @@ std::ostream &operator<<( std::ostream &stream, ConicalFrustum& conicalFrustum )
 
 }
 
-// End of file.
+

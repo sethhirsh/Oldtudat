@@ -35,11 +35,11 @@
  *
  */
 
-// Include statements.
+
 #include "Tudat/Mathematics/BasicMathematics/nearestNeighbourSearch.h"
 #include "Tudat/Mathematics/Interpolators/linearInterpolation.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -132,4 +132,4 @@ Eigen::VectorXd computeLinearInterpolation(
 
 } // Namespace tudat.
 
-// End of file.
+

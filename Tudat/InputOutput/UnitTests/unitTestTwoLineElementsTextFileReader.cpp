@@ -42,7 +42,7 @@
 // (Celestrak (c), 2004).
 // 
 
-// Include statements.
+
 #include <ctime>
 #include <cstdlib>
 #include <map>
@@ -171,4 +171,4 @@ int main( )
     return isTwoLineElementsTextFileReaderErroneous;
 }
 
-// End of file.
+

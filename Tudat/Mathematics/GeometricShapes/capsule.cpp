@@ -29,7 +29,7 @@
  *
  */
 
-// Include statements.
+
 #include <cmath>
 #include <Eigen/Core>
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
@@ -39,7 +39,7 @@
 #include "Tudat/Mathematics/GeometricShapes/sphereSegment.h"
 #include "Tudat/Mathematics/GeometricShapes/torus.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -198,4 +198,4 @@ std::ostream &operator<<( std::ostream &stream, Capsule& capsule )
 
 }
 
-// End of file.
+

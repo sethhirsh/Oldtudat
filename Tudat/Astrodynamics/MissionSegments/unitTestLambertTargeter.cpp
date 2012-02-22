@@ -46,7 +46,7 @@
 // ( Mengali, Quarta ). The hyperbolic case was taken from ( Noomen, R. ).
 // 
 
-// Include statements.
+
 #include <cmath>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
@@ -358,4 +358,4 @@ int main( )
     return isLambertTargeterErroneous;
 }
 
-// End of file.
+

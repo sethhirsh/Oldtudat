@@ -22,7 +22,6 @@
  *
  */
 
-// Include statements.
 #include <cmath>
 #include <iostream>
 #include <limits>
@@ -215,5 +214,3 @@ int main( )
 
     return isTabulatedAtmosphereErroneous;
 }
-
-// End of file.

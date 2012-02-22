@@ -19,15 +19,12 @@
  *
  */
 
-// Macros.
 #define TUDAT_UNUSED_PARAMETER( unusedParameter ) { ( void ) unusedParameter; }
 
-// Include statements.
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamicMoment.h"
 
-//! Tudat library namespace.
 namespace tudat
 {
 
@@ -41,6 +38,4 @@ void AerodynamicMoment::computeMoment( State* pointerToState, double time )
             pointerToAerodynamicCoefficientInterface_->getCurrentMomentCoefficients( );
 }
 
-}
-
-// End of file.
+} // namespace tudat

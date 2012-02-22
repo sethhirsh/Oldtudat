@@ -24,7 +24,6 @@
  *
  */
 
-// Include statements.
 #include <cmath>
 #include <iostream>
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
@@ -196,5 +195,3 @@ int main( )
 
     return isAerodynamicsNamespaceBad;
 }
-
-// End of file.

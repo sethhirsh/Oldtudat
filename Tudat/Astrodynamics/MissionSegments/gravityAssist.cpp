@@ -50,7 +50,7 @@
 // method by using polymorphism.
 // 
 
-// Include statements.
+
 #include <cmath>
 #include <limits>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
@@ -69,7 +69,7 @@ using tudat::unit_conversions::convertRadiansToDegrees;
 // Using declarations.
 using std::endl;
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -258,4 +258,4 @@ std::ostream& operator<<( std::ostream& stream, GravityAssist& gravityAssist )
 
 }
 
-// End of file.
+

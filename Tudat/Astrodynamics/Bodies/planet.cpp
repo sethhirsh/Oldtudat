@@ -17,10 +17,10 @@
  *
  */
 
-// Include statements.
+
 #include "Tudat/Astrodynamics/Bodies/planet.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -152,4 +152,4 @@ void Planet::setPredefinedPlanetSettings( PredefinedPlanets predefinedPlanet )
 
 }
 
-// End of file.
+

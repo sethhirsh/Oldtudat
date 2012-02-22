@@ -215,4 +215,4 @@ private:
 
 #endif // LINEARREGRESSION_H
 
-// End of file.
+

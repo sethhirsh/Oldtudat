@@ -41,11 +41,11 @@
 // future for consistency with the rest of the code.
 // 
 
-// Include statements.
+
 #include <iostream>
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -195,4 +195,4 @@ void SingleSurfaceGeometry::transformPoint( Eigen::VectorXd& point )
 
 }
 
-// End of file.
+

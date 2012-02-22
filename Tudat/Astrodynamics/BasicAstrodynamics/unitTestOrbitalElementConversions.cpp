@@ -51,7 +51,7 @@
 // true; if the code is correct, the function returns a boolean false.
 // 
 
-// Include statements.
+
 #include <cmath>
 #include <iostream>
 #include <limits>
@@ -275,4 +275,4 @@ int main( )
     return isOrbitalElementConversionErroneous;
 }
 
-// End of file.
+

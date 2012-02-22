@@ -19,12 +19,10 @@
  *
  */
 
-// Include statements.
 #include <sstream>
 #include "Tudat/Astrodynamics/Aerodynamics/tabulatedAtmosphere.h"
 #include "Tudat/InputOutput/matrixTextFileReader.h"
 
-//! Tudat library namespace.
 namespace tudat
 {
 
@@ -70,6 +68,4 @@ void TabulatedAtmosphere::initialize( std::string atmosphereTableFile )
                 altitudeData_, temperatureData_ );
 }
 
-}
-
-// End of file.
+} // namespace tudat

@@ -34,10 +34,10 @@
 // containers instead.
 // 
 
-// Include statements.
+
 #include "Tudat/Mathematics/GeometricShapes/compositeSurfaceGeometry.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -59,4 +59,4 @@ std::ostream &operator<<( std::ostream &stream,
 
 }
 
-// End of file.
+

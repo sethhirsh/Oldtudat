@@ -24,10 +24,10 @@
  *
  */
 
-// Include statements.
+
 #include "Tudat/Mathematics/GeometricShapes/lawgsPartGeometry.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -181,4 +181,4 @@ std::ostream& operator<<( std::ostream& stream,
 
 }
 
-// End of file.
+

@@ -19,7 +19,6 @@
  *
  */
 
-// Include statements.
 #include <cmath>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
@@ -166,5 +165,3 @@ int main( )
 
     return ( isAerodynamicMomentBroken || isAerodynamicForceBroken );
 }
-
-// End of file.

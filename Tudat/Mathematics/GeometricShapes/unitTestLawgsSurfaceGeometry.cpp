@@ -23,7 +23,7 @@
  *
  */
 
-// Include statements.
+
 #include <cmath>
 #include <iostream>
 #include <Eigen/Core>
@@ -122,4 +122,4 @@ int main( )
     return  isLawgsSurfaceGeometryBad;
 }
 
-// End of file.
+

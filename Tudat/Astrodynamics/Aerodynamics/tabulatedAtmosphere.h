@@ -36,8 +36,6 @@
 #include "Tudat/Astrodynamics/Aerodynamics/atmosphereModel.h"
 #include "Tudat/Mathematics/Interpolators/cubicSplineInterpolation.h"
 
-using tudat::mathematics::interpolators::CubicSplineInterpolation;
-
 namespace tudat
 {
 
@@ -180,19 +178,19 @@ private:
     /*!
      *  Cubic spline interpolation for density.
      */
-    CubicSplineInterpolation cubicSplineInterpolationForDensity_;
+    mathematics::interpolators::CubicSplineInterpolation cubicSplineInterpolationForDensity_;
 
     //! Cubic spline interpolation for pressure.
     /*!
      *  Cubic spline interpolation for pressure.
      */
-    CubicSplineInterpolation cubicSplineInterpolationForPressure_;
+    mathematics::interpolators::CubicSplineInterpolation cubicSplineInterpolationForPressure_;
 
     //! Cubic spline interpolation for temperature.
     /*!
      *  Cubic spline interpolation for temperature.
      */
-    CubicSplineInterpolation cubicSplineInterpolationForTemperature_;
+    mathematics::interpolators::CubicSplineInterpolation cubicSplineInterpolationForTemperature_;
 };
 
 } // namespace tudat

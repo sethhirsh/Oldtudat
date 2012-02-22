@@ -24,7 +24,7 @@
  *
  */
 
-// Include statements.
+
 #include <iostream>
 #include <boost/format.hpp>
 #include <boost/exception/all.hpp>
@@ -32,7 +32,7 @@
 #include "Tudat/Astrodynamics/Bodies/Ephemeris/approximatePlanetPositionsBase.h"
 #include "Tudat/InputOutput/basicInputOutput.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -212,4 +212,4 @@ void ApproximatePlanetPositionsBase::reloadData( )
 
 }
 
-// End of file.
+

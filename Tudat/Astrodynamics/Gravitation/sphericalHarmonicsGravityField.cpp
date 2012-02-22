@@ -32,7 +32,7 @@
  *
  */
 
-// Include statements.
+
 #include <cmath>
 #include "Tudat/Astrodynamics/Gravitation/sphericalHarmonicsGravityField.h"
 
@@ -41,7 +41,7 @@ using std::endl;
 using std::cerr;
 using std::pow;
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -145,4 +145,4 @@ std::ostream& operator<<( std::ostream& stream,
 
 }
 
-// End of file.
+

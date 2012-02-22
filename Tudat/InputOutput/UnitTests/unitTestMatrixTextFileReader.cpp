@@ -21,7 +21,7 @@
 // If tabs are used as spaces, it doesn't work. The seperator should also be tabs then.
 // 
 
-// Include statements.
+
 #include <Eigen/Core>
 #include <cmath>
 #include <iostream>
@@ -103,4 +103,4 @@ int main( )
     return isTestMatrixBroken;
 }
 
-// End of file.
+

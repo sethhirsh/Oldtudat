@@ -34,7 +34,7 @@
 // Required Boost unit test framework define.
 #define BOOST_TEST_MAIN
 
-// Include statements.
+
 #include <boost/test/floating_point_comparison.hpp>
 #include <boost/test/unit_test.hpp>
 #include <limits>
@@ -103,4 +103,4 @@ BOOST_AUTO_TEST_CASE( testSampleVariance )
 // Close Boost test suite.
 BOOST_AUTO_TEST_SUITE_END( )
 
-// End of file.
+

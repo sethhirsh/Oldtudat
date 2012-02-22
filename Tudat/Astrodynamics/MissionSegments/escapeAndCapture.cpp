@@ -24,10 +24,10 @@
  *
  */
 
-// Include statements.
+
 #include "Tudat/Astrodynamics/MissionSegments/escapeAndCapture.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -101,4 +101,4 @@ double& EscapeAndCapture::computeDeltaV( )
 
 }
 
-// End of file.
+

@@ -30,7 +30,7 @@
 // referenceFrameTransformations.h.
 // 
 
-// Include statements.
+
 #include <cmath>
 #include <Eigen/Core>
 #include <iostream>
@@ -332,4 +332,4 @@ int main( )
     return isFrameTransformationErroneous;
 }
 
-// End of file.
+

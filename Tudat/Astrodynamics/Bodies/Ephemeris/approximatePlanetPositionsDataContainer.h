@@ -24,11 +24,11 @@
 #ifndef APPROXIMATEPLANETPOSITIONSDATACONTAINER_H
 #define APPROXIMATEPLANETPOSITIONSDATACONTAINER_H
 
-// Include statements.
+
 #include <iostream>
 #include <string>
 
-//! Tudat library namespace.
+
 /*!
  * Tudat library namespace.
  */
@@ -238,4 +238,4 @@ private:
 
 #endif // APPROXIMATEPLANETPOSITIONSDATACONTAINER_H
 
-// End of file.
+

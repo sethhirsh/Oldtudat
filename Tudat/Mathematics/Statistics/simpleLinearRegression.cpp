@@ -27,11 +27,11 @@
  *
  */
 
-// Include statements.
+
 #include <cmath>
 #include "Tudat/Mathematics/Statistics/simpleLinearRegression.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -144,4 +144,4 @@ void SimpleLinearRegression::sumDependentVariableData_( )
 
 }
 
-// End of file.
+

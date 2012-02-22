@@ -32,12 +32,12 @@
 // 
 // 
 
-// Include statements.
+
 #include <cmath>
 #include "Tudat/Astrodynamics/Gravitation/gravitationalForceModel.h"
 #include "Tudat/Astrodynamics/MissionSegments/librationPoint.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -163,4 +163,4 @@ void LibrationPoint::computeLocationOfLibrationPoint(
 
 }
 
-// End of file.
+

@@ -43,5 +43,3 @@ get_target_property(GRAVITATIONSOURCES tudat_gravitation SOURCES)
 get_target_property(MISSIONSEGMENTSSOURCES tudat_mission_segments SOURCES)
 get_target_property(REFERENCEFRAMESSOURCES tudat_reference_frames SOURCES)
 get_target_property(STATESSOURCES tudat_states SOURCES)
-
-# End of file.

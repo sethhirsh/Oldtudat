@@ -33,7 +33,7 @@
 // (James, 2006).
 // 
 
-// Include statements.
+
 #include <cmath>
 #include <iostream>
 #include <limits>
@@ -320,4 +320,4 @@ int main( )
     return isLibrationPointComputationErroneous;
 }
 
-// End of file.
+

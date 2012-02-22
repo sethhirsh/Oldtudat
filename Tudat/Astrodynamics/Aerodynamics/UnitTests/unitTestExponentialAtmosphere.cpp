@@ -23,7 +23,6 @@
  *
  */
 
-// Include statements.
 #include <cmath>
 #include <iostream>
 #include <limits>
@@ -168,5 +167,3 @@ int main( )
 
     return isExponentialAtmosphereErroneous;
 }
-
-// End of file.

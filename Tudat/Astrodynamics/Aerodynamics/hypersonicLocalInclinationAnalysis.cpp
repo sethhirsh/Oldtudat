@@ -24,7 +24,6 @@
  *
  */
 
-// Include statements.
 #include <Eigen/Geometry>
 #include <string>
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
@@ -39,7 +38,6 @@ using std::string;
 using std::endl;
 using tudat::mathematics::PI;
 
-//! Tudat library namespace.
 namespace tudat
 {
 
@@ -904,6 +902,4 @@ std::ostream& operator<<( std::ostream& stream,
     return stream;
 }
 
-}
-
-// End of file.
+} // namespace tudat

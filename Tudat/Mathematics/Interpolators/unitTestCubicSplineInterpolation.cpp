@@ -21,7 +21,7 @@
  *
  */
 
-// Include statements.
+
 #include <cmath>
 #include <Eigen/Core>
 #include <iostream>
@@ -95,4 +95,4 @@ int main( )
     return isCubicSplineInterpolationBad;
 }
 
-// End of file.
+

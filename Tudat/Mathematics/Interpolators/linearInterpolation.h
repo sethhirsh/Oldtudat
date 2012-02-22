@@ -41,12 +41,12 @@
 #ifndef TUDAT_LINEARINTERPOLATION_H
 #define TUDAT_LINEARINTERPOLATION_H
 
-// Include statements.
+
 #include <Eigen/Core>
 #include <map>
 #include "Tudat/Astrodynamics/States/state.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -138,4 +138,4 @@ State* computeLinearInterpolation(
 
 #endif // TUDAT_LINEARINTERPOLATION_H
 
-// End of file.
+

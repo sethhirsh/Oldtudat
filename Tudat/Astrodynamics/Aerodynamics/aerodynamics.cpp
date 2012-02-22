@@ -30,11 +30,14 @@
  *
  */
 
-// Include statements.
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/Aerodynamics/aerodynamics.h"
 
-// Using declarations.
+namespace tudat
+{
+namespace aerodynamics
+{
+
 using tudat::mathematics::PI;
 using std::atan;
 using std::exp;
@@ -42,14 +45,6 @@ using std::log;
 using std::pow;
 using std::sqrt;
 using std::tan;
-
-//! Tudat library namespace.
-namespace tudat
-{
-
-//! Aerodynamics namespace.
-namespace aerodynamics
-{
 
 //! Compute local-to-static pressure ratio.
 double computeLocalToStaticPressureRatio( double machNumber,
@@ -491,8 +486,5 @@ double computeShockDeflectionAngle( double shockAngle, double machNumber,
     return atan( tangentOfDeflectionAngle_ );
 }
 
-}
-
-}
-
-// End of file.
+} // namespace aerodynamics
+} // namespace tudat

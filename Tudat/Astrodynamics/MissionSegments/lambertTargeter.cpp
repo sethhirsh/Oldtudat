@@ -74,7 +74,7 @@
 #include <TudatCore/Mathematics/BasicMathematics/linearAlgebra.h>
 #include "Tudat/Astrodynamics/MissionSegments/lambertTargeter.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -526,4 +526,4 @@ void LambertTargeter::execute( )
 
 }
 
-// End of file.
+

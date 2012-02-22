@@ -67,7 +67,7 @@ public:
      * Returns the dynamic pressure.
      * \return Dynamic pressure.
      */
-    double& getDynamicPressure( ) { return dynamicPressure_; }
+    double getDynamicPressure( ) { return dynamicPressure_; }
 
     //! Compute aerodynamic force.
     /*!

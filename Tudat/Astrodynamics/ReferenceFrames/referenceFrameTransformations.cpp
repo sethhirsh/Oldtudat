@@ -33,11 +33,11 @@
 // clearity, or work with directional cosine matrices.
 // 
 
-// Include statements.
+
 #include <TudatCore/Mathematics/BasicMathematics/mathematicalConstants.h>
 #include "Tudat/Astrodynamics/ReferenceFrames/referenceFrameTransformations.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -166,4 +166,4 @@ getLocalVerticalToRotatingPlanetocentricFrameTransformationQuaternion(
 
 }
 
-// End of file.
+

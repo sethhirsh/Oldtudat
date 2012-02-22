@@ -23,7 +23,7 @@
 // true; if the code is correct, the function returns a boolean false.
 // 
 
-// Include statements.
+
 #include <cmath>
 #include <iostream>
 #include <limits>
@@ -113,4 +113,4 @@ int main( )
     return isDeepSpaceManeuverErroneous_;
 }
 
-// End of file.
+

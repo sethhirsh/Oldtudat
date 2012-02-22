@@ -23,12 +23,12 @@
  *
  */
 
-// Include statements.
+
 #include <iostream>
 #include "Tudat/Mathematics/Interpolators/cubicSplineInterpolation.h"
 #include "Tudat/Mathematics/BasicMathematics/nearestNeighbourSearch.h"
 
-//! Tudat library namespace.
+
 namespace tudat
 {
 
@@ -165,4 +165,4 @@ void CubicSplineInterpolation::computeSecondDerivativeOfCurvature_( )
 
 } // Namespace tudat.
 
-// End of file.
+
