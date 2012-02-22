@@ -49,7 +49,9 @@ namespace orbital_element_conversions
  * \param epochOfFinalState Epoch of final state.                                               [s]
  * \param centralBodyGravitationalParameter Gravitational parameter of central body      [m^3 s^-2]
  * \param newtonRaphsonConvergenceTolerance Convergence tolerance for Newton-Raphson
- *          root-finder.                                                                        [-]
+ *          root-finder. This quantity represents the absolute difference in solution for the
+ *          eccentric anomaly in the Newton-Raphson root-finding solution when converting
+ *          eccentric to mean anomaly                                                           [-]
  * \param useModuloOption Option to propagate remainder time computed from
  *          mod( propagationTime, orbitalPeriod ). This has computational advantages when the
  *          angles in Kepler's equation become very large. The default is set to true.
