@@ -142,9 +142,9 @@ int main( )
     double temperature1 = exponentialAtmosphere.getTemperature( altitude );
     double temperature2 = exponentialAtmosphere.getTemperature( altitude, longitude, latitude, time );
 
-    if ( fabs( density1 - density2 ) > std::numeric_limits< double >::epsilon( )
-         || fabs( pressure1 - pressure2 ) > std::numeric_limits< double >::epsilon( )
-         || fabs( temperature1 - temperature2 ) > std::numeric_limits< double >::epsilon( ) )
+    if ( fabs( ( density1 - density2 ) / density2 ) > std::numeric_limits< double >::epsilon( )
+         || fabs( ( pressure1 - pressure2 ) / pressure2 ) > std::numeric_limits< double >::epsilon( )
+         || fabs( ( temperature1 - temperature2 ) /temperature2 ) > std::numeric_limits< double >::epsilon( ) )
     {
         cerr << "Location-dependent and location-independent functions did not give the same "
              << "result." << endl;
