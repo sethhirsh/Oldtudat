@@ -32,7 +32,6 @@
 
 #include <Eigen/Core>
 #include <fstream>
-#include <iostream>
 #include <limits>
 #include <map>
 #include <boost/test/floating_point_comparison.hpp>

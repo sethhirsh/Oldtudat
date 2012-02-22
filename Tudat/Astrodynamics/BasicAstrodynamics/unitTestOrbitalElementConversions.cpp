@@ -51,7 +51,6 @@
 // true; if the code is correct, the function returns a boolean false.
 // 
 
-
 #include <cmath>
 #include <iostream>
 #include <limits>
@@ -80,190 +79,50 @@ int main( )
     using namespace tudat;
 
     // Test of orbital element conversion methods imeplemented in Tudat.
-    // Test 1: Test of Cartesian-to-Keplerian elements conversion and
-    //         Keplerian-to-Cartesian elements conversion.
-    // Test 2: Test of true anomaly to eccentric anomaly conversion.
-    // Test 3: Test of eccentric anomaly to true anomaly conversion.
-    // Test 4: Test of true anomaly to hyperbolic eccentric anomaly conversion.
-    // Test 5: Test of hyperbolic eccentric anomaly to true anomaly conversion.
-    // Test 6: Test of eccentric anomaly to mean anomaly conversion.
-    // Test 7: Test of mean anomaly to eccentric anomaly conversion.
-    // Test 8: Test of hyperbolic eccentric anomaly to mean anomaly conversion.
-    // Test 9: Test of mean anomaly to hyperbolic eccentric anomaly conversion.
-    // Test 10: Test of elapsed time to mean anomaly for elliptical orbits.
-    // Test 11: Test of mean anomaly to elapsed time for elliptical orbits.
-    // Test 12: Test of elapsed time to mean anomaly for hyperbolic orbits.
-    // Test 13: Test of mean anomaly to elapsed time for hyperbolic orbits.
-
-    // Test 1: Test of Cartesian-to-Keplerian elements conversion and
-    //         Keplerian-to-Cartesian elements conversion.
+    // Test 1: Test of mean anomaly to eccentric anomaly conversion.
 
     // Initialize unit test result to false.
     bool isOrbitalElementConversionErroneous = false;
 
-//    // Define tolerance.
-//    double errorTolerance_ = 1.0e2 * std::numeric_limits< double >::epsilon( );
+    // Test 1: Test of mean anomaly to eccentric anomaly conversion.
+    // Source: ( Vallado, 2004 ).
 
-//    // Test 7: Test of mean anomaly to eccentric anomaly conversion.
-//    // Source: ( Vallado, 2004 ).
+    // Set tolerance for conversion.
+    double toleranceOrbitalElementConversion = 1e-8;
 
-//    // Set tolerance for conversion.
-//    double toleranceOrbitalElementConversion = 1e-8;
+    // Set mean anomaly.
+    double meanAnomaly = unit_conversions::convertDegreesToRadians( 60.0 );
 
-//    // Set mean anomaly.
-//    double meanAnomaly = unit_conversions::convertDegreesToRadians( 60.0 );
+    // Create object for mean anomaly to eccentric anomaly conversion.
+    orbital_element_conversions::ConvertMeanAnomalyToEccentricAnomaly
+            convertMeanAnomalyToEccentricAnomaly;
 
-//    // Create object for mean anomaly to eccentric anomaly conversion.
-//    orbital_element_conversions::ConvertMeanAnomalyToEccentricAnomaly
-//            convertMeanAnomalyToEccentricAnomaly;
+    // Create pointer to Newton-Raphson object.
+    NewtonRaphson* pointerToNewtonRaphson = new NewtonRaphson;
 
-//    // Create pointer to Newton-Raphson object.
-//    NewtonRaphson* pointerToNewtonRaphson = new NewtonRaphson;
+    // Set eccentricity.
+    convertMeanAnomalyToEccentricAnomaly.setEccentricity( 0.01671 );
 
-//    // Set eccentricity.
-//    convertMeanAnomalyToEccentricAnomaly.setEccentricity( 0.01671 );
+    // Set mean anomaly.
+    convertMeanAnomalyToEccentricAnomaly.setMeanAnomaly( meanAnomaly );
 
-//    // Set mean anomaly.
-//    convertMeanAnomalyToEccentricAnomaly.setMeanAnomaly( meanAnomaly );
+    // Set Newton-Raphson method.
+    convertMeanAnomalyToEccentricAnomaly.setNewtonRaphson( pointerToNewtonRaphson );
 
-//    // Set Newton-Raphson method.
-//    convertMeanAnomalyToEccentricAnomaly.setNewtonRaphson( pointerToNewtonRaphson );
+    // Compute eccentric anomaly.
+    double eccentricAnomaly = convertMeanAnomalyToEccentricAnomaly.convert( );
 
-//    // Compute eccentric anomaly.
-//    double eccentricAnomaly = convertMeanAnomalyToEccentricAnomaly.convert( );
+    // Check if computed eccentric anomaly is equal to reference value.
+    if ( fabs( eccentricAnomaly - 1.061789204 ) > toleranceOrbitalElementConversion )
+    {
+        isOrbitalElementConversionErroneous = true;
 
-//    // Check if computed eccentric anomaly is equal to reference value.
-//    if ( fabs( eccentricAnomaly - 1.061789204 ) > toleranceOrbitalElementConversion )
-//    {
-//        isOrbitalElementConversionErroneous = true;
-
-//        cerr << "The conversion of mean anomaly to eccentric anomaly is "
-//             << "erroneous as the computed eccentric anomaly after applying the conversion ( "
-//             << unit_conversions::convertRadiansToDegrees( eccentricAnomaly )
-//             << " ) does not match the expected value of the eccentric anomaly ( "
-//             << unit_conversions::convertRadiansToDegrees( 1.061789204 ) << " ) " << endl;
-//    }
-
-//    // Test 10: Test of elapsed time to mean anomaly for elliptical orbits.
-
-//    // Set tolerance for conversion.
-//    toleranceOrbitalElementConversion = 1.0e-11;
-
-//    // Expected mean anomaly value;
-//    double expectedMeanAnomalyForTest10 = 20.203139666972554;
-
-//    // Set elapsed time.
-//    double expectedElapsedTime = 4000.0;
-
-//    // Set semi-major axis.
-//    double semiMajorAxis = unit_conversions::convertKilometersToMeters( 2500.0 );
-
-//    // Compute mean anomaly.
-//    meanAnomaly = orbital_element_conversions::convertElapsedTimeToMeanAnomalyForEllipticalOrbits(
-//                expectedElapsedTime, &predefinedEarth, semiMajorAxis );
-
-//    // Declare and compute absolute and relative errors.
-//    double absoluteDifference = fabs( meanAnomaly - expectedMeanAnomalyForTest10 );
-
-//    double relativeDifference = absoluteDifference / expectedMeanAnomalyForTest10;
-
-//    // Check if relative error is too large.
-//    if ( relativeDifference > std::numeric_limits< double >::epsilon( ) )
-//    {
-//        isOrbitalElementConversionErroneous = true;
-
-//        cerr << "The conversion of elapsed time to mean anomaly is erroneous "
-//             << "as the computed mean anomaly after applying the conversion ( "
-//             << unit_conversions::convertRadiansToDegrees( meanAnomaly )
-//             << " ) does not match the expected value of the mean anomaly ( "
-//             << unit_conversions::convertRadiansToDegrees( expectedMeanAnomalyForTest10 )
-//             << " ) " << endl;
-//    }
-
-//    // Test 11: Test of mean anomaly to elapsed time for elliptical orbits.
-//    //          Reversal of computation for Test 10.
-
-//    // Set tolerance for conversion.
-//    toleranceOrbitalElementConversion = 1e-11;
-
-//    // Set mean anomaly.
-//    meanAnomaly = expectedMeanAnomalyForTest10;
-
-//    // Declare and compute elapsed time.
-//    double elapsedTime = orbital_element_conversions::
-//            convertMeanAnomalyToElapsedTimeForEllipticalOrbits(
-//                meanAnomaly, &predefinedEarth, semiMajorAxis );
-
-//    // Compute absolute and relative errors.
-//    absoluteDifference = fabs( elapsedTime - expectedElapsedTime );
-
-//    relativeDifference = absoluteDifference / expectedElapsedTime;
-
-//    // Check if computed elapsed time is equal to reference value.
-//    if ( relativeDifference > toleranceOrbitalElementConversion )
-//    {
-//        isOrbitalElementConversionErroneous = true;
-
-//        cerr << "The conversion of mean anomaly to elapsed time is erroneous "
-//             << "as the computed elapsed time after applying the conversion ( " << elapsedTime
-//             << " ) does not match the expected value of the elapsed time ( "
-//             << expectedElapsedTime << " ) " << endl;
-//    }
-
-//    // Test 12: Test of elapsed time to mean anomaly for hyperbolic orbits.
-
-//    // Set tolerance for conversion.
-//    toleranceOrbitalElementConversion = 1e-11;
-
-//    // Set elapsed time.
-//    elapsedTime = 1000.0;
-
-//    // Set semi-major axis.
-//    semiMajorAxis = unit_conversions::convertKilometersToMeters( -40000.0 );
-
-//    // Compute mean anomaly.
-//    meanAnomaly = orbital_element_conversions::
-//            convertElapsedTimeToMeanAnomalyForHyperbolicOrbits(
-//                elapsedTime, &predefinedEarth, semiMajorAxis );
-
-//    // Check if computed mean anomaly is equal to reference value.
-//    if ( fabs( meanAnomaly - 0.078918514324112 ) > toleranceOrbitalElementConversion )
-//    {
-//        isOrbitalElementConversionErroneous = true;
-
-//        cerr << "The conversion of elapsed time to mean anomaly is erroneous "
-//             << "as the computed mean anomaly after applying the conversion ( "
-//             << unit_conversions::convertRadiansToDegrees( meanAnomaly )
-//             << " ) does not match the expected value of the mean anomaly ( "
-//             << unit_conversions::convertRadiansToDegrees( 0.078918514324112 ) << " ) " << endl;
-//    }
-
-//    // Test 13: Test of mean anomaly to elapsed time for hyperbolic orbits.
-
-//    // Set tolerance for conversion.
-//    toleranceOrbitalElementConversion = 1e-11;
-
-//    // Set mean anomaly.
-//    meanAnomaly = 0.078918514324112;
-
-//    // Set semi-major axis.
-//    semiMajorAxis = unit_conversions::convertKilometersToMeters( -40000.0 );
-
-//    // Compute elapsed time.
-//    elapsedTime = orbital_element_conversions::
-//            convertMeanAnomalyToElapsedTimeForHyperbolicOrbits(
-//                meanAnomaly, &predefinedEarth, semiMajorAxis );
-
-//    // Check if computed elapsed time is equal to reference value.
-//    if ( fabs( elapsedTime - 1000.0 ) > toleranceOrbitalElementConversion )
-//    {
-//        isOrbitalElementConversionErroneous = true;
-
-//        cerr << "The conversion of mean anomaly to elapsed time is erroneous "
-//             << "as the computed elapsed time after applying the conversion ( " << elapsedTime
-//             << " ) does not match the expected value of the elapsed time ( "
-//             << 1000.0 << " ) " << endl;
-//    }
+        cerr << "The conversion of mean anomaly to eccentric anomaly is "
+             << "erroneous as the computed eccentric anomaly after applying the conversion ( "
+             << unit_conversions::convertRadiansToDegrees( eccentricAnomaly )
+             << " ) does not match the expected value of the eccentric anomaly ( "
+             << unit_conversions::convertRadiansToDegrees( 1.061789204 ) << " ) " << endl;
+    }
 
     // Return test result.
     // If test is successful return false; if test fails, return true.
@@ -274,5 +133,3 @@ int main( )
 
     return isOrbitalElementConversionErroneous;
 }
-
-

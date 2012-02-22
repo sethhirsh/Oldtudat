@@ -29,8 +29,7 @@
 #include <limits>
 #include "Tudat/Astrodynamics/BasicAstrodynamics/momentDueToForceModel.h"
 
-
-//! Test implemntation of moment due to Force
+//! Test implementation of moment due to force.
 int main( )
 {
     using std::cerr;
@@ -81,6 +80,4 @@ int main( )
         isMomentDueToForceBroken = true;
         cerr << "Test momentDueToForce failed." << endl;
     }
-
-
 }

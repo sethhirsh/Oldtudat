@@ -28,7 +28,6 @@
 
 namespace tudat
 {
-
 namespace orbital_element_conversions
 {
 

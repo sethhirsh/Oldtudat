@@ -26,21 +26,17 @@
 // difficulties of the iterative method to converge for eccentricities close to 1.
 // 
 
-
 #include <iostream>
 #include "Tudat/Astrodynamics/BasicAstrodynamics/convertMeanAnomalyToEccentricAnomaly.h"
 
-
 namespace tudat
+{
+namespace orbital_element_conversions
 {
 
 // Using declarations.
 using std::cerr;
 using std::endl;
-
-//! Orbital element conversions namespace.
-namespace orbital_element_conversions
-{
 
 //! Convert mean anomaly to eccentric anomaly.
 double ConvertMeanAnomalyToEccentricAnomaly::convert( )
@@ -90,8 +86,5 @@ double ConvertMeanAnomalyToEccentricAnomaly::convert( )
     return eccentricAnomaly_;
 }
 
-} // Namespace orbital_element_conversions.
-
-} // Namespace tudat.
-
-
+} // namespace orbital_element_conversions
+} // namespace tudat

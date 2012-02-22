@@ -24,14 +24,12 @@
 
 namespace tudat
 {
+namespace orbital_element_conversions
+{
 
 // Using declarations.
 using std::cerr;
 using std::endl;
-
-//! Orbital element conversions namespace.
-namespace orbital_element_conversions
-{
 
 //! Convert mean anomaly to hyperbolic eccentric anomaly.
 double ConvertMeanAnomalyToHyperbolicEccentricAnomaly::convert( )

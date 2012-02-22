@@ -55,6 +55,6 @@ private:
 
 };
 
-}
+} // namespace tudat
 
 #endif // GENERALIZEDFORCEMODEL_H

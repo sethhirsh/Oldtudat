@@ -31,11 +31,6 @@
 
 namespace tudat
 {
-
-//! Orbital element conversions namespace.
-/*!
- * Orbital element conversions namespace.
- */
 namespace orbital_element_conversions
 {
 
@@ -106,7 +101,6 @@ private:
 };
 
 } // namespace orbital_element_conversions
-
 } // namespace tudat
 
 #endif // TUDAT_CONVERT_MEANANOMALY_BASE_H

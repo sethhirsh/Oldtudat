@@ -26,12 +26,8 @@
 
 namespace tudat
 {
-
-//! Tudat mathematics namespace
 namespace mathematics
 {
-
-//! Integrators namespace
 namespace numerical_integrators
 {
 

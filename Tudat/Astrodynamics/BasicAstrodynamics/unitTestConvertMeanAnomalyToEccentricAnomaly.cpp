@@ -29,7 +29,6 @@
 // Required Boost unit test framework define.
 #define BOOST_TEST_MAIN
 
-
 #include <boost/test/unit_test.hpp>
 #include <boost/math/special_functions/fpclassify.hpp>
 #include <TudatCore/Astrodynamics/BasicAstrodynamics/unitConversions.h>
@@ -192,5 +191,3 @@ BOOST_AUTO_TEST_CASE( test_convertMeanAnomalyToEccentricAnomaly_nearParabolic )
 
 // End Boost test suite.
 BOOST_AUTO_TEST_SUITE_END( )
-
-
