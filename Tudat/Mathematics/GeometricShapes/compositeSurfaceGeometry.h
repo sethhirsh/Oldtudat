@@ -35,15 +35,13 @@
 #ifndef TUDAT_COMPOSITE_SURFACE_GEOMETRY_H
 #define TUDAT_COMPOSITE_SURFACE_GEOMETRY_H
 
+#include <vector>
+
 #include "Tudat/Mathematics/GeometricShapes/singleSurfaceGeometry.h"
 #include "Tudat/Mathematics/GeometricShapes/surfaceGeometry.h"
-#include <vector>
 
 namespace tudat
 {
-
-using std::vector;
-
 
 //! Composite surface geometry class.
 /*!
@@ -193,13 +191,13 @@ protected:
     /*!
      *  Array of pointers to SingleSurfaceGeometries.
      */
-    vector< SingleSurfaceGeometry* > singleSurfaceGeometryList_;
+    std::vector< SingleSurfaceGeometry* > singleSurfaceGeometryList_;
 
     //! Array of pointers to CompositeSurfaceGeometries.
     /*!
      *  Array of pointers to CompositeSurfaceGeometries.
      */
-    vector< CompositeSurfaceGeometry* > compositeSurfaceGeometryList_;
+    std::vector< CompositeSurfaceGeometry* > compositeSurfaceGeometryList_;
 
 private:
 };

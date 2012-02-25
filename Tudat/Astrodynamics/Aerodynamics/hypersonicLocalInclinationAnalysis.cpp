@@ -42,8 +42,9 @@ namespace tudat
 {
 
 //! Constructor to set geometry and reference quantities.
-void HypersonicLocalInclinationAnalysis::setVehicle( Vehicle& vehicle, vector<int> numberOfLines,
-                                                     vector<int> numberOfPoints, vector<bool> invertOrders )
+void HypersonicLocalInclinationAnalysis::setVehicle(
+        Vehicle& vehicle, std::vector< int > numberOfLines,
+        std::vector< int > numberOfPoints, std::vector< bool > invertOrders )
 {
     // Retrieve external surface geometry from vehicle.
     VehicleExternalModel* externalModel_ = vehicle.getPointerToExternalModel( );
@@ -142,7 +143,7 @@ void HypersonicLocalInclinationAnalysis::allocateArrays( )
 
 //! Get aerodynamic coefficients.
 Eigen::VectorXd HypersonicLocalInclinationAnalysis::getAerodynamicCoefficients(
-    vector< int > independentVariables )
+    std::vector< int > independentVariables )
 {
     // If coefficients have not been allocated (and independent variables
     // have not been initialized), do so.
@@ -166,7 +167,8 @@ Eigen::VectorXd HypersonicLocalInclinationAnalysis::getAerodynamicCoefficients(
 }
 
 //! Set local inclination methods for all parts (expansion and compression).
-void HypersonicLocalInclinationAnalysis::setSelectedMethods( vector< vector < int > > selectedMethods )
+void HypersonicLocalInclinationAnalysis::setSelectedMethods(
+        std::vector< std::vector < int > > selectedMethods )
 {
     //For loops loop through input methods and set the analysis methods.
     for ( int i = 0; i < 4; i++ )
@@ -192,7 +194,7 @@ void HypersonicLocalInclinationAnalysis::generateDatabase( )
 
     // Allocate variable to pass to coefficient determination for independent
     // variable indices.
-    vector< int > independentVariableIndices;
+    std::vector< int > independentVariableIndices;
     independentVariableIndices.resize( numberOfIndependentVariables_ );
 
     // Iterate over all combinations of independent variables.
@@ -257,14 +259,13 @@ void HypersonicLocalInclinationAnalysis::allocateVehicleCoefficients( )
 
 //! Generate aerodynamic coefficients at a single set of independent variables.
 void HypersonicLocalInclinationAnalysis::determineVehicleCoefficients(
-        vector< int > independentVariableIndices )
+        std::vector< int > independentVariableIndices )
 {
     int i;
 
     // Determine index in vehicleCoefficients_ at which the coefficient
     // should be set.
-    int coefficientsIndex = variableIndicesToListIndex(
-            independentVariableIndices );
+    int coefficientsIndex = variableIndicesToListIndex( independentVariableIndices );
 
     // Declare coefficients vector and initialize to zeros.
     Eigen::VectorXd coefficients = Eigen::VectorXd( 6 );
@@ -291,7 +292,7 @@ void HypersonicLocalInclinationAnalysis::determineVehicleCoefficients(
 
 //! Determine aerodynamic coefficients of a single vehicle part.
 Eigen::VectorXd HypersonicLocalInclinationAnalysis::determinePartCoefficients(
-        int partNumber, vector<int> independentVariableIndices )
+        int partNumber, std::vector< int > independentVariableIndices )
 {
     // Declare and determine angles of attack and sideslip for analysis.
     double angleOfAttack = dataPointsOfIndependentVariables_[
@@ -322,7 +323,7 @@ Eigen::VectorXd HypersonicLocalInclinationAnalysis::determinePartCoefficients(
 
 //! Determine the pressure coefficients on a single vehicle part.
 void HypersonicLocalInclinationAnalysis::determinePressureCoefficients(
-        int partNumber, vector< int > independentVariableIndices )
+        int partNumber, std::vector< int > independentVariableIndices )
 {
     // Retrieve Mach number.
     double machNumber = dataPointsOfIndependentVariables_[ machIndex_ ]

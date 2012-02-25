@@ -26,8 +26,6 @@
 
 // Temporary notes (move to class/function doxygen):
 // Mooij, E. The Motion of a vehicle in a Planetary Atmosphere, TU Delft, 1997.
-// 
-// 
 
 #ifndef TUDAT_FRAME_TRANSFORMATION_H
 #define TUDAT_FRAME_TRANSFORMATION_H
@@ -40,9 +38,6 @@ namespace tudat
 {
 namespace reference_frame_transformations
 {
-
-using Eigen::AngleAxisd;
-using Eigen::Quaterniond;
 
 //! Get rotating planetocentric (R) to inertial (I) reference frame transformation matrix.
 /*!
@@ -66,7 +61,7 @@ Eigen::Matrix3d getRotatingPlanetocentricToInertialFrameTransformationMatrix(
  *          the rotational rate of the central body [rad/s] times the time from epoch [s].
  * \return Reference frame (R) to inertial reference frame (I) transformation quaternion.
  */
-Quaterniond getRotatingPlanetocentricToInertialFrameTransformationQuaternion(
+Eigen::Quaterniond getRotatingPlanetocentricToInertialFrameTransformationQuaternion(
     double angleFromXItoXR );
 
 //! Get inertial (I) to rotating planetocentric (R) reference frame transformtion matrix.
@@ -90,7 +85,7 @@ Eigen::Matrix3d getInertialToPlanetocentricFrameTransformationMatrix( double ang
  *          the rotational rate of the central body [rad/s] times the time from epoch [s].
  * \return Inertial (I) to planetocentric reference frame (R) transformation quaternion.
  */
-Quaterniond getInertialToPlanetocentricFrameTransformationQuaternion(
+Eigen::Quaterniond getInertialToPlanetocentricFrameTransformationQuaternion(
         double angleFromXItoXR );
 
 //! Create a Quaterniond rotation state object from four quaternion values in vector 4d.
@@ -109,7 +104,8 @@ Quaterniond getInertialToPlanetocentricFrameTransformationQuaternion(
  * \param vectorWithQuaternion A vector containing the quaternions of the rotation state
  * \return Transformation quaternion.
  */
-Quaterniond getQuaternionObjectFromQuaternionValues( const Eigen::Vector4d& vectorWithQuaternion );
+Eigen::Quaterniond getQuaternionObjectFromQuaternionValues(
+        const Eigen::Vector4d& vectorWithQuaternion );
 
 //! Get Aerodynamic (airspeed-based) (AA) to body reference frame (B) tranformation matrix.
 /*!
@@ -130,7 +126,7 @@ Eigen::Matrix3d getAirspeedBasedAerodynamicToBodyFrameTransformationMatrix(
  * \param angleOfSideslip Angle of sideslip [rad].
  * \return Transformation quaternion.
  */
-Quaterniond getAirspeedBasedAerodynamicToBodyFrameTransformationQuaternion(
+Eigen::Quaterniond getAirspeedBasedAerodynamicToBodyFrameTransformationQuaternion(
         double angleOfAttack, double angleOfSideslip );
 
 //! Get transformation quaternion from Planetocentric (R) to the Local vertical (V) frame.
@@ -144,7 +140,7 @@ Quaterniond getAirspeedBasedAerodynamicToBodyFrameTransformationQuaternion(
  * \param latitude The planetocentric latitude.
  * \return Transformation quaternion from Planetocentric (R) to the local vertical (V) frame.
  */
-Quaterniond getRotatingPlanetocentricToLocalVerticalFrameTransformationQuaternion(
+Eigen::Quaterniond getRotatingPlanetocentricToLocalVerticalFrameTransformationQuaternion(
     double longitude, double latitude );
 
 //! Get transformation quaternion from local vertical (V) to the Planetocentric frame (R).
@@ -158,7 +154,7 @@ Quaterniond getRotatingPlanetocentricToLocalVerticalFrameTransformationQuaternio
  * \param latitude The planetocentric latitude in [rad].
  * \return Transformation quaternion from local vertical (V) to the Planetocentric (R) frame.
  */
-Quaterniond getLocalVerticalToRotatingPlanetocentricFrameTransformationQuaternion(
+Eigen::Quaterniond getLocalVerticalToRotatingPlanetocentricFrameTransformationQuaternion(
     double longitude, double latitude );
 
 } // namespace reference_frame_transformations

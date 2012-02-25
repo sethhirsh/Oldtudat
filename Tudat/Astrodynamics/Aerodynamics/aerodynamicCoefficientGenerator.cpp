@@ -93,7 +93,7 @@ void AerodynamicCoefficientGenerator::setNumberOfReynoldsNumberPoints(
 
 //! Convert independent variable indices to list index in vehicleCoefficients_.
 int AerodynamicCoefficientGenerator::variableIndicesToListIndex(
-        vector< int > independentVariableIndices )
+        std::vector< int > independentVariableIndices )
 {
     int i, j;
 

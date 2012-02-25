@@ -30,10 +30,6 @@
 namespace tudat
 {
 
-// Using declarations.
-using std::string;
-using std::endl;
-
 //! JPL "Approximate Positions of Major Planets" data container class.
 /*!
  * Data container class for JPL "Approximate Positions of Major Planets" ephemeris data.
@@ -66,8 +62,6 @@ public:
                                      ApproximatePlanetPositionsDataContainer&
                                      approximatePlanetPositionsDataContainer )
     {
-
-        // Using declarations.
         using std::endl;
 
         stream << "This is an ApproximatePlanetPositionsDataContainer object. " << endl;
@@ -120,7 +114,7 @@ public:
     /*!
      * Planet name
      */
-    string planetName_;
+    std::string planetName_;
 
     //! Semi-major axis.
     /*!

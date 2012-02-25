@@ -29,12 +29,14 @@
 #ifndef TUDAT_AERODYNAMIC_COEFFICIENT_GENERATOR_H
 #define TUDAT_AERODYNAMIC_COEFFICIENT_GENERATOR_H
 
-#include <Eigen/Core>
-#include "Tudat/Astrodynamics/Aerodynamics/aerodynamicCoefficientInterface.h"
-#include "boost/multi_array.hpp"
-#include "boost/shared_ptr.hpp"
+#include <vector>
 
-using std::vector;
+#include <boost/multi_array.hpp>
+#include <boost/shared_ptr.hpp>
+
+#include <Eigen/Core>
+
+#include "Tudat/Astrodynamics/Aerodynamics/aerodynamicCoefficientInterface.h"
 
 namespace tudat
 {
@@ -249,13 +251,14 @@ public:
      * \param independentVariables Array of values of independent variable
      * indices in dataPointsOfIndependentVariables_.
      */
-    virtual Eigen::VectorXd getAerodynamicCoefficients( vector< int > independentVariables ) = 0;
+    virtual Eigen::VectorXd getAerodynamicCoefficients(
+            std::vector< int > independentVariables ) = 0;
 
     //! List of pointers to VectorXds containing coefficients.
     /*!
      * List of pointers to VectorXds containing coefficients.
      */
-    vector< boost::shared_ptr< Eigen::VectorXd > > vehicleCoefficients_;
+    std::vector< boost::shared_ptr< Eigen::VectorXd > > vehicleCoefficients_;
 
 protected:
 
@@ -265,7 +268,7 @@ protected:
      * \param independentVariableIndices Array of indices of independent variables.
      * \return Resulting index in vehicleCoefficients_.
      */
-    int variableIndicesToListIndex( vector<int> independentVariableIndices );
+    int variableIndicesToListIndex( std::vector< int > independentVariableIndices );
 
     //! Number of independent variables in analysis.
     /*!
@@ -286,7 +289,7 @@ protected:
      * Array of arrays of data points for independent variables. Physical
      * meaning of indices are determined by the machIndex, angleOfAttackIndex, etc.
      */
-    vector< boost::multi_array< int, 1 > > dataPointsOfIndependentVariables_;
+    std::vector< boost::multi_array< int, 1 > > dataPointsOfIndependentVariables_;
 
     //! Index in independent variables arrays representing Mach number.
     /*!

@@ -53,7 +53,12 @@ public:
     /*!
      * Default constructor.
      */
-    ApproximatePlanetPositionsBase( );
+    //! Default constructor.
+    ApproximatePlanetPositionsBase( )
+        : julianDate_( -0.0 ),
+          meanLongitudeAtGivenJulianDate_( -0.0 ),
+          numberOfCenturiesPastJ2000_( -0.0 )
+    { }
 
     //! Set planet.
     /*!

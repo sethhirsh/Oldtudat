@@ -34,12 +34,6 @@
 namespace tudat
 {
 
-//! Default constructor.
-ApproximatePlanetPositionsBase::ApproximatePlanetPositionsBase( ) : julianDate_( -0.0 ),
-    meanLongitudeAtGivenJulianDate_( -0.0 ), numberOfCenturiesPastJ2000_( -0.0 )
-{
-}
-
 //! Set planet.
 void ApproximatePlanetPositionsBase::setPlanet( BodiesWithEphemerisData bodyWithEphemerisData )
 {
@@ -123,7 +117,7 @@ void ApproximatePlanetPositionsBase::parseEphemerisLineData_( const unsigned int
     // Check if the line number corresponds to that for "EM Bary".
     if ( firstLineNumber == 22 )
     {
-        string earthMoonBarycenter_;
+        std::string earthMoonBarycenter_;
 
         ephemerisLineData_ >> earthMoonBarycenter_;
         approximatePlanetPositionsDataContainer_.planetName_ += " " + earthMoonBarycenter_;
