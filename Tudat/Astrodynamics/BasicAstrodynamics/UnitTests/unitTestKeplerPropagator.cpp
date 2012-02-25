@@ -19,6 +19,8 @@
  *                                  Boostified unit test; added new unit tests based on ODTBX.
  *      120217    K. Kumar          Updated computeModuloForSignedValues() to computeModulo() from
  *                                  Tudat Core.
+ *      120225    K. Kumar          Updated unit test using data from (Melman, 2010) to fix bug in
+ *                                  Linux; data is no longer imported from input text file.
  *
  *    References
  *      Melman, J. Propagate software, J.C.P.Melman@tudelft.nl, 2010.
@@ -48,7 +50,7 @@ namespace tudat
 namespace unit_tests
 {
 
-// Typedef for propagation history.
+//! Typedef for propagation history.
 typedef std::map < double, Eigen::VectorXd > PropagationHistory;
 
 //! Get Earth gravitational parameter for benchmark data from (Melman, 2010).
@@ -129,10 +131,8 @@ BOOST_AUTO_TEST_CASE( testPropagateKeplerOrbit )
         // Create propagation history map for benchmark data to be stored in.
         PropagationHistory benchmarkKeplerPropagationHistory = getMelmanBenchmarkData( );
 
-        // Run Kepler propagator simulation.
-
-        // Create expected final state in Keplerian elements.
-        Eigen::VectorXd expectedFinalStateInKeplerianElements
+        // Propagate to final state in Keplerian elements.
+        Eigen::VectorXd computedFinalStateInKeplerianElements
                 = orbital_element_conversions::propagateKeplerOrbit(
                     benchmarkKeplerPropagationHistory.begin( )->second,
                     benchmarkKeplerPropagationHistory.begin( )->first,
@@ -142,7 +142,7 @@ BOOST_AUTO_TEST_CASE( testPropagateKeplerOrbit )
         // Check that computed results match expected results.
         BOOST_CHECK_CLOSE_FRACTION(
                     benchmarkKeplerPropagationHistory.rbegin( )->second( 5 ),
-                    mathematics::computeModulo( expectedFinalStateInKeplerianElements( 5 ),
+                    mathematics::computeModulo( computedFinalStateInKeplerianElements( 5 ),
                                                 2.0 * mathematics::PI ), 1.0e-8 );
     }
 
