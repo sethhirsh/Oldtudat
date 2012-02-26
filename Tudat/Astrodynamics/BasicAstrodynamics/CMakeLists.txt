@@ -13,6 +13,9 @@
  #      YYMMDD    Author            Comment
  #      110820    S.M. Persson      File created.
  #	120203    K. Kumar	    Adapted for new BasicAstrodynamics package.
+ #      120216    K. Kumar          Removed propagator files.
+ #
+ #    References
  #
 
 # Set the source files.
