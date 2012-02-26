@@ -15,7 +15,7 @@
  #      111025    K. Kumar          Adapted file to work with Revision 194.
  #      111026    K. Kumar          Adapted file so all headers show in project tree in Qt Creator.
  #      120209    B. Tong Minh      Merge Ephemeris package
- #/
+ #
 
 # Set Ephemeris path.
 set(EPHEMERISDIR "${BODIESDIR}/Ephemeris")

@@ -15,7 +15,7 @@
  #      111025    K. Kumar          Adapted file to work with Revision 194.
  #      111026    K. Kumar          Adapted file so all headers show in project tree in Qt Creator.
  #      120909    B. Tong Minh      Moved to BasicMathematics
- #/
+ #
 
 # Add source files.
 set(BASICMATHEMATICS_SOURCES

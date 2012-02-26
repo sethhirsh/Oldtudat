@@ -12,7 +12,7 @@
  #    Changelog
  #      YYMMDD    Author            Comment
  #      120127    B. Tong Minh      File created.
- #/
+ #
 
 # Add source files.
 set(NUMERICALINTEGRATORS_SOURCES

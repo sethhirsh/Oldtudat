@@ -13,7 +13,7 @@
  #      YYMMDD    Author            Comment
  #      110820    S.M. Persson      File created.
  #	120203    K. Kumar	    Adapted for new BasicAstrodynamics package.
- #/
+ #
 
 # Set the source files.
 set(BASICASTRODYNAMICS_SOURCES

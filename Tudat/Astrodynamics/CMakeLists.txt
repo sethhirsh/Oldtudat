@@ -15,7 +15,7 @@
  #      111025    K. Kumar          Adapted file to work with Revision 194.
  #      111026    K. Kumar          Adapted file so all headers show in project tree in Qt Creator.
  #      120202    K. Kumar          Removed astrodynamicsFunctions.h/.cpp and unit tests.
- #/
+ #
 
 # Define the main sub-directories.
 set(AERODYNAMICSDIR "${ASTRODYNAMICSDIR}/Aerodynamics")

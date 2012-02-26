@@ -15,7 +15,7 @@
  #      111025    K. Kumar          Adapted file to work with Revision 194.
  #      111026    K. Kumar          Adapted file so all headers show in project tree in Qt Creator.
  #      111027    K. Kumar          Removed RandomNumberGenerators as sub-directory.
- #/
+ #
 
 # Add sub-directories.
 add_subdirectory("${SRCROOT}${MATHEMATICSDIR}/BasicMathematics")

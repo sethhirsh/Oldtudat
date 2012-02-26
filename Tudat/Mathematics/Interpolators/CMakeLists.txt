@@ -13,7 +13,7 @@
  #      YYMMDD    Author            Comment
  #      110820    S.M. Persson      File created.
  #	120202    K. Kumar	    Adapted for new Interpolators sub-directory.
- #/
+ #
 
 # Add source files.
 set(INTERPOLATORS_SOURCES

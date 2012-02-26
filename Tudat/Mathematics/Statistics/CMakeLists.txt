@@ -14,7 +14,7 @@
  #      110820    S.M. Persson      File created.
  #      111025    K. Kumar          Adapted file to work with Revision 194.
  #      111026    K. Kumar          Adapted file so all headers show in project tree in Qt Creator.
- #/
+ #
 
 # Add source files.
 set(STATISTICS_SOURCES

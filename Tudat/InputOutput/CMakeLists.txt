@@ -12,7 +12,7 @@
  #    Changelog
  #      YYMMDD    Author            Comment
  #      120202    B. Tong Minh      File copied from Tudat core
- #/
+ #
 
 # Add source files.
 set(INPUTOUTPUT_SOURCES
