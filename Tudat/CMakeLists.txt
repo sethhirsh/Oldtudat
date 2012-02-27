@@ -169,7 +169,7 @@ else( )
 endif( )
 
 # Find Tudat Core library on local system.
-find_package(TudatCore 1.0 REQUIRED)
+find_package(TudatCore 1.1 REQUIRED)
 
 # Include TudatCore directories.
 # Set CMake flag to suppress TudatCore warnings (platform-dependent solution).
